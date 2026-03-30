@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Dashboard — Elzinga Creative Studio</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// ══════════════════════════════════════════════════════════════
+// PASTE YOUR SUPABASE CREDENTIALS BELOW (see setup guide)
+const SUPABASE_URL      = 'https://wpvydafeuuwiqkaudsnu.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndwdnlkYWZldXV3aXFrYXVkc251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4NjUwOTAsImV4cCI6MjA5MDQ0MTA5MH0.Xn6w67kUrA5TKkaspd3uGir70rW2J5V28u-TwR85Ias';
+// ══════════════════════════════════════════════════════════════
+const _supa = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+</script>
+<style>
+:root{--cream:#FAF7F2;--sand:#EDE4D8;--brown:#8B6347;--brown-dark:#3D2B1F;--green:#7A9E7E;--text:#2C1F14;--text-light:#7A6355;--border:#D4C4B0;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Georgia',serif;background:var(--cream);color:var(--text);min-height:100vh;}
+#login-screen{position:fixed;inset:0;background:var(--brown-dark);display:flex;align-items:center;justify-content:center;z-index:999;padding:40px 24px;}
+.login-box{background:var(--cream);padding:60px 50px;max-width:420px;width:100%;text-align:center;}
+.login-eyebrow{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--green);display:block;margin-bottom:20px;}
+.login-title{font-size:30px;font-weight:300;color:var(--brown-dark);margin-bottom:8px;}
+.login-title em{font-style:italic;color:var(--brown);}
+.login-sub{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--text-light);line-height:1.7;margin-bottom:32px;}
+.login-box input{width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:'Georgia',serif;font-size:18px;letter-spacing:5px;text-align:center;text-transform:uppercase;color:var(--text);outline:none;margin-bottom:28px;transition:border-color .25s;}
+.login-box input:focus{border-color:var(--brown);}
+.login-btn{width:100%;padding:16px;background:var(--brown);color:var(--cream);font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s;}
+.login-btn:hover{background:var(--brown-dark);}
+.login-btn:disabled{opacity:.6;cursor:not-allowed;}
+.login-err{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#b04040;margin-top:14px;display:none;line-height:1.6;}
+.login-hint{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--text-light);margin-top:16px;}
+#app{display:none;}
+.dash-header{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 60px;display:flex;align-items:center;justify-content:space-between;}
+.header-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.lw-name{font-family:'Georgia',serif;font-size:13px;font-weight:400;letter-spacing:4px;color:var(--brown-dark);display:block;}
+.lw-sub{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);display:block;margin-top:2px;}
+.header-right{display:flex;align-items:center;gap:20px;}
+.header-client-name{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:1.5px;color:var(--text-light);}
+.logout-btn{padding:8px 20px;border:1px solid var(--border);color:var(--text-light);font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:transparent;cursor:pointer;transition:all .25s;}
+.logout-btn:hover{border-color:var(--brown);color:var(--brown);}
+.dash-body{display:flex;min-height:calc(100vh - 70px);}
+.sidebar{width:220px;min-height:calc(100vh - 70px);background:var(--brown-dark);position:fixed;top:70px;left:0;display:flex;flex-direction:column;}
+.sidebar-section{padding:28px 0;border-bottom:1px solid rgba(250,247,242,.08);}
+.sidebar-label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(250,247,242,.3);padding:0 24px;margin-bottom:6px;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:11px 24px;color:rgba(250,247,242,.55);font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;border-left:2px solid transparent;transition:all .2s;}
+.nav-item:hover{color:rgba(250,247,242,.9);background:rgba(250,247,242,.06);}
+.nav-item.active{color:var(--cream);border-left-color:var(--brown);background:rgba(250,247,242,.08);}
+.sidebar-footer{padding:20px 24px;margin-top:auto;}
+.sidebar-footer p{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:1px;color:rgba(250,247,242,.2);}
+.main{margin-left:220px;flex:1;padding:48px 60px;max-width:1200px;}
+.page-eyebrow{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+.page-title{font-size:36px;font-weight:300;color:var(--brown-dark);margin-bottom:6px;}
+.page-title em{font-style:italic;color:var(--brown);}
+.page-sub{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--text-light);margin-bottom:40px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-bottom:3px;}
+.kpi-card{background:var(--sand);padding:28px 24px;}
+.kpi-label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+.kpi-value{font-size:34px;font-weight:300;color:var(--brown-dark);margin-bottom:4px;}
+.kpi-value em{font-style:italic;color:var(--brown);}
+.kpi-delta{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--green);}
+.card{background:var(--sand);padding:32px;margin-bottom:3px;}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;}
+.card-title{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--green);}
+.card-subtitle{font-size:22px;font-weight:300;color:var(--brown-dark);margin-top:4px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.bar-chart{display:flex;align-items:flex-end;gap:8px;height:100px;margin-top:12px;}
+.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.bar{width:100%;background:var(--brown);opacity:.7;transition:opacity .2s;min-height:4px;}
+.bar:hover{opacity:1;}
+.bar-label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;color:var(--text-light);}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;}
+.data-table th{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);text-align:left;padding:0 0 12px;border-bottom:1px solid var(--border);}
+.data-table td{padding:14px 0;border-bottom:1px solid rgba(212,196,176,.4);vertical-align:middle;}
+.data-table tr:last-child td{border-bottom:none;}
+.metric-name{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--text-light);}
+.metric-value{font-size:15px;color:var(--brown-dark);}
+.metric-change{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--green);}
+.info-rows{display:flex;flex-direction:column;}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(212,196,176,.4);}
+.info-row:last-child{border-bottom:none;}
+.info-key{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);}
+.info-val{font-family:'Georgia',serif;font-size:14px;color:var(--brown-dark);}
+.timeline{display:flex;flex-direction:column;}
+.timeline-item{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid rgba(212,196,176,.4);}
+.timeline-item:last-child{border-bottom:none;}
+.timeline-dot{width:8px;height:8px;border-radius:50%;background:var(--brown);margin-top:5px;flex-shrink:0;}
+.timeline-dot.green{background:var(--green);}
+.timeline-dot.light{background:var(--border);}
+.timeline-event{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--brown-dark);font-weight:600;margin-bottom:2px;}
+.timeline-date{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:var(--text-light);}
+.status-badge{display:inline-block;padding:4px 14px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;}
+.status-active{background:#D4E8D4;color:#3D6040;}
+.status-new{background:var(--sand);color:var(--brown);border:1px solid var(--border);}
+.view{display:none;}
+.view.active{display:block;}
+@media(max-width:900px){.sidebar{display:none;}.main{margin-left:0;padding:32px 24px;}.kpi-grid{grid-template-columns:1fr 1fr;}.two-col{grid-template-columns:1fr;}.dash-header{padding:16px 24px;}}
+</style>
+</head>
+<body>
+
+<div id="login-screen">
+  <div class="login-box">
+    <svg width="40" height="40" viewBox="0 0 80 80" fill="none" style="margin:0 auto 24px;display:block">
+      <path d="M5 36L5 5L36 5" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M44 75L75 75L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity=".35"/>
+      <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+    </svg>
+    <span class="login-eyebrow">Client Portal</span>
+    <h2 class="login-title">Welcome<br><em>back</em></h2>
+    <p class="login-sub">Enter the reference ID you received when you completed onboarding (e.g. CLT-AB12CD).<br><br>Or type <strong>DEMO</strong> to preview with sample data.</p>
+    <input type="text" id="access-input" placeholder="CLT-XXXXXX" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="login-btn" id="login-btn" onclick="doLogin()">View My Dashboard →</button>
+    <div class="login-err" id="login-err">No account found with that reference ID. Please check your confirmation email or contact <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="63080207060d23060f190a0d040200110602170a1506101716070a0c4d000c0e">[email&#160;protected]</a></div>
+    <p class="login-hint">Don't have a reference ID? <a href="client_intake.html" style="color:var(--brown)">Complete onboarding first →</a></p>
+  </div>
+</div>
+
+<div id="app">
+  <div class="dash-header">
+    <a href="login_portal.html" class="header-logo">
+      <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36L5 5L36 5" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75L75 75L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+      </svg>
+      <div><span class="lw-name">ELZINGA</span><span class="lw-sub">Creative Studio</span></div>
+    </a>
+    <div class="header-right">
+      <span class="header-client-name" id="header-client-name"></span>
+      <button class="logout-btn" onclick="logout()">Sign Out</button>
+    </div>
+  </div>
+
+  <div class="dash-body">
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Overview</div>
+        <div class="nav-item active" onclick="showView('overview',this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </div>
+        <div class="nav-item" onclick="showView('analytics',this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Analytics
+        </div>
+        <div class="nav-item" onclick="showView('campaigns',this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Campaigns
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Account</div>
+        <div class="nav-item" onclick="showView('profile',this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          My Profile
+        </div>
+      </div>
+      <div class="sidebar-footer"><p>© 2026 Elzinga Creative</p></div>
+    </div>
+
+    <div class="main">
+
+      <div class="view active" id="view-overview">
+        <div class="page-eyebrow">Dashboard</div>
+        <h1 class="page-title">Your Campaign<br><em>at a Glance</em></h1>
+        <p class="page-sub" id="overview-sub">Loading your data...</p>
+        <div class="kpi-grid" id="kpi-grid"></div>
+        <div class="two-col">
+          <div class="card">
+            <div class="card-header"><div><div class="card-title">Performance</div><div class="card-subtitle">Weekly trend</div></div></div>
+            <div class="bar-chart" id="perf-chart"></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div><div class="card-title">Activity</div><div class="card-subtitle">Recent updates</div></div></div>
+            <div class="timeline" id="activity-timeline"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="view" id="view-analytics">
+        <div class="page-eyebrow">Analytics</div>
+        <h1 class="page-title">Campaign<br><em>Performance</em></h1>
+        <p class="page-sub">Simulated metrics based on your campaign configuration. Live ad platform integration available on request.</p>
+        <div class="card" style="margin-bottom:3px">
+          <div class="card-title" style="margin-bottom:20px">Key Metrics</div>
+          <table class="data-table">
+            <thead><tr><th>Metric</th><th>This Month</th><th>Last Month</th><th>Change</th></tr></thead>
+            <tbody id="analytics-tbody"></tbody>
+          </table>
+        </div>
+        <div class="two-col">
+          <div class="card"><div class="card-title" style="margin-bottom:14px">Platform Split</div><div class="info-rows" id="platform-split"></div></div>
+          <div class="card"><div class="card-title" style="margin-bottom:14px">Audience Insights</div><div class="info-rows" id="audience-insights"></div></div>
+        </div>
+      </div>
+
+      <div class="view" id="view-campaigns">
+        <div class="page-eyebrow">Campaigns</div>
+        <h1 class="page-title">Your Active<br><em>Campaigns</em></h1>
+        <p class="page-sub">Overview of all campaigns running under your account.</p>
+        <div id="campaigns-content"></div>
+      </div>
+
+      <div class="view" id="view-profile">
+        <div class="page-eyebrow">Account</div>
+        <h1 class="page-title">My<br><em>Profile</em></h1>
+        <p class="page-sub">Your onboarding information on file with us.</p>
+        <div class="card" id="profile-content"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+let clientData = null;
+
+// Map flat Supabase row → nested object the dashboard expects
+function rowToClient(row) {
+  return {
+    referenceId: row.reference_id,
+    status: row.status || 'Active',
+    submittedAt: row.submitted_at,
+    business: { name:row.business_name, industry:row.industry, location:row.location, website:row.website, facebook:row.facebook, instagram:row.instagram },
+    goals: { objective:row.objective, target:row.target_customer, timeline:row.timeline },
+    audience: { ageRange:row.age_range, gender:row.gender, locations:row.target_locations, interests:row.interests },
+    budget: { range:row.budget_range, rawAmount:row.budget_raw, platforms:row.platforms, contractLength:row.contract_length, startDate:row.start_date },
+    creative: { style:row.brand_style, brandPersonality:row.brand_personality },
+    contact: { name:row.contact_name, email:row.contact_email, phone:row.contact_phone },
+  };
+}
+
+function getDemoClient() {
+  return {
+    referenceId:'CLT-DEMO01', status:'Active',
+    submittedAt:new Date(Date.now()-30*24*60*60*1000).toISOString(),
+    business:{name:'Grand Rapids Homes',industry:'Real Estate',location:'Grand Rapids, MI',website:'https://grhomes.com'},
+    goals:{objective:'Generate Leads',target:'Homebuyers 28–50',timeline:'Ongoing'},
+    audience:{ageRange:'28–44, 45–54',gender:'All genders',locations:'Grand Rapids, West Michigan',interests:'Real estate, home improvement'},
+    budget:{range:'$2,500/month',rawAmount:2500,platforms:'Facebook, Instagram, Google Search',contractLength:'6 months',startDate:'March 2026'},
+    creative:{style:'Warm & Lifestyle',brandPersonality:'Trustworthy, approachable'},
+    contact:{name:'Alex Johnson',email:'alex@grhomes.com',phone:'(616) 555-0199'},
+  };
+}
+
+async function doLogin() {
+  const btn = document.getElementById('login-btn');
+  const input = document.getElementById('access-input').value.trim().toUpperCase();
+  const errEl = document.getElementById('login-err');
+  errEl.style.display = 'none';
+  btn.textContent = 'Loading…';
+  btn.disabled = true;
+
+  if (!input || input === 'DEMO') {
+    clientData = getDemoClient();
+  } else {
+    try {
+      const { data, error } = await _supa.from('clients').select('*').eq('reference_id', input).single();
+      if (error && error.code !== 'PGRST116') throw error;
+      clientData = data ? rowToClient(data) : null;
+    } catch(err) {
+      console.error('Supabase error:', err);
+      clientData = null;
+    }
+  }
+
+  btn.textContent = 'View My Dashboard →';
+  btn.disabled = false;
+
+  if (!clientData) { errEl.style.display = 'block'; return; }
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  bootDashboard();
+}
+
+function logout() {
+  clientData = null;
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('access-input').value = '';
+}
+
+function bootDashboard() {
+  const biz = clientData.business || {};
+  document.getElementById('header-client-name').textContent = biz.name || 'Your Account';
+  document.getElementById('overview-sub').textContent = (biz.name||'Your business')+' · '+(clientData.budget?.platforms||'—')+' · '+(clientData.budget?.range||'—');
+  renderKPIs(); renderChart(); renderTimeline(); renderAnalytics(); renderCampaigns(); renderProfile();
+}
+
+function sr(seed,min,max){const x=Math.sin(seed+1)*10000;return Math.floor((x-Math.floor(x))*(max-min+1))+min;}
+
+function renderKPIs() {
+  const b = clientData.budget?.rawAmount || 2000;
+  const imp = Math.round(b*sr(1,180,240));
+  const clk = Math.round(imp*(sr(2,18,32)/1000));
+  const lds = Math.round(clk*(sr(3,12,22)/100));
+  const spd = Math.round(b*(sr(4,88,99)/100));
+  document.getElementById('kpi-grid').innerHTML = `
+    <div class="kpi-card"><div class="kpi-label">Total Impressions</div><div class="kpi-value"><em>${imp.toLocaleString()}</em></div><div class="kpi-delta">↑ +12% vs last month</div></div>
+    <div class="kpi-card"><div class="kpi-label">Link Clicks</div><div class="kpi-value"><em>${clk.toLocaleString()}</em></div><div class="kpi-delta">↑ +8% vs last month</div></div>
+    <div class="kpi-card"><div class="kpi-label">Leads / Conversions</div><div class="kpi-value"><em>${lds}</em></div><div class="kpi-delta">↑ +${sr(5,5,20)}% vs last month</div></div>
+    <div class="kpi-card"><div class="kpi-label">Spend This Month</div><div class="kpi-value"><em>$${spd.toLocaleString()}</em></div><div class="kpi-delta">Budget: ${clientData.budget?.range||'—'}</div></div>`;
+}
+
+function renderChart() {
+  const days=['M','T','W','T','F','S','S'];
+  const vals=days.map((_,i)=>sr(i+10,30,100));
+  const max=Math.max(...vals);
+  document.getElementById('perf-chart').innerHTML=days.map((d,i)=>`
+    <div class="bar-wrap"><div class="bar" style="height:${(vals[i]/max)*90}px"></div><span class="bar-label">${d}</span></div>`).join('');
+}
+
+function renderTimeline() {
+  const sub=new Date(clientData.submittedAt||Date.now());
+  const fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  const kickoff=new Date(sub.getTime()+3*24*60*60*1000);
+  const live=new Date(sub.getTime()+10*24*60*60*1000);
+  document.getElementById('activity-timeline').innerHTML=`
+    <div class="timeline-item"><div class="timeline-dot green"></div><div><div class="timeline-event">Onboarding submitted</div><div class="timeline-date">${fmt(sub)}</div></div></div>
+    <div class="timeline-item"><div class="timeline-dot green"></div><div><div class="timeline-event">Kick-off call scheduled</div><div class="timeline-date">${fmt(kickoff)}</div></div></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div><div class="timeline-event">Campaigns go live</div><div class="timeline-date">${fmt(live)}</div></div></div>
+    <div class="timeline-item"><div class="timeline-dot light"></div><div><div class="timeline-event">First performance report</div><div class="timeline-date">Coming soon</div></div></div>`;
+}
+
+function renderAnalytics() {
+  const b=clientData.budget?.rawAmount||2000;
+  const rows=[
+    ['Impressions',(b*215).toLocaleString(),(b*191).toLocaleString(),'+13%'],
+    ['Clicks',Math.round(b*.225).toLocaleString(),Math.round(b*.198).toLocaleString(),'+14%'],
+    ['Click-Through Rate','2.1%','1.9%','+0.2%'],
+    ['Leads',Math.round(b*.022).toString(),Math.round(b*.019).toString(),'+16%'],
+    ['Cost Per Lead','$'+Math.round(b/(b*.022)).toFixed(0),'$'+Math.round(b/(b*.019)).toFixed(0),'-8%'],
+    ['Total Spend','$'+Math.round(b*.94).toLocaleString(),'$'+Math.round(b*.91).toLocaleString(),'+3%'],
+  ];
+  document.getElementById('analytics-tbody').innerHTML=rows.map(([n,c,p,ch])=>`
+    <tr><td><span class="metric-name">${n}</span></td><td><span class="metric-value">${c}</span></td><td><span class="metric-value" style="opacity:.5">${p}</span></td><td><span class="metric-change">${ch}</span></td></tr>`).join('');
+  const platforms=(clientData.budget?.platforms||'Facebook').split(', ');
+  const pct=Math.floor(100/(platforms.length||1));
+  document.getElementById('platform-split').innerHTML=platforms.map((p,i)=>`<div class="info-row"><span class="info-key">${p}</span><span class="info-val">${pct+(i===0?100-pct*platforms.length:0)}%</span></div>`).join('');
+  document.getElementById('audience-insights').innerHTML=`
+    <div class="info-row"><span class="info-key">Age Range</span><span class="info-val">${clientData.audience?.ageRange||'25–44'}</span></div>
+    <div class="info-row"><span class="info-key">Top Location</span><span class="info-val">${clientData.audience?.locations||clientData.business?.location||'—'}</span></div>
+    <div class="info-row"><span class="info-key">Gender</span><span class="info-val">${clientData.audience?.gender||'All'}</span></div>
+    <div class="info-row"><span class="info-key">Objective</span><span class="info-val">${clientData.goals?.objective||'—'}</span></div>`;
+}
+
+function renderCampaigns() {
+  const platforms=(clientData.budget?.platforms||'Facebook, Instagram').split(', ');
+  document.getElementById('campaigns-content').innerHTML=platforms.map(p=>`
+    <div class="card" style="margin-bottom:3px">
+      <div class="card-header"><div><div class="card-title">${p}</div><div class="card-subtitle">${clientData.business?.name||'Your Brand'} — ${clientData.goals?.objective||'Lead Generation'}</div></div><span class="status-badge status-active">Active</span></div>
+      <div class="info-rows">
+        <div class="info-row"><span class="info-key">Budget</span><span class="info-val">${clientData.budget?.range||'—'}</span></div>
+        <div class="info-row"><span class="info-key">Target</span><span class="info-val">${clientData.goals?.target||'—'}</span></div>
+        <div class="info-row"><span class="info-key">Contract</span><span class="info-val">${clientData.budget?.contractLength||'—'}</span></div>
+        <div class="info-row"><span class="info-key">Start Date</span><span class="info-val">${clientData.budget?.startDate||'—'}</span></div>
+      </div>
+    </div>`).join('');
+}
+
+function renderProfile() {
+  const c=clientData;
+  document.getElementById('profile-content').innerHTML=`
+    <div class="card-title" style="margin-bottom:24px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--green)">Business Information</div>
+    <div class="info-rows">
+      <div class="info-row"><span class="info-key">Business Name</span><span class="info-val">${c.business?.name||'—'}</span></div>
+      <div class="info-row"><span class="info-key">Industry</span><span class="info-val">${c.business?.industry||'—'}</span></div>
+      <div class="info-row"><span class="info-key">Location</span><span class="info-val">${c.business?.location||'—'}</span></div>
+      <div class="info-row"><span class="info-key">Website</span><span class="info-val">${c.business?.website||'—'}</span></div>
+      <div class="info-row"><span class="info-key">Contact Name</span><span class="info-val">${c.contact?.name||'—'}</span></div>
+      <div class="info-row"><span class="info-key">Contact Email</span><span class="info-val">${c.contact?.email||'—'}</span></div>
+      <div class="info-row"><span class="info-key">Contact Phone</span><span class="info-val">${c.contact?.phone||'—'}</span></div>
+      <div class="info-row"><span class="info-key">Reference ID</span><span class="info-val">${c.referenceId||'—'}</span></div>
+      <div class="info-row"><span class="info-key">Submitted</span><span class="info-val">${c.submittedAt?new Date(c.submittedAt).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}):'—'}</span></div>
+      <div class="info-row"><span class="info-key">Status</span><span class="info-val">${c.status||'Active'}</span></div>
+    </div>`;
+}
+
+function showView(id,el) {
+  document.querySelectorAll('.view').forEach(v=>
