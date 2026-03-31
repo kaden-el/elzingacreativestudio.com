@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Onboarding — Elzinga Creative Studio</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script>
+const _supa = supabase.createClient(window.ELZINGA_CONFIG.supabaseUrl, window.ELZINGA_CONFIG.supabaseKey);
+let intakeClientId = null; // reference_id of the client this code belongs to
+
+async function checkAccess() {
+  const input = document.getElementById('access-input').value.trim().toUpperCase();
+  const btn = document.querySelector('.login-btn');
+  const err = document.getElementById('login-error');
+  err.style.display = 'none';
+  if (!input) { err.style.display = 'block'; err.textContent = 'Please enter your access code.'; return; }
+  btn.textContent = 'Checking…'; btn.disabled = true;
+  try {
+    const supa = window.ELZINGA_CONFIG
+      ? supabase.createClient(window.ELZINGA_CONFIG.supabaseUrl, window.ELZINGA_CONFIG.supabaseKey)
+      : null;
+    if (!supa) throw new Error('Config not loaded');
+    const { data, error } = await supa.from('clients').select('reference_id,client_username').eq('access_code', input).single();
+    if (error || !data) throw new Error('Invalid code');
+    if (data.client_username) {
+      // Already completed onboarding — send to login
+      err.style.display = 'block';
+      err.style.background = '#EAF4EA';
+      err.style.color = '#3A7A3A';
+      err.textContent = 'You've already completed onboarding. Log in at the client dashboard.';
+      btn.textContent = 'Get Started →'; btn.disabled = false;
+      return;
+    }
+    intakeClientId = data.reference_id;
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+  } catch(e) {
+    err.style.display = 'block';
+    err.style.background = '#FDECEA'; err.style.color = '#b04040';
+    err.textContent = 'Invalid access code. Please check and try again.';
+  }
+  btn.textContent = 'Get Started →'; btn.disabled = false;
+}
+</script>
+<style>
+:root{--cream:#FAF7F2;--sand:#EDE4D8;--brown:#8B6347;--brown-dark:#3D2B1F;--green:#7A9E7E;--text:#2C1F14;--text-light:#7A6355;--border:#D4C4B0;--surface:#FFFFFF;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Georgia',serif;background:var(--cream);color:var(--text);min-height:100vh;}
+#login-screen{position:fixed;inset:0;background:linear-gradient(135deg,var(--brown-dark) 0%,#5C3D28 50%,var(--brown) 100%);display:flex;align-items:center;justify-content:center;z-index:999;padding:40px 24px;}
+.login-box{background:var(--surface);padding:52px 44px;max-width:440px;width:100%;text-align:center;border-radius:28px;box-shadow:0 20px 60px rgba(28,20,16,.2);}
+.login-eyebrow{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--green);display:block;margin-bottom:20px;}
+.login-title{font-size:30px;font-weight:300;color:var(--brown-dark);margin-bottom:8px;}
+.login-title em{font-style:italic;color:var(--brown);}
+.login-sub{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--text-light);line-height:1.7;margin-bottom:32px;}
+.login-box input{width:100%;border:1.5px solid #E8DDD4;background:var(--sand);padding:14px 18px;font-family:'Georgia',serif;font-size:18px;letter-spacing:5px;text-align:center;text-transform:uppercase;color:var(--text);outline:none;margin-bottom:24px;border-radius:14px;transition:border-color .25s,box-shadow .25s;}
+.login-box input:focus{border-color:var(--brown);box-shadow:0 0 0 3px rgba(139,99,71,.12);}
+.login-btn{width:100%;padding:16px;background:var(--brown);color:var(--cream);font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s,transform .2s;border-radius:50px;box-shadow:0 4px 16px rgba(139,99,71,.3);}
+.login-btn:hover{background:var(--brown-dark);transform:translateY(-1px);}
+.login-err{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#b04040;margin-top:14px;display:none;background:#FDECEA;padding:10px 14px;border-radius:10px;}
+.login-footer{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--text-light);margin-top:24px;}
+#app{display:none;}
+.app-header{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,196,176,.3);padding:16px 60px;display:flex;align-items:center;justify-content:space-between;}
+.header-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.lw-name{font-family:'Georgia',serif;font-size:13px;font-weight:400;letter-spacing:4px;color:var(--brown-dark);display:block;}
+.lw-sub{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);display:block;margin-top:2px;}
+.header-step-info{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);}
+.step-dots{display:flex;align-items:center;gap:10px;}
+.step-dot{width:9px;height:9px;border-radius:50%;background:var(--border);transition:all .3s;}
+.step-dot.done{background:var(--green);}
+.step-dot.active{background:var(--brown);transform:scale(1.35);box-shadow:0 0 0 3px rgba(139,99,71,.2);}
+.progress-track{height:3px;background:var(--sand);position:relative;}
+.progress-fill{height:100%;background:var(--brown);transition:width .5s ease;position:absolute;top:0;left:0;}
+.form-container{max-width:720px;margin:0 auto;padding:56px 24px;}
+.step{display:none;}
+.step.active{display:block;}
+.step-header{margin-bottom:40px;}
+.step-num{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--green);display:block;margin-bottom:14px;}
+.step-title{font-size:36px;font-weight:300;color:var(--brown-dark);margin-bottom:10px;line-height:1.1;}
+.step-title em{font-style:italic;color:var(--brown);}
+.step-sub{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--text-light);line-height:1.75;}
+.card{background:var(--surface);padding:36px 40px;margin-bottom:16px;border-radius:20px;box-shadow:0 2px 16px rgba(61,43,31,.07);border:1px solid rgba(212,196,176,.2);}
+.card-label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:24px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;}
+.form-group{display:flex;flex-direction:column;gap:8px;}
+.form-group.full{grid-column:1/-1;}
+label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);}
+input[type=text],input[type=email],input[type=url],input[type=tel],select,textarea{border:1.5px solid #E8DDD4;background:var(--cream);padding:11px 14px;font-family:'Georgia',serif;font-size:15px;color:var(--text);outline:none;width:100%;border-radius:12px;transition:border-color .25s,box-shadow .25s;appearance:none;}
+input:focus,select:focus,textarea:focus{border-color:var(--brown);box-shadow:0 0 0 3px rgba(139,99,71,.10);}
+textarea{resize:none;height:90px;}
+.obj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:3px;margin-top:8px;}
+.obj-card{background:var(--cream);padding:22px 20px;cursor:pointer;transition:background .25s,transform .2s,box-shadow .2s;border:2px solid transparent;border-radius:16px;}
+.obj-card:hover{background:#F2EBE0;transform:translateY(-2px);box-shadow:0 4px 16px rgba(61,43,31,.09);}
+.obj-card.selected{border-color:var(--brown);box-shadow:0 4px 16px rgba(139,99,71,.18);}
+.obj-icon{font-size:22px;margin-bottom:8px;display:block;}
+.obj-label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:600;color:var(--brown-dark);display:block;margin-bottom:3px;}
+.obj-sub{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:var(--text-light);}
+.check-group{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.check-chip{display:flex;align-items:center;gap:6px;padding:8px 18px;border:1.5px solid var(--border);cursor:pointer;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--text-light);transition:all .2s;border-radius:50px;user-select:none;}
+.check-chip:hover{border-color:var(--brown);color:var(--brown);}
+.check-chip.checked{background:var(--brown);border-color:var(--brown);color:var(--cream);font-weight:600;}
+.check-chip input{display:none;}
+.style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:8px;}
+.style-card{background:var(--cream);padding:24px 18px;text-align:center;cursor:pointer;transition:background .25s,transform .2s,box-shadow .2s;border:2px solid transparent;border-radius:16px;}
+.style-card:hover{background:#F2EBE0;transform:translateY(-2px);}
+.style-card.selected{border-color:var(--brown);box-shadow:0 4px 16px rgba(139,99,71,.18);}
+.style-emoji{font-size:24px;display:block;margin-bottom:8px;}
+.style-label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:600;color:var(--brown-dark);}
+.budget-wrap{padding:24px 0;}
+.budget-display{font-size:40px;font-weight:300;color:var(--brown-dark);text-align:center;margin-bottom:8px;}
+.budget-display em{font-style:italic;color:var(--brown);}
+#budget-amt{outline:none;border-bottom:2px dashed var(--border);padding:0 4px;min-width:60px;display:inline-block;cursor:text;transition:border-color .2s;}
+#budget-amt:focus{border-bottom-color:var(--brown);}
+.budget-edit-hint{text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:var(--text-light);letter-spacing:1px;margin-bottom:20px;}
+input[type=range]{width:100%;border:none;background:none;padding:0;accent-color:var(--brown);cursor:pointer;}
+.budget-labels{display:flex;justify-content:space-between;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:var(--text-light);margin-top:8px;}
+.review-section{margin-bottom:28px;}
+.review-title{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--green);border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:14px;}
+.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.review-item{display:flex;flex-direction:column;gap:3px;}
+.review-row{display:flex;flex-direction:column;padding:10px 0;border-bottom:1px solid var(--border);}
+.review-row:last-child{border-bottom:none;}
+.review-label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);display:block;margin-bottom:3px;}
+.review-val{font-family:'Helvetica Neue',Arial,sans-serif;color:var(--brown);font-size:11px;font-weight:600;letter-spacing:.5px;}
+.nav-buttons{display:flex;gap:14px;justify-content:space-between;align-items:center;margin-top:40px;padding-bottom:60px;}
+.btn-primary{display:inline-block;padding:16px 48px;background:var(--brown);color:var(--cream);font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s,transform .2s;border-radius:50px;box-shadow:0 4px 16px rgba(139,99,71,.28);}
+.btn-primary:hover{background:var(--brown-dark);transform:translateY(-1px);}
+.btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.btn-outline{display:inline-block;padding:16px 32px;border:1.5px solid var(--border);color:var(--text-light);font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;background:transparent;cursor:pointer;transition:all .25s;border-radius:50px;}
+.btn-outline:hover{border-color:var(--brown);color:var(--brown);}
+#confirm-screen{display:none;text-align:center;padding:80px 24px;max-width:560px;margin:0 auto;}
+.confirm-mark{width:72px;height:72px;margin:0 auto 28px;background:rgba(122,158,126,.1);border:1.5px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.confirm-title{font-size:36px;font-weight:300;color:var(--brown-dark);margin-bottom:12px;}
+.confirm-title em{font-style:italic;color:var(--brown);}
+.confirm-sub{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--text-light);line-height:1.8;margin-bottom:16px;}
+.confirm-ref{display:inline-block;padding:12px 32px;border:1.5px solid var(--border);background:var(--sand);border-radius:50px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;letter-spacing:3px;color:var(--brown-dark);margin-bottom:8px;font-weight:600;}
+.confirm-note{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--text-light);margin-bottom:32px;}
+.confirm-back{display:inline-block;padding:14px 40px;background:var(--brown);color:var(--cream);font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;border-radius:50px;box-shadow:0 4px 16px rgba(139,99,71,.28);transition:background .3s,transform .2s;}
+.confirm-back:hover{background:var(--brown-dark);transform:translateY(-1px);}
+@media(max-width:640px){.app-header{padding:16px 24px;}.form-container{padding:36px 16px;}.card{padding:28px 20px;}.form-grid{grid-template-columns:1fr;}.style-grid{grid-template-columns:repeat(2,1fr);}.review-grid{grid-column:1fr;}}
+</style>
+</head>
+<body>
+
+<div id="login-screen">
+  <div class="login-box">
+    <svg width="40" height="40" viewBox="0 0 80 80" fill="none" style="margin:0 auto 24px;display:block">
+      <path d="M5 36L5 5L36 5" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M44 75L75 75L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity=".35"/>
+      <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+    </svg>
+    <span class="login-eyebrow">Client Onboarding</span>
+    <h2 class="login-title">Welcome to<br><em>Elzinga Creative</em></h2>
+    <p class="login-sub">Enter the access code provided by your account manager to get started.</p>
+    <input type="text" id="access-input" placeholder="ACCESS CODE" onkeydown="if(event.key==='Enter')checkAccess()">
+    <button class="login-btn" onclick="checkAccess()">Get Started →</button>
+    <div class="login-err" id="login-error">Invalid access code. Please contact <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7813191c1d16381d140211161f191b0a1d190c110e1d0b0c0d1c1117561b1715">[email&#160;protected]</a></div>
+    <p class="login-footer">No code? Email kaden@elzingacreativestudio.com</p>
+  </div>
+</div>
+
+<div id="app">
+  <div class="app-header">
+    <a href="login_portal.html" class="header-logo">
+      <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36L5 5L36 5" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75L75 75L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+      </svg>
+      <div><span class="lw-name">ELZINGA</span><span class="lw-sub">Creative Studio</span></div>
+    </a>
+    <div class="header-step-info" id="step-label-header">Step 1 of 6</div>
+    <div class="step-dots" id="step-dots"></div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+
+  <div class="form-container">
+
+    <div class="step active" id="step-1">
+      <div class="step-header">
+        <span class="step-num">Step 1 of 6 — Business</span>
+        <h2 class="step-title">Tell us about<br><em>your business</em></h2>
+        <p class="step-sub">Let's start with the basics so we can build a strategy around your brand.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Core Details</span>
+        <div class="form-grid">
+          <div class="form-group"><label>Business Name</label><input type="text" id="biz-name" placeholder="Acme Co."></div>
+          <div class="form-group"><label>Industry</label>
+            <select id="biz-industry"><option value="">Select...</option><option>Photography / Videography</option><option>Restaurant / Food &amp; Beverage</option><option>Real Estate</option><option>Health &amp; Wellness</option><option>Retail / E-commerce</option><option>Home Services</option><option>Professional Services</option><option>Automotive</option><option>Education</option><option>Non-profit</option><option>Other</option></select>
+          </div>
+          <div class="form-group"><label>City / Region</label><input type="text" id="biz-location" placeholder="Grand Rapids, MI"></div>
+          <div class="form-group"><label>Website URL</label><input type="url" id="biz-website" placeholder="https://yourbusiness.com"></div>
+          <div class="form-group"><label>Facebook Page URL</label><input type="url" id="biz-facebook" placeholder="https://facebook.com/yourpage"></div>
+          <div class="form-group"><label>Instagram Handle</label><input type="text" id="biz-instagram" placeholder="@yourbusiness"></div>
+          <div class="form-group full"><label>Brief Business Description</label><textarea id="biz-desc" placeholder="Tell us what you do, who you serve, and what makes you different..."></textarea></div>
+          <div class="form-group full"><label>Primary Ad Focus</label>
+            <select id="biz-focus"><option value="">Select...</option><option>Lead generation</option><option>Brand awareness</option><option>E-commerce / direct sales</option><option>Event promotion</option><option>Retargeting existing audience</option><option>App installs</option></select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" id="step-2">
+      <div class="step-header">
+        <span class="step-num">Step 2 of 6 — Goals</span>
+        <h2 class="step-title">What are you<br><em>working toward?</em></h2>
+        <p class="step-sub">Help us understand your primary objective so we can align every decision around it.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Primary Objective</span>
+        <div class="obj-grid">
+          <div class="obj-card" data-obj="Generate Leads" onclick="selectObj(this)"><span class="obj-icon">🎯</span><span class="obj-label">Generate Leads</span><span class="obj-sub">Forms, calls, messages</span></div>
+          <div class="obj-card" data-obj="Drive Sales" onclick="selectObj(this)"><span class="obj-icon">🛍️</span><span class="obj-label">Drive Sales</span><span class="obj-sub">E-commerce or direct</span></div>
+          <div class="obj-card" data-obj="Build Awareness" onclick="selectObj(this)"><span class="obj-icon">📣</span><span class="obj-label">Build Awareness</span><span class="obj-sub">Reach new audiences</span></div>
+          <div class="obj-card" data-obj="Grow Community" onclick="selectObj(this)"><span class="obj-icon">🌱</span><span class="obj-label">Grow Community</span><span class="obj-sub">Followers &amp; engagement</span></div>
+          <div class="obj-card" data-obj="Promote Event" onclick="selectObj(this)"><span class="obj-icon">📅</span><span class="obj-label">Promote Event</span><span class="obj-sub">RSVPs or ticket sales</span></div>
+          <div class="obj-card" data-obj="Retargeting" onclick="selectObj(this)"><span class="obj-icon">🔁</span><span class="obj-label">Retargeting</span><span class="obj-sub">Re-engage warm traffic</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-label">Details</span>
+        <div class="form-grid">
+          <div class="form-group"><label>Target Customer</label><input type="text" id="goal-target" placeholder="e.g. homeowners 35–55 in West Michigan"></div>
+          <div class="form-group"><label>Desired Timeline</label>
+            <select id="goal-timeline"><option value="">Select...</option><option>ASAP</option><option>Within 2 weeks</option><option>1 month</option><option>2–3 months</option><option>Flexible</option></select>
+          </div>
+          <div class="form-group full"><label>Key Performance Indicators (KPIs) — What does success look like?</label><textarea id="goal-notes" placeholder="e.g. 50 leads per month at under $15 cost per lead, 3× return on ad spend, 500 new followers in 90 days..."></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" id="step-3">
+      <div class="step-header">
+        <span class="step-num">Step 3 of 6 — Audience</span>
+        <h2 class="step-title">Who are we<br><em>reaching?</em></h2>
+        <p class="step-sub">The better we understand your audience, the sharper we can make your targeting.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Demographics</span>
+        <div class="form-grid">
+          <div class="form-group full"><label>Describe your ideal customer</label><textarea id="aud-desc" placeholder="Who are they, what do they care about, what problem do they have?"></textarea></div>
+          <div class="form-group full"><label>Age Range (select all that apply)</label>
+            <div class="check-group" id="age-group">
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="18–24">18–24</label>
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="25–34">25–34</label>
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="35–44">35–44</label>
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="45–54">45–54</label>
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="55–64">55–64</label>
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="65+">65+</label>
+            </div>
+          </div>
+          <div class="form-group"><label>Gender Targeting</label>
+            <select id="aud-gender"><option value="">All genders</option><option>Male</option><option>Female</option></select>
+          </div>
+          <div class="form-group"><label>Target Locations</label><input type="text" id="aud-locations" placeholder="e.g. Grand Rapids, West Michigan"></div>
+          <div class="form-group"><label>Key Interests / Behaviors</label><input type="text" id="aud-interests" placeholder="e.g. home improvement, real estate"></div>
+          <div class="form-group"><label>Pain Points or Motivations</label><input type="text" id="aud-pain" placeholder="e.g. busy professionals wanting done-for-you solutions"></div>
+          <div class="form-group full"><label>Do you have existing customer data?</label>
+            <select id="aud-existing"><option value="">Select...</option><option>Yes — Meta Pixel installed</option><option>Yes — Email list (1,000+)</option><option>Yes — CRM / customer database</option><option>Yes — multiple of the above</option><option>No — starting fresh</option></select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" id="step-4">
+      <div class="step-header">
+        <span class="step-num">Step 4 of 6 — Budget</span>
+        <h2 class="step-title">Investment &amp;<br><em>platforms</em></h2>
+        <p class="step-sub">Set your monthly ad spend and choose where you'd like to show up.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Monthly Ad Budget</span>
+        <div class="budget-wrap">
+          <div class="budget-display">
+            $<em><span id="budget-amt" contenteditable="true" inputmode="numeric" title="Click to type a custom amount">1,000</span></em> / month
+          </div>
+          <div class="budget-edit-hint">click the amount to type a custom value</div>
+          <input type="range" id="budget-slider" min="0" max="26" value="4" oninput="updateBudgetFromSlider(this.value)">
+          <div class="budget-labels">
+            <span>$300</span><span>$1,000</span><span>$5,000</span><span>$10,000</span><span>$50,000+</span>
+          </div>
+          <input type="hidden" id="budget-range" value="1000">
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-label">Ad Platforms</span>
+        <div class="check-group" id="platform-group">
+          <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="Facebook">Facebook</label>
+          <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="Instagram">Instagram</label>
+          <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="Google Search">Google Search</label>
+          <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="Google Display">Google Display</label>
+          <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="YouTube">YouTube</label>
+          <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="TikTok">TikTok</label>
+        </div>
+        <div class="form-grid" style="margin-top:28px">
+          <div class="form-group"><label>Contract Length</label>
+            <select id="contract-length"><option value="">Select...</option><option>Month-to-month</option><option>3 months</option><option>6 months</option><option>12 months</option></select>
+          </div>
+          <div class="form-group"><label>Desired Start Date</label><input type="text" id="start-date" placeholder="e.g. April 1, 2026"></div>
+          <div class="form-group full"><label>Notes on budget or timing</label><textarea id="budget-notes" placeholder="Any flexibility? Seasonal spikes? Special circumstances?"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" id="step-5">
+      <div class="step-header">
+        <span class="step-num">Step 5 of 6 — Creative</span>
+        <h2 class="step-title">Your brand's<br><em>visual voice</em></h2>
+        <p class="step-sub">Great ads start with great creative. Tell us what you have and how you want to sound.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Brand Style</span>
+        <div class="style-grid">
+          <div class="style-card" data-style="Clean &amp; Minimal" onclick="selectStyle(this)"><span class="style-emoji">🤍</span><span class="style-label">Clean &amp; Minimal</span></div>
+          <div class="style-card" data-style="Bold &amp; Graphic" onclick="selectStyle(this)"><span class="style-emoji">🔶</span><span class="style-label">Bold &amp; Graphic</span></div>
+          <div class="style-card" data-style="Warm &amp; Lifestyle" onclick="selectStyle(this)"><span class="style-emoji">🌿</span><span class="style-label">Warm &amp; Lifestyle</span></div>
+          <div class="style-card" data-style="Luxury &amp; Editorial" onclick="selectStyle(this)"><span class="style-emoji">✨</span><span class="style-label">Luxury &amp; Editorial</span></div>
+          <div class="style-card" data-style="Playful &amp; Fun" onclick="selectStyle(this)"><span class="style-emoji">🎉</span><span class="style-label">Playful &amp; Fun</span></div>
+          <div class="style-card" data-style="Corporate &amp; Trust" onclick="selectStyle(this)"><span class="style-emoji">💼</span><span class="style-label">Corporate &amp; Trust</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-label">Assets &amp; Details</span>
+        <div class="form-grid">
+          <div class="form-group full"><label>Video / Photo Availability</label>
+            <div class="check-group" id="video-avail">
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="Professional photos">Professional photos</label>
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="Professional video">Professional video</label>
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="UGC / phone footage">UGC / phone footage</label>
+              <label class="check-chip" onclick="toggleChip(this)"><input type="checkbox" value="None yet">None yet</label>
+            </div>
+          </div>
+          <div class="form-group"><label>Brand Personality / Voice</label><input type="text" id="brand-personality" placeholder="e.g. approachable, premium, honest"></div>
+          <div class="form-group"><label>Brand Colours</label><input type="text" id="brand-colours" placeholder="e.g. navy #1F4E79, gold #C8A951"></div>
+          <div class="form-group"><label>Brand Assets URL</label><input type="url" id="brand-assets-url" placeholder="https://drive.google.com/..."></div>
+          <div class="form-group"><label>Competitor Ads to Reference</label><input type="text" id="competitor-ads" placeholder="URLs or brand names you admire"></div>
+          <div class="form-group full"><label>Additional Creative Notes</label><textarea id="creative-notes" placeholder="Anything else about your brand's look, feel, or messaging?"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" id="step-6">
+      <div class="step-header">
+        <span class="step-num">Step 6 of 6 — Contact</span>
+        <h2 class="step-title">How do we<br><em>reach you?</em></h2>
+        <p class="step-sub">Last step — tell us who our primary point of contact will be.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Contact Information</span>
+        <div class="form-grid">
+          <div class="form-group"><label>Full Name</label><input type="text" id="contact-name" placeholder="Jane Smith"></div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="contact-email" placeholder="jane@yourbusiness.com"></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="contact-phone" placeholder="(616) 555-0100"></div>
+          <div class="form-group"><label>Best Time to Reach You</label>
+            <select id="contact-time"><option value="">Select...</option><option>Morning (8am–12pm)</option><option>Afternoon (12pm–5pm)</option><option>Evening (5pm–8pm)</option><option>Anytime</option></select>
+          </div>
+          <div class="form-group full"><label>Anything else we should know?</label><textarea id="contact-notes" placeholder="Additional context, questions for us..."></textarea></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-label">Ad Platform Access</span>
+        <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--text-light);line-height:1.7;margin-bottom:20px;">To manage your campaigns we'll need access to your ad accounts. You can share logins here or grant agency access directly — we'll follow up if anything is missing.</p>
+        <div class="form-grid">
+          <div class="form-group"><label>Meta Business Manager Email</label><input type="email" id="meta-email" placeholder="email used for Meta Business Suite"></div>
+          <div class="form-group"><label>Meta Ad Account ID</label><input type="text" id="meta-account-id" placeholder="e.g. act_123456789"></div>
+          <div class="form-group"><label>Google Ads Account Email</label><input type="email" id="google-email" placeholder="email used for Google Ads"></div>
+          <div class="form-group"><label>Google Ads Customer ID</label><input type="text" id="google-customer-id" placeholder="e.g. 123-456-7890"></div>
+          <div class="form-group full"><label>Other Platform Access Notes</label><textarea id="platform-access-notes" placeholder="TikTok, YouTube, Snapchat — any other platforms or access details..."></textarea></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:3px">
+        <span class="card-label">Review Your Submission</span>
+        <div id="review-content"></div>
+      </div>
+    </div>
+
+    <div class="nav-buttons" id="step-nav">
+      <button class="btn-outline" id="btn-back" onclick="prevStep()" style="display:none">← Back</button>
+      <button class="btn-primary" id="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Account setup — shown after submission -->
+    <div id="account-setup-screen" style="display:none;text-align:center;padding:60px 24px;max-width:480px;margin:0 auto">
+      <div style="width:56px;height:56px;margin:0 auto 24px;background:rgba(139,99,71,.1);border:1.5px solid var(--brown);border-radius:50%;display:flex;align-items:center;justify-content:center">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#8B6347" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#8B6347" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <h2 class="confirm-title">One last step —<br><em>create your login</em></h2>
+      <p class="confirm-sub" style="margin-bottom:32px">Set up your username and password so you can access your client dashboard anytime.</p>
+      <div style="text-align:left;max-width:360px;margin:0 auto 24px">
+        <div class="form-group" style="margin-bottom:16px">
+          <label style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px">Username</label>
+          <input type="text" id="new-client-username" placeholder="e.g. smithrealty" style="width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:12px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:var(--sand);outline:none">
+        </div>
+        <div class="form-group" style="margin-bottom:16px">
+          <label style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px">Password</label>
+          <input type="password" id="new-client-password" placeholder="At least 6 characters" style="width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:12px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:var(--sand);outline:none">
+        </div>
+        <div class="form-group">
+          <label style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px">Confirm Password</label>
+          <input type="password" id="new-client-confirm" placeholder="Repeat password" style="width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:12px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:var(--sand);outline:none">
+        </div>
+      </div>
+      <div id="account-setup-err" style="display:none;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#b04040;background:#FDECEA;padding:10px 16px;border-radius:10px;margin-bottom:16px"></div>
+      <button class="btn-primary" onclick="createClientAccount()" style="width:100%;max-width:360px">Create My Account →</button>
+    </div>
+
+    <div id="confirm-screen">
+      <div class="confirm-mark">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M6 14l5 5 11-11" stroke="#7A9E7E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="confirm-title">You're all set,<br><em>we'll be in touch.</em></h2>
+      <p class="confirm-sub">Your onboarding submission has been received. Your account manager will reach out within 1–2 business days to schedule your kickoff call.</p>
+      <div class="confirm-ref" id="confirm-ref-id">—</div>
+      <p class="confirm-note">Save this reference ID — you'll use it to log into your client dashboard.</p>
+      <a href="client_dashboard.html" class="confirm-back">View Your Dashboard →</a>
+    </div>
+
+  </div><!-- /.form-container -->
+</div><!-- /#app -->
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────────
+let currentStep = 1;
+const TOTAL_STEPS = 6;
+
+// ── INIT ───────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  buildDots();
+  updateNav();
+  initBudget();
+});
+
+function buildDots() {
+  const container = document.getElementById('step-dots');
+  if (!container) return;
+  container.innerHTML = '';
+  for (let i = 1; i <= TOTAL_STEPS; i++) {
+    const d = document.createElement('div');
+    d.className = 'step-dot' + (i === 1 ? ' active' : '');
+    d.id = 'dot-' + i;
+    container.appendChild(d);
+  }
+}
+
+// ── NAVIGATION ─────────────────────────────────────────────────────
+function goTo(n) {
+  document.getElementById('step-' + currentStep).classList.remove('active');
+  document.getElementById('dot-' + currentStep).classList.remove('active');
+  document.getElementById('dot-' + currentStep).classList.add('done');
+  currentStep = n;
+  document.getElementById('step-' + currentStep).classList.add('active');
+  document.getElementById('dot-' + currentStep).classList.remove('done');
+  document.getElementById('dot-' + currentStep).classList.add('active');
+  const label = document.getElementById('step-label-header');
+  if (label) label.textContent = 'Step ' + currentStep + ' of ' + TOTAL_STEPS;
+  document.getElementById('btn-back').style.display = currentStep > 1 ? 'inline-block' : 'none';
+  const nextBtn = document.getElementById('btn-next');
+  nextBtn.textContent = currentStep === TOTAL_STEPS ? 'Submit →' : 'Continue →';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextStep() {
+  if (currentStep < TOTAL_STEPS) {
+    if (currentStep === TOTAL_STEPS - 1) buildReview();
+    goTo(currentStep + 1);
+  } else {
+    submitForm();
+  }
+}
+
+function prevStep() {
+  if (currentStep > 1) goTo(currentStep - 1);
+}
+
+
+// ── BUDGET SLIDER ─────────────────────────────────────────────────
+const BUDGET_STEPS = [
+  300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 1750, 2000,
+  2500, 3000, 3500, 4000, 5000, 6000, 7500, 10000, 12500, 15000,
+  20000, 25000, 30000, 40000, 50000
+];
+
+function formatBudget(n) {
+  if (n >= 1000) return (n / 1000).toLocaleString('en-US', {minimumFractionDigits: n % 1000 === 0 ? 0 : 1}) + 'k';
+  return n.toLocaleString('en-US');
+}
+
+function setBudgetValue(amount) {
+  amount = Math.max(300, Math.min(50000, parseInt(amount) || 1000));
+  document.getElementById('budget-amt').textContent = amount.toLocaleString('en-US');
+  document.getElementById('budget-range').value = amount;
+  // Snap slider to nearest step
+  let nearest = 0;
+  let minDiff = Infinity;
+  BUDGET_STEPS.forEach((v, i) => {
+    const diff = Math.abs(v - amount);
+    if (diff < minDiff) { minDiff = diff; nearest = i; }
+  });
+  const slider = document.getElementById('budget-slider');
+  slider.value = nearest;
+  updateSliderTrack(slider);
+}
+
+function updateBudgetFromSlider(idx) {
+  const amount = BUDGET_STEPS[parseInt(idx)] || 1000;
+  document.getElementById('budget-amt').textContent = amount.toLocaleString('en-US');
+  document.getElementById('budget-range').value = amount;
+  updateSliderTrack(document.getElementById('budget-slider'));
+}
+
+function updateSliderTrack(slider) {
+  const pct = (slider.value / slider.max) * 100;
+  slider.style.background = `linear-gradient(to right, var(--brown) 0%, var(--brown) ${pct}%, var(--border) ${pct}%, var(--border) 100%)`;
+}
+
+function initBudget() {
+  const amt = document.getElementById('budget-amt');
+  const slider = document.getElementById('budget-slider');
+
+  // Sync slider track on load
+  updateSliderTrack(slider);
+
+  // Editable amount — only allow numbers
+  amt.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); amt.blur(); return; }
+    if (!['Backspace','Delete','ArrowLeft','ArrowRight','Tab','Home','End'].includes(e.key) && !/^\d$/.test(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  amt.addEventListener('input', () => {
+    // Move slider in real time as user types
+    const raw = parseInt(amt.textContent.replace(/[^0-9]/g, ''));
+    if (raw >= 300) {
+      document.getElementById('budget-range').value = raw;
+      let nearest = 0, minDiff = Infinity;
+      BUDGET_STEPS.forEach((v, i) => {
+        const diff = Math.abs(v - raw);
+        if (diff < minDiff) { minDiff = diff; nearest = i; }
+      });
+      const slider = document.getElementById('budget-slider');
+      slider.value = nearest;
+      updateSliderTrack(slider);
+    }
+  });
+
+  amt.addEventListener('blur', () => {
+    // On blur, snap and reformat
+    const raw = parseInt(amt.textContent.replace(/[^0-9]/g, '')) || 1000;
+    setBudgetValue(raw);
+  });
+
+  // Init display
+  updateBudgetFromSlider(slider.value);
+}
+
+// ── CHECKBOX CHIPS ────────────────────────────────────────────────
+function toggleChip(label) {
+  const cb = label.querySelector('input[type="checkbox"]');
+  if (!cb) return;
+  cb.checked = !cb.checked;
+  label.classList.toggle('checked', cb.checked);
+}
+
+// ── SELECTION CARDS ────────────────────────────────────────────────
+function selectObj(el) {
+  document.querySelectorAll('.obj-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function selectStyle(el) {
+  document.querySelectorAll('.style-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// ── PLATFORM TOGGLES ───────────────────────────────────────────────
+function togglePlatform(el) {
+  el.classList.toggle('selected');
+}
+
+// ── REVIEW BUILD ───────────────────────────────────────────────────
+function buildReview() {
+  const v = id => (document.getElementById(id) || {}).value || '—';
+  const checked = sel => [...document.querySelectorAll(sel + ':checked')].map(c => c.value).join(', ') || '—';
+  const selected = sel => (document.querySelector(sel + '.selected') || {}).dataset;
+
+  const checkedVals = (groupId) => {
+    const els = document.querySelectorAll('#' + groupId + ' input:checked');
+    return els.length ? [...els].map(c => c.value).join(', ') : '—';
+  };
+
+  const rows = [
+    ['Business Name', v('biz-name')],
+    ['Industry', v('biz-industry')],
+    ['Location', v('biz-location')],
+    ['Website', v('biz-website')],
+    ['Primary Objective', (selected('.obj-card') || {}).obj || '—'],
+    ['Target Customer', v('goal-target')],
+    ['KPIs / Success Metrics', v('goal-notes')],
+    ['Age Range', checkedVals('age-group')],
+    ['Target Locations', v('aud-locations')],
+    ['Monthly Budget', v('budget-range')],
+    ['Ad Platforms', checkedVals('platform-group')],
+    ['Creative Style', (selected('.style-card') || {}).style || '—'],
+    ['Brand Personality', v('brand-personality')],
+    ['Contact Name', v('contact-name')],
+    ['Contact Email', v('contact-email')],
+    ['Contact Phone', v('contact-phone')],
+    ['Meta Business Email', v('meta-email')],
+    ['Meta Ad Account ID', v('meta-account-id')],
+    ['Google Ads Email', v('google-email')],
+    ['Google Customer ID', v('google-customer-id')],
+  ].filter(([, val]) => val && val !== '—');
+
+  document.getElementById('review-content').innerHTML = rows.map(([label, val]) =>
+    `<div class="review-row"><span class="review-label">${label}</span><span class="review-val">${val}</span></div>`
+  ).join('');
+}
+
+// ── SUBMIT ─────────────────────────────────────────────────────────
+async function submitForm() {
+  const btn = document.getElementById('btn-next');
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+
+  const v = id => (document.getElementById(id) || {}).value || '';
+  const checked = (groupId) => [...document.querySelectorAll('#' + groupId + ' input:checked')].map(c => c.value);
+  const selectedCard = sel => (document.querySelector(sel + '.selected') || {}).dataset || {};
+
+  const ref = 'CLT-' + Date.now().toString(36).toUpperCase().slice(-6);
+
+  const payload = {
+    reference_id:  ref,
+    status:        'New',
+    submitted_at:  new Date().toISOString(),
+    business_name: v('biz-name'),
+    industry:      v('biz-industry'),
+    location:      v('biz-location'),
+    website:       v('biz-website'),
+    contact_name:  v('contact-name'),
+    contact_email: v('contact-email'),
+    budget_range:  v('budget-range'),
+    full_data: {
+      referenceId:  ref,
+      status:       'New',
+      submittedAt:  new Date().toISOString(),
+      business: {
+        name:        v('biz-name'),
+        industry:    v('biz-industry'),
+        location:    v('biz-location'),
+        website:     v('biz-website'),
+        facebook:    v('biz-facebook'),
+        instagram:   v('biz-instagram'),
+        description: v('biz-desc'),
+      },
+      goals: {
+        objective:     selectedCard('.obj-card').obj || '',
+        targetRevenue: v('target-revenue'),
+        timeline:      v('timeline'),
+        pastAds:       v('past-ads'),
+        pastResults:   v('past-results'),
+      },
+      audience: {
+        ageRange:    checked('age-range'),
+        gender:      v('gender'),
+        income:      v('income'),
+        location:    v('audience-location'),
+        interests:   v('interests'),
+        painPoints:  v('pain-points'),
+      },
+      budget: {
+        range:          v('budget-range'),
+        rawAmount:      parseInt(v('budget-range')) || 0,
+        platforms:      checked('platform-select').join(', '),
+        contractLength: v('contract-length'),
+        startDate:      v('start-date'),
+      },
+      creative: {
+        style:           selectedCard('.style-card').style || '',
+        videoAvail:      checked('video-avail'),
+        brandPersonality: v('brand-personality'),
+        brandColours:    v('brand-colours'),
+        brandAssetsUrl:  v('brand-assets-url'),
+        competitorAds:   v('competitor-ads'),
+        creativeNotes:   v('creative-notes'),
+      },
+      contact: {
+        name:    v('contact-name'),
+        email:   v('contact-email'),
+        phone:   v('contact-phone'),
+        time:    v('contact-time'),
+        notes:   v('contact-notes'),
+      },
+      adAccess: {
+        metaEmail:      v('meta-email'),
+        metaAccountId:  v('meta-account-id'),
+        googleEmail:    v('google-email'),
+        googleCustomerId: v('google-customer-id'),
+        platformNotes:  v('platform-access-notes'),
+      },
+    }
+  };
+
+  try {
+    if (_supa) {
+      const { error } = await _supa.from('clients').insert([payload]);
+      if (error) throw error;
+    }
+  } catch(err) {
+    console.error('Supabase submit error:', err);
+  }
+
+  // Show account setup screen
+  document.getElementById('step-nav').style.display = 'none';
+  document.getElementById('step-' + currentStep).classList.remove('active');
+  document.getElementById('account-setup-screen').style.display = 'block';
+  // Store ref for account creation
+  window._intakeRef = ref;
+}
+
+async function createClientAccount() {
+  const username = document.getElementById('new-client-username').value.trim().toLowerCase();
+  const pw       = document.getElementById('new-client-password').value;
+  const confirm  = document.getElementById('new-client-confirm').value;
+  const errEl    = document.getElementById('account-setup-err');
+  errEl.style.display = 'none';
+
+  if (!username) { errEl.textContent = 'Please choose a username.'; errEl.style.display = 'block'; return; }
+  if (pw.length < 6) { errEl.textContent = 'Password must be at least 6 characters.'; errEl.style.display = 'block'; return; }
+  if (pw !== confirm) { errEl.textContent = 'Passwords do not match.'; errEl.style.display = 'block'; return; }
+
+  const btn = document.querySelector('#account-setup-screen .btn-primary');
+  btn.textContent = 'Saving…'; btn.disabled = true;
+
+  try {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw + 'elzinga_salt'));
+    const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+    const ref = window._intakeRef || intakeClientId;
+    const supa = window.ELZINGA_CONFIG
+      ? supabase.createClient(window.ELZINGA_CONFIG.supabaseUrl, window.ELZINGA_CONFIG.supabaseKey)
+      : null;
+    if (!supa) throw new Error('Config not loaded');
+    // Check username not already taken
+    const { data: existing } = await supa.from('clients').select('reference_id').eq('client_username', username);
+    if (existing && existing.length > 0) {
+      errEl.textContent = 'That username is already taken. Please choose another.';
+      errEl.style.display = 'block';
+      btn.textContent = 'Create My Account →'; btn.disabled = false;
+      return;
+    }
+    const { error } = await supa.from('clients').update({
+      client_username: username,
+      client_password_hash: hash,
+      status: 'Onboarding'
+    }).eq('reference_id', ref);
+    if (error) throw error;
+  } catch(e) {
+    errEl.textContent = 'Error saving account: ' + (e.message || 'please try again.');
+    errEl.style.display = 'block';
+    btn.textContent = 'Create My Account →'; btn.disabled = false;
+    return;
+  }
+
+  // Show final confirm screen
+  document.getElementById('account-setup-screen').style.display = 'none';
+  document.getElementById('confirm-screen').style.display = 'block';
+  document.getElementById('confirm-ref-id').textContent = window._intakeRef || intakeClientId;
+}
+</script>
+</body>
+</html>
