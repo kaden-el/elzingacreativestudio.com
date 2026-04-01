@@ -26,16 +26,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate config.js from secrets
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         run: |
-          cat > config.js << EOF
-          window.ELZINGA_CONFIG = {
-            supabaseUrl:       '${{ secrets.SUPABASE_URL }}',
-            supabaseKey:       '${{ secrets.SUPABASE_KEY }}',
-            emailjsPublicKey:  '${{ secrets.EMAILJS_PUBLIC_KEY }}',
-            emailjsServiceId:  '${{ secrets.EMAILJS_SERVICE_ID }}',
-            emailjsTemplateId: '${{ secrets.EMAILJS_TEMPLATE_ID }}',
-          };
-          EOF
+          printf 'window.ELZINGA_CONFIG = {\n  supabaseUrl: "%s",\n  supabaseKey: "%s",\n  emailjsPublicKey: "%s",\n  emailjsServiceId: "%s",\n  emailjsTemplateId: "%s",\n};\n' \
+            "$SUPABASE_URL" "$SUPABASE_KEY" "$EMAILJS_PUBLIC_KEY" "$EMAILJS_SERVICE_ID" "$EMAILJS_TEMPLATE_ID" \
+            > config.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
