@@ -224,16 +224,10 @@
     }
     .ghost-btn:hover { background: var(--brown); color: var(--cream); transform: translateY(-1px); }
     .portfolio-grid {
-      display: grid; grid-template-columns: repeat(12,1fr);
+      display: grid; grid-template-columns: repeat(3,1fr);
       gap: 12px;
     }
-    .pg-item { overflow: hidden; cursor: pointer; position: relative; border-radius: var(--radius-md); }
-    .pg-item:nth-child(1) { grid-column: span 7; aspect-ratio: 7/8; }
-    .pg-item:nth-child(2) { grid-column: span 5; aspect-ratio: 5/4; }
-    .pg-item:nth-child(3) { grid-column: span 5; aspect-ratio: 5/4; }
-    .pg-item:nth-child(4) { grid-column: span 4; aspect-ratio: 1/1; }
-    .pg-item:nth-child(5) { grid-column: span 4; aspect-ratio: 1/1; }
-    .pg-item:nth-child(6) { grid-column: span 4; aspect-ratio: 1/1; }
+    .pg-item { overflow: hidden; cursor: pointer; position: relative; border-radius: var(--radius-md); aspect-ratio: 4/3; }
     .pg-fill { position: absolute; inset: 0; transition: transform 0.7s ease; }
     .pg-item:hover .pg-fill { transform: scale(1.04); }
     .pg1 { background: url('images/_DSC1170.avif') center/cover no-repeat; }
@@ -453,8 +447,8 @@
       .services-grid { grid-template-columns: 1fr; gap: 12px; }
       .portfolio-header { flex-direction: column; align-items: flex-start; }
       .portfolio-grid { grid-template-columns: 1fr 1fr; }
-      .pg-item:nth-child(n) { grid-column: span 1 !important; aspect-ratio: 1/1 !important; }
-      .pg-item:nth-child(1) { grid-column: span 2 !important; aspect-ratio: 16/9 !important; }
+      .portfolio-grid { grid-template-columns: repeat(2,1fr); }
+      .pg-item { aspect-ratio: 4/3 !important; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-img { aspect-ratio: 3/2; }
       .about-img::after { display: none; }
