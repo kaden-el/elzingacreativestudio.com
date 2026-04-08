@@ -45,5 +45,14 @@ Disallow: /
 User-agent: HTTrack
 Disallow: /
 
+# Block internal portals from indexing
+User-agent: *
+Disallow: /agency_dashboard.html
+Disallow: /client_dashboard.html
+Disallow: /client_intake.html
+Disallow: /login_portal.html
+Disallow: /config.js
+Disallow: /config_example.js
+
 # Sitemap
 Sitemap: https://elzingacreativestudio.com/sitemap.xml

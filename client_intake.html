@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Client Onboarding — Elzinga Creative Studio</title>
 <script>
@@ -14,7 +15,20 @@ function getIntakeSupa() {
     _supa = supabase.createClient(window.ELZINGA_CONFIG.supabaseUrl, window.ELZINGA_CONFIG.supabaseKey);
   }
   return _supa;
-} // reference_id of the client this code belongs to
+}
+
+// Init Turnstile site key from config
+function initIntakeTurnstile() {
+  if (window.ELZINGA_CONFIG && window.ELZINGA_CONFIG.turnstileSiteKey) {
+    const el = document.getElementById('intake-turnstile');
+    if (el) el.setAttribute('data-sitekey', window.ELZINGA_CONFIG.turnstileSiteKey);
+    return true;
+  }
+  return false;
+}
+setTimeout(function retryIntakeTs() {
+  if (!initIntakeTurnstile()) setTimeout(retryIntakeTs, 200);
+}, 200); // reference_id of the client this code belongs to
 
 async function checkAccess() {
   const input = document.getElementById('access-input').value.trim().toUpperCase();
@@ -161,7 +175,7 @@ input[type=range]{width:100%;border:none;background:none;padding:0;accent-color:
     <p class="login-sub">Enter the access code provided by your account manager to get started.</p>
     <input type="text" id="access-input" placeholder="ACCESS CODE" onkeydown="if(event.key==='Enter')checkAccess()">
     <button class="login-btn" onclick="checkAccess()">Get Started →</button>
-    <div class="login-err" id="login-error">Invalid access code. Please contact <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7813191c1d16381d140211161f191b0a1d190c110e1d0b0c0d1c1117561b1715">[email&#160;protected]</a></div>
+    <div class="login-err" id="login-error">Invalid access code. Please contact kaden@elzingacreativestudio.com</div>
     <p class="login-footer">No code? Email kaden@elzingacreativestudio.com</p>
   </div>
 </div>
@@ -385,6 +399,7 @@ input[type=range]{width:100%;border:none;background:none;padding:0;accent-color:
 
     <div class="nav-buttons" id="step-nav">
       <button class="btn-outline" id="btn-back" onclick="prevStep()" style="display:none">← Back</button>
+      <div class="cf-turnstile" id="intake-turnstile" data-callback="onIntakeTurnstile" data-expired-callback="onIntakeTurnstileExpired" data-theme="light" style="margin-bottom:8px;display:none"></div>
       <button class="btn-primary" id="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
@@ -429,7 +444,7 @@ input[type=range]{width:100%;border:none;background:none;padding:0;accent-color:
   </div><!-- /.form-container -->
 </div><!-- /#app -->
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── STATE ──────────────────────────────────────────────────────────
 let currentStep = 1;
 const TOTAL_STEPS = 6;
@@ -467,6 +482,9 @@ function goTo(n) {
   document.getElementById('btn-back').style.display = currentStep > 1 ? 'inline-block' : 'none';
   const nextBtn = document.getElementById('btn-next');
   nextBtn.textContent = currentStep === TOTAL_STEPS ? 'Submit →' : 'Continue →';
+  // Show Turnstile only on final review step
+  const tsWidget = document.getElementById('intake-turnstile');
+  if (tsWidget) tsWidget.style.display = currentStep === TOTAL_STEPS ? 'block' : 'none';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -629,8 +647,22 @@ function buildReview() {
 }
 
 // ── SUBMIT ─────────────────────────────────────────────────────────
+// ── Turnstile CAPTCHA ──
+let intakeTurnstileToken = null;
+function onIntakeTurnstile(token) { intakeTurnstileToken = token; }
+function onIntakeTurnstileExpired() { intakeTurnstileToken = null; }
+
 async function submitForm() {
   const btn = document.getElementById('btn-next');
+
+  // Turnstile verification
+  const tsEl = document.getElementById('intake-turnstile');
+  const tsConfigured = tsEl && tsEl.getAttribute('data-sitekey') && tsEl.getAttribute('data-sitekey').length > 5;
+  if (tsConfigured && !intakeTurnstileToken) {
+    alert('Please complete the verification check before submitting.');
+    return;
+  }
+
   btn.textContent = 'Submitting…';
   btn.disabled = true;
 
@@ -745,7 +777,7 @@ async function createClientAccount() {
   btn.textContent = 'Saving…'; btn.disabled = true;
 
   try {
-    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw + 'elzinga_salt'));
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw + 'elzinga_salt_2026'));
     const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
     const ref = window._intakeRef || intakeClientId;
     const supa = getIntakeSupa();
@@ -774,10 +806,10 @@ async function createClientAccount() {
   // Show final confirm screen
   document.getElementById('account-setup-screen').style.display = 'none';
   document.getElementById('confirm-screen').style.display = 'block';
-  document.getElementById('confirm-ref-id').textContent = window._intakeRef || intakeClientId;
+  document.getElementById('confirm-ref-id').textContent = window._intakeRef || '';
 }
+
+
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="config.js"></script>
 </body>
 </html>

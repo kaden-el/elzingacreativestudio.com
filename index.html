@@ -5,6 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elzinga Creative Studio | Grand Rapids Photographer &amp; Videographer</title>
   <meta name="description" content="Elzinga Creative Studio — Grand Rapids photographer and videographer specializing in weddings, seniors, sports, commercial, family, and real estate across West Michigan.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://elzingacreativestudio.com/#business",
+        "name": "Elzinga Creative Studio",
+        "description": "Full-service photography, videography, and marketing studio serving Grand Rapids and all of West Michigan. Specializing in real estate, senior, wedding, family, sports, brand, and commercial photography.",
+        "url": "https://elzingacreativestudio.com",
+        "email": "kaden@elzingacreativestudio.com",
+        "founder": {
+          "@type": "Person",
+          "name": "Kaden Elzinga"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Grand Rapids",
+          "addressRegion": "MI",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Grand Rapids" },
+          { "@type": "City", "name": "Wyoming" },
+          { "@type": "City", "name": "Kentwood" },
+          { "@type": "City", "name": "Walker" },
+          { "@type": "City", "name": "Grandville" },
+          { "@type": "City", "name": "Rockford" },
+          { "@type": "City", "name": "Holland" },
+          { "@type": "City", "name": "Hudsonville" },
+          { "@type": "AdministrativeArea", "name": "Kent County" },
+          { "@type": "AdministrativeArea", "name": "Ottawa County" },
+          { "@type": "AdministrativeArea", "name": "West Michigan" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Photography & Videography Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Photography", "description": "Professional MLS-ready real estate photography for realtors and property listings in Grand Rapids and West Michigan." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Senior Photography", "description": "Creative senior portrait sessions for high school seniors in West Michigan." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Photography", "description": "Natural, documentary-style wedding photography across Grand Rapids and West Michigan." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Photography", "description": "Lifestyle and portrait family photography sessions." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sports Photography", "description": "Action and portrait photography for athletes and sports teams." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand & Commercial Photography", "description": "Commercial brand photography for businesses. Past clients include Biggby Coffee." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Event Photography", "description": "Corporate and private event photography coverage." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videography", "description": "Creative video production for businesses and personal projects." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Content Creation", "description": "Photography and videography optimized for brand social media channels." } }
+          ]
+        }
+      },
+      {
+        "@type": "Photographer",
+        "@id": "https://elzingacreativestudio.com/#photographer",
+        "name": "Kaden Elzinga",
+        "worksFor": { "@id": "https://elzingacreativestudio.com/#business" },
+        "knowsAbout": [
+          "Real Estate Photography", "Senior Photography", "Wedding Photography",
+          "Family Photography", "Sports Photography", "Commercial Photography",
+          "Brand Photography", "Event Photography", "Videography"
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --cream:      #FAF7F2;
@@ -654,6 +718,7 @@
         </div>
         <div class="fg"><label>Tell us about your vision</label><textarea id="inq-message" name="message" placeholder="Share details about your session, preferred dates, location ideas..."></textarea></div>
         <div class="form-msg" id="form-msg"></div>
+        <div class="cf-turnstile" id="contact-turnstile" data-callback="onContactTurnstile" data-expired-callback="onContactTurnstileExpired" data-theme="light" style="margin-bottom:12px"></div>
         <button class="submit-btn" type="submit" id="submit-btn">Send Inquiry</button>
       </form>
       <div class="contact-info">
@@ -720,7 +785,7 @@
 </div>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   /* ── Header scroll shadow ── */
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
@@ -877,9 +942,25 @@
   }
 </script>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="config.js"></script>
 <script>
+  /* ── Turnstile CAPTCHA ── */
+  let contactTurnstileToken = null;
+  function onContactTurnstile(token) { contactTurnstileToken = token; }
+  function onContactTurnstileExpired() { contactTurnstileToken = null; }
+  function initTurnstile() {
+    if (window.ELZINGA_CONFIG && window.ELZINGA_CONFIG.turnstileSiteKey) {
+      const el = document.getElementById('contact-turnstile');
+      if (el) el.setAttribute('data-sitekey', window.ELZINGA_CONFIG.turnstileSiteKey);
+      return true;
+    }
+    return false;
+  }
+  if (!initTurnstile()) {
+    const retryTs = setInterval(() => { if (initTurnstile()) clearInterval(retryTs); }, 100);
+  }
   /* ── Contact form — EmailJS ── */
   function initEmailJS() {
     if (window.emailjs && window.ELZINGA_CONFIG) {
@@ -901,6 +982,17 @@
     btn.disabled = true;
     msg.className = 'form-msg';
     msg.textContent = '';
+
+    // Turnstile verification
+    const tsEl = document.getElementById('contact-turnstile');
+    const tsConfigured = tsEl && tsEl.getAttribute('data-sitekey') && tsEl.getAttribute('data-sitekey').length > 5;
+    if (tsConfigured && !contactTurnstileToken) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Please complete the verification check.';
+      btn.textContent = 'Send Inquiry';
+      btn.disabled = false;
+      return;
+    }
 
     if (!window.ELZINGA_CONFIG) {
       msg.className = 'form-msg error';
@@ -931,14 +1023,20 @@
         { first_name: first, last_name: last, email, service, message }
       );
       msg.className = 'form-msg success';
-      msg.textContent = 'Message sent! We\'ll be in touch within 24 hours.';
-      e.target.reset();
+      msg.textContent = 'Thank you! We\'ll be in touch within 24 hours.';
+      document.getElementById('inquiry-form').reset();
+      btn.textContent = 'Sent!';
+      // Reset Turnstile
+      contactTurnstileToken = null;
+      var tsEl = document.getElementById('contact-turnstile');
+      if (tsEl && typeof turnstile !== 'undefined') { try { turnstile.reset(); } catch(e) {} }
+      setTimeout(() => { btn.textContent = 'Send Inquiry'; btn.disabled = false; }, 3000);
     } catch (err) {
       msg.className = 'form-msg error';
-      msg.textContent = 'Something went wrong. Please email us directly at kaden@elzingacreativestudio.com';
+      msg.textContent = 'Something went wrong. Please email us directly.';
+      btn.textContent = 'Send Inquiry';
+      btn.disabled = false;
     }
-    btn.textContent = 'Send Inquiry';
-    btn.disabled = false;
   }
 </script>
 </body>

@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Client Dashboard — Elzinga Creative Studio</title>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 <script>
@@ -276,6 +278,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
         <label>Password</label>
         <input type="password" id="cred-password" placeholder="Your password" onkeydown="if(event.key==='Enter')doLogin()">
       </div>
+      <div class="cf-turnstile" id="client-turnstile" data-callback="onClientTurnstile" data-expired-callback="onClientTurnstileExpired" data-theme="light" style="margin-bottom:10px"></div>
       <button class="login-btn" id="login-btn-creds" onclick="doLogin()">Sign In →</button>
       <div class="login-err" id="login-err-creds"></div>
     </div>
@@ -288,8 +291,9 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
         <label>Reference ID</label>
         <input type="text" id="refid-input" placeholder="CLT-XXXXXX" style="text-transform:uppercase;letter-spacing:2px" onkeydown="if(event.key==='Enter')doLoginRefId()">
       </div>
+      <div class="cf-turnstile" id="client-turnstile-ref" data-callback="onClientTurnstileRef" data-expired-callback="onClientTurnstileRefExpired" data-theme="light" style="margin-bottom:10px"></div>
       <button class="login-btn" id="login-btn-refid" onclick="doLoginRefId()">View Dashboard →</button>
-      <div class="login-err" id="login-err-refid">No account found. Check your confirmation email or contact <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1873797c7d76587d746271767f797b6a7d796c716e7d6b6c6d7c7177367b7775">[email&#160;protected]</a></div>
+      <div class="login-err" id="login-err-refid">No account found. Check your confirmation email or contact kaden@elzingacreativestudio.com</div>
       <p class="login-hint">Don't have a reference ID? <a href="client_intake.html">Complete onboarding →</a></p>
     </div>
   </div>
@@ -475,6 +479,52 @@ function getDemoClient() {
 
 
 // ── PASSWORD HASH ─────────────────────────────────────────────────
+// ── Turnstile CAPTCHA ──
+let clientTurnstileToken = null;
+let clientTurnstileRefToken = null;
+function onClientTurnstile(token) { clientTurnstileToken = token; }
+function onClientTurnstileExpired() { clientTurnstileToken = null; }
+function onClientTurnstileRef(token) { clientTurnstileRefToken = token; }
+function onClientTurnstileRefExpired() { clientTurnstileRefToken = null; }
+// ── LOGIN RATE LIMITER ───────────────────────────────────────
+const loginAttempts = { count: 0, lockUntil: 0 };
+function checkRateLimit() {
+  const now = Date.now();
+  if (loginAttempts.lockUntil > now) {
+    const secs = Math.ceil((loginAttempts.lockUntil - now) / 1000);
+    return 'Too many attempts. Try again in ' + secs + ' seconds.';
+  }
+  loginAttempts.count++;
+  if (loginAttempts.count >= 5) {
+    loginAttempts.lockUntil = now + 30000;
+    loginAttempts.count = 0;
+    return 'Too many attempts. Try again in 30 seconds.';
+  }
+  return null;
+}
+
+
+function initClientTurnstile() {
+  if (window.ELZINGA_CONFIG && window.ELZINGA_CONFIG.turnstileSiteKey) {
+    document.querySelectorAll('.cf-turnstile').forEach(el => {
+      if (!el.getAttribute('data-sitekey') || el.getAttribute('data-sitekey').length < 5) {
+        el.setAttribute('data-sitekey', window.ELZINGA_CONFIG.turnstileSiteKey);
+      }
+    });
+    return true;
+  }
+  return false;
+}
+setTimeout(function retryClientTs() {
+  if (!initClientTurnstile()) setTimeout(retryClientTs, 200);
+}, 200);
+
+
+// ── XSS SANITIZER ────────────────────────────────────────────
+function esc(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
 async function hashPassword(pw) {
   const input = pw + 'elzinga_salt_2026';
   if (window.crypto && window.crypto.subtle && window.isSecureContext) {
@@ -612,7 +662,7 @@ async function renderKPIs() {
       }
       merged.cpl = (merged.leads||merged.conversions) > 0 ? +(merged.spend/(merged.leads||merged.conversions)).toFixed(2) : null;
       document.getElementById('kpi-grid').innerHTML = `
-        <div class="kpi-card"><div class="kpi-label">Total Spend</div><div class="kpi-value"><em>$${merged.spend.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</em></div><div class="kpi-delta">Budget: ${clientData.budget?.range||'—'}</div></div>
+        <div class="kpi-card"><div class="kpi-label">Total Spend</div><div class="kpi-value"><em>$${merged.spend.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</em></div><div class="kpi-delta">Budget: ${esc(clientData.budget?.range||'—')}</div></div>
         <div class="kpi-card"><div class="kpi-label">Impressions</div><div class="kpi-value"><em>${merged.impressions.toLocaleString()}</em></div><div class="kpi-delta">Total reach</div></div>
         <div class="kpi-card"><div class="kpi-label">Clicks</div><div class="kpi-value"><em>${merged.clicks.toLocaleString()}</em></div><div class="kpi-delta">Link clicks</div></div>
         <div class="kpi-card"><div class="kpi-label">Leads / Conversions</div><div class="kpi-value"><em>${(merged.leads||merged.conversions).toLocaleString()}</em></div><div class="kpi-delta">Actions completed</div></div>`;
@@ -629,7 +679,7 @@ async function renderKPIs() {
     <div class="kpi-card"><div class="kpi-label">Total Impressions</div><div class="kpi-value"><em>${imp.toLocaleString()}</em></div><div class="kpi-delta">↑ +12% vs last month</div></div>
     <div class="kpi-card"><div class="kpi-label">Link Clicks</div><div class="kpi-value"><em>${clk.toLocaleString()}</em></div><div class="kpi-delta">↑ +8% vs last month</div></div>
     <div class="kpi-card"><div class="kpi-label">Leads</div><div class="kpi-value"><em>${lds}</em></div><div class="kpi-delta">↑ +${sr(5,5,20)}% vs last month</div></div>
-    <div class="kpi-card"><div class="kpi-label">Spend This Month</div><div class="kpi-value"><em>$${spd.toLocaleString()}</em></div><div class="kpi-delta">Budget: ${clientData.budget?.range||'—'}</div></div>`;
+    <div class="kpi-card"><div class="kpi-label">Spend This Month</div><div class="kpi-value"><em>$${spd.toLocaleString()}</em></div><div class="kpi-delta">Budget: ${esc(clientData.budget?.range||'—')}</div></div>`;
 }
 
 function renderChart() {
@@ -744,7 +794,7 @@ async function renderCampaigns() {
       .order('launched_at', { ascending: false });
     if (error) throw error;
     if (!data || data.length === 0) {
-      el.innerHTML = `<div class="camp-card"><div class="camp-header"><div><div class="camp-platform">Pending Setup</div><div class="camp-name">${clientData.business?.name||'Your Brand'} — ${clientData.goals?.objective||'Campaign'}</div></div><span class="status-pill">Setting Up</span></div><div class="info-rows"><div class="info-row"><span class="info-key">Budget</span><span class="info-val">${clientData.budget?.range||'—'}</span></div><div class="info-row"><span class="info-key">Platforms</span><span class="info-val">${clientData.budget?.platforms||'—'}</span></div><div class="info-row"><span class="info-key">Start Date</span><span class="info-val">${clientData.budget?.startDate||'Coming soon'}</span></div></div></div>`;
+      el.innerHTML = `<div class="camp-card"><div class="camp-header"><div><div class="camp-platform">Pending Setup</div><div class="camp-name">${esc(clientData.business?.name||'Your Brand')} — ${esc(clientData.goals?.objective||'Campaign')}</div></div><span class="status-pill">Setting Up</span></div><div class="info-rows"><div class="info-row"><span class="info-key">Budget</span><span class="info-val">${esc(clientData.budget?.range||'—')}</span></div><div class="info-row"><span class="info-key">Platforms</span><span class="info-val">${esc(clientData.budget?.platforms||'—')}</span></div><div class="info-row"><span class="info-key">Start Date</span><span class="info-val">${esc(clientData.budget?.startDate||'Coming soon')}</span></div></div></div>`;
       return;
     }
     el.innerHTML = data.map(row => {
