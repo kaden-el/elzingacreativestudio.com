@@ -509,7 +509,7 @@ textarea{resize:vertical;min-height:80px;}
         <label>Password</label>
         <input type="password" id="login-password" placeholder="Your password" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
       </div>
-      <div class="cf-turnstile" id="agency-turnstile" data-callback="onAgencyTurnstile" data-expired-callback="onAgencyTurnstileExpired" data-theme="light" style="margin-bottom:12px"></div>
+      <div id="agency-turnstile" style="margin-bottom:12px"></div>
       <button class="login-btn" onclick="doLogin()">Sign In →</button>
       <div class="login-err" id="pw-error"></div>
     </div>
@@ -1466,7 +1466,24 @@ https://yourcdn.com/image2.jpg"></textarea></div>
 </div>
 <div class="toast" id="toast"></div>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+function onTurnstileApiReady() {
+  var el = document.getElementById('agency-turnstile');
+  if (!el) return;
+  var cfg = window.ELZINGA_CONFIG;
+  if (cfg && cfg.turnstileSiteKey) {
+    window.turnstile.render(el, {
+      sitekey: cfg.turnstileSiteKey,
+      callback: window.onAgencyTurnstile,
+      'expired-callback': window.onAgencyTurnstileExpired,
+      theme: 'light'
+    });
+  } else {
+    setTimeout(onTurnstileApiReady, 100);
+  }
+}
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileApiReady&render=explicit" async defer></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 <script>
