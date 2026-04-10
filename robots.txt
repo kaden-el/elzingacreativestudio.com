@@ -1,58 +1,36 @@
-# Allow all legitimate crawlers including AI/LLM bots
 User-agent: *
 Allow: /
 
-# Block known malicious and abusive bots
-User-agent: MJ12bot
-Disallow: /
+# AI & LLM crawlers - explicitly allowed
+User-agent: GPTBot
+Allow: /
 
-User-agent: DotBot
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Block known malicious scrapers
+User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
 
-User-agent: AhrefsBot
+User-agent: MJ12bot
 Disallow: /
 
-User-agent: MauiBot
-Disallow: /
-
-User-agent: BLEXBot
-Disallow: /
-
-User-agent: EmailCollector
-Disallow: /
-
-User-agent: EmailSiphon
-Disallow: /
-
-User-agent: WebBandit
-Disallow: /
-
-User-agent: EmailWolf
-Disallow: /
-
-User-agent: ExtractorPro
-Disallow: /
-
-User-agent: CopyRightCheck
-Disallow: /
-
-User-agent: Wget
-Disallow: /
-
-User-agent: HTTrack
-Disallow: /
-
-# Block internal portals from indexing
-User-agent: *
-Disallow: /agency_dashboard.html
-Disallow: /client_dashboard.html
-Disallow: /client_intake.html
-Disallow: /login_portal.html
-Disallow: /config.js
-Disallow: /config_example.js
-
-# Sitemap
 Sitemap: https://elzingacreativestudio.com/sitemap.xml
