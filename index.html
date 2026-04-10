@@ -5,70 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elzinga Creative Studio | Grand Rapids Photographer &amp; Videographer</title>
   <meta name="description" content="Elzinga Creative Studio — Grand Rapids photographer and videographer specializing in weddings, seniors, sports, commercial, family, and real estate across West Michigan.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["LocalBusiness", "ProfessionalService"],
-        "@id": "https://elzingacreativestudio.com/#business",
-        "name": "Elzinga Creative Studio",
-        "description": "Full-service photography, videography, and marketing studio serving Grand Rapids and all of West Michigan. Specializing in real estate, senior, wedding, family, sports, brand, and commercial photography.",
-        "url": "https://elzingacreativestudio.com",
-        "email": "kaden@elzingacreativestudio.com",
-        "founder": {
-          "@type": "Person",
-          "name": "Kaden Elzinga"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Grand Rapids",
-          "addressRegion": "MI",
-          "addressCountry": "US"
-        },
-        "areaServed": [
-          { "@type": "City", "name": "Grand Rapids" },
-          { "@type": "City", "name": "Wyoming" },
-          { "@type": "City", "name": "Kentwood" },
-          { "@type": "City", "name": "Walker" },
-          { "@type": "City", "name": "Grandville" },
-          { "@type": "City", "name": "Rockford" },
-          { "@type": "City", "name": "Holland" },
-          { "@type": "City", "name": "Hudsonville" },
-          { "@type": "AdministrativeArea", "name": "Kent County" },
-          { "@type": "AdministrativeArea", "name": "Ottawa County" },
-          { "@type": "AdministrativeArea", "name": "West Michigan" }
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Photography & Videography Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Photography", "description": "Professional MLS-ready real estate photography for realtors and property listings in Grand Rapids and West Michigan." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Senior Photography", "description": "Creative senior portrait sessions for high school seniors in West Michigan." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Photography", "description": "Natural, documentary-style wedding photography across Grand Rapids and West Michigan." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Photography", "description": "Lifestyle and portrait family photography sessions." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sports Photography", "description": "Action and portrait photography for athletes and sports teams." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand & Commercial Photography", "description": "Commercial brand photography for businesses. Past clients include Biggby Coffee." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Event Photography", "description": "Corporate and private event photography coverage." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videography", "description": "Creative video production for businesses and personal projects." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Content Creation", "description": "Photography and videography optimized for brand social media channels." } }
-          ]
-        }
-      },
-      {
-        "@type": "Photographer",
-        "@id": "https://elzingacreativestudio.com/#photographer",
-        "name": "Kaden Elzinga",
-        "worksFor": { "@id": "https://elzingacreativestudio.com/#business" },
-        "knowsAbout": [
-          "Real Estate Photography", "Senior Photography", "Wedding Photography",
-          "Family Photography", "Sports Photography", "Commercial Photography",
-          "Brand Photography", "Event Photography", "Videography"
-        ]
-      }
-    ]
-  }
-  </script>
   <style>
     :root {
       --cream:      #FAF7F2;
@@ -189,14 +125,13 @@
     }
     .hm { overflow: hidden; }
     .hm1 { background: linear-gradient(160deg,#C9B8A4,#9E7B62); grid-row: span 2; border-radius: 0 0 var(--radius-lg) 0; }
-    .hm2 { background: url('images/_DSC1170.avif') center/cover no-repeat; border-radius: 0 0 0 var(--radius-md); }
-    .hm3 { background: url('images/DSC02295.avif') center/cover no-repeat; border-radius: 0 0 var(--radius-md) 0; }
-    .hm4 { background: url('images/DSC08468-HDR.jpg') center/cover no-repeat; }
-    .hm5 { background: url('images/DSC08651.avif') center/cover no-repeat; border-radius: 0 var(--radius-lg) 0 0; }
-    .hero-content-bg {
+    .hm2 { background: linear-gradient(135deg,#8FA88F,#607860); border-radius: 0 0 0 var(--radius-md); }
+    .hm3 { background: linear-gradient(135deg,#C4A88C,#8B6040); border-radius: 0 0 var(--radius-md) 0; }
+    .hm4 { background: linear-gradient(155deg,#B0A898,#786858); }
+    .hm5 { background: linear-gradient(135deg,#96A896,#6A886A); border-radius: 0 var(--radius-lg) 0 0; }
+    .hero-veil {
       position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(250,247,242,0.92) 0%, rgba(250,247,242,0.7) 33%, rgba(250,247,242,0) 50%);
-      pointer-events: none;
+      background: linear-gradient(to top, rgba(250,247,242,0.97) 0%, rgba(250,247,242,0.5) 45%, rgba(250,247,242,0.08) 100%);
     }
     .hero-content { position: relative; z-index: 2; max-width: 680px; }
     .hero-eyebrow {
@@ -289,18 +224,24 @@
     }
     .ghost-btn:hover { background: var(--brown); color: var(--cream); transform: translateY(-1px); }
     .portfolio-grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
+      display: grid; grid-template-columns: repeat(12,1fr);
       gap: 12px;
     }
-    .pg-item { overflow: hidden; cursor: pointer; position: relative; border-radius: var(--radius-md); aspect-ratio: 4/3; }
+    .pg-item { overflow: hidden; cursor: pointer; position: relative; border-radius: var(--radius-md); }
+    .pg-item:nth-child(1) { grid-column: span 7; aspect-ratio: 7/8; }
+    .pg-item:nth-child(2) { grid-column: span 5; aspect-ratio: 5/4; }
+    .pg-item:nth-child(3) { grid-column: span 5; aspect-ratio: 5/4; }
+    .pg-item:nth-child(4) { grid-column: span 4; aspect-ratio: 1/1; }
+    .pg-item:nth-child(5) { grid-column: span 4; aspect-ratio: 1/1; }
+    .pg-item:nth-child(6) { grid-column: span 4; aspect-ratio: 1/1; }
     .pg-fill { position: absolute; inset: 0; transition: transform 0.7s ease; }
     .pg-item:hover .pg-fill { transform: scale(1.04); }
-    .pg1 { background: url('images/_DSC1170.avif') center/cover no-repeat; }
-    .pg2 { background: url('images/DSC02295.avif') center/cover no-repeat; }
-    .pg3 { background: linear-gradient(135deg,#B8A898,#887468); }
+    .pg1 { background: linear-gradient(145deg,#C4B09A,#8B6B52); }
+    .pg2 { background: linear-gradient(135deg,#96AE96,#628062); }
+    .pg3 { background: url('images/DSC07049.avif') center/cover; }
     .pg4 { background: linear-gradient(155deg,#AEBEAE,#789078); }
     .pg5 { background: linear-gradient(135deg,#C8B8A0,#988070); }
-    .pg6 { background: url('images/DSC08468-HDR.jpg') center/cover no-repeat; }
+    .pg6 { background: linear-gradient(135deg,#A0B0A0,#708870); }
     .pg-overlay {
       position: absolute; inset: 0; background: rgba(61,43,31,0);
       display: flex; align-items: center; justify-content: center; transition: background 0.35s;
@@ -424,7 +365,27 @@
     }
 
     /* ── LIGHTBOX ── */
-    .lightbox {
+    .lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(61,43,31,0.6); color: #FAF7F2; border: none;
+  width: 48px; height: 48px; border-radius: 50%; font-size: 20px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s; z-index: 10; backdrop-filter: blur(4px);
+}
+.lb-nav:hover { background: rgba(61,43,31,0.9); }
+.lb-prev { left: 20px; }
+.lb-next { right: 20px; }
+.lb-counter {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  font-family: Helvetica Neue, Arial, sans-serif; font-size: 11px;
+  letter-spacing: 2px; color: rgba(255,255,255,0.6); pointer-events: none;
+}
+.lb-img {
+  max-width: 92vw; max-height: 88vh; border-radius: 8px;
+  object-fit: contain; box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  display: block;
+}
+.lightbox {
       display: none; position: fixed; inset: 0;
       background: rgba(0,0,0,0.88); z-index: 500;
       align-items: center; justify-content: center; flex-direction: column;
@@ -452,40 +413,6 @@
       font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;
       letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.9);
     }
-    .lb-carousel {
-      display: none; position: relative;
-      align-items: center; justify-content: center; flex-direction: column;
-    }
-    .lb-carousel.active { display: flex; }
-    .lb-img {
-      max-width: min(88vw, 900px); max-height: 78vh;
-      object-fit: contain; border-radius: var(--radius-md);
-      display: block;
-    }
-    .lb-arrow {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
-      color: #fff; font-size: 20px; width: 44px; height: 44px;
-      border-radius: 50%; cursor: pointer; display: flex;
-      align-items: center; justify-content: center;
-      transition: background 0.2s; z-index: 10;
-    }
-    .lb-arrow:hover { background: rgba(255,255,255,0.25); }
-    .lb-prev { left: -60px; }
-    .lb-next { right: -60px; }
-    .lb-counter {
-      font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px;
-      letter-spacing: 2px; color: rgba(255,255,255,0.5); margin-top: 14px;
-    }
-    .lb-cat-label {
-      font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9px;
-      letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35);
-      margin-top: 6px;
-    }
-    @media (max-width: 768px) {
-      .lb-prev { left: -42px; } .lb-next { right: -42px; }
-      .lb-arrow { width: 36px; height: 36px; font-size: 16px; }
-    }
 
     /* ── MOBILE — Tablet ── */
     @media (max-width: 1024px) {
@@ -512,8 +439,8 @@
       .services-grid { grid-template-columns: 1fr; gap: 12px; }
       .portfolio-header { flex-direction: column; align-items: flex-start; }
       .portfolio-grid { grid-template-columns: 1fr 1fr; }
-      .portfolio-grid { grid-template-columns: repeat(2,1fr); }
-      .pg-item { aspect-ratio: 4/3 !important; }
+      .pg-item:nth-child(n) { grid-column: span 1 !important; aspect-ratio: 1/1 !important; }
+      .pg-item:nth-child(1) { grid-column: span 2 !important; aspect-ratio: 16/9 !important; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-img { aspect-ratio: 3/2; }
       .about-img::after { display: none; }
@@ -584,7 +511,7 @@
     <div class="hm hm4"></div>
     <div class="hm hm5"></div>
   </div>
-  <div class="hero-content-bg"></div>
+  <div class="hero-veil"></div>
   <div class="hero-content">
     <span class="hero-eyebrow">Grand Rapids, Michigan</span>
     <h1>Photography &amp;<br><em>Videography</em><br>that moves people.</h1>
@@ -718,7 +645,6 @@
         </div>
         <div class="fg"><label>Tell us about your vision</label><textarea id="inq-message" name="message" placeholder="Share details about your session, preferred dates, location ideas..."></textarea></div>
         <div class="form-msg" id="form-msg"></div>
-        <div class="cf-turnstile" id="contact-turnstile" data-callback="onContactTurnstile" data-expired-callback="onContactTurnstileExpired" data-theme="light" style="margin-bottom:12px"></div>
         <button class="submit-btn" type="submit" id="submit-btn">Send Inquiry</button>
       </form>
       <div class="contact-info">
@@ -727,7 +653,7 @@
         <div class="contact-details">
           <div class="cd-item">
             <span class="cd-label">Email</span>
-            <span class="cd-value">kaden@elzingacreativestudio.com</span>
+            <span class="cd-value"><a href="mailto:kaden@elzingacreativestudio.com" style="color:inherit;text-decoration:none">kaden@elzingacreativestudio.com</a></span>
           </div>
           <div class="cd-item">
             <span class="cd-label">Location</span>
@@ -763,7 +689,7 @@
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
       </svg>
     </a>
-    <span class="footer-email-text">kaden@elzingacreativestudio.com</span>
+    <span class="footer-email-text"><a href="mailto:kaden@elzingacreativestudio.com" style="color:inherit;text-decoration:none">kaden@elzingacreativestudio.com</a></span>
   </div>
   <p>&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan.</p>
 </footer>
@@ -772,20 +698,17 @@
 <!-- ═══════ LIGHTBOX ═══════ -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <span class="lb-close" onclick="closeLightbox()">&#215;</span>
-  <!-- Gradient placeholder (non-real-estate categories) -->
-  <div class="lb-placeholder" id="lb-placeholder"></div>
-  <!-- Real photo carousel -->
-  <div class="lb-carousel" id="lb-carousel">
-    <button class="lb-arrow lb-prev" onclick="lbPrev(event)">&#8592;</button>
-    <img class="lb-img" id="lb-img" src="" alt="">
-    <button class="lb-arrow lb-next" onclick="lbNext(event)">&#8594;</button>
-    <div class="lb-counter" id="lb-counter"></div>
-    <div class="lb-cat-label" id="lb-cat-label"></div>
-  </div>
+  <button class="lb-nav lb-prev" id="lb-prev" onclick="lbNav(-1)" style="display:none">&#8592;</button>
+  <img class="lb-img" id="lb-img" src="" alt="" style="display:none">
+  <div class="lb-placeholder" id="lb-placeholder" style="display:none"></div>
+  <button class="lb-nav lb-next" id="lb-next" onclick="lbNav(1)" style="display:none">&#8594;</button>
+  <div class="lb-counter" id="lb-counter"></div>
 </div>
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="config.js"></script>
+<script>
   /* ── Header scroll shadow ── */
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
@@ -808,124 +731,74 @@
 
   /* ── Lightbox ── */
   const bgColors = {
-    'Weddings':   'linear-gradient(145deg,#C4B09A,#8B6B52)',
-    'Seniors':    'linear-gradient(135deg,#96AE96,#628062)',
-    'Sports':     'linear-gradient(135deg,#B8A898,#887468)',
-    'Family':     'linear-gradient(155deg,#AEBEAE,#789078)',
-    'Commercial': 'linear-gradient(135deg,#C8B8A0,#988070)',
+    'Weddings':    'linear-gradient(145deg,#C4B09A,#8B6B52)',
+    'Seniors':     'linear-gradient(135deg,#96AE96,#628062)',
+    'Sports':      'linear-gradient(135deg,#B8A898,#887468)',
+    'Family':      'linear-gradient(155deg,#AEBEAE,#789078)',
+    'Commercial':  'linear-gradient(135deg,#C8B8A0,#988070)',
+    'Real Estate': 'linear-gradient(135deg,#A0B0A0,#708870)',
+  };
+  const galleryPhotos = {
+    'Sports': ['DSC07049.avif', 'DSC06667.avif', 'DSC06685.avif', 'DSC06690.avif', 'DSC06777.avif', 'DSC06854.avif', 'DSC06876.avif', 'DSC06923.avif', 'DSC06926.avif', 'DSC06951.avif', 'DSC06993.avif', 'DSC07011.avif', 'DSC07017.avif', 'DSC07018.avif', 'DSC07048.avif', 'DSC07072.avif', 'DSC07082.avif', 'DSC07097.avif', 'DSC07122.avif', 'DSC07124.avif', 'DSC07206.avif', 'DSC07230.avif', 'DSC07242.avif'],
   };
 
-  const photoCategories = {
-    'Weddings': [
-      'images/_DSC0475.avif',
-      'images/_DSC0554.avif',
-      'images/_DSC1170.avif',
-      'images/_DSC1367.avif',
-      'images/_DSC1402.avif',
-      'images/_DSC2831.avif',
-      'images/_DSC9926.avif',
-      'images/DSC01094.avif',
-      'images/DSC01135.avif',
-      'images/DSC01591.avif',
-      'images/DSC01747.avif',
-      'images/DSC02790.avif',
-      'images/DSC02834.avif',
-      'images/DSC02917.avif',
-      'images/DSC03049.avif',
-      'images/DSC03731.avif',
-    ],
-    'Seniors': [
-      'images/DSC02053.avif',
-      'images/DSC02106.avif',
-      'images/DSC02213.avif',
-      'images/DSC02289.avif',
-      'images/DSC02292.avif',
-      'images/DSC02295.avif',
-      'images/DSC02309.avif',
-      'images/DSC02313.avif',
-      'images/DSC02330.avif',
-      'images/DSC02342.avif',
-      'images/DSC02451.avif',
-      'images/DSC02464.avif',
-    ],
-    'Real Estate': [
-      'images/DSC08468-HDR.jpg',
-      'images/DSC08876-HDR.jpg',
-      'images/DSC08901-HDR.jpg',
-      'images/_DSC8528-HDR.jpg',
-      'images/_DSC8548-HDR.jpg',
-      'images/DSC08478-HDR.jpg',
-      'images/DSC08483-HDR.jpg',
-      'images/DSC08881-HDR.jpg',
-      'images/DSC08891-HDR.jpg',
-    ],
-  };
-
-  let lbPhotos = [], lbIndex = 0;
+  let _lbPhotos = [];
+  let _lbIndex  = 0;
 
   function openLightbox(cat) {
-    const lb       = document.getElementById('lightbox');
-    const ph       = document.getElementById('lb-placeholder');
-    const carousel = document.getElementById('lb-carousel');
+    const lb     = document.getElementById('lightbox');
+    const ph     = document.getElementById('lb-placeholder');
+    const img    = document.getElementById('lb-img');
+    const prev   = document.getElementById('lb-prev');
+    const next   = document.getElementById('lb-next');
+    const photos = galleryPhotos[cat];
 
-    if (photoCategories[cat]) {
-      lbPhotos = photoCategories[cat];
-      lbIndex  = 0;
-      ph.style.display = 'none';
-      carousel.classList.add('active');
-      document.getElementById('lb-cat-label').textContent = cat;
-      lbShow();
-      preloadAll(lbPhotos);
+    if (photos && photos.length > 0) {
+      _lbPhotos = photos;
+      _lbIndex  = 0;
+      ph.style.display  = 'none';
+      img.style.display = 'block';
+      prev.style.display = photos.length > 1 ? 'flex' : 'none';
+      next.style.display = photos.length > 1 ? 'flex' : 'none';
+      lbShowPhoto();
     } else {
-      lbPhotos = [];
-      carousel.classList.remove('active');
-      ph.style.display = '';
+      _lbPhotos = [];
+      img.style.display  = 'none';
+      prev.style.display = 'none';
+      next.style.display = 'none';
+      ph.style.display   = 'flex';
       ph.style.background = bgColors[cat] || '#8B6347';
-      ph.innerHTML = '<span class="lb-category">' + cat + '</span><span style="font-family:\'Helvetica Neue\',Arial,sans-serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.45);">PHOTOS COMING SOON</span>';
+      ph.innerHTML = '<span class="lb-category">' + cat + '</span><span style="font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.45);">PHOTOS COMING SOON</span>';
     }
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
-  // Preload cache
-  const imgCache = {};
-  function preloadImg(src) {
-    if (!imgCache[src]) {
-      const img = new Image();
-      img.src = src;
-      imgCache[src] = img;
-    }
-  }
-  function preloadAll(photos) {
-    photos.forEach(src => preloadImg(src));
+  function lbShowPhoto() {
+    const img     = document.getElementById('lb-img');
+    const counter = document.getElementById('lb-counter');
+    img.src = 'images/' + _lbPhotos[_lbIndex];
+    img.alt = _lbPhotos[_lbIndex].replace('.avif','').replace('.jpg','').replace('.JPG','');
+    counter.textContent = (_lbIndex + 1) + ' / ' + _lbPhotos.length;
   }
 
-  function lbShow() {
-    const src = lbPhotos[lbIndex];
-    document.getElementById('lb-img').src = src;
-    document.getElementById('lb-counter').textContent = (lbIndex + 1) + ' / ' + lbPhotos.length;
-    // Preload neighbours
-    preloadImg(lbPhotos[(lbIndex + 1) % lbPhotos.length]);
-    preloadImg(lbPhotos[(lbIndex - 1 + lbPhotos.length) % lbPhotos.length]);
+  function lbNav(dir) {
+    _lbIndex = (_lbIndex + dir + _lbPhotos.length) % _lbPhotos.length;
+    lbShowPhoto();
   }
-  function lbNext(e) { e.stopPropagation(); lbIndex = (lbIndex + 1) % lbPhotos.length; lbShow(); }
-  function lbPrev(e) { e.stopPropagation(); lbIndex = (lbIndex - 1 + lbPhotos.length) % lbPhotos.length; lbShow(); }
 
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft')  lbNav(-1);
+  });
   function closeLightbox(e) {
     if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lb-close')) {
       document.getElementById('lightbox').classList.remove('open');
-      document.getElementById('lb-carousel').classList.remove('active');
-      document.getElementById('lb-placeholder').style.display = '';
       document.body.style.overflow = '';
     }
   }
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox({target: document.getElementById('lightbox')});
-    if (e.key === 'ArrowRight' && lbPhotos.length) lbNext(e);
-    if (e.key === 'ArrowLeft'  && lbPhotos.length) lbPrev(e);
-  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({target: document.getElementById('lightbox')}); });
 
-  /* ── Full Gallery overlay ── */
   function openGallery() {
     const overlay = document.createElement('div');
     overlay.style.cssText = 'position:fixed;inset:0;background:rgba(28,20,16,.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;backdrop-filter:blur(8px)';
@@ -940,39 +813,9 @@
       </div>`;
     document.body.appendChild(overlay);
   }
-</script>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="config.js"></script>
-<script>
-  /* ── Turnstile CAPTCHA ── */
-  let contactTurnstileToken = null;
-  function onContactTurnstile(token) { contactTurnstileToken = token; }
-  function onContactTurnstileExpired() { contactTurnstileToken = null; }
-  function initTurnstile() {
-    if (window.ELZINGA_CONFIG && window.ELZINGA_CONFIG.turnstileSiteKey) {
-      const el = document.getElementById('contact-turnstile');
-      if (el) el.setAttribute('data-sitekey', window.ELZINGA_CONFIG.turnstileSiteKey);
-      return true;
-    }
-    return false;
-  }
-  if (!initTurnstile()) {
-    const retryTs = setInterval(() => { if (initTurnstile()) clearInterval(retryTs); }, 100);
-  }
   /* ── Contact form — EmailJS ── */
-  function initEmailJS() {
-    if (window.emailjs && window.ELZINGA_CONFIG) {
-      emailjs.init(window.ELZINGA_CONFIG.emailjsPublicKey);
-      return true;
-    }
-    return false;
-  }
-  // Retry until config.js has loaded (handles async script timing)
-  if (!initEmailJS()) {
-    const retryInit = setInterval(() => { if (initEmailJS()) clearInterval(retryInit); }, 100);
-  }
+  emailjs.init(window.ELZINGA_CONFIG.emailjsPublicKey);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -982,25 +825,6 @@
     btn.disabled = true;
     msg.className = 'form-msg';
     msg.textContent = '';
-
-    // Turnstile verification
-    const tsEl = document.getElementById('contact-turnstile');
-    const tsConfigured = tsEl && tsEl.getAttribute('data-sitekey') && tsEl.getAttribute('data-sitekey').length > 5;
-    if (tsConfigured && !contactTurnstileToken) {
-      msg.className = 'form-msg error';
-      msg.textContent = 'Please complete the verification check.';
-      btn.textContent = 'Send Inquiry';
-      btn.disabled = false;
-      return;
-    }
-
-    if (!window.ELZINGA_CONFIG) {
-      msg.className = 'form-msg error';
-      msg.textContent = 'Configuration not loaded. Please try again shortly.';
-      btn.textContent = 'Send Inquiry';
-      btn.disabled = false;
-      return;
-    }
 
     const first   = document.getElementById('inq-first').value.trim();
     const last    = document.getElementById('inq-last').value.trim();
@@ -1017,27 +841,12 @@
     }
 
     try {
-      await emailjs.send(
-        window.ELZINGA_CONFIG.emailjsServiceId,
-        window.ELZINGA_CONFIG.emailjsTemplateId,
-        { first_name: first, last_name: last, email, service, message }
-      );
+      await emailjs.send(window.ELZINGA_CONFIG.emailjsServiceId, window.ELZINGA_CONFIG.emailjsTemplateId, {
+        first_name: first,
+        last_name:  last,
+        reply_to:   email,
+        service:    service,
+        message:    message
+      });
       msg.className = 'form-msg success';
-      msg.textContent = 'Thank you! We\'ll be in touch within 24 hours.';
-      document.getElementById('inquiry-form').reset();
-      btn.textContent = 'Sent!';
-      // Reset Turnstile
-      contactTurnstileToken = null;
-      var tsEl = document.getElementById('contact-turnstile');
-      if (tsEl && typeof turnstile !== 'undefined') { try { turnstile.reset(); } catch(e) {} }
-      setTimeout(() => { btn.textContent = 'Send Inquiry'; btn.disabled = false; }, 3000);
-    } catch (err) {
-      msg.className = 'form-msg error';
-      msg.textContent = 'Something went wrong. Please email us directly.';
-      btn.textContent = 'Send Inquiry';
-      btn.disabled = false;
-    }
-  }
-</script>
-</body>
-</html>
+      msg.textContent = 'Message sent! We\'ll be in touch within 24 ho
