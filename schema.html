@@ -1,0 +1,75 @@
+<!-- Elzinga Creative Studio - JSON-LD Schema | Paste inside <head> on every page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://elzingacreativestudio.com/#business",
+      "name": "Elzinga Creative Studio",
+      "description": "Full-service photography, videography, and marketing studio serving Grand Rapids and all of West Michigan. Specializing in real estate, senior, wedding, family, sports, brand, and commercial photography.",
+      "url": "https://elzingacreativestudio.com",
+      "email": "kaden@elzingacreativestudio.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Kaden Elzinga"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grand Rapids",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Grand Rapids", "containedInPlace": { "@type": "State", "name": "Michigan" } },
+        { "@type": "City", "name": "Wyoming" },
+        { "@type": "City", "name": "Kentwood" },
+        { "@type": "City", "name": "Walker" },
+        { "@type": "City", "name": "Grandville" },
+        { "@type": "City", "name": "Rockford" },
+        { "@type": "City", "name": "Holland" },
+        { "@type": "City", "name": "Hudsonville" },
+        { "@type": "AdministrativeArea", "name": "Kent County" },
+        { "@type": "AdministrativeArea", "name": "Ottawa County" },
+        { "@type": "AdministrativeArea", "name": "West Michigan" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Photography & Videography Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Photography", "description": "Professional MLS-ready real estate photography for realtors and property listings in Grand Rapids and West Michigan." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Senior Photography", "description": "Creative senior portrait sessions for high school seniors in West Michigan." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Photography", "description": "Natural, documentary-style wedding photography across Grand Rapids and West Michigan." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Photography", "description": "Lifestyle and portrait family photography sessions." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sports Photography", "description": "Action and portrait photography for athletes and sports teams." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand & Commercial Photography", "description": "Commercial brand photography for businesses. Past clients include Biggby Coffee." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Event Photography", "description": "Corporate and private event photography coverage." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videography", "description": "Creative video production for businesses and personal projects." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Content Creation", "description": "Photography and videography optimized for brand social media channels." } }
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/kaden_elzinga",
+        "https://www.facebook.com/profile.php?id=100090268353324"
+      ]
+    },
+    {
+      "@type": "Photographer",
+      "@id": "https://elzingacreativestudio.com/#photographer",
+      "name": "Kaden Elzinga",
+      "worksFor": { "@id": "https://elzingacreativestudio.com/#business" },
+      "knowsAbout": [
+        "Real Estate Photography",
+        "Senior Photography",
+        "Wedding Photography",
+        "Family Photography",
+        "Sports Photography",
+        "Commercial Photography",
+        "Brand Photography",
+        "Event Photography",
+        "Videography"
+      ]
+    }
+  ]
+}
+</script>
