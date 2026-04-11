@@ -664,7 +664,7 @@
       <div class="pg-item" onclick="openLightbox('Seniors')"><div class="pg-fill pg2"></div><div class="pg-overlay"><span class="pg-label">Seniors</span></div></div>
       <div class="pg-item" onclick="openLightbox('Sports')"><div class="pg-fill pg3"></div><div class="pg-overlay"><span class="pg-label">Sports</span></div></div>
       <div class="pg-item" onclick="openLightbox('Family')"><div class="pg-fill pg4"></div><div class="pg-overlay"><span class="pg-label">Family</span></div></div>
-      <div class="pg-item" onclick="openLightbox('Commercial')"><div class="pg-fill pg5"></div><div class="pg-overlay"><span class="pg-label">Commercial</span></div></div>
+      <div class="pg-item" onclick="openLightbox('Portraits')"><div class="pg-fill pg5"></div><div class="pg-overlay"><span class="pg-label">Portraits</span></div></div>
       <div class="pg-item" onclick="openLightbox('Real Estate')"><div class="pg-fill pg6"></div><div class="pg-overlay"><span class="pg-label">Real Estate</span></div></div>
     </div>
     <div class="portfolio-footer">
@@ -890,7 +890,7 @@
       'images/DSC01952.jpg',
       'images/DSC01954.jpg',
     ],
-    'Commercial': [
+    'Portraits': [
       'images/DSC08651.avif',
       'images/DSC08518.avif',
       'images/DSC08525.avif',
@@ -967,18 +967,66 @@
 
   /* ── Full Gallery overlay ── */
   function openGallery() {
+    // Flatten all photos in order: category label + images
+    const order = ['Weddings','Seniors','Sports','Family','Portraits','Real Estate'];
+    let allPhotos = []; // {src, cat}
+    order.forEach(cat => {
+      if (photoCategories[cat]) {
+        photoCategories[cat].forEach(src => allPhotos.push({src, cat}));
+      }
+    });
+
     const overlay = document.createElement('div');
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(28,20,16,.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;backdrop-filter:blur(8px)';
+    overlay.id = 'full-gallery-overlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(22,14,10,.95);z-index:9999;overflow-y:auto;-webkit-overflow-scrolling:touch;backdrop-filter:blur(6px)';
     overlay.onclick = e => { if(e.target===overlay) overlay.remove(); };
-    overlay.innerHTML = `
-      <div style="max-width:700px;width:100%;text-align:center">
-        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#7A9E7E;margin-bottom:12px">Portfolio</div>
-        <h2 style="font-family:'Georgia',serif;font-size:32px;font-weight:300;color:#FAF7F2;margin-bottom:8px">Our <em style='font-style:italic;color:#8B6347'>Work</em></h2>
-        <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:rgba(250,247,242,.6);margin-bottom:32px;line-height:1.7">Full portfolio coming soon — we're building something worth showing. In the meantime, reach out to see case studies and examples relevant to your industry.</p>
-        <a href="#contact" onclick="overlay.remove()" style="display:inline-block;padding:14px 32px;background:#8B6347;color:#FAF7F2;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:50px;margin-right:12px;transition:background .2s">Get In Touch</a>
-        <button onclick="this.closest('div[style]').parentElement.remove()" style="padding:14px 32px;background:transparent;border:1.5px solid rgba(250,247,242,.3);color:#FAF7F2;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;border-radius:50px;cursor:pointer">Close</button>
+
+    const header = `
+      <div style="position:sticky;top:0;z-index:10;background:rgba(22,14,10,.95);padding:22px 40px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.07)">
+        <div>
+          <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#7A9E7E;margin-bottom:4px">Full Portfolio</div>
+          <div style="font-family:'Georgia',serif;font-size:22px;font-weight:300;color:#FAF7F2">${allPhotos.length} images</div>
+        </div>
+        <button onclick="document.getElementById('full-gallery-overlay').remove()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#FAF7F2;font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:10px 22px;border-radius:50px;cursor:pointer">Close</button>
       </div>`;
+
+    const imgs = allPhotos.map((p, i) => `
+      <div onclick="openGalleryItem(${i})" style="aspect-ratio:4/3;overflow:hidden;border-radius:10px;cursor:pointer;position:relative;">
+        <img src="${p.src}" loading="lazy" alt="${p.cat}"
+          style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;"
+          onmouseover="this.style.transform='scale(1.04)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s;border-radius:10px;"
+          onmouseover="this.style.background='rgba(0,0,0,.18)'"
+          onmouseout="this.style.background='rgba(0,0,0,0)'"
+        ></div>
+      </div>`).join('');
+
+    overlay.innerHTML = header + `<div style="padding:32px 40px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;">${imgs}</div>`;
     document.body.appendChild(overlay);
+
+    // Store flat list for lightbox navigation from gallery
+    window._galleryPhotos = allPhotos;
+  }
+
+  function openGalleryItem(index) {
+    const photos = window._galleryPhotos;
+    // Remove gallery overlay and open in the main lightbox
+    const ov = document.getElementById('full-gallery-overlay');
+    if (ov) ov.remove();
+    lbPhotos = photos.map(p => p.src);
+    lbIndex  = index;
+    const lb       = document.getElementById('lightbox');
+    const ph       = document.getElementById('lb-placeholder');
+    const carousel = document.getElementById('lb-carousel');
+    ph.style.display = 'none';
+    carousel.classList.add('active');
+    document.getElementById('lb-cat-label').textContent = photos[index].cat;
+    lbShow();
+    preloadAll(lbPhotos);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
 </script>
 
