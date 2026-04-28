@@ -6,7 +6,8 @@
   <title>Elzinga Creative Studio | Grand Rapids Photographer &amp; Videographer</title>
   <meta name="description" content="Grand Rapids real estate photographer and videographer. HDR listing photography, twilight shoots, senior portraits, weddings, and commercial work across West Michigan. 24-hour turnaround.">
   <link rel="canonical" href="https://elzingacreativestudio.com/" />
-  <link rel="preload" as="image" href="images/DSC08468-HDR.jpg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="preload" as="image" href="images/_DSC1170.avif" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
@@ -15,6 +16,8 @@
   <meta property="og:description" content="Grand Rapids real estate photographer and videographer. HDR listing photography, twilight shoots, senior portraits, weddings, and commercial work across West Michigan." />
   <meta property="og:image"       content="https://elzingacreativestudio.com/images/DSC08468-HDR.jpg" />
   <meta name="twitter:card"       content="summary_large_image" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <script type="application/ld+json">
   {
@@ -26,7 +29,7 @@
         "name": "Elzinga Creative Studio",
         "description": "Full-service photography, videography, and marketing studio serving Grand Rapids and all of West Michigan. Specializing in real estate, senior, wedding, family, sports, brand, and commercial photography.",
         "url": "https://elzingacreativestudio.com",
-        "telephone": "(616) 258-4578",
+        "telephone": "+16162584578",
         "email": "kaden@elzingacreativestudio.com",
         "image": "https://elzingacreativestudio.com/images/DSC08468-HDR.jpg",
         "priceRange": "$$",
@@ -35,10 +38,16 @@
           "latitude": 42.96336,
           "longitude": -85.66807
         },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Grand Rapids",
+          "addressRegion": "MI",
+          "addressCountry": "US"
+        },
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
             "opens": "09:00",
             "closes": "20:00"
           }
@@ -46,15 +55,9 @@
         "sameAs": [
           "https://www.instagram.com/kaden_elzinga",
           "https://www.facebook.com/profile.php?id=100090268353324",
-          "https://maps.app.goo.gl/JgS5m3sfgHmYZ5tN9"
+          "https://maps.app.goo.gl/eRag7okCqEp4HJdW9"
         ],
         "founder": { "@type": "Person", "name": "Kaden Elzinga" },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Grand Rapids",
-          "addressRegion": "MI",
-          "addressCountry": "US"
-        },
         "areaServed": [
           { "@type": "City", "name": "Grand Rapids" },
           { "@type": "City", "name": "Wyoming" },
@@ -72,26 +75,75 @@
           "@type": "OfferCatalog",
           "name": "Photography, Videography & Marketing Services",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Photography", "description": "Professional MLS-ready real estate photography for realtors and property listings in Grand Rapids and West Michigan." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Photography", "description": "Professional MLS-ready real estate photography for realtors and property listings in Grand Rapids and West Michigan. HDR interiors, twilight exteriors, aerial drone shots, and 24-hour delivery." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Senior Photography", "description": "Creative senior portrait sessions for high school seniors in West Michigan." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Photography", "description": "Natural, documentary-style wedding photography across Grand Rapids and West Michigan." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Photography", "description": "Lifestyle and portrait family photography sessions." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sports Photography", "description": "Action and portrait photography for athletes and sports teams." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand & Commercial Photography", "description": "Commercial brand photography for businesses. Past clients include Biggby Coffee." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videography", "description": "Creative video production for businesses and personal projects." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand & Commercial Photography", "description": "Commercial brand photography for businesses. Past clients include Biggby Coffee and the Grand Rapids Griffins." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videography", "description": "Creative video production including listing walkthroughs, brand films, and social media content." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing", "description": "Full-service social media marketing including Meta Ads, Google Ads, content creation, and GBP optimization for local businesses." } }
           ]
         }
       },
       {
-        "@type": "Photographer",
-        "@id": "https://elzingacreativestudio.com/#photographer",
+        "@type": ["Person", "Photographer"],
+        "@id": "https://elzingacreativestudio.com/#founder",
         "name": "Kaden Elzinga",
+        "jobTitle": "Photographer & Founder",
+        "url": "https://elzingacreativestudio.com",
+        "image": "https://elzingacreativestudio.com/images/_DSC0643.JPG",
+        "sameAs": [
+          "https://www.instagram.com/kaden_elzinga",
+          "https://www.facebook.com/profile.php?id=100090268353324"
+        ],
         "worksFor": { "@id": "https://elzingacreativestudio.com/#business" },
         "knowsAbout": [
           "Real Estate Photography", "Senior Photography", "Wedding Photography",
           "Family Photography", "Sports Photography", "Commercial Photography",
           "Brand Photography", "Videography", "Social Media Marketing"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://elzingacreativestudio.com/#website",
+        "url": "https://elzingacreativestudio.com",
+        "name": "Elzinga Creative Studio",
+        "publisher": { "@id": "https://elzingacreativestudio.com/#business" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What areas does Elzinga Creative Studio serve?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We serve all of West Michigan including Grand Rapids, Wyoming, Kentwood, Walker, Grandville, Rockford, Holland, Hudsonville, and the surrounding areas across Kent and Ottawa counties. We also travel for weddings and commercial projects." }
+          },
+          {
+            "@type": "Question",
+            "name": "How fast will I get my real estate photos?",
+            "acceptedAnswer": { "@type": "Answer", "text": "All real estate photography packages include 24-hour delivery. Your MLS-ready images are professionally edited and delivered the next day." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer twilight and drone photography?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We specialize in real twilight photography during blue hour — not virtual edits. Listings with real twilight photos receive up to 300% more views. We also offer licensed Part 107 aerial drone photography for stunning overhead property and landscape shots." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is included in a real estate photography package?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Our Standard package ($175) includes HDR interiors and exteriors with 25-35 MLS-ready images and 24-hour delivery. Showcase ($325) adds real twilight, a 2D floor plan, social graphics, and vertical cuts. Signature ($525) adds golden hour exteriors and a 60-second listing Reel." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer video and marketing services too?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Beyond photography, we produce listing walkthrough Reels, brand films, and social media content. Our marketing services include Meta Ads, Google Ads, content creation, and Google Business Profile optimization for local businesses." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I book a session with Elzinga Creative Studio?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Fill out the contact form on our website, call us at (616) 258-4578, or send an email to kaden@elzingacreativestudio.com. We typically respond within 24 hours. A 50% deposit holds your date." }
+          }
         ]
       }
     ]
@@ -343,8 +395,10 @@
     .strip-fill {
       position: absolute;
       inset: 0;
-      background-size: cover;
-      background-position: center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       transition: transform 0.9s ease;
     }
     .strip-panel:hover .strip-fill { transform: scale(1.04); }
@@ -435,17 +489,13 @@
     .pg-fill {
       position: absolute;
       inset: 0;
-      background-size: cover;
-      background-position: center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       transition: transform 0.7s ease;
     }
     .pg-item:hover .pg-fill { transform: scale(1.04); }
-    .pg1 { background: url('images/_DSC1170.avif') center/cover no-repeat; }
-    .pg2 { background: url('images/DSC02295.avif') center/cover no-repeat; }
-    .pg3 { background: url('images/DSC07049.avif') center/cover; }
-    .pg4 { background: url('images/DSC01597.jpg') center/cover no-repeat; }
-    .pg5 { background: url('images/DSC08625.avif') center/cover no-repeat; }
-    .pg6 { background: url('images/DSC08468-HDR.jpg') center/cover no-repeat; }
     .pg-overlay {
       position: absolute;
       inset: 0;
@@ -742,6 +792,81 @@
       .hero-title { font-size: clamp(52px, 17vw, 72px); letter-spacing: -1.5px; }
       .section-title { font-size: clamp(30px, 8vw, 44px); }
     }
+
+    /* ── CLIENTS ── */
+    #clients {
+      background: var(--white);
+      padding: 80px 60px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .clients-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray-lt);
+      margin-bottom: 28px;
+    }
+    .clients-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .clients-list span {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--black);
+      opacity: 0.35;
+    }
+
+    /* ── FAQ ── */
+    #faq {
+      background: var(--off-white);
+      padding: 120px 60px;
+      border-top: 1px solid var(--border);
+    }
+    .faq-header { margin-bottom: 60px; }
+    .faq-list { max-width: 800px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item summary {
+      padding: 24px 0;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--black);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--green);
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item p {
+      padding: 0 0 24px;
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--gray);
+    }
+    @media (max-width: 768px) {
+      #clients { padding: 60px 24px; }
+      .clients-list { gap: 32px; }
+      #faq { padding: 72px 24px; }
+    }
   </style>
 </head>
 <body>
@@ -795,13 +920,13 @@
   </div>
   <div class="hero-strip">
     <div class="strip-panel">
-      <div class="strip-fill" style="background-image:url('images/_DSC1170.avif')"></div>
+      <img class="strip-fill" src="images/_DSC1170.avif" alt="Grand Rapids wedding photography by Elzinga Creative Studio" width="1200" height="800" fetchpriority="high">
     </div>
     <div class="strip-panel">
-      <div class="strip-fill" style="background-image:url('images/DSC08468-HDR.jpg')"></div>
+      <img class="strip-fill" src="images/DSC08468-HDR.jpg" alt="Grand Rapids real estate photography - HDR interior by Elzinga Creative Studio" width="1200" height="800" loading="lazy">
     </div>
     <div class="strip-panel">
-      <div class="strip-fill" style="background-image:url('images/DSC08651.avif')"></div>
+      <img class="strip-fill" src="images/DSC08651.avif" alt="Portrait photography in Grand Rapids Michigan" width="1200" height="800" loading="lazy">
     </div>
   </div>
 </section>
@@ -818,7 +943,7 @@
     <div class="svc-col">
       <div class="svc-num">01</div>
       <h3 class="svc-name">Photography</h3>
-      <p class="svc-desc">Deliberate, craft-first imagery across every discipline. Every frame composed with intent — nothing rushed, nothing careless. Past clients include Biggby Coffee and the Grand Rapids Griffins.</p>
+      <p class="svc-desc">Professional real estate photography in Grand Rapids with HDR interiors, real twilight exteriors, aerial drone shots, and 24-hour delivery. We also shoot senior portraits, weddings, family sessions, sports, and commercial brand work across West Michigan. Past clients include Biggby Coffee and the Grand Rapids Griffins.</p>
       <p class="svc-sub">Real Estate &nbsp;·&nbsp; Seniors &nbsp;·&nbsp; Weddings<br>Sports &nbsp;·&nbsp; Family &nbsp;·&nbsp; Commercial</p>
       <a href="#contact" class="svc-link">Book a Session →</a>
     </div>
@@ -826,7 +951,7 @@
     <div class="svc-col">
       <div class="svc-num">02</div>
       <h3 class="svc-name">Video</h3>
-      <p class="svc-desc">Creative video production for businesses, listings, and events. From 60-second listing Reels to full commercial campaigns — visual storytelling that moves people.</p>
+      <p class="svc-desc">Listing walkthrough Reels that help properties sell faster on social media and MLS. Brand films and event coverage for businesses throughout Kent and Ottawa counties. From 60-second property tours to full commercial campaigns — visual storytelling that drives results.</p>
       <p class="svc-sub">Listing Reels &nbsp;·&nbsp; Brand Films<br>Event Coverage &nbsp;·&nbsp; Social Content</p>
       <a href="#contact" class="svc-link">Start a Project →</a>
     </div>
@@ -834,7 +959,7 @@
     <div class="svc-col">
       <div class="svc-num">03</div>
       <h3 class="svc-name">Marketing</h3>
-      <p class="svc-desc">Full-service social media marketing for local businesses. Paid ads, content, and GBP optimization — all built around results you can actually measure.</p>
+      <p class="svc-desc">Full-service social media marketing for local businesses in Grand Rapids and West Michigan. We run Meta Ads and Google Ads campaigns, create content, and optimize Google Business Profiles — all built around leads and revenue you can actually measure.</p>
       <p class="svc-sub">Meta Ads &nbsp;·&nbsp; Google Ads<br>Content Creation &nbsp;·&nbsp; GBP Optimization</p>
       <a href="#contact" class="svc-link">Get a Proposal →</a>
     </div>
@@ -854,32 +979,43 @@
   </div>
   <div class="portfolio-grid">
     <div class="pg-item" onclick="openLightbox('Weddings')">
-      <div class="pg-fill pg1"></div>
+      <img class="pg-fill" src="images/_DSC1170.avif" alt="Wedding photography in Grand Rapids Michigan" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Weddings</span></div>
     </div>
     <div class="pg-item" onclick="openLightbox('Seniors')">
-      <div class="pg-fill pg2"></div>
+      <img class="pg-fill" src="images/DSC02295.avif" alt="Senior portrait photography in West Michigan" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Seniors</span></div>
     </div>
     <div class="pg-item" onclick="openLightbox('Sports')">
-      <div class="pg-fill pg3"></div>
+      <img class="pg-fill" src="images/DSC07049.avif" alt="Sports action photography - Grand Rapids Griffins hockey" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Sports</span></div>
     </div>
     <div class="pg-item" onclick="openLightbox('Family')">
-      <div class="pg-fill pg4"></div>
+      <img class="pg-fill" src="images/DSC01597.jpg" alt="Family photography sessions in Grand Rapids Michigan" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Family</span></div>
     </div>
     <div class="pg-item" onclick="openLightbox('Portraits')">
-      <div class="pg-fill pg5"></div>
+      <img class="pg-fill" src="images/DSC08625.avif" alt="Portrait photography by Elzinga Creative Studio" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Portraits</span></div>
     </div>
     <div class="pg-item" onclick="openLightbox('Real Estate')">
-      <div class="pg-fill pg6"></div>
+      <img class="pg-fill" src="images/DSC08468-HDR.jpg" alt="Real estate photography Grand Rapids - HDR listing photos" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Real Estate</span></div>
     </div>
   </div>
   <div class="portfolio-footer">
     <button class="btn-outline" onclick="openGallery()">View Full Gallery</button>
+  </div>
+</section>
+
+
+<!-- ═══════ CLIENTS ═══════ -->
+<section id="clients">
+  <p class="clients-label">Trusted by businesses across West Michigan</p>
+  <div class="clients-list">
+    <span>Biggby Coffee</span>
+    <span>Grand Rapids Griffins</span>
+    <span>Mars Hill</span>
   </div>
 </section>
 
@@ -900,6 +1036,41 @@
       <div class="about-rule"></div>
       <span class="about-founder">Kaden Elzinga &nbsp;—&nbsp; Founder</span>
     </div>
+  </div>
+</section>
+
+
+<!-- ═══════ FAQ ═══════ -->
+<section id="faq">
+  <div class="faq-header">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">FAQ</h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What areas does Elzinga Creative Studio serve?</summary>
+      <p>We serve all of West Michigan including Grand Rapids, Wyoming, Kentwood, Walker, Grandville, Rockford, Holland, Hudsonville, and the surrounding areas across Kent and Ottawa counties. We also travel for weddings and commercial projects beyond our standard service area.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How fast will I get my real estate photos?</summary>
+      <p>All real estate photography packages include 24-hour delivery. Your MLS-ready images are professionally edited with HDR processing and delivered the next day so you can get your listing live fast.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you offer twilight and drone photography?</summary>
+      <p>Yes. We specialize in real twilight photography during blue hour — not virtual edits. Listings with real twilight photos receive up to 300% more online views. We also offer licensed Part 107 aerial drone photography for overhead property and landscape shots.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What is included in a real estate photography package?</summary>
+      <p>Our Standard package ($175) includes HDR interiors and exteriors with 25-35 MLS-ready images and 24-hour delivery. Showcase ($325) adds real twilight, a 2D floor plan, social media graphics, and vertical cuts. Signature ($525) adds golden hour exteriors and a 60-second listing Reel with 55-70 images.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you offer video and marketing services?</summary>
+      <p>Yes. Beyond photography, we produce listing walkthrough Reels, brand films, and social media video content. Our marketing services include Meta Ads, Google Ads campaign management, content creation, and Google Business Profile optimization for local businesses across Grand Rapids and West Michigan.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I book a session?</summary>
+      <p>Fill out the contact form below, call us at (616) 258-4578, or email kaden@elzingacreativestudio.com. We typically respond within 24 hours. A 50% deposit holds your date, and the balance is due before gallery delivery.</p>
+    </details>
   </div>
 </section>
 
@@ -966,7 +1137,7 @@
         </div>
         <div class="cd-item">
           <span class="cd-label">Google</span>
-          <span class="cd-value"><a href="https://maps.app.goo.gl/JgS5m3sfgHmYZ5tN9" target="_blank" rel="noopener">Find us on Google Maps ↗</a></span>
+          <span class="cd-value"><a href="https://maps.app.goo.gl/eRag7okCqEp4HJdW9" target="_blank" rel="noopener">Find us on Google Maps ↗</a></span>
         </div>
       </div>
     </div>
@@ -994,7 +1165,7 @@
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
       </svg>
     </a>
-    <a href="https://maps.app.goo.gl/JgS5m3sfgHmYZ5tN9" target="_blank" rel="noopener" aria-label="Google Business Profile">
+    <a href="https://maps.app.goo.gl/eRag7okCqEp4HJdW9" target="_blank" rel="noopener" aria-label="Google Business Profile">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
       </svg>
@@ -1203,7 +1374,7 @@
   }
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="config.js"></script>
 <script>
   /* ── Contact form — EmailJS ── */
