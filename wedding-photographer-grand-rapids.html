@@ -220,6 +220,7 @@
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
   </style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
 
@@ -234,7 +235,7 @@
     <a href="about.html">About</a>
     <a href="index.html#contact">Contact</a>
     <a href="../blog.html">Blog</a>
-    <a href="index.html#contact" class="nav-book">Book a Session</a>
+    <a href="#" onclick="openCalendly(); return false;" class="nav-book">Book a Session</a>
   </nav>
 </header>
 
@@ -252,7 +253,7 @@
       <span class="pill">Starting at $1,000</span>
     </div>
     <div class="hero-ctas">
-      <a href="index.html#contact" class="btn-green">Get a Quote</a>
+      <a href="#" onclick="openCalendly(); return false;" class="btn-green">Get a Quote</a>
       <a href="tel:+16162584578" class="btn-black">Call (616) 258-4578</a>
       <a href="#wedding-deliverables" class="btn-outline" style="border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);">See What's Included</a>
     </div>
@@ -341,7 +342,7 @@
       <span style="font-size:40px;font-weight:800;letter-spacing:-1.5px;color:var(--black);display:block;line-height:1;">$1,000</span>
       <span style="font-size:11px;color:var(--gray-lt);display:block;margin-top:4px;">Final quote based on coverage</span>
     </div>
-    <a href="index.html#contact" class="btn-green" style="text-align:center;white-space:nowrap;">Get a Quote</a>
+    <a href="#" onclick="openCalendly(); return false;" class="btn-green" style="text-align:center;white-space:nowrap;">Get a Quote</a>
   </div>
   <div class="custom-strip">
     <div class="custom-left">
@@ -432,7 +433,7 @@
 <section id="cta-band">
   <span class="section-label">Let's Talk About Your Day</span>
   <h2 class="cta-title">Your wedding.<br>Every moment.</h2>
-  <a href="index.html#contact" class="btn-white">Start a Conversation</a>
+  <a href="#" onclick="openCalendly(); return false;" class="btn-white">Start a Conversation</a>
 </section>
 
 
@@ -450,6 +451,17 @@
   window.addEventListener('scroll', () => {
     hdr.classList.toggle('scrolled', window.scrollY > 40);
   });
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  const CALENDLY_URL = 'https://calendly.com/kaden-elzingacreativestudio/portrait-session';
+  function openCalendly() {
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      window.open(CALENDLY_URL, '_blank');
+    }
+  }
 </script>
 </body>
 </html>

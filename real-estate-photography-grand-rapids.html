@@ -236,6 +236,7 @@
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
   </style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
 
@@ -250,7 +251,7 @@
     <a href="about.html">About</a>
     <a href="index.html#contact">Contact</a>
     <a href="../blog.html">Blog</a>
-    <a href="index.html#contact" class="nav-book">Book a Session</a>
+    <a href="#" onclick="openCalendly(); return false;" class="nav-book">Book a Session</a>
   </nav>
 </header>
 
@@ -269,7 +270,7 @@
       <span class="pill">Starting at $175</span>
     </div>
     <div class="hero-ctas">
-      <a href="index.html#contact" class="btn-green">Book a Shoot</a>
+      <a href="#" onclick="openCalendly(); return false;" class="btn-green">Book a Shoot</a>
       <a href="tel:+16162584578" class="btn-black">Call (616) 258-4578</a>
       <a href="#re-pricing" class="btn-outline" style="border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);">See Pricing</a>
     </div>
@@ -361,7 +362,7 @@
         <li><span class="p-check"></span>24-hour delivery</li>
         <li><span class="p-check"></span>Pixieset gallery download</li>
       </ul>
-      <a href="index.html#contact" class="btn-book">Book This Package</a>
+      <a href="#" onclick="openCalendly(); return false;" class="btn-book">Book This Package</a>
     </div>
     <div class="p-card p-featured">
       <span class="p-popular">Most Popular</span>
@@ -376,7 +377,7 @@
         <li><span class="p-check"></span>Social media graphics</li>
         <li><span class="p-check"></span>Vertical cuts for Reels &amp; Stories</li>
       </ul>
-      <a href="index.html#contact" class="btn-book">Book This Package</a>
+      <a href="#" onclick="openCalendly(); return false;" class="btn-book">Book This Package</a>
     </div>
     <div class="p-card">
       <span class="p-popular">Most Popular</span>
@@ -390,7 +391,7 @@
         <li><span class="p-check"></span>60-second listing Reel</li>
         <li><span class="p-check"></span>55–70 total images</li>
       </ul>
-      <a href="index.html#contact" class="btn-book">Book This Package</a>
+      <a href="#" onclick="openCalendly(); return false;" class="btn-book">Book This Package</a>
     </div>
   </div>
   <div class="custom-strip">
@@ -487,7 +488,7 @@
 <section id="cta-band">
   <span class="section-label">Ready to Book?</span>
   <h2 class="cta-title">Your next listing.<br>Booked today.</h2>
-  <a href="index.html#contact" class="btn-white">Book a Shoot</a>
+  <a href="#" onclick="openCalendly(); return false;" class="btn-white">Book a Shoot</a>
 </section>
 
 
@@ -505,6 +506,17 @@
   window.addEventListener('scroll', () => {
     hdr.classList.toggle('scrolled', window.scrollY > 40);
   });
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  const CALENDLY_URL = 'https://calendly.com/kaden-elzingacreativestudio/portrait-session';
+  function openCalendly() {
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      window.open(CALENDLY_URL, '_blank');
+    }
+  }
 </script>
 </body>
 </html>

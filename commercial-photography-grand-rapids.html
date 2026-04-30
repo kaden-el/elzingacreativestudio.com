@@ -235,6 +235,7 @@
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
   </style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
 
@@ -249,7 +250,7 @@
     <a href="about.html">About</a>
     <a href="index.html#contact">Contact</a>
     <a href="../blog.html">Blog</a>
-    <a href="index.html#contact" class="nav-book">Book a Session</a>
+    <a href="#" onclick="openCalendly(); return false;" class="nav-book">Book a Session</a>
   </nav>
 </header>
 
@@ -268,7 +269,7 @@
       <span class="pill">Starting at $350/mo</span>
     </div>
     <div class="hero-ctas">
-      <a href="index.html#contact" class="btn-green">Get a Free Demo Shoot</a>
+      <a href="#" onclick="openCalendly(); return false;" class="btn-green">Get a Free Demo Shoot</a>
       <a href="tel:+16162584578" class="btn-black">Call (616) 258-4578</a>
       <a href="#comm-pricing" class="btn-outline" style="border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);">See Pricing</a>
     </div>
@@ -492,7 +493,7 @@
 <section id="cta-band">
   <span class="section-label">Free Demo Shoot</span>
   <h2 class="cta-title">See the difference<br>before you commit.</h2>
-  <a href="index.html#contact" class="btn-white">Book a Free Demo</a>
+  <a href="#" onclick="openCalendly(); return false;" class="btn-white">Book a Free Demo</a>
 </section>
 
 
@@ -510,6 +511,17 @@
   window.addEventListener('scroll', () => {
     hdr.classList.toggle('scrolled', window.scrollY > 40);
   });
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  const CALENDLY_URL = 'https://calendly.com/kaden-elzingacreativestudio/portrait-session';
+  function openCalendly() {
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      window.open(CALENDLY_URL, '_blank');
+    }
+  }
 </script>
 </body>
 </html>
