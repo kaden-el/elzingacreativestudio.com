@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Rapids Senior Portrait Photography | Elzinga Creative Studio</title>
+  <meta name="description" content="Senior portrait photography in Grand Rapids, MI. Creative sessions for high school seniors across West Michigan. Flexible locations, 25+ edited images, fast delivery. Starting at $149.">
+  <link rel="canonical" href="https://elzingacreativestudio.com/senior-portraits-grand-rapids.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://elzingacreativestudio.com/senior-portraits-grand-rapids.html#service",
+        "name": "Senior Portrait Photography Grand Rapids",
+        "description": "Creative senior portrait photography for high school seniors in Grand Rapids and West Michigan. Flexible locations, 25+ edited images, social media crops, and gallery delivery within 5 business days.",
+        "provider": { "@id": "https://elzingacreativestudio.com/#business" },
+        "areaServed": [
+          { "@type": "City", "name": "Grand Rapids" },
+          { "@type": "AdministrativeArea", "name": "Kent County" },
+          { "@type": "AdministrativeArea", "name": "Ottawa County" },
+          { "@type": "AdministrativeArea", "name": "West Michigan" }
+        ],
+        "offers": [
+          { "@type": "Offer", "name": "Portrait Session", "price": "149", "priceCurrency": "USD" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long is a senior portrait session?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sessions start at 30+ minutes. Extended sessions are available for multiple outfit changes or multiple locations — reach out for a custom quote." }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do you shoot senior portraits in Grand Rapids?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Anywhere you want — Riverside Park, Millennium Park, downtown Grand Rapids, your high school, a family farm, or any location that's meaningful to you. We travel throughout West Michigan at no extra charge." }
+          },
+          {
+            "@type": "Question",
+            "name": "How many photos will I receive?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Every session includes a minimum of 25 fully edited, high-resolution images delivered via Pixieset. You'll get print-ready files and social media crops in the same download." }
+          },
+          {
+            "@type": "Question",
+            "name": "When will I get my photos?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Your gallery is delivered within 5 business days of your session. You'll get an email with a Pixieset link to download, share, or order prints." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I bring a friend or sibling to my session?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We regularly shoot seniors with their best friend or a sibling. Just mention it when you book so we can plan the session accordingly." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #111111; --white: #FFFFFF; --green: #2A5C3F;
+      --green-dk: #1e4430; --off-white: #F7F7F7;
+      --gray: #666666; --gray-lt: #AAAAAA; --border: #E0E0E0;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+
+    .section-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+    .section-title { font-size: clamp(36px, 5vw, 68px); font-weight: 800; line-height: 1.0; letter-spacing: -1.5px; }
+    .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-green:hover { background: var(--green-dk); }
+    .btn-black { display: inline-block; padding: 14px 36px; background: var(--black); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-black:hover { background: #333; }
+    .btn-outline { display: inline-block; padding: 12px 28px; background: transparent; border: 1.5px solid var(--black); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .btn-outline:hover { background: var(--black); color: var(--white); }
+
+    /* HEADER */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    header.scrolled { border-bottom-color: var(--border); }
+    .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
+    .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
+    .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
+    .nav-desktop { display: flex; align-items: center; gap: 4px; }
+    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-desktop a:hover { color: var(--black); }
+    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; }
+    .nav-book:hover { background: var(--green-dk) !important; }
+
+    /* HERO A — Dark statement */
+    #hero {
+      background: var(--black);
+      min-height: 100vh; padding-top: 80px;
+      display: flex; flex-direction: column;
+    }
+    .hero-inner {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 80px 60px 60px;
+    }
+    .re-hero-strip {
+      width: 100%; height: 42vh; min-height: 220px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px;
+    }
+    .re-strip-panel { overflow: hidden; position: relative; }
+    .re-strip-fill {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      transition: transform 0.9s ease;
+    }
+    .re-strip-panel:hover .re-strip-fill { transform: scale(1.04); }
+    .hero-breadcrumb { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 32px; }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: rgba(255,255,255,0.6); }
+    .hero-h1 { font-size: clamp(48px, 8vw, 110px); font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--white); margin-bottom: 36px; }
+    .hero-h1 em { font-style: normal; color: var(--green); }
+    .hero-sub { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+    .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
+    .pill { padding: 8px 18px; border: 1px solid rgba(255,255,255,0.15); font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    .pill.active { border-color: var(--green); color: var(--green); }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+    /* WHAT YOU GET */
+    #deliverables { padding: 120px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
+    .del-header { margin-bottom: 72px; }
+    .del-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+    .del-item { display: flex; flex-direction: column; gap: 16px; }
+    .del-icon { width: 48px; height: 48px; background: var(--black); display: flex; align-items: center; justify-content: center; }
+    .del-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .del-title { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; color: var(--black); }
+    .del-desc { font-size: 13px; line-height: 1.8; color: var(--gray); }
+
+    /* PRICING */
+    #senior-pricing { padding: 120px 60px; background: var(--white); border-top: 1px solid var(--border); }
+    .re-pricing-header { margin-bottom: 72px; }
+    .pricing-row { border: 1.5px solid var(--border); background: var(--white); display: grid; grid-template-columns: 1fr 200px 180px; align-items: center; gap: 40px; padding: 44px 48px; margin-bottom: 3px; }
+    @media (max-width: 768px) { .pricing-row { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; } }
+    .p-name { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); margin-bottom: 20px; }
+    .p-price { font-size: 64px; font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--black); margin-bottom: 6px; }
+    .p-per { font-size: 11px; color: var(--gray-lt); margin-bottom: 36px; }
+    .p-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 32px; }
+    .p-features { list-style: none; display: flex; flex-direction: column; gap: 14px; flex: 1; margin-bottom: 40px; }
+    .p-features li { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; line-height: 1.5; color: var(--gray); }
+    .p-check { width: 16px; height: 16px; background: var(--green); border-radius: 50%; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; }
+    .p-check::after { content: '✓'; font-size: 9px; font-weight: 800; color: var(--white); }
+    .btn-book { display: block; text-align: center; padding: 14px 24px; font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; border: none; transition: background 0.2s, color 0.2s; text-decoration: none; }
+    .btn-book-green { background: var(--green); color: var(--white); }
+    .btn-book-green:hover { background: var(--green-dk); }
+    .custom-strip { background: var(--black); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .custom-left { display: flex; flex-direction: column; gap: 6px; }
+    .custom-kicker { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); }
+    .custom-title { font-size: clamp(20px, 2vw, 28px); font-weight: 800; letter-spacing: -0.5px; color: var(--white); }
+    .custom-desc { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+    .btn-custom { display: inline-block; padding: 14px 36px; border: 1.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
+    .btn-custom:hover { border-color: var(--white); color: var(--white); }
+
+    /* WHY ECS */
+    #why { padding: 120px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 64px; }
+    .why-left { display: flex; flex-direction: column; gap: 40px; }
+    .why-item { display: flex; flex-direction: column; gap: 8px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .why-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .why-num { font-size: 10px; font-weight: 800; letter-spacing: 3px; color: var(--green); }
+    .why-title { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--black); }
+    .why-desc { font-size: 14px; line-height: 1.8; color: var(--gray); }
+    .why-right { background: var(--black); padding: 56px 48px; }
+    .why-stat { display: flex; flex-direction: column; gap: 4px; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .why-stat:first-child { padding-top: 0; }
+    .why-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .stat-num { font-size: 56px; font-weight: 800; letter-spacing: -2px; color: var(--white); line-height: 1; }
+    .stat-label { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+    /* FAQ */
+    #senior-faq { padding: 120px 60px; background: var(--white); border-top: 1px solid var(--border); }
+    .faq-header { margin-bottom: 60px; }
+    .faq-list { max-width: 800px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item summary { padding: 24px 0; font-size: 16px; font-weight: 800; color: var(--black); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--green); transition: transform 0.2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item p { padding: 0 0 24px; font-size: 15px; line-height: 1.85; color: var(--gray); }
+
+    /* CTA BAND */
+    #cta-band { background: var(--green); padding: 100px 60px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    #cta-band .section-label { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .cta-title { font-size: clamp(36px, 5vw, 72px); font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--white); margin-bottom: 48px; }
+    .btn-white { display: inline-block; padding: 16px 48px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-white:hover { background: var(--off-white); }
+
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer > * { flex: 1; }
+    footer > *:nth-child(2) { text-align: center; }
+    footer > *:last-child { text-align: right; }
+    .footer-brand { display: flex; flex-direction: column; gap: 4px; }
+    .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
+    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 768px) {
+      header { padding: 16px 24px; }
+      .hero-inner { padding: 80px 24px 48px; }
+      .hero-h1 { font-size: clamp(42px, 12vw, 72px); letter-spacing: -1.5px; }
+      .re-hero-strip { grid-template-columns: 1fr; height: 50vw; min-height: 180px; }
+      .re-strip-panel:not(:first-child) { display: none; }
+      #deliverables, #senior-pricing, #why, #senior-faq { padding: 72px 24px; }
+      .del-grid { grid-template-columns: 1fr; gap: 36px; }
+      .custom-strip { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+      .why-grid { grid-template-columns: 1fr; gap: 48px; }
+      #cta-band { padding: 72px 24px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="index.html" class="logo-link">
+    <span class="logo-ecs">ECS</span>
+    <span class="logo-full">Elzinga Creative Studio</span>
+  </a>
+  <nav class="nav-desktop">
+    <a href="index.html#portfolio">Work</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="../blog.html">Blog</a>
+    <a href="index.html#contact" class="nav-book">Book a Session</a>
+  </nav>
+</header>
+
+
+<!-- ═══ HERO A — Dark ═══ -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Senior Portraits</p>
+    <h1 class="hero-h1">Grand Rapids<br><em>Senior</em><br>Portraits</h1>
+    <p class="hero-sub">Creative senior portrait sessions for high school seniors across West Michigan. Flexible locations, 25+ edited images, and a gallery delivered in days — not weeks.</p>
+    <div class="hero-pills">
+      <span class="pill active">Flexible Locations</span>
+      <span class="pill active">25+ Images</span>
+      <span class="pill active">Fast Delivery</span>
+      <span class="pill">Starting at $149</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="index.html#contact" class="btn-green">Book a Session</a>
+      <a href="#senior-pricing" class="btn-outline" style="border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);">See Pricing</a>
+    </div>
+  </div>
+  <div class="re-hero-strip">
+    <div class="re-strip-panel">
+      <img class="re-strip-fill" src="images/DSC02295.avif" alt="Senior portrait photography Grand Rapids Michigan" width="1200" height="800" loading="eager">
+    </div>
+    <div class="re-strip-panel">
+      <img class="re-strip-fill" src="images/DSC02330.avif" alt="High school senior portraits West Michigan" width="1200" height="800" loading="eager">
+    </div>
+    <div class="re-strip-panel">
+      <img class="re-strip-fill" src="images/DSC02451.avif" alt="Creative senior photos Grand Rapids" width="1200" height="800" loading="eager">
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ WHAT YOU GET ═══ -->
+<section id="deliverables">
+  <div class="del-header">
+    <span class="section-label">What's Included</span>
+    <h2 class="section-title">Everything your<br>session needs.</h2>
+  </div>
+  <div class="del-grid">
+    <div class="del-item">
+      <div class="del-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <span class="del-title">Session Planning</span>
+      <p class="del-desc">We talk through locations, outfits, and shot ideas before the day so nothing is left to chance. Show up ready, leave with exactly the images you had in mind.</p>
+    </div>
+    <div class="del-item">
+      <div class="del-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <span class="del-title">Flexible Locations</span>
+      <p class="del-desc">Your session, your locations. Parks, urban backdrops, your school, your home — anywhere in West Michigan that means something to you.</p>
+    </div>
+    <div class="del-item">
+      <div class="del-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <span class="del-title">25+ Edited Images</span>
+      <p class="del-desc">Every session delivers a minimum of 25 fully edited, high-resolution images. Real editing — color, light, composition — not just a filter.</p>
+    </div>
+    <div class="del-item">
+      <div class="del-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <span class="del-title">Fast Gallery Delivery</span>
+      <p class="del-desc">Your gallery is delivered via Pixieset within 5 business days. Download full resolution, share the link, or order prints directly.</p>
+    </div>
+    <div class="del-item">
+      <div class="del-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <span class="del-title">Social Media Crops</span>
+      <p class="del-desc">Vertical crops optimized for Instagram and TikTok included. Post-ready from the same gallery download.</p>
+    </div>
+    <div class="del-item">
+      <div class="del-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <span class="del-title">Print-Ready Files</span>
+      <p class="del-desc">Full-resolution files with print rights included. No upcharges, no watermarks, no expiring downloads.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ PRICING ═══ -->
+<section id="senior-pricing">
+  <div class="re-pricing-header">
+    <span class="section-label">Portrait Sessions</span>
+    <h2 class="section-title">Simple pricing.<br>No surprises.</h2>
+  </div>
+
+  <div class="pricing-row">
+    <div>
+      <div style="font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:12px;">Portrait Session</div>
+      <div style="font-size:13px;line-height:1.8;color:var(--gray);">30+ minute session &nbsp;·&nbsp; 25+ fully edited images &nbsp;·&nbsp; Flexible West Michigan location &nbsp;·&nbsp; Delivered in 5 business days &nbsp;·&nbsp; Social media crops &nbsp;·&nbsp; Full print rights</div>
+    </div>
+    <div style="text-align:right;">
+      <span style="font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray-lt);display:block;margin-bottom:4px;">Starting at</span>
+      <span style="font-size:40px;font-weight:800;letter-spacing:-1.5px;color:var(--black);display:block;line-height:1;">$149</span>
+      <span style="font-size:11px;color:var(--gray-lt);display:block;margin-top:4px;">30+ min &nbsp;·&nbsp; 25+ images</span>
+    </div>
+    <a href="index.html#contact" class="btn-green" style="text-align:center;white-space:nowrap;">Book a Session</a>
+  </div>
+  <div class="custom-strip">
+    <div class="custom-left">
+      <span class="custom-kicker">Extended &amp; Custom Sessions</span>
+      <span class="custom-title">Need more time?</span>
+      <span class="custom-desc">Extended sessions and multi-outfit shoots available — reach out for a custom quote.</span>
+    </div>
+    <a href="index.html#contact" class="btn-custom">Get a Custom Quote</a>
+  </div>
+</section>
+
+
+<!-- ═══ WHY ECS ═══ -->
+<section id="why">
+  <span class="section-label">Why Elzinga Creative</span>
+  <div class="why-grid">
+    <div class="why-left">
+      <div class="why-item">
+        <span class="why-num">01</span>
+        <span class="why-title">We shoot at your locations</span>
+        <p class="why-desc">Grand Rapids has incredible backdrops — Riverside Park, the city, local farms, downtown murals. We've shot them all and know how to use them.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-num">02</span>
+        <span class="why-title">Fast turnaround, no waiting</span>
+        <p class="why-desc">Your gallery ships within 5 business days, not 6–8 weeks. You can order prints or post to Instagram before the week is out.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-num">03</span>
+        <span class="why-title">Real editing, not presets</span>
+        <p class="why-desc">Every image is individually processed. We correct exposure, color, and composition on each photo — not batch-applied filters.</p>
+      </div>
+    </div>
+    <div class="why-right">
+      <div class="why-stat">
+        <span class="stat-num">30+</span>
+        <span class="stat-label">Min / Per session</span>
+      </div>
+      <div class="why-stat">
+        <span class="stat-num">25+</span>
+        <span class="stat-label">Images / Minimum delivered</span>
+      </div>
+      <div class="why-stat">
+        <span class="stat-num">5 days</span>
+        <span class="stat-label">Gallery turnaround</span>
+      </div>
+      <div class="why-stat">
+        <span class="stat-num">$149</span>
+        <span class="stat-label">Starting price</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FAQ ═══ -->
+<section id="senior-faq">
+  <div class="faq-header">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">FAQ</h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>How long is a senior portrait session?</summary>
+      <p>Sessions start at 30+ minutes. Extended sessions are available for multiple outfit changes or multiple locations — reach out for a custom quote.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Where do you shoot senior portraits in Grand Rapids?</summary>
+      <p>Anywhere you want — Riverside Park, Millennium Park, downtown Grand Rapids, your high school, a family farm, or any location that's meaningful to you. We travel throughout West Michigan at no extra charge.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How many photos will I receive?</summary>
+      <p>Every session includes a minimum of 25 fully edited, high-resolution images delivered via Pixieset. You'll get print-ready files and social media crops in the same download.</p>
+    </details>
+    <details class="faq-item">
+      <summary>When will I get my photos?</summary>
+      <p>Your gallery is delivered within 5 business days of your session. You'll get an email with a Pixieset link to download, share, or order prints.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I bring a friend or sibling to my session?</summary>
+      <p>Absolutely. We regularly shoot seniors with their best friend or a sibling. Just mention it when you book so we can plan the session accordingly.</p>
+    </details>
+  </div>
+</section>
+
+
+<!-- ═══ CTA BAND ═══ -->
+<section id="cta-band">
+  <span class="section-label">Book Your Senior Session</span>
+  <h2 class="cta-title">Your senior year.<br>Captured right.</h2>
+  <a href="index.html#contact" class="btn-white">Book a Session</a>
+</section>
+
+
+<footer>
+  <div class="footer-brand">
+    <span class="footer-ecs">ECS</span>
+    <span class="footer-tag">Photography · Video · Marketing</span>
+  </div>
+  <a href="index.html" style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;">← Back to Main Site</a>
+  <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan.</p>
+</footer>
+
+<script>
+  const hdr = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+</body>
+</html>
