@@ -7,7 +7,7 @@
   <meta name="description" content="Grand Rapids real estate photographer and videographer. HDR listing photography, twilight shoots, senior portraits, weddings, and commercial work across West Michigan. 24-hour turnaround.">
   <link rel="canonical" href="https://elzingacreativestudio.com/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="preload" as="image" href="images/_DSC1170.avif" />
+  <link rel="preload" as="image" href="images/DSC08468-HDR.jpg" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
@@ -154,6 +154,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <style>
     /* ── DESIGN SYSTEM ── */
@@ -381,6 +382,14 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+    .hero-phone {
+      margin-top: 16px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: var(--gray-lt);
+    }
+    .hero-phone a { color: var(--gray); text-decoration: none; }
+    .hero-phone a:hover { text-decoration: underline; }
     .hero-strip {
       width: 100%;
       height: 48vh;
@@ -981,6 +990,16 @@
       margin-top: 24px; font-size: 12px;
       color: var(--gray-lt); letter-spacing: 0.3px;
     }
+    .pricing-stat {
+      margin-bottom: 28px;
+      padding: 14px 20px;
+      border-left: 3px solid var(--green);
+      background: rgba(42,92,63,0.06);
+      font-size: 13px;
+      color: var(--gray);
+      letter-spacing: 0.2px;
+    }
+    .pricing-stat strong { color: var(--green); font-weight: 800; }
     @media (max-width: 768px) {
       #pricing { padding: 72px 24px; }
       .pricing-cards { grid-template-columns: 1fr; }
@@ -1110,7 +1129,7 @@
     <a href="about.html">About</a>
     <a href="#contact">Contact</a>
     <a href="blog.html">Blog</a>
-    <a href="#contact" class="nav-book">Book a Session</a>
+    <a href="#" onclick="openCalendly(); return false;" class="nav-book">Book a Session</a>
   </nav>
 
   <button class="nav-burger" id="burger" aria-label="Menu">
@@ -1129,7 +1148,7 @@
   <a href="#services"  onclick="closeMenu()">Services</a>
   <a href="about.html" onclick="closeMenu()">About</a>
   <a href="#contact"   onclick="closeMenu()">Contact</a>
-  <a href="#contact"   onclick="closeMenu()" class="nav-book-mobile btn-green">Book a Session</a>
+  <a href="#" onclick="openCalendly(); closeMenu(); return false;" class="nav-book-mobile btn-green">Book a Session</a>
 </nav>
 
 
@@ -1142,15 +1161,16 @@
     <p class="hero-tagline">Real estate photography with 24-hour delivery. Senior portraits, weddings, commercial content, and brand work across West Michigan.</p>
     <div class="hero-ctas">
       <a href="#portfolio" class="btn-black">View Work</a>
-      <a href="#contact"   class="btn-green">Book a Session</a>
+      <a href="#" onclick="openCalendly(); return false;" class="btn-green">Book a Session</a>
     </div>
+    <p class="hero-phone">Call or text: <a href="tel:+16162584578">(616) 258-4578</a></p>
   </div>
   <div class="hero-strip">
     <div class="strip-panel">
-      <img class="strip-fill" src="images/_DSC1170.avif" alt="Grand Rapids wedding photography by Elzinga Creative Studio" width="1200" height="800" fetchpriority="high">
+      <img class="strip-fill" src="images/DSC08468-HDR.jpg" alt="Grand Rapids real estate photography - HDR interior by Elzinga Creative Studio" width="1200" height="800" fetchpriority="high">
     </div>
     <div class="strip-panel">
-      <img class="strip-fill" src="images/DSC08468-HDR.jpg" alt="Grand Rapids real estate photography - HDR interior by Elzinga Creative Studio" width="1200" height="800" loading="lazy">
+      <img class="strip-fill" src="images/_DSC1170.avif" alt="Grand Rapids wedding photography by Elzinga Creative Studio" width="1200" height="800" loading="lazy">
     </div>
     <div class="strip-panel">
       <img class="strip-fill" src="images/DSC08651.avif" alt="Portrait photography in Grand Rapids Michigan" width="1200" height="800" loading="lazy">
@@ -1255,6 +1275,8 @@
     <p class="section-sub">All packages include 24-hour turnaround and MLS-ready images delivered via Pixieset. Serving Grand Rapids and all of West Michigan.</p>
   </div>
 
+  <p class="pricing-stat">Listings with real twilight photos receive up to <strong>300% more online views</strong> — included in Showcase &amp; Signature.</p>
+
   <div class="pricing-cards">
     <div class="p-card">
       <span class="p-popular">Most Popular</span>
@@ -1309,7 +1331,7 @@
       <span class="custom-title">Something else in mind?</span>
       <span class="custom-desc">Commercial shoots, events, add-ons, or multi-property deals — let's build a quote.</span>
     </div>
-    <button class="btn-custom" onclick="bookPackage('Custom / Commercial Project')">Get a Custom Quote</button>
+    <button class="btn-custom" onclick="scrollToContact()">Get a Custom Quote</button>
   </div>
 
   <p class="pricing-note">Drone add-on available for any package. 50% deposit holds your date, balance due before delivery.</p>
@@ -1330,7 +1352,7 @@
         <span class="osvc-price-num">$149</span>
         <span class="osvc-price-note">30+ min &nbsp;·&nbsp; 25+ images</span>
       </div>
-      <a href="#contact" class="btn-osvc btn-osvc-green">Book Now</a>
+      <a href="#" onclick="openCalendly(); return false;" class="btn-osvc btn-osvc-green">Book Now</a>
     </div>
 
     <div class="osvc-row">
@@ -1767,6 +1789,7 @@
   }
 </script>
 
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="config.js"></script>
 <script>
@@ -1782,13 +1805,21 @@
     const retryInit = setInterval(() => { if (initEmailJS()) clearInterval(retryInit); }, 100);
   }
 
-  function bookPackage(packageName) {
-    const serviceSelect = document.getElementById('inq-service');
-    const messageArea   = document.getElementById('inq-message');
-    if (serviceSelect) serviceSelect.value = 'Real Estate Photography';
-    if (messageArea && !messageArea.value) {
-      messageArea.value = "Hi, I'm interested in the " + packageName + " package. Can we set something up?";
+  const CALENDLY_URL = 'https://calendly.com/kaden-elzingacreativestudio/portrait-session';
+
+  function openCalendly() {
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      window.open(CALENDLY_URL, '_blank');
     }
+  }
+
+  function bookPackage(packageName) {
+    openCalendly();
+  }
+
+  function scrollToContact() {
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   }
 
