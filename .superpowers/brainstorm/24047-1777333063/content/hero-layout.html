@@ -1,0 +1,94 @@
+<h2>How should the hero work?</h2>
+<p class="subtitle">The first thing every visitor sees. All three use the Bold Minimal direction with forest green accent.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="A" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;padding:0;border-bottom:1px solid #eee;overflow:hidden;position:relative;">
+      <!-- Navbar -->
+      <div style="padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e8e8e8;position:relative;z-index:2;background:#fff;">
+        <span style="font-size:8px;letter-spacing:4px;font-family:sans-serif;font-weight:800;color:#111;">ECS</span>
+        <div style="display:flex;gap:12px;">
+          <span style="font-size:7px;letter-spacing:2px;color:#999;font-family:sans-serif;">WORK</span>
+          <span style="font-size:7px;letter-spacing:2px;color:#999;font-family:sans-serif;">SERVICES</span>
+          <span style="font-size:7px;letter-spacing:2px;color:#2A5C3F;font-family:sans-serif;font-weight:700;">BOOK →</span>
+        </div>
+      </div>
+      <!-- Full bleed image with text overlay -->
+      <div style="flex:1;position:relative;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);display:flex;align-items:flex-end;padding:20px;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.3) 100%);"></div>
+        <div style="position:absolute;top:12px;right:12px;width:70px;height:50px;background:rgba(255,255,255,0.08);border-radius:4px;"></div>
+        <div style="position:relative;z-index:2;">
+          <div style="font-size:28px;font-weight:800;color:#fff;font-family:sans-serif;letter-spacing:-1px;line-height:0.9;">GRAND RAPIDS<br>PHOTOGRAPHER<br><span style="color:#2A5C3F;">&amp; STUDIO</span></div>
+          <div style="margin-top:12px;display:inline-block;padding:6px 16px;background:#2A5C3F;color:#fff;font-size:7px;letter-spacing:2px;font-family:sans-serif;">VIEW WORK</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Photo-Dominant</h3>
+      <p>Full-bleed image fills the hero, bold type overlaid on a dark treatment. The photo makes the first impression. Very cinematic — almost bends back toward direction A but keeps the bold type DNA.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="B" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;min-height:240px;display:flex;flex-direction:column;padding:0;border-bottom:1px solid #eee;overflow:hidden;">
+      <!-- Navbar -->
+      <div style="padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e8e8e8;background:#fff;">
+        <span style="font-size:8px;letter-spacing:4px;font-family:sans-serif;font-weight:800;color:#111;">ECS</span>
+        <div style="display:flex;gap:12px;">
+          <span style="font-size:7px;letter-spacing:2px;color:#999;font-family:sans-serif;">WORK</span>
+          <span style="font-size:7px;letter-spacing:2px;color:#999;font-family:sans-serif;">SERVICES</span>
+          <span style="font-size:7px;letter-spacing:2px;color:#2A5C3F;font-family:sans-serif;font-weight:700;">BOOK →</span>
+        </div>
+      </div>
+      <!-- Split layout -->
+      <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;">
+        <!-- Left: Big type -->
+        <div style="padding:20px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid #e8e8e8;">
+          <div>
+            <div style="font-size:9px;letter-spacing:3px;color:#2A5C3F;font-family:sans-serif;margin-bottom:8px;">GRAND RAPIDS, MI</div>
+            <div style="font-size:30px;font-weight:800;color:#111;font-family:sans-serif;letter-spacing:-1.5px;line-height:0.88;">PHOTO<br>&amp;<br>VIDEO<br>STUDIO</div>
+          </div>
+          <div style="display:inline-block;padding:6px 16px;background:#111;color:#fff;font-size:7px;letter-spacing:2px;font-family:sans-serif;align-self:flex-start;">VIEW WORK ↓</div>
+        </div>
+        <!-- Right: Stacked photo grid -->
+        <div style="display:grid;grid-template-rows:1fr 1fr;gap:2px;padding:2px;">
+          <div style="background:linear-gradient(135deg,#C4B09A,#8B6B52);border-radius:4px;"></div>
+          <div style="background:linear-gradient(135deg,#96AE96,#4A7A5A);border-radius:4px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Type + Grid Split</h3>
+      <p>Left half is massive bold type, right half is a stacked photo grid. Pure Bold Minimal — the type IS the design. Photos live in a structured grid beside it. Very editorial, very contemporary.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="C" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;min-height:240px;display:flex;flex-direction:column;padding:0;border-bottom:1px solid #eee;overflow:hidden;">
+      <!-- Navbar -->
+      <div style="padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e8e8e8;background:#fff;">
+        <span style="font-size:8px;letter-spacing:4px;font-family:sans-serif;font-weight:800;color:#111;">ECS</span>
+        <div style="display:flex;gap:12px;">
+          <span style="font-size:7px;letter-spacing:2px;color:#999;font-family:sans-serif;">WORK</span>
+          <span style="font-size:7px;letter-spacing:2px;color:#999;font-family:sans-serif;">SERVICES</span>
+          <span style="font-size:7px;letter-spacing:2px;color:#2A5C3F;font-family:sans-serif;font-weight:700;">BOOK →</span>
+        </div>
+      </div>
+      <!-- Centered masthead -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;gap:12px;">
+        <div style="font-size:9px;letter-spacing:4px;color:#2A5C3F;font-family:sans-serif;">GRAND RAPIDS, MI — EST. 2024</div>
+        <div style="font-size:34px;font-weight:800;color:#111;font-family:sans-serif;letter-spacing:-2px;line-height:0.85;text-align:center;">ELZINGA<br>CREATIVE</div>
+        <div style="width:32px;height:2px;background:#2A5C3F;"></div>
+        <div style="font-size:8px;letter-spacing:2px;color:#888;font-family:sans-serif;text-align:center;">PHOTOGRAPHY · VIDEO · MARKETING</div>
+        <!-- Full width photo strip below -->
+        <div style="width:100%;height:60px;background:linear-gradient(90deg,#1a1a1a,#3d3d3d,#2d2d2d,#1a1a1a);border-radius:4px;margin-top:4px;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Centered Masthead + Strip</h3>
+      <p>Centered logo/type treatment at top, then a full-width cinematic photo strip below. Feels like a brand identity, not just a website. Clean, symmetric, distinctive. Services line doubles as your tagline.</p>
+    </div>
+  </div>
+
+</div>

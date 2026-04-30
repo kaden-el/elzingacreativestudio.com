@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Elzinga Creative Studio — Logo Suite</title>
+<style>
+  :root {
+    --cream:  #FAF7F2;
+    --sand:   #EDE4D8;
+    --brown:  #8B6347;
+    --dark:   #3D2B1F;
+    --green:  #7A9E7E;
+    --muted:  #7A6355;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #E8E3DC; font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--dark); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 52px 60px 40px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-bottom: 1px solid rgba(139,99,71,0.15);
+  }
+  .page-header h1 { font-family: Georgia, serif; font-size: 13px; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); }
+  .page-header p { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); opacity: 0.6; }
+
+  /* ── SECTION LABELS ── */
+  .section { padding: 48px 60px; border-bottom: 1px solid rgba(139,99,71,0.1); }
+  .section-title { font-size: 9px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 36px; opacity: 0.6; }
+
+  /* ── LOGO CELLS ── */
+  .row { display: flex; gap: 4px; flex-wrap: wrap; }
+  .cell {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 20px; padding: 44px 36px 32px; position: relative; min-width: 180px; flex: 1;
+  }
+  .cell-label {
+    font-size: 8.5px; letter-spacing: 2.5px; text-transform: uppercase;
+    position: absolute; bottom: 14px; left: 0; right: 0; text-align: center;
+  }
+
+  /* Backgrounds */
+  .bg-cream  { background: var(--cream); }
+  .bg-sand   { background: var(--sand); }
+  .bg-dark   { background: var(--dark); }
+  .bg-brown  { background: var(--brown); }
+  .bg-green  { background: var(--green); }
+  .bg-white  { background: #ffffff; }
+
+  /* Label colors */
+  .bg-cream .cell-label, .bg-sand .cell-label, .bg-white .cell-label { color: rgba(139,99,71,0.4); }
+  .bg-dark .cell-label, .bg-brown .cell-label, .bg-green .cell-label { color: rgba(250,247,242,0.3); }
+
+  /* ── WORDMARK TYPOGRAPHY ── */
+  .wm { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+  .wm-name { font-family: Georgia, serif; font-size: 15px; font-weight: 400; letter-spacing: 5px; }
+  .wm-rule { width: 26px; height: 1px; }
+  .wm-sub  { font-size: 7.5px; letter-spacing: 4px; text-transform: uppercase; }
+
+  /* Wordmark colors — light */
+  .on-light .wm-name { color: var(--dark); }
+  .on-light .wm-rule { background: rgba(139,99,71,0.3); }
+  .on-light .wm-sub  { color: var(--muted); }
+
+  /* Wordmark colors — dark */
+  .on-dark .wm-name { color: rgba(250,247,242,0.88); }
+  .on-dark .wm-rule { background: rgba(250,247,242,0.15); }
+  .on-dark .wm-sub  { color: rgba(250,247,242,0.38); }
+
+  /* ── HORIZONTAL LOCKUP ── */
+  .horiz { display: flex; align-items: center; gap: 18px; }
+  .horiz .divider-v { width: 1px; height: 36px; }
+  .on-light .divider-v { background: rgba(139,99,71,0.25); }
+  .on-dark  .divider-v { background: rgba(250,247,242,0.15); }
+  .horiz .wm { align-items: flex-start; }
+  .horiz .wm-name { font-size: 13px; letter-spacing: 4px; }
+  .horiz .wm-sub  { font-size: 7px; letter-spacing: 3.5px; }
+
+  /* ── SIZING DEMO ── */
+  .sizes-row { display: flex; gap: 32px; align-items: flex-end; flex-wrap: wrap; }
+
+  /* ── COLORS SWATCHES ── */
+  .swatches { display: flex; gap: 4px; margin-top: 4px; }
+  .swatch { width: 52px; height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 8px; }
+  .swatch span { font-size: 8px; letter-spacing: 1px; text-transform: uppercase; margin-top: 10px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Elzinga Creative Studio &mdash; Logo Suite</h1>
+  <p>Mark 3B &mdash; Diagonal Focus</p>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     01 · PRIMARY MARK (icon only)
+════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-title">01 &mdash; Primary Mark (Icon Only)</p>
+  <div class="row">
+
+    <div class="cell bg-cream on-light">
+      <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity="0.35"/>
+        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+      </svg>
+      <span class="cell-label">On Cream</span>
+    </div>
+
+    <div class="cell bg-sand on-light">
+      <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity="0.35"/>
+        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+      </svg>
+      <span class="cell-label">On Sand</span>
+    </div>
+
+    <div class="cell bg-white on-light">
+      <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity="0.35"/>
+        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+      </svg>
+      <span class="cell-label">On White</span>
+    </div>
+
+    <div class="cell bg-dark on-dark">
+      <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="rgba(250,247,242,0.82)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="rgba(250,247,242,0.82)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="rgba(250,247,242,0.82)" stroke-width="1.1" fill="none" opacity="0.3"/>
+        <circle cx="40" cy="40" r="3.5" fill="rgba(250,247,242,0.82)"/>
+      </svg>
+      <span class="cell-label">On Dark</span>
+    </div>
+
+    <div class="cell bg-brown on-dark">
+      <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="rgba(250,247,242,0.88)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="rgba(250,247,242,0.88)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="rgba(250,247,242,0.88)" stroke-width="1.1" fill="none" opacity="0.3"/>
+        <circle cx="40" cy="40" r="3.5" fill="rgba(250,247,242,0.88)"/>
+      </svg>
+      <span class="cell-label">On Brown</span>
+    </div>
+
+    <div class="cell bg-green on-dark">
+      <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="rgba(250,247,242,0.9)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="rgba(250,247,242,0.9)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="rgba(250,247,242,0.9)" stroke-width="1.1" fill="none" opacity="0.3"/>
+        <circle cx="40" cy="40" r="3.5" fill="rgba(250,247,242,0.9)"/>
+      </svg>
+      <span class="cell-label">On Green</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     02 · STACKED LOCKUP (icon + wordmark)
+════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-title">02 &mdash; Stacked Lockup</p>
+  <div class="row">
+
+    <div class="cell bg-cream on-light" style="padding: 50px 48px 32px;">
+      <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity="0.35"/>
+        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+      </svg>
+      <div class="wm">
+        <span class="wm-name" style="color:var(--dark)">ELZINGA</span>
+        <div class="wm-rule" style="background:rgba(139,99,71,0.3)"></div>
+        <span class="wm-sub" style="color:var(--muted)">Creative Studio</span>
+      </div>
+      <span class="cell-label">Light / Primary</span>
+    </div>
+
+    <div class="cell bg-dark on-dark" style="padding: 50px 48px 32px;">
+      <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="rgba(250,247,242,0.82)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="rgba(250,247,242,0.82)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="rgba(250,247,242,0.82)" stroke-width="1.1" fill="none" opacity="0.3"/>
+        <circle cx="40" cy="40" r="3.5" fill="rgba(250,247,242,0.82)"/>
+      </svg>
+      <div class="wm">
+        <span class="wm-name" style="color:rgba(250,247,242,0.88)">ELZINGA</span>
+        <div class="wm-rule" style="background:rgba(250,247,242,0.15)"></div>
+        <span class="wm-sub" style="color:rgba(250,247,242,0.38)">Creative Studio</span>
+      </div>
+      <span class="cell-label">Dark / Reversed</span>
+    </div>
+
+    <div class="cell bg-sand on-light" style="padding: 50px 48px 32px;">
+      <!-- Single color brown version -->
+      <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
+        <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity="0.35"/>
+        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+      </svg>
+      <div class="wm">
+        <span class="wm-name" style="color:var(--dark)">ELZINGA</span>
+        <div class="wm-rule" style="background:rgba(139,99,71,0.3)"></div>
+        <span class="wm-sub" style="color:var(--muted)">Creative Studio</span>
+      </div>
+      <span class="cell-label">Sand / Neutral</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     03 · HORIZONTAL LOCKUP
+════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-title">03 &mdash; Horizontal Lockup</p>
+  <div class="row">
+
+    <div class="cell bg-cream on-light" style="padding: 44px 52px 32px; flex: 2;">
+      <div class="horiz">
+        <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
+          <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.2" fill="none" opacity="0.35"/>
+          <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+        </svg>
+        <div class="divider-v" style="background:rgba(139,99,71,0.25)"></div>
+        <div class="wm" style="align-items:flex-start;">
+          <span class="wm-name" style="color:var(--dark);font-size:13px;letter-spacing:4px">ELZINGA</span>
+          <span class="wm-sub" style="color:var(--muted);font-size:7px;letter-spacing:3.5px">Creative Studio</span>
+        </div>
+      </div>
+      <span class="cell-label">Horizontal — Light</span>
+    </div>
+
+    <div class="cell bg-dark on-dark" style="padding: 44px 52px 32px; flex: 2;">
+      <div class="horiz">
+        <svg width="44" height="44" viewBox="0 0 80 80" fill="none">
+          <path d="M5 36 L5 5 L36 5"   stroke="rgba(250,247,242,0.82)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M44 75 L75 75 L75 44" stroke="rgba(250,247,242,0.82)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="40" r="13" stroke="rgba(250,247,242,0.82)" stroke-width="1.2" fill="none" opacity="0.3"/>
+          <circle cx="40" cy="40" r="3.5" fill="rgba(250,247,242,0.82)"/>
+        </svg>
+        <div class="divider-v" style="background:rgba(250,247,242,0.15)"></div>
+        <div class="wm" style="align-items:flex-start;">
+          <span class="wm-name" style="color:rgba(250,247,242,0.88);font-size:13px;letter-spacing:4px">ELZINGA</span>
+          <span class="wm-sub" style="color:rgba(250,247,242,0.38);font-size:7px;letter-spacing:3.5px">Creative Studio</span>
+        </div>
+      </div>
+      <span class="cell-label">Horizontal — Dark</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     04 · WORDMARK ONLY
+════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-title">04 &mdash; Wordmark Only</p>
+  <div class="row">
+
+    <div class="cell bg-cream on-light" style="padding:44px 52px 32px; flex:2;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <span style="font-family:Georgia,serif; font-size:22px; font-weight:400; letter-spacing:7px; color:var(--dark);">ELZINGA</span>
+        <div style="width:32px;height:1px;background:rgba(139,99,71,0.3);"></div>
+        <span style="font-size:8.5px;letter-spacing:5px;text-transform:uppercase;color:var(--muted);">Creative Studio</span>
+      </div>
+      <span class="cell-label">Wordmark — Light</span>
+    </div>
+
+    <div class="cell bg-dark on-dark" style="padding:44px 52px 32px; flex:2;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <span style="font-family:Georgia,serif; font-size:22px; font-weight:400; letter-spacing:7px; color:rgba(250,247,242,0.88);">ELZINGA</span>
+        <div style="width:32px;height:1px;background:rgba(250,247,242,0.15);"></div>
+        <span style="font-size:8.5px;letter-spacing:5px;text-transform:uppercase;color:rgba(250,247,242,0.38);">Creative Studio</span>
+      </div>
+      <span class="cell-label">Wordmark — Dark</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     05 · FAVICON / SMALL MARK
+════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-title">05 &mdash; Favicon &amp; Small Mark</p>
+  <div class="row" style="align-items:flex-end;">
+
+    <div class="cell bg-cream on-light">
+      <div style="display:flex; align-items:flex-end; gap:24px;">
+        <!-- 32px size -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <svg width="32" height="32" viewBox="0 0 80 80" fill="none">
+            <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="40" cy="40" r="4" fill="#8B6347"/>
+          </svg>
+          <span style="font-size:8px;letter-spacing:1px;color:var(--muted);opacity:0.5">32px</span>
+        </div>
+        <!-- 24px size -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <svg width="24" height="24" viewBox="0 0 80 80" fill="none">
+            <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="40" cy="40" r="5" fill="#8B6347"/>
+          </svg>
+          <span style="font-size:8px;letter-spacing:1px;color:var(--muted);opacity:0.5">24px</span>
+        </div>
+        <!-- 16px size -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 80 80" fill="none">
+            <path d="M5 36 L5 5 L36 5"   stroke="#8B6347" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 75 L75 75 L75 44" stroke="#8B6347" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="40" cy="40" r="6" fill="#8B6347"/>
+          </svg>
+          <span style="font-size:8px;letter-spacing:1px;color:var(--muted);opacity:0.5">16px</span>
+        </div>
+      </div>
+      <span class="cell-label">Small — Light</span>
+    </div>
+
+    <div class="cell bg-dark on-dark">
+      <div style="display:flex; align-items:flex-end; gap:24px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <svg width="32" height="32" viewBox="0 0 80 80" fill="none">
+            <path d="M5 36 L5 5 L36 5"   stroke="rgba(250,247,242,0.82)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 75 L75 75 L75 44" stroke="rgba(250,247,242,0.82)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="40" cy="40" r="4" fill="rgba(250,247,242,0.82)"/>
+          </svg>
+          <span style="font-size:8px;letter-spacing:1px;color:rgba(250,247,242,0.3)">32px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <svg width="24" height="24" viewBox="0 0 80 80" fill="none">
+            <path d="M5 36 L5 5 L36 5"   stroke="rgba(250,247,242,0.82)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 75 L75 75 L75 44" stroke="rgba(250,247,242,0.82)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="40" cy="40" r="5" fill="rgba(250,247,242,0.82)"/>
+          </svg>
+          <span style="font-size:8px;letter-spacing:1px;color:rgba(250,247,242,0.3)">24px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 80 80" fill="none">
+            <path d="M5 36 L5 5 L36 5"   stroke="rgba(250,247,242,0.82)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 75 L75 75 L75 44" stroke="rgba(250,247,242,0.82)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="40" cy="40" r="6" fill="rgba(250,247,242,0.82)"/>
+          </svg>
+          <span style="font-size:8px;letter-spacing:1px;color:rgba(250,247,242,0.3)">16px</span>
+        </div>
+      </div>
+      <span class="cell-label">Small — Dark</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     06 · BRAND COLORS
+════════════════════════════════════════ -->
+<div class="section" style="border-bottom:none;">
+  <p class="section-title">06 &mdash; Brand Colors</p>
+  <div style="display:flex; gap:4px; flex-wrap:wrap;">
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px 24px 20px;background:var(--cream);flex:1;min-width:100px;">
+      <div style="width:44px;height:44px;background:#FAF7F2;border:1px solid rgba(139,99,71,0.2);border-radius:2px;"></div>
+      <div style="text-align:center;">
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Cream</p>
+        <p style="font-size:8px;letter-spacing:1px;color:rgba(122,99,85,0.6);font-family:monospace;">#FAF7F2</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px 24px 20px;background:var(--cream);flex:1;min-width:100px;">
+      <div style="width:44px;height:44px;background:#EDE4D8;border-radius:2px;"></div>
+      <div style="text-align:center;">
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Sand</p>
+        <p style="font-size:8px;letter-spacing:1px;color:rgba(122,99,85,0.6);font-family:monospace;">#EDE4D8</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px 24px 20px;background:var(--cream);flex:1;min-width:100px;">
+      <div style="width:44px;height:44px;background:#8B6347;border-radius:2px;"></div>
+      <div style="text-align:center;">
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Brown</p>
+        <p style="font-size:8px;letter-spacing:1px;color:rgba(122,99,85,0.6);font-family:monospace;">#8B6347</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px 24px 20px;background:var(--cream);flex:1;min-width:100px;">
+      <div style="width:44px;height:44px;background:#3D2B1F;border-radius:2px;"></div>
+      <div style="text-align:center;">
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Dark</p>
+        <p style="font-size:8px;letter-spacing:1px;color:rgba(122,99,85,0.6);font-family:monospace;">#3D2B1F</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:28px 24px 20px;background:var(--cream);flex:1;min-width:100px;">
+      <div style="width:44px;height:44px;background:#7A9E7E;border-radius:2px;"></div>
+      <div style="text-align:center;">
+        <p style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Green</p>
+        <p style="font-size:8px;letter-spacing:1px;color:rgba(122,99,85,0.6);font-family:monospace;">#7A9E7E</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
