@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Kaden Elzinga | Grand Rapids Photographer — Elzinga Creative Studio</title>
+  <meta name="description" content="Kaden Elzinga is a Grand Rapids photographer and videographer specializing in real estate, portraits, and commercial work. Founded Elzinga Creative Studio serving all of West Michigan.">
+  <link rel="canonical" href="https://elzingacreativestudio.com/about.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://elzingacreativestudio.com/#founder",
+      "name": "Kaden Elzinga",
+      "jobTitle": "Photographer & Videographer",
+      "description": "Grand Rapids-based photographer, videographer, and founder of Elzinga Creative Studio. Specializing in real estate photography, senior portraits, commercial content, and local marketing for West Michigan businesses.",
+      "url": "https://elzingacreativestudio.com/about.html",
+      "image": "https://elzingacreativestudio.com/images/_DSC0643.JPG",
+      "worksFor": { "@id": "https://elzingacreativestudio.com/#business" },
+      "knowsAbout": ["Real estate photography", "Portrait photography", "Commercial photography", "Videography", "Social media marketing", "Google Ads", "Meta Ads"],
+      "sameAs": ["https://www.instagram.com/kaden_elzinga"]
+    }
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://elzingacreativestudio.com/about.html" />
+  <meta property="og:title" content="About Kaden Elzinga | Grand Rapids Photographer" />
+  <meta property="og:description" content="Kaden Elzinga is a Grand Rapids photographer and videographer. Founded Elzinga Creative Studio serving West Michigan." />
+  <meta property="og:image" content="https://elzingacreativestudio.com/images/_DSC0643.JPG" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #111111; --white: #FFFFFF; --green: #2A5C3F;
+      --green-dk: #1e4430; --off-white: #F7F7F7;
+      --gray: #666666; --gray-lt: #AAAAAA; --border: #E0E0E0;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    header.scrolled { border-bottom-color: var(--border); }
+    .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
+    .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
+    .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
+    .nav-desktop { display: flex; align-items: center; gap: 4px; }
+    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-desktop a:hover { color: var(--black); }
+    .nav-active { color: var(--black) !important; }
+    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; }
+    .nav-book:hover { background: var(--green-dk) !important; }
+
+    /* HERO */
+    #hero { background: var(--black); padding: 120px 60px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .hero-img { width: 100%; aspect-ratio: 4/5; overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .hero-text { display: flex; flex-direction: column; }
+    .hero-label { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 24px; }
+    .hero-name { font-size: clamp(52px, 7vw, 96px); font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--white); margin-bottom: 6px; }
+    .hero-title { font-size: 14px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 40px; }
+    .hero-rule { width: 40px; height: 1px; background: var(--green); margin-bottom: 32px; }
+    .hero-bio { font-size: 16px; line-height: 1.85; color: rgba(255,255,255,0.6); }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px; }
+    .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-green:hover { background: var(--green-dk); }
+    .btn-outline-light { display: inline-block; padding: 12px 28px; background: transparent; border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .btn-outline-light:hover { border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.9); }
+
+    /* CREDENTIALS */
+    #credentials { padding: 100px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
+    .cred-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .cred-title { font-size: clamp(32px, 4vw, 52px); font-weight: 800; line-height: 1; letter-spacing: -1.5px; margin-bottom: 72px; }
+    .cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+    .cred-item { display: flex; flex-direction: column; gap: 12px; }
+    .cred-num { font-size: 56px; font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--green); }
+    .cred-desc { font-size: 14px; line-height: 1.6; color: var(--gray); }
+
+    /* STORY */
+    #story { padding: 100px 60px; background: var(--white); border-top: 1px solid var(--border); }
+    .story-inner { max-width: 760px; }
+    .story-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .story-title { font-size: clamp(32px, 4vw, 52px); font-weight: 800; line-height: 1; letter-spacing: -1.5px; margin-bottom: 48px; }
+    .story-body { font-size: 17px; line-height: 1.85; color: var(--gray); margin-bottom: 28px; }
+    .story-body strong { font-weight: 800; color: var(--black); }
+
+    /* GEAR */
+    #gear { padding: 100px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
+    .gear-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .gear-title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; line-height: 1; letter-spacing: -1px; margin-bottom: 56px; }
+    .gear-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
+    .gear-card { background: var(--white); padding: 36px 40px; }
+    .gear-cat { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: block; }
+    .gear-name { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: var(--black); margin-bottom: 8px; }
+    .gear-note { font-size: 13px; line-height: 1.6; color: var(--gray); }
+
+    /* CLIENTS */
+    #clients { padding: 100px 60px; background: var(--white); border-top: 1px solid var(--border); }
+    .clients-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .clients-title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; line-height: 1; letter-spacing: -1px; margin-bottom: 48px; }
+    .client-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    .client-item { background: var(--off-white); padding: 32px 36px; }
+    .client-name { font-size: 16px; font-weight: 800; letter-spacing: -0.3px; color: var(--black); margin-bottom: 6px; }
+    .client-desc { font-size: 12px; color: var(--gray-lt); letter-spacing: 0.5px; }
+
+    /* CTA STRIP */
+    #about-cta { background: var(--black); padding: 80px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
+    .cta-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .cta-title { font-size: clamp(36px, 5vw, 64px); font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--white); margin-bottom: 12px; }
+    .cta-sub { font-size: 15px; color: rgba(255,255,255,0.4); margin-bottom: 40px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { display: inline-block; padding: 14px 36px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-white:hover { background: #e8e8e8; }
+    .btn-phone { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-phone:hover { background: var(--green-dk); }
+
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer > * { flex: 1; }
+    footer > *:nth-child(2) { text-align: center; }
+    footer > *:last-child { text-align: right; }
+    .footer-brand { display: flex; flex-direction: column; gap: 4px; }
+    .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
+    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; gap: 48px; }
+      .hero-img { aspect-ratio: 3/2; }
+      .cred-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .client-list { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      header { padding: 16px 24px; }
+      #hero, #credentials, #story, #gear, #clients, #about-cta { padding: 80px 24px; }
+      .gear-grid, .client-list { grid-template-columns: 1fr; }
+      .cred-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="index.html" class="logo-link">
+    <span class="logo-ecs">ECS</span>
+    <span class="logo-full">Elzinga Creative Studio</span>
+  </a>
+  <nav class="nav-desktop">
+    <a href="index.html#portfolio">Work</a>
+    <a href="index.html#services">Services</a>
+    <a href="about.html" class="nav-active">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact" class="nav-book">Book a Session</a>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-img">
+    <img src="images/_DSC0643.JPG"
+         alt="Kaden Elzinga, Grand Rapids photographer and founder of Elzinga Creative Studio"
+         width="1200" height="1500" loading="eager">
+  </div>
+  <div class="hero-text">
+    <span class="hero-label">The Photographer</span>
+    <h1 class="hero-name">Kaden<br>Elzinga</h1>
+    <p class="hero-title">Photographer · Videographer · Founder</p>
+    <div class="hero-rule"></div>
+    <p class="hero-bio">I'm a Grand Rapids-based photographer, videographer, and the founder of Elzinga Creative Studio. I shoot real estate, senior portraits, commercial work, and everything in between — always with the same standard: nothing inherently wrong in the frame.</p>
+    <div class="hero-ctas">
+      <a href="index.html#contact" class="btn-green">Work With Me</a>
+      <a href="tel:+16162584578" class="btn-outline-light">Call (616) 258-4578</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <span class="cred-label">By the Numbers</span>
+  <h2 class="cred-title">The work, in numbers.</h2>
+  <div class="cred-grid">
+    <div class="cred-item">
+      <span class="cred-num">24hr</span>
+      <p class="cred-desc">Turnaround on every real estate package. MLS-ready, HDR-processed, delivered the next day — every time.</p>
+    </div>
+    <div class="cred-item">
+      <span class="cred-num">20+</span>
+      <p class="cred-desc">Cities served across West Michigan, including Grand Rapids, Wyoming, Kentwood, Holland, Rockford, and throughout Kent and Ottawa counties.</p>
+    </div>
+    <div class="cred-item">
+      <span class="cred-num">107</span>
+      <p class="cred-desc">FAA Part 107 licensed for commercial drone operations. Aerial photography available on any listing — no hobbyist workarounds.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-inner">
+    <span class="story-label">Background</span>
+    <h2 class="story-title">Craft first.<br>Always.</h2>
+    <p class="story-body">Elzinga Creative Studio is built on a straightforward standard: <strong>nothing inherently wrong in the frame.</strong> Not trendy. Not over-processed. Just clean light, honest composition, and work that holds up when a potential buyer or client looks at it for the third time.</p>
+    <p class="story-body">I started shooting real estate because it sits at the intersection of something I care about — making things look exactly as good as they are — and a market that has a real, measurable need for it. A listing with strong photography sells faster and for more money. That's not marketing copy, it's a documented statistical reality. I take that seriously.</p>
+    <p class="story-body">Beyond real estate, I shoot senior portraits, weddings, commercial brand content, and sports work across West Michigan. <strong>Past commercial clients include Biggby Coffee, the Grand Rapids Griffins, and Mars Hill.</strong> Each project is different, but the standard is the same: the final image should look as good as the subject actually is, and nothing that's fixable should be left wrong.</p>
+    <p class="story-body">I also run the digital marketing side of ECS — managing Meta and Google Ads campaigns, Google Business Profile optimization, and content strategy for local businesses. Most of my marketing clients are landscapers, contractors, and home service companies who do excellent work but whose online presence doesn't reflect it yet. That gap is fixable.</p>
+    <p class="story-body">ECS is based in Grand Rapids, Michigan and serves clients throughout Kent and Ottawa counties — and beyond for the right project.</p>
+  </div>
+</section>
+
+
+<!-- GEAR -->
+<section id="gear">
+  <span class="gear-label">Equipment</span>
+  <h2 class="gear-title">Professional gear.<br>No excuses.</h2>
+  <div class="gear-grid">
+    <div class="gear-card">
+      <span class="gear-cat">Primary Camera</span>
+      <p class="gear-name">Sony FX30</p>
+      <p class="gear-note">Super 35 sensor for stills and video. Native 4K, excellent dynamic range for HDR real estate work and brand video content.</p>
+    </div>
+    <div class="gear-card">
+      <span class="gear-cat">Primary Lens</span>
+      <p class="gear-name">Tamron 17–70mm f/2.8</p>
+      <p class="gear-note">Fast zoom with constant aperture. The workhorse for real estate interiors, lifestyle portraits, and commercial work where you need range and speed in the same setup.</p>
+    </div>
+    <div class="gear-card">
+      <span class="gear-cat">Long Telephoto</span>
+      <p class="gear-name">Sony 70–200mm f/2.8</p>
+      <p class="gear-note">Compression, reach, and background separation. Used for sports, portraits, and exterior real estate work where distance gives a better result than a wide angle.</p>
+    </div>
+    <div class="gear-card">
+      <span class="gear-cat">Aerial / Drone</span>
+      <p class="gear-name">DJI Mini 4 Pro</p>
+      <p class="gear-note">FAA Part 107 licensed commercial drone operations. Aerial photography and video for real estate listings, commercial projects, and events across West Michigan.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- CLIENTS -->
+<section id="clients">
+  <span class="clients-label">Past Clients</span>
+  <h2 class="clients-title">Who I've worked with.</h2>
+  <div class="client-list">
+    <div class="client-item">
+      <p class="client-name">Biggby Coffee</p>
+      <p class="client-desc">Commercial brand photography · West Michigan</p>
+    </div>
+    <div class="client-item">
+      <p class="client-name">Grand Rapids Griffins</p>
+      <p class="client-desc">Sports action photography · AHL hockey</p>
+    </div>
+    <div class="client-item">
+      <p class="client-name">Mars Hill</p>
+      <p class="client-desc">Event and editorial photography · Grand Rapids</p>
+    </div>
+    <div class="client-item">
+      <p class="client-name">West Michigan Realtors</p>
+      <p class="client-desc">Real estate listing photography · Kent &amp; Ottawa counties</p>
+    </div>
+    <div class="client-item">
+      <p class="client-name">Local Landscapers &amp; Contractors</p>
+      <p class="client-desc">Monthly content retainers · Home service businesses</p>
+    </div>
+    <div class="client-item">
+      <p class="client-name">Seniors &amp; Families</p>
+      <p class="client-desc">Portraits, milestones, and personal projects across West Michigan</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA STRIP -->
+<section id="about-cta">
+  <span class="cta-label">Let's Work Together</span>
+  <h2 class="cta-title">Ready when you are.</h2>
+  <p class="cta-sub">Real estate, portraits, commercial work, or marketing — reach out and we'll figure out the right fit.</p>
+  <div class="cta-btns">
+    <a href="index.html#contact" class="btn-white">Book a Session</a>
+    <a href="tel:+16162584578" class="btn-phone">Call (616) 258-4578</a>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-brand">
+    <span class="footer-ecs">ECS</span>
+    <span class="footer-tag">Photography · Video · Marketing</span>
+  </div>
+  <a href="index.html" style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;">← Back to Main Site</a>
+  <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a></p>
+</footer>
+
+<script>
+  const hdr = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 20);
+  });
+</script>
+
+</body>
+</html>
