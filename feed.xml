@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Elzinga Creative Studio — Grand Rapids Photography &amp; Marketing Blog</title>
+    <link>https://elzingacreativestudio.com/blog.html</link>
+    <description>Working-photographer field notes on real estate, brand, and commercial content in Grand Rapids and West Michigan. Pricing, twilight, drone law, prep, and how to evaluate a photographer.</description>
+    <language>en-us</language>
+    <copyright>© 2026 Elzinga Creative Studio. Grand Rapids, Michigan.</copyright>
+    <lastBuildDate>Thu, 15 May 2026 12:00:00 -0400</lastBuildDate>
+    <atom:link href="https://elzingacreativestudio.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>How Much Does Real Estate Photography Cost in Grand Rapids? 2026 Guide</title>
+      <link>https://elzingacreativestudio.com/blog/how-much-does-real-estate-photography-cost-grand-rapids.html</link>
+      <guid isPermaLink="true">https://elzingacreativestudio.com/blog/how-much-does-real-estate-photography-cost-grand-rapids.html</guid>
+      <pubDate>Thu, 15 May 2026 09:00:00 -0400</pubDate>
+      <dc:creator>Kaden Elzinga</dc:creator>
+      <description><![CDATA[A working photographer's 2026 breakdown of what real estate photography actually costs in West Michigan, what drives the price differences, and where realtors should pay more vs save. Includes ECS pricing comparison.]]></description>
+      <category>Real Estate</category>
+    </item>
+
+    <item>
+      <title>10 Questions to Ask Your Grand Rapids Wedding Photographer Before You Book</title>
+      <link>https://elzingacreativestudio.com/blog/questions-to-ask-wedding-photographer-grand-rapids.html</link>
+      <guid isPermaLink="true">https://elzingacreativestudio.com/blog/questions-to-ask-wedding-photographer-grand-rapids.html</guid>
+      <pubDate>Wed, 21 May 2026 09:00:00 -0400</pubDate>
+      <dc:creator>Kaden Elzinga</dc:creator>
+      <description><![CDATA[The portfolio tells you what they can do. These 10 questions tell you who they are — and whether they'll actually deliver when it matters most.]]></description>
+      <category>Weddings</category>
+    </item>
+
+    <item>
+      <title>Drone Laws Every Grand Rapids Real Estate Agent Needs to Know</title>
+      <link>https://elzingacreativestudio.com/blog/drone-laws-grand-rapids-real-estate-agents.html</link>
+      <guid isPermaLink="true">https://elzingacreativestudio.com/blog/drone-laws-grand-rapids-real-estate-agents.html</guid>
+      <pubDate>Wed, 14 May 2026 09:00:00 -0400</pubDate>
+      <dc:creator>Kaden Elzinga</dc:creator>
+      <description><![CDATA[Flying a drone over a listing without checking the airspace is an FAA violation. Here's what agents need to know before hiring a drone photographer in West Michigan.]]></description>
+      <category>Real Estate</category>
+    </item>
+
+    <item>
+      <title>Real vs. Virtual Twilight — Why Grand Rapids Listings Need the Real Glow</title>
+      <link>https://elzingacreativestudio.com/blog/real-vs-virtual-twilight-grand-rapids.html</link>
+      <guid isPermaLink="true">https://elzingacreativestudio.com/blog/real-vs-virtual-twilight-grand-rapids.html</guid>
+      <pubDate>Fri, 09 May 2026 09:00:00 -0400</pubDate>
+      <dc:creator>Kaden Elzinga</dc:creator>
+      <description><![CDATA[Virtual twilight is cheap. Real twilight moves listings 30% faster and generates 76% more views. Here's what the data says and when it's worth it.]]></description>
+      <category>Real Estate</category>
+    </item>
+
+    <item>
+      <title>Why Professional Photos Help Grand Rapids Contractors Win More Jobs</title>
+      <link>https://elzingacreativestudio.com/blog/why-professional-photos-matter-grand-rapids-contractors.html</link>
+      <guid isPermaLink="true">https://elzingacreativestudio.com/blog/why-professional-photos-matter-grand-rapids-contractors.html</guid>
+      <pubDate>Thu, 07 May 2026 09:00:00 -0400</pubDate>
+      <dc:creator>Kaden Elzinga</dc:creator>
+      <description><![CDATA[Your finished work looks better in person than it does on your phone. Here's why that gap is costing contractors real jobs — and how to close it.]]></description>
+      <category>Commercial</category>
+    </item>
+
+    <item>
+      <title>Best Locations for Senior Portraits in Grand Rapids</title>
+      <link>https://elzingacreativestudio.com/blog/best-locations-senior-portraits-grand-rapids.html</link>
+      <guid isPermaLink="true">https://elzingacreativestudio.com/blog/best-locations-senior-portraits-grand-rapids.html</guid>
+      <pubDate>Sat, 02 May 2026 09:00:00 -0400</pubDate>
+      <dc:creator>Kaden Elzinga</dc:creator>
+      <description><![CDATA[Top senior portrait locations in Grand Rapids and surrounding West Michigan, ranked by lighting, time of year, and what works for different aesthetics.]]></description>
+      <category>Senior Portraits</category>
+    </item>
+
+    <item>
+      <title>How to Prepare Your Home for Real Estate Photos in Grand Rapids</title>
+      <link>https://elzingacreativestudio.com/blog/how-to-prepare-home-for-real-estate-photos-grand-rapids.html</link>
+      <guid isPermaLink="true">https://elzingacreativestudio.com/blog/how-to-prepare-home-for-real-estate-photos-grand-rapids.html</guid>
+      <pubDate>Wed, 30 Apr 2026 09:00:00 -0400</pubDate>
+      <dc:creator>Kaden Elzinga</dc:creator>
+      <description><![CDATA[The 47-point pre-shoot checklist that separates listings that photograph well from listings that don't. Includes notes on common GR home types.]]></description>
+      <category>Real Estate</category>
+    </item>
+
+  </channel>
+</rss>

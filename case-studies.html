@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies | Elzinga Creative Studio — Grand Rapids Photography &amp; Marketing</title>
+  <meta name="description" content="Real-world results from Elzinga Creative Studio. Photography, video, and digital marketing case studies for Grand Rapids and West Michigan businesses." />
+  <link rel="canonical" href="https://elzingacreativestudio.com/case-studies.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://elzingacreativestudio.com/case-studies.html",
+    "name": "Elzinga Creative Studio Case Studies",
+    "description": "Photography, video, and digital marketing case studies for Grand Rapids and West Michigan service businesses, real estate agents, and brands.",
+    "isPartOf": { "@id": "https://elzingacreativestudio.com/#website" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <style>
+    :root { --black: #111111; --white: #FFFFFF; --green: #2A5C3F; --green-dk: #1e4430; --off-white: #F7F7F7; --gray: #666666; --gray-lt: #AAAAAA; --border: #E0E0E0; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+    .section-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+    .section-title { font-size: clamp(36px, 5vw, 68px); font-weight: 800; line-height: 1.0; letter-spacing: -1.5px; }
+    .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-green:hover { background: var(--green-dk); }
+
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    header.scrolled { border-bottom-color: var(--border); }
+    .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
+    .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
+    .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
+    .nav-desktop { display: flex; align-items: center; gap: 4px; }
+    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-desktop a:hover { color: var(--black); }
+    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; }
+
+    #hero { background: var(--black); min-height: 60vh; padding: 140px 60px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-inner { max-width: 900px; }
+    .hero-h1 { font-size: clamp(42px, 7vw, 88px); font-weight: 800; line-height: 0.95; letter-spacing: -2px; color: var(--white); margin-bottom: 24px; }
+    .hero-h1 em { font-style: normal; color: var(--green); }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 640px; line-height: 1.7; }
+
+    #cases { padding: 120px 60px; }
+    .case-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 56px; }
+    .case-card { background: var(--white); border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
+    .case-card:hover { transform: translateY(-4px); border-color: var(--green); }
+    .case-image { aspect-ratio: 4/3; background: var(--off-white); display: flex; align-items: center; justify-content: center; color: var(--gray-lt); font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+    .case-image.coming { background: repeating-linear-gradient(135deg, var(--off-white) 0 12px, #ededed 12px 24px); }
+    .case-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+    .case-tag { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); padding: 4px 10px; border: 1px solid var(--green); margin-bottom: 16px; align-self: flex-start; }
+    .case-h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
+    .case-desc { font-size: 13px; line-height: 1.7; color: var(--gray); margin-bottom: 20px; flex: 1; }
+    .case-stats { display: flex; gap: 16px; padding: 16px 0; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .case-stat { display: flex; flex-direction: column; gap: 2px; }
+    .case-stat-num { font-size: 18px; font-weight: 800; color: var(--black); }
+    .case-stat-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-lt); }
+    .case-coming-soon { padding: 56px 24px; text-align: center; color: var(--gray-lt); font-size: 13px; font-style: italic; }
+
+    #cta-band { background: var(--green); padding: 100px 60px; text-align: center; }
+    #cta-band .section-label { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .cta-title { font-size: clamp(36px, 5vw, 72px); font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--white); margin-bottom: 48px; }
+    .btn-white { display: inline-block; padding: 16px 48px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-white:hover { background: var(--off-white); }
+
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer > * { flex: 1; }
+    footer > *:nth-child(2) { text-align: center; }
+    footer > *:last-child { text-align: right; }
+    .footer-brand { display: flex; flex-direction: column; gap: 4px; }
+    .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
+    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 768px) {
+      header { padding: 16px 24px; }
+      #hero { padding: 100px 24px 56px; }
+      #cases, #cta-band { padding: 72px 24px; }
+      .case-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '26293188720377993'); fbq('track', 'PageView');
+</script>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="index.html" class="logo-link">
+    <span class="logo-ecs">ECS</span>
+    <span class="logo-full">Elzinga Creative Studio</span>
+  </a>
+  <nav class="nav-desktop">
+    <a href="preferred-photographer.html">For Realtors</a>
+    <a href="real-estate-photography-grand-rapids.html">Real Estate</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact" class="nav-book">Get a Quote</a>
+  </nav>
+</header>
+
+
+<section id="hero">
+  <div class="hero-inner">
+    <p style="color: rgba(255,255,255,0.4); font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;">Real work. Real results.</p>
+    <h1 class="hero-h1">Case <em>studies</em>.</h1>
+    <p class="hero-sub">How we work with Grand Rapids realtors, trade-service operators, and brands. Each case below documents the goal, the work, and the result — measured in showings, leads, or revenue.</p>
+  </div>
+</section>
+
+
+<section id="cases">
+  <span class="section-label">Featured Work</span>
+  <h2 class="section-title">Built for service businesses<br>in West Michigan.</h2>
+
+  <div class="case-grid">
+
+    <article class="case-card">
+      <div class="case-image coming">Case study in progress</div>
+      <div class="case-body">
+        <span class="case-tag">Trades — Garage Doors</span>
+        <h3 class="case-h3">GarageDoorsMen — Meta + LSA launch</h3>
+        <p class="case-desc">Trey Johnson's new garage-door service business launching June 2026. ECS handles lead-gen + branded media: 3 Meta ad sets (Founder Intro / Diagnosis Walkthrough / Same-Day Emergency), CallRail + Jobber wiring, GBP foundation, and ongoing content retainer.</p>
+        <div class="case-stats">
+          <div class="case-stat"><span class="case-stat-num">$2,000</span><span class="case-stat-label">Monthly ad budget</span></div>
+          <div class="case-stat"><span class="case-stat-num">June 2026</span><span class="case-stat-label">Launch target</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image coming">Case study in progress</div>
+      <div class="case-body">
+        <span class="case-tag">Trades — Power Washing</span>
+        <h3 class="case-h3">PowerWashedRight — Scale-to-hire OS</h3>
+        <p class="case-desc">PowerWashedRight (Trey's second brand) on a 12-week scale-to-hire plan. ECS provides drone + before/after content stack, Meta retainer ads, and commercial retainer pipeline support. KPI: $200k ARR / 15+ commercial accounts by August 2026.</p>
+        <div class="case-stats">
+          <div class="case-stat"><span class="case-stat-num">15+</span><span class="case-stat-label">Accounts target</span></div>
+          <div class="case-stat"><span class="case-stat-num">12 wks</span><span class="case-stat-label">Forcing-function window</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image coming">Case study in progress</div>
+      <div class="case-body">
+        <span class="case-tag">Real Estate — Personal Brand</span>
+        <h3 class="case-h3">Richard — Realtor portfolio shoot</h3>
+        <p class="case-desc">First branded-portfolio shoot under the ECS Preferred Photographer program. Real twilight exteriors, agent personal-brand portraits, and listing-Reel system designed to seed a $245-$495 per-listing engagement model with Grand Rapids agents.</p>
+        <div class="case-stats">
+          <div class="case-stat"><span class="case-stat-num">3-tier</span><span class="case-stat-label">Pricing model</span></div>
+          <div class="case-stat"><span class="case-stat-num">$245-495</span><span class="case-stat-label">Per listing</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image coming">Case study in progress</div>
+      <div class="case-body">
+        <span class="case-tag">Bath Remodel — Lead-Gen</span>
+        <h3 class="case-h3">West Michigan Bath Audit — Triple-Sell pipeline</h3>
+        <p class="case-desc">Lead-brokerage build for the West Michigan bath remodel niche. Form-abandonment capture, visitor-ID system, lead temperature scoring, partner CRM, and Meta retargeting infrastructure powering a triple-sell model with vetted bath contractors.</p>
+        <div class="case-stats">
+          <div class="case-stat"><span class="case-stat-num">13-field</span><span class="case-stat-label">Lead schema</span></div>
+          <div class="case-stat"><span class="case-stat-num">8</span><span class="case-stat-label">Custom Meta events</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image coming">Case study in progress</div>
+      <div class="case-body">
+        <span class="case-tag">Brand Day</span>
+        <h3 class="case-h3">Brand Day Starter Package</h3>
+        <p class="case-desc">$2,500 productized offer: 60-90s hero video + 3 Reels + 20 photos + raw footage + 1 revision, all from a single day on-site. Built for coaches, consultants, and service operators who need a content library that does not look like phone footage.</p>
+        <div class="case-stats">
+          <div class="case-stat"><span class="case-stat-num">$2,500</span><span class="case-stat-label">Flat rate</span></div>
+          <div class="case-stat"><span class="case-stat-num">1 day</span><span class="case-stat-label">On-site</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-image coming">Want to be next?</div>
+      <div class="case-body">
+        <span class="case-tag">Open</span>
+        <h3 class="case-h3">Your case study, here.</h3>
+        <p class="case-desc">We are filming 3-5 more case studies in 2026. If you are a West Michigan service business or realtor with a clear before/after story, we offer discounted rates in exchange for documented case-study rights. Drop us a note.</p>
+        <a href="index.html#contact" class="btn-green" style="align-self: flex-start; margin-top: 8px;">Pitch a Case Study</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<section id="cta-band">
+  <span class="section-label">Want results like these?</span>
+  <h2 class="cta-title">Let's talk<br>about your work.</h2>
+  <a href="index.html#contact" class="btn-white">Get a Quote</a>
+</section>
+
+
+<footer>
+  <div class="footer-brand">
+    <span class="footer-ecs">ECS</span>
+    <span class="footer-tag">Photography · Video · Marketing</span>
+  </div>
+  <a href="index.html" style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;">← Back to Main Site</a>
+  <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a></p>
+</footer>
+
+<script>
+  const hdr = document.getElementById('site-header');
+  window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>

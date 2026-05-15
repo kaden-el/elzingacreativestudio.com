@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://elzingacreativestudio.com/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <image:image>
       <image:loc>https://elzingacreativestudio.com/images/_DSC1170.avif</image:loc>
       <image:title>Grand Rapids wedding photography by Elzinga Creative Studio</image:title>
@@ -29,78 +29,91 @@
       <image:title>Family photography sessions in West Michigan</image:title>
     </image:image>
   </url>
+
+  <!-- Service Pages -->
+  <url><loc>https://elzingacreativestudio.com/real-estate-photography-grand-rapids.html</loc><lastmod>2026-05-15</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/senior-portraits-grand-rapids.html</loc><lastmod>2026-05-15</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/wedding-photographer-grand-rapids.html</loc><lastmod>2026-05-15</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/commercial-photography-grand-rapids.html</loc><lastmod>2026-05-15</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/social-media-marketing-grand-rapids.html</loc><lastmod>2026-05-15</lastmod></url>
+
+  <!-- 2026-05-15 NEW: Organic conversion pages -->
   <url>
-    <loc>https://elzingacreativestudio.com/real-estate-photography-grand-rapids.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC08468-HDR.jpg</image:loc>
-      <image:title>Grand Rapids real estate photography - HDR interior</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC08876-HDR.jpg</image:loc>
-      <image:title>Grand Rapids real estate photography - HDR kitchen</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/_DSC8528-HDR.jpg</image:loc>
-      <image:title>West Michigan real estate photography - exterior listing</image:title>
-    </image:image>
+    <loc>https://elzingacreativestudio.com/preferred-photographer.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://elzingacreativestudio.com/senior-portraits-grand-rapids.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC02295.avif</image:loc>
-      <image:title>Senior portrait photography Grand Rapids Michigan</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC02330.avif</image:loc>
-      <image:title>High school senior portraits West Michigan</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC02451.avif</image:loc>
-      <image:title>Creative senior photos Grand Rapids</image:title>
-    </image:image>
+    <loc>https://elzingacreativestudio.com/free-audit.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://elzingacreativestudio.com/wedding-photographer-grand-rapids.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/_DSC1170.avif</image:loc>
-      <image:title>Grand Rapids wedding photographer - ceremony coverage</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/_DSC1402.avif</image:loc>
-      <image:title>West Michigan wedding photography</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC02834.avif</image:loc>
-      <image:title>Natural documentary wedding photography Grand Rapids</image:title>
-    </image:image>
+    <loc>https://elzingacreativestudio.com/twilight.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://elzingacreativestudio.com/commercial-photography-grand-rapids.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC07049.avif</image:loc>
-      <image:title>Commercial photography Grand Rapids Michigan</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC08625.avif</image:loc>
-      <image:title>Brand photography Grand Rapids Michigan</image:title>
-    </image:image>
+    <loc>https://elzingacreativestudio.com/brand-day.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://elzingacreativestudio.com/social-media-marketing-grand-rapids.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <loc>https://elzingacreativestudio.com/case-studies.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://elzingacreativestudio.com/about.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <loc>https://elzingacreativestudio.com/referrals.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 2026-05-15 NEW: Pillar guide + neighborhood pages -->
+  <url>
+    <loc>https://elzingacreativestudio.com/grand-rapids-real-estate-photography-guide.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://elzingacreativestudio.com/blog.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-east-grand-rapids.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-ada.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-forest-hills.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-rockford.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Static pages -->
+  <url><loc>https://elzingacreativestudio.com/about.html</loc><lastmod>2026-04-30</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/blog.html</loc><lastmod>2026-05-15</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/faq.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/elzinga-pricing-calculator.html</loc><lastmod>2026-05-01</lastmod></url>
+
+  <!-- Blog posts -->
   <url>
     <loc>https://elzingacreativestudio.com/blog/how-to-prepare-home-for-real-estate-photos-grand-rapids.html</loc>
     <lastmod>2026-04-30</lastmod>
@@ -109,40 +122,19 @@
       <image:title>How to prepare your home for real estate photos Grand Rapids</image:title>
     </image:image>
   </url>
+  <url><loc>https://elzingacreativestudio.com/blog/best-locations-senior-portraits-grand-rapids.html</loc><lastmod>2026-04-30</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/blog/why-professional-photos-matter-grand-rapids-contractors.html</loc><lastmod>2026-04-30</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/blog/real-vs-virtual-twilight-grand-rapids.html</loc><lastmod>2026-05-09</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/blog/drone-laws-grand-rapids-real-estate-agents.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://elzingacreativestudio.com/blog/questions-to-ask-wedding-photographer-grand-rapids.html</loc><lastmod>2026-05-21</lastmod></url>
   <url>
-    <loc>https://elzingacreativestudio.com/blog/best-locations-senior-portraits-grand-rapids.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <loc>https://elzingacreativestudio.com/blog/how-much-does-real-estate-photography-cost-grand-rapids.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://elzingacreativestudio.com/blog/why-professional-photos-matter-grand-rapids-contractors.html</loc>
-    <lastmod>2026-04-30</lastmod>
-  </url>
-  <url>
-    <loc>https://elzingacreativestudio.com/blog/real-vs-virtual-twilight-grand-rapids.html</loc>
-    <lastmod>2026-05-09</lastmod>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC08881-HDR.jpg</image:loc>
-      <image:title>Real twilight real estate photography Grand Rapids exterior</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://elzingacreativestudio.com/blog/drone-laws-grand-rapids-real-estate-agents.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC08901-HDR.jpg</image:loc>
-      <image:title>Drone aerial photography Grand Rapids real estate</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://elzingacreativestudio.com/faq.html</loc>
-    <lastmod>2026-05-01</lastmod>
-  </url>
-  <url>
-    <loc>https://elzingacreativestudio.com/blog/questions-to-ask-wedding-photographer-grand-rapids.html</loc>
-    <lastmod>2026-05-21</lastmod>
-    <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC06923.avif</image:loc>
-      <image:title>Wedding photography Grand Rapids Michigan</image:title>
-    </image:image>
-  </url>
+
+  <!-- RSS feed reference -->
+  <url><loc>https://elzingacreativestudio.com/feed.xml</loc><lastmod>2026-05-15</lastmod></url>
+
 </urlset>

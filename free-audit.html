@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Listing Photo Audit for Grand Rapids Realtors | Elzinga Creative Studio</title>
+  <meta name="description" content="Send us a Zillow or MLS listing photo set. We send back a 5-minute video critique with 3 specific fixes that would boost showings — free, no commitment. Built for West Michigan real estate agents." />
+  <link rel="canonical" href="https://elzingacreativestudio.com/free-audit.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://elzingacreativestudio.com/free-audit.html#service",
+        "name": "Free Listing Photo Audit — Grand Rapids Real Estate Agents",
+        "description": "Submit a current or recent listing photo set (Zillow, MLS, or Pixieset). Receive a 5-minute video audit identifying 3 specific shots that would increase buyer engagement. Free, no obligation.",
+        "provider": { "@id": "https://elzingacreativestudio.com/#business" },
+        "areaServed": [
+          { "@type": "City", "name": "Grand Rapids" },
+          { "@type": "AdministrativeArea", "name": "Kent County" },
+          { "@type": "AdministrativeArea", "name": "Ottawa County" },
+          { "@type": "AdministrativeArea", "name": "West Michigan" }
+        ],
+        "offers": [
+          { "@type": "Offer", "name": "Free Listing Photo Audit", "price": "0", "priceCurrency": "USD", "description": "5-minute video audit of a real listing photo set, delivered in 48 hours." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the listing photo audit really free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. No card, no commitment, no recurring email pitch you can't unsubscribe from. We do this because most realtor listing photos in Grand Rapids have 2-3 easy fixes that would move their needles, and an audit costs us ~30 minutes." }
+          },
+          {
+            "@type": "Question",
+            "name": "What do I send you for the audit?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pixieset link, Zillow URL, MLS gallery link, or a Dropbox/Drive folder of the photos. Active or recent listings only — we audit shots that are or were live." }
+          },
+          {
+            "@type": "Question",
+            "name": "What do I get back?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A 5-minute video critique walking through your gallery: which 3 shots are pulling down engagement, what changed compositions or lighting would have fixed them, and what 1-2 missing shots would have moved the listing faster." }
+          },
+          {
+            "@type": "Question",
+            "name": "How fast do I get the audit back?",
+            "acceptedAnswer": { "@type": "Answer", "text": "48 hours from submission. We are a real West Michigan studio, not a content farm — first 5 audits a week, then waitlist." }
+          },
+          {
+            "@type": "Question",
+            "name": "Will you publish my listing or photos publicly?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Only with explicit permission. The form has a checkbox: yes/no on whether we can use the audit as a public case study with the listing address obscured. Default is no." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #111111; --white: #FFFFFF; --green: #2A5C3F;
+      --green-dk: #1e4430; --off-white: #F7F7F7;
+      --gray: #666666; --gray-lt: #AAAAAA; --border: #E0E0E0;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+    .section-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+    .section-title { font-size: clamp(36px, 5vw, 68px); font-weight: 800; line-height: 1.0; letter-spacing: -1.5px; }
+    .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; }
+    .btn-green:hover { background: var(--green-dk); }
+    .btn-black { display: inline-block; padding: 14px 36px; background: var(--black); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-black:hover { background: #333; }
+
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    header.scrolled { border-bottom-color: var(--border); }
+    .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
+    .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
+    .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
+    .nav-desktop { display: flex; align-items: center; gap: 4px; }
+    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-desktop a:hover { color: var(--black); }
+    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; }
+    .nav-book:hover { background: var(--green-dk) !important; }
+
+    #hero { background: var(--black); min-height: 100vh; padding-top: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-left: 60px; padding-right: 60px; padding-bottom: 60px; }
+    .hero-inner { max-width: 1100px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-left h1 { font-size: clamp(36px, 6vw, 72px); font-weight: 800; line-height: 0.95; letter-spacing: -2px; color: var(--white); margin-bottom: 24px; }
+    .hero-left h1 em { font-style: normal; color: var(--green); }
+    .hero-left .hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 28px; }
+    .hero-bullets { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+    .hero-bullets li { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+    .hero-bullets li::before { content: '→'; color: var(--green); flex-shrink: 0; font-weight: 800; }
+    .hero-meta { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; }
+
+    /* FORM CARD */
+    .form-card { background: var(--white); padding: 48px 40px; border: 2px solid var(--green); position: relative; }
+    .form-card::before { content: 'FREE'; position: absolute; top: -16px; left: 32px; background: var(--green); color: var(--white); font-size: 10px; font-weight: 800; letter-spacing: 3px; padding: 6px 14px; }
+    .form-card h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .form-card .form-sub { font-size: 13px; color: var(--gray); margin-bottom: 28px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); font-family: inherit; font-size: 14px; color: var(--black); transition: border-color 0.2s; background: var(--off-white); }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--green); background: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 88px; }
+    .form-check { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 24px; }
+    .form-check input { margin-top: 3px; }
+    .form-check label { font-size: 12px; color: var(--gray); line-height: 1.6; }
+    .form-submit { width: 100%; padding: 16px 24px; background: var(--green); color: var(--white); font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.2s; }
+    .form-submit:hover { background: var(--green-dk); }
+    .form-disclaimer { margin-top: 16px; font-size: 11px; color: var(--gray-lt); text-align: center; line-height: 1.5; }
+    .form-success { display: none; padding: 24px; background: rgba(42, 92, 63, 0.1); border: 1px solid var(--green); color: var(--green); font-size: 14px; line-height: 1.6; }
+    .form-success.show { display: block; }
+    .form-card.success-state .form-actual { display: none; }
+    .form-card.success-state .form-success { display: block; }
+
+    /* WHAT YOU GET */
+    #what { padding: 120px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
+    .what-header { margin-bottom: 64px; max-width: 800px; }
+    .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .what-card { background: var(--white); padding: 36px 32px; border: 1px solid var(--border); }
+    .what-num { font-size: 32px; font-weight: 800; color: var(--green); margin-bottom: 16px; line-height: 1; }
+    .what-title { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 10px; }
+    .what-desc { font-size: 13px; line-height: 1.8; color: var(--gray); }
+
+    /* WHO IT'S FOR */
+    #who { padding: 120px 60px; background: var(--white); border-top: 1px solid var(--border); }
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 56px; align-items: start; }
+    .who-card { padding: 36px; border: 1px solid var(--border); }
+    .who-card h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; }
+    .who-card ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .who-card li { display: flex; gap: 10px; font-size: 14px; line-height: 1.6; color: var(--gray); align-items: flex-start; }
+    .who-card li::before { color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .who-card.yes li::before { content: '✓'; }
+    .who-card.no li::before { content: '✗'; color: #c14a3a; }
+
+    /* FAQ */
+    #faq { padding: 120px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
+    .faq-header { margin-bottom: 60px; }
+    .faq-list { max-width: 800px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item summary { padding: 24px 0; font-size: 16px; font-weight: 800; color: var(--black); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--green); transition: transform 0.2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item p { padding: 0 0 24px; font-size: 15px; line-height: 1.85; color: var(--gray); }
+
+    /* CTA BAND */
+    #cta-band { background: var(--green); padding: 100px 60px; text-align: center; }
+    #cta-band .section-label { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .cta-title { font-size: clamp(36px, 5vw, 72px); font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--white); margin-bottom: 48px; }
+    .btn-white { display: inline-block; padding: 16px 48px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; border: none; cursor: pointer; }
+    .btn-white:hover { background: var(--off-white); }
+
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer > * { flex: 1; }
+    footer > *:nth-child(2) { text-align: center; }
+    footer > *:last-child { text-align: right; }
+    .footer-brand { display: flex; flex-direction: column; gap: 4px; }
+    .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
+    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 768px) {
+      header { padding: 16px 24px; }
+      #hero { padding: 100px 24px 48px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+      #what, #who, #faq, #cta-band { padding: 72px 24px; }
+      .what-grid { grid-template-columns: 1fr; gap: 24px; }
+      .who-grid { grid-template-columns: 1fr; gap: 36px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '26293188720377993');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<header id="site-header">
+  <a href="index.html" class="logo-link">
+    <span class="logo-ecs">ECS</span>
+    <span class="logo-full">Elzinga Creative Studio</span>
+  </a>
+  <nav class="nav-desktop">
+    <a href="preferred-photographer.html">For Realtors</a>
+    <a href="real-estate-photography-grand-rapids.html">Real Estate</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="#audit-form" class="nav-book">Get Free Audit</a>
+  </nav>
+</header>
+
+
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p style="color: rgba(255,255,255,0.4); font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 24px;">For Grand Rapids realtors</p>
+      <h1>Free <em>5-minute</em><br>listing photo audit.</h1>
+      <p class="hero-sub">Send us a real listing photo set — Zillow link, MLS gallery, or Pixieset. We send back a 5-minute video walking through what is killing your engagement and the 2-3 shots that would have moved the needle.</p>
+      <ul class="hero-bullets">
+        <li>5-minute video critique recorded by Kaden, not a template</li>
+        <li>3 specific shots flagged with what to change</li>
+        <li>1-2 missing shots that would have helped the listing</li>
+        <li>Delivered in 48 hours — first 5 each week, then waitlist</li>
+      </ul>
+      <p class="hero-meta">No card. No commitment. No "we'll add you to our newsletter."</p>
+    </div>
+
+    <div class="form-card" id="audit-form">
+      <div class="form-actual">
+        <h2>Submit a listing</h2>
+        <p class="form-sub">Active or recent listings only. We respond in 48 hours.</p>
+        <form id="audit-submission" onsubmit="submitAudit(event)">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone (text-friendly)</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="brokerage">Brokerage</label>
+            <input type="text" id="brokerage" name="brokerage" placeholder="Optional — but helps us calibrate" />
+          </div>
+          <div class="form-group">
+            <label for="listing-url">Listing URL (Zillow, MLS, Pixieset)</label>
+            <input type="url" id="listing-url" name="listing-url" placeholder="https://www.zillow.com/..." required />
+          </div>
+          <div class="form-group">
+            <label for="notes">Anything specific you want flagged?</label>
+            <textarea id="notes" name="notes" placeholder="Optional — e.g., 'twilight wasn't an option, what else?' or 'kitchen feels small in photos'"></textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="case-study" name="case-study" />
+            <label for="case-study">OK to use this as a public case study (listing address obscured). Default off — totally optional.</label>
+          </div>
+          <button type="submit" class="form-submit">Get my free audit →</button>
+          <p class="form-disclaimer">By submitting you agree we may text you the audit and any follow-up questions. Text STOP to unsubscribe anytime.</p>
+        </form>
+      </div>
+      <div class="form-success">
+        <strong>Got it.</strong> Your audit submission is in the queue. Watch for an email from kaden@elzingacreativestudio.com within 48 hours. If you put a phone number in, we will text you when the video is ready.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT YOU GET -->
+<section id="what">
+  <div class="what-header">
+    <span class="section-label">What you get back</span>
+    <h2 class="section-title">A 5-minute video. Three specific fixes.</h2>
+  </div>
+  <div class="what-grid">
+    <div class="what-card">
+      <span class="what-num">01</span>
+      <span class="what-title">Composition + lighting flags</span>
+      <p class="what-desc">Which 3 shots in your gallery are pulling down engagement — wrong angle, blown windows, dead kitchen lighting — and the exact change that would have fixed it.</p>
+    </div>
+    <div class="what-card">
+      <span class="what-num">02</span>
+      <span class="what-title">Missing shots</span>
+      <p class="what-desc">1-2 shots that should have been in your gallery and weren't. Backyard wide, twilight exterior, neighborhood drone — whatever would have moved buyers off Zillow and into showings.</p>
+    </div>
+    <div class="what-card">
+      <span class="what-num">03</span>
+      <span class="what-title">The "do this next time" list</span>
+      <p class="what-desc">A two-line shot list to send your next photographer (us or someone else). No upsell pressure — just a checklist that makes your next listing better.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHO IT'S FOR -->
+<section id="who">
+  <span class="section-label">Who this is for</span>
+  <h2 class="section-title">Real listings. Real agents. Real critique.</h2>
+  <div class="who-grid">
+    <div class="who-card yes">
+      <h3>Send a listing if</h3>
+      <ul>
+        <li>You are a licensed real estate agent in West Michigan</li>
+        <li>The listing is currently active or closed in the last 90 days</li>
+        <li>You have a Zillow / MLS / Pixieset / Dropbox link to the full gallery</li>
+        <li>You want a working-photographer's honest read, not generic feedback</li>
+        <li>You are open to a follow-up text about your next listing</li>
+      </ul>
+    </div>
+    <div class="who-card no">
+      <h3>This isn't for you if</h3>
+      <ul>
+        <li>You shoot your own listings on a phone (the audit assumes a photographer's work)</li>
+        <li>You want a critique of staging only — we focus on photo decisions</li>
+        <li>You are a photographer asking us to audit your portfolio (we don't critique peers)</li>
+        <li>You are outside West Michigan and unlikely to ever shoot with us</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-header">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Free Listing Photo Audit FAQ.</h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>Is the listing photo audit really free?</summary>
+      <p>Yes. No card, no commitment, no recurring email pitch you can't unsubscribe from. We do this because most realtor listing photos in Grand Rapids have 2-3 easy fixes that would move their numbers, and an audit costs us ~30 minutes. If the audit is useful, you book your next listing with us. If it's not, you got a free critique.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What do I send you for the audit?</summary>
+      <p>Pixieset link, Zillow URL, MLS gallery link, or a Dropbox/Drive folder of the photos. Active or recent listings only — we audit shots that are or were live.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What do I get back?</summary>
+      <p>A 5-minute video critique walking through your gallery: which 3 shots are pulling down engagement, what changed compositions or lighting would have fixed them, and what 1-2 missing shots would have moved the listing faster.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How fast do I get the audit back?</summary>
+      <p>48 hours from submission. We are a real West Michigan studio, not a content farm — first 5 audits each week, then waitlist.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Will you publish my listing or photos publicly?</summary>
+      <p>Only with explicit permission. The form has a checkbox: yes/no on whether we can use the audit as a public case study with the listing address obscured. Default is off.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What's the catch?</summary>
+      <p>The catch is honest: we do this as our top-funnel marketing. If the audit lands, you remember us next time you have a $300K+ listing where the photos matter. If it doesn't, you walk away with a free critique. We track captures, not commitments.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you audit listings outside West Michigan?</summary>
+      <p>We focus on Kent and Ottawa counties. If you are a Grand Rapids agent listing in a neighboring market, send it — we will probably do it. National listings, we usually decline because we cannot follow up with a real shoot.</p>
+    </details>
+  </div>
+</section>
+
+
+<!-- CTA BAND -->
+<section id="cta-band">
+  <span class="section-label">Free, no commitment</span>
+  <h2 class="cta-title">Send a listing.<br>Get the audit.</h2>
+  <a href="#audit-form" class="btn-white">Submit a Listing</a>
+</section>
+
+
+<footer>
+  <div class="footer-brand">
+    <span class="footer-ecs">ECS</span>
+    <span class="footer-tag">Photography · Video · Marketing</span>
+  </div>
+  <a href="index.html" style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;">← Back to Main Site</a>
+  <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a></p>
+</footer>
+
+<script>
+  const hdr = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Submission handler — emails Kaden via mailto fallback OR sends to webhook
+  // TODO: wire to Notion webhook via Cowork in Phase 3
+  function submitAudit(e) {
+    e.preventDefault();
+    const card = document.querySelector('.form-card');
+    const data = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      brokerage: document.getElementById('brokerage').value,
+      url: document.getElementById('listing-url').value,
+      notes: document.getElementById('notes').value,
+      caseStudy: document.getElementById('case-study').checked,
+      ts: new Date().toISOString()
+    };
+    // Phase 1 fallback: mailto. Cowork wires Notion webhook in Phase 3.
+    const subject = encodeURIComponent(`[FREE AUDIT] ${data.name} — ${data.brokerage || 'no brokerage'}`);
+    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nBrokerage: ${data.brokerage}\nListing URL: ${data.url}\nNotes: ${data.notes}\nCase Study OK: ${data.caseStudy ? 'yes' : 'no'}\nTimestamp: ${data.ts}`);
+    window.location.href = `mailto:kaden@elzingacreativestudio.com?subject=${subject}&body=${body}`;
+
+    // Track in Meta Pixel
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', { content_name: 'Free Audit Submission', content_category: 'lead-magnet' });
+    }
+    // Show success state
+    card.classList.add('success-state');
+  }
+</script>
+</body>
+</html>
