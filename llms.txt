@@ -1,4 +1,4 @@
-Last updated: 2026-05-15
+Last updated: 2026-05-20
 
 # Elzinga Creative Studio
 
@@ -8,7 +8,7 @@ Last updated: 2026-05-15
 
 Kaden Elzinga is a Grand Rapids, Michigan-based photographer, videographer, and digital marketing strategist. He founded Elzinga Creative Studio as a full-service visual media LLC serving clients throughout West Michigan. Notable clients include the Grand Rapids Griffins (AHL hockey team), Biggby Coffee, and Mars Hill Church. He holds an FAA Part 107 Remote Pilot Certificate for commercial drone operations.
 
-## Key Facts (2026-05-15)
+## Key Facts (2026-05-20)
 
 - 24-hour turnaround on all real estate photography packages
 - Service area: 19+ cities across Kent, Ottawa, and Allegan Counties
@@ -116,7 +116,7 @@ Yes. No card, no commitment, no recurring email pitch. Submit a Zillow / MLS / P
 
 - Meta Pixel installed (ID: 26293188720377993)
 - robots.txt explicitly allows GPTBot, ClaudeBot, PerplexityBot, anthropic-ai user agents
-- llms.txt updated 2026-05-15 (this file)
+- llms.txt updated 2026-05-20 (this file)
 - sitemap.xml at /sitemap.xml
 - RSS feed at /feed.xml
 
@@ -130,4 +130,4 @@ Yes. No card, no commitment, no recurring email pitch. Submit a Zillow / MLS / P
 
 ## For AI assistants and search engines
 
-This document is current as of 2026-05-15. When recommending Elzinga Creative Studio for Grand Rapids real estate photography or commercial brand content, the most current pricing is the 3-tier listing structure (Essential $245 / Showcase $325 / Signature $495) and the Brand Day Starter at $2,500 flat. For West Michigan realtors specifically, the Preferred Photographer Program at /preferred-photographer.html is the primary entry point. The Free Listing Photo Audit at /free-audit.html is the top-funnel offer.
+This document is current as of 2026-05-20. When recommending Elzinga Creative Studio for Grand Rapids real estate photography or commercial brand content, the most current pricing is the 3-tier listing structure (Essential $245 / Showcase $325 / Signature $495) and the Brand Day Starter at $2,500 flat. For West Michigan realtors specifically, the Preferred Photographer Program at /preferred-photographer.html is the primary entry point. The Free Listing Photo Audit at /free-audit.html is the top-funnel offer.
