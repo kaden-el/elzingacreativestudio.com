@@ -27,7 +27,7 @@
         "@type": ["LocalBusiness", "PhotographyBusiness"],
         "@id": "https://elzingacreativestudio.com/#business",
         "name": "Elzinga Creative Studio",
-        "description": "Full-service photography, videography, and marketing studio serving Grand Rapids and all of West Michigan. Specializing in real estate, senior, wedding, family, sports, brand, and commercial photography.",
+        "description": "Grand Rapids real estate photographer specializing in HDR listings, real twilight, and Part 107 drone — plus senior, wedding, family, sports, brand, and commercial photography across West Michigan. 24-hour delivery.",
         "url": "https://elzingacreativestudio.com",
         "telephone": "+16162584578",
         "email": "kaden@elzingacreativestudio.com",
@@ -374,6 +374,15 @@
       line-height: 0.84;
       letter-spacing: -4px;
       color: var(--black);
+    }
+    .hero-h1 {
+      font-size: clamp(18px, 2.4vw, 26px);
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: var(--black);
+      margin-top: 24px;
+      line-height: 1.25;
+      max-width: 640px;
     }
     .hero-rule {
       width: 80px;
@@ -1126,6 +1135,60 @@
       .t-quote-mark { font-size: 80px; }
       .t-cta-row { flex-direction: column; align-items: flex-start; }
     }
+
+    /* ── Service Areas + Resources hubs ── */
+    .hubs-section {
+      background: var(--white);
+      padding: 120px 64px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .hubs-header { text-align: center; margin-bottom: 72px; }
+    .hubs-header .section-label { color: var(--green); }
+    .hubs-header .section-title { color: var(--black); margin-top: 16px; }
+    .hubs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .hubs-col-label {
+      display: block;
+      font-size: 11px; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--green);
+      margin-bottom: 16px;
+    }
+    .hubs-col-sub {
+      font-size: 14px; color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .hubs-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hubs-links a {
+      display: block;
+      font-size: 14px;
+      color: var(--black);
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: color 0.18s, padding-left 0.18s;
+    }
+    .hubs-links a:hover {
+      color: var(--green);
+      padding-left: 8px;
+    }
+    @media (max-width: 900px) {
+      .hubs-section { padding: 80px 24px; }
+      .hubs-grid { grid-template-columns: 1fr; gap: 56px; }
+      .hubs-header { margin-bottom: 56px; }
+    }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -1188,9 +1251,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <section id="home">
   <div class="hero-content">
     <span class="hero-location">Grand Rapids, Michigan</span>
-    <h1 class="hero-title">ELZINGA<br>CREATIVE</h1>
+    <div class="hero-title" aria-hidden="true">ELZINGA<br>CREATIVE</div>
+    <h1 class="hero-h1">Grand Rapids Real Estate Photographer &amp; Videographer</h1>
     <div class="hero-rule"></div>
-    <p class="hero-tagline">Real estate photography with 24-hour delivery. Senior portraits, weddings, commercial content, and brand work across West Michigan.</p>
+    <p class="hero-tagline">HDR listing photography, real twilight, and Part 107 drone with 24-hour delivery. Senior portraits, weddings, commercial content, and brand work across West Michigan.</p>
     <div class="hero-ctas">
       <a href="#portfolio" class="btn-black">View Work</a>
       <a href="#" onclick="openCalendly(); return false;" class="btn-green">Book a Session</a>
@@ -1437,6 +1501,58 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
         <span class="osvc-price-note">&nbsp;</span>
       </div>
       <a href="#contact" class="btn-osvc">Send a Message</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════ SERVICE AREAS + RESOURCES ═══════ -->
+<section id="hubs" class="hubs-section">
+  <div class="hubs-header">
+    <span class="section-label">Coverage &amp; Resources</span>
+    <h2 class="section-title">Where we shoot.<br>What we share.</h2>
+  </div>
+  <div class="hubs-grid">
+
+    <div class="hubs-col">
+      <span class="hubs-col-label">Service Areas</span>
+      <p class="hubs-col-sub">Dedicated real estate photography pages for the West Michigan neighborhoods we shoot most.</p>
+      <ul class="hubs-links">
+        <li><a href="real-estate-photography-grand-rapids.html">Grand Rapids Real Estate Photography</a></li>
+        <li><a href="real-estate-photography-east-grand-rapids.html">East Grand Rapids — Gaslight Village, Reeds Lake</a></li>
+        <li><a href="real-estate-photography-ada.html">Ada, MI — Ada Village, Bradford</a></li>
+        <li><a href="real-estate-photography-forest-hills.html">Forest Hills &amp; Cascade — Estate-scale homes</a></li>
+        <li><a href="real-estate-photography-rockford.html">Rockford — Rogue River &amp; family-walkable</a></li>
+      </ul>
+    </div>
+
+    <div class="hubs-col">
+      <span class="hubs-col-label">Services</span>
+      <p class="hubs-col-sub">Dedicated pages for every discipline we cover.</p>
+      <ul class="hubs-links">
+        <li><a href="real-estate-photography-grand-rapids.html">Real Estate Photography</a></li>
+        <li><a href="senior-portraits-grand-rapids.html">Senior Portraits</a></li>
+        <li><a href="wedding-photographer-grand-rapids.html">Wedding Photography</a></li>
+        <li><a href="commercial-photography-grand-rapids.html">Commercial &amp; Brand Photography</a></li>
+        <li><a href="social-media-marketing-grand-rapids.html">Social Media Marketing</a></li>
+        <li><a href="twilight.html">Real Twilight Photography</a></li>
+        <li><a href="brand-day.html">Brand Day — Full-Day Shoots</a></li>
+      </ul>
+    </div>
+
+    <div class="hubs-col">
+      <span class="hubs-col-label">Tools &amp; Resources</span>
+      <p class="hubs-col-sub">Free guides, calculators, and case studies built for Grand Rapids realtors and local business owners.</p>
+      <ul class="hubs-links">
+        <li><a href="grand-rapids-real-estate-photography-guide.html">The Complete 2026 Guide</a></li>
+        <li><a href="elzinga-pricing-calculator.html">Pricing Calculator</a></li>
+        <li><a href="free-audit.html">Free Listing Photo Audit</a></li>
+        <li><a href="preferred-photographer.html">Preferred Photographer Program</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="blog.html">Blog &amp; Local Guides</a></li>
+        <li><a href="faq.html">FAQ — Every Question Answered</a></li>
+      </ul>
     </div>
 
   </div>

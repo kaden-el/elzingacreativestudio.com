@@ -83,6 +83,12 @@
     .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
     .footer-tag { font-size: 7.5px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
     .footer-copy { font-size: 10px; color: rgba(255,255,255,0.2); }
+    .work-gallery { max-width: 880px; margin: 0 auto; padding: 0 60px 80px; }
+    .work-gallery-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: block; }
+    .work-gallery-title { font-size: clamp(24px, 4vw, 36px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: var(--black); margin-bottom: 16px; }
+    .work-gallery-sub { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 32px; max-width: 720px; }
+    .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .work-grid img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
     @media (max-width: 768px) {
       header { padding: 16px 24px; }
       #hero, article, #cta-band { padding-left: 24px; padding-right: 24px; }
@@ -90,6 +96,8 @@
       article { padding-top: 56px; padding-bottom: 56px; }
       .pricing-strip .tiers { gap: 16px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+      .work-gallery { padding: 0 24px 56px; }
+      .work-grid { grid-template-columns: 1fr; }
     }
   </style>
 <script>
@@ -160,6 +168,18 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
   </ul>
   <p>Or text Kaden directly at (616) 258-4578.</p>
 </article>
+
+<section class="work-gallery">
+  <span class="work-gallery-label">Sample Work — East Grand Rapids</span>
+  <h2 class="work-gallery-title">HDR &amp; real twilight from East GR listings.</h2>
+  <p class="work-gallery-sub">A few frames from the East GR core — historic millwork detail, even exposure on the Tudor brick and limestone, and the kind of interior light that holds up on a tablet at 9pm. Reeds Lake-adjacent properties get a specific waterfront drone composition that ground-level shots can't fake.</p>
+  <div class="work-grid">
+    <img src="images/DSC08881-HDR.jpg" alt="HDR interior photography for an East Grand Rapids historic home near Gaslight Village" width="1200" height="800" loading="lazy">
+    <img src="images/DSC08891-HDR.jpg" alt="Bright HDR kitchen photo for an East GR Reeds Lake-adjacent listing" width="1200" height="800" loading="lazy">
+    <img src="images/DSC08901-HDR.jpg" alt="HDR living room with restored millwork — East Grand Rapids Tudor revival" width="1200" height="800" loading="lazy">
+    <img src="images/_DSC8528-HDR.jpg" alt="Real twilight exterior photography for an East Grand Rapids historic listing" width="1200" height="800" loading="lazy">
+  </div>
+</section>
 
 <section id="cta-band">
   <h2 class="cta-title">List in East GR? Make us your photographer.</h2>
