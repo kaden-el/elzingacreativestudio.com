@@ -79,8 +79,8 @@
 
   /* headshot — sharp square, matching the brand's photo treatment */
   .avatar-wrap{
-    width:120px;height:120px;
-    margin:0 auto 22px;
+    width:132px;height:132px;
+    margin:0 auto 24px;
     position:relative;
   }
   .avatar{
@@ -110,37 +110,12 @@
 
   .name{
     font-weight:800;
-    font-size:clamp(2rem,8vw,2.45rem);
-    line-height:.98;
-    letter-spacing:-.025em;
+    font-size:clamp(2.2rem,9vw,2.7rem);
+    line-height:.96;
+    letter-spacing:-.03em;
     color:var(--black);
-    margin-bottom:12px;
+    margin-bottom:2px;
   }
-  /* green serif accent line — the brand's signature voice */
-  .tagline{
-    font-family:Georgia,"Times New Roman",serif;
-    font-style:italic;
-    font-size:17px;
-    color:var(--green);
-    margin-bottom:14px;
-  }
-  .role{
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--gray);
-  }
-  .location{
-    display:inline-flex;align-items:center;gap:6px;
-    margin-top:13px;
-    font-size:12px;
-    font-weight:500;
-    letter-spacing:.04em;
-    color:var(--gray-lt);
-    text-transform:uppercase;
-  }
-  .location svg{width:12px;height:12px;color:var(--green)}
 
   /* primary CTA — brand .btn-green DNA: green, square, uppercase, tracked */
   .save{
@@ -183,10 +158,11 @@
   }
   .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--border)}
 
-  .actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px}
   .action{
     display:flex;align-items:center;gap:12px;
-    padding:13px 14px;
+    min-width:0;
+    padding:14px 15px;
     border:1px solid var(--border);
     background:var(--white);
     color:var(--ink);
@@ -197,7 +173,16 @@
   }
   .action:hover{border-color:var(--green);background:var(--off-white)}
   .action:active{transform:translateY(1px)}
-  .action.full{grid-column:1 / -1}
+  /* full-width rows (long values) get a chevron affordance */
+  .action.full{grid-column:1 / -1;position:relative;padding-right:36px}
+  .action.full::after{
+    content:"";position:absolute;right:16px;top:50%;
+    width:7px;height:7px;
+    border-right:2px solid var(--gray-lt);border-top:2px solid var(--gray-lt);
+    transform:translateY(-50%) rotate(45deg);
+    transition:border-color .18s;
+  }
+  .action.full:hover::after{border-color:var(--green)}
   .ico{
     width:34px;height:34px;flex:none;
     display:flex;align-items:center;justify-content:center;
@@ -250,25 +235,18 @@
     </div>
 
     <h1 class="name reveal" id="name" style="animation-delay:.18s">Kaden Elzinga</h1>
-    <p class="tagline reveal" style="animation-delay:.24s">Three disciplines, one studio.</p>
-    <p class="role reveal" id="title" style="animation-delay:.3s"></p>
 
-    <span class="location reveal" id="location" style="animation-delay:.36s">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span id="location-text"></span>
-    </span>
-
-    <button class="save reveal" id="save" style="animation-delay:.42s">
+    <button class="save reveal" id="save" style="animation-delay:.28s">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
       <span id="save-label">Save my contact</span>
     </button>
-    <p class="save-hint reveal" style="animation-delay:.48s">Adds me to your phone — photo and all.</p>
+    <p class="save-hint reveal" style="animation-delay:.34s">Adds me to your phone — photo and all.</p>
 
-    <div class="divider reveal" style="animation-delay:.54s">or reach me</div>
+    <div class="divider reveal" style="animation-delay:.4s">or reach me</div>
 
-    <nav class="actions reveal" id="actions" style="animation-delay:.6s"></nav>
+    <nav class="actions reveal" id="actions" style="animation-delay:.46s"></nav>
 
-    <div class="footer reveal" style="animation-delay:.68s">
+    <div class="footer reveal" style="animation-delay:.54s">
       <button class="share" id="share" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
         Share my card
@@ -308,9 +286,8 @@ const igUrl = CARD.instagram ? `https://instagram.com/${CARD.instagram.replace(/
 const siteLabel = CARD.website.replace(/^https?:\/\//,"").replace(/\/$/,"");
 
 $("name").textContent = fullName;
-$("title").textContent = CARD.title;
-const locParts = [CARD.city, CARD.region].filter(Boolean).join(", ");
-if (locParts) $("location-text").textContent = locParts; else $("location").style.display = "none";
+/* note: title + city/region are intentionally not shown on the card,
+   but they're still written into the saved vCard below. */
 
 /* headshot or monogram fallback */
 const avatar = $("avatar");
@@ -342,12 +319,12 @@ const ICONS = {
 };
 const actions = [];
 if (CARD.phone){
-  actions.push({icon:"call", label:"Call", sub:prettyPhone(CARD.phone), href:`tel:${CARD.phone}`});
-  actions.push({icon:"text", label:"Text", sub:"Send a message",        href:`sms:${CARD.phone}`});
+  actions.push({icon:"call", label:"Call", sub:prettyPhone(CARD.phone), href:`tel:${CARD.phone}`, full:true});
+  actions.push({icon:"text", label:"Text", sub:"Send a message",        href:`sms:${CARD.phone}`, full:true});
 }
-if (CARD.email)   actions.push({icon:"email", label:"Email", sub:CARD.email, href:`mailto:${CARD.email}`});
-if (igUrl)        actions.push({icon:"insta", label:"Instagram", sub:`@${CARD.instagram.replace(/^@/,"")}`, href:igUrl});
-if (CARD.website) actions.push({icon:"web", label:"Website", sub:siteLabel, href:CARD.website, full:(actions.length%2===0)});
+if (CARD.email)   actions.push({icon:"email", label:"Email", sub:CARD.email, href:`mailto:${CARD.email}`, full:true});
+if (igUrl)        actions.push({icon:"insta", label:"Instagram", sub:`@${CARD.instagram.replace(/^@/,"")}`, href:igUrl, full:true});
+if (CARD.website) actions.push({icon:"web", label:"Website", sub:siteLabel, href:CARD.website, full:true});
 
 const nav = $("actions");
 actions.forEach(a=>{
