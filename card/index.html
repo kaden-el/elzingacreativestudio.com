@@ -193,20 +193,48 @@
   .action .meta{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25;min-width:0;font-size:14px;font-weight:700}
   .action .meta small{font-size:11px;font-weight:500;color:var(--gray);letter-spacing:.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;text-transform:none}
 
-  .footer{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:14px}
-  .share{
-    background:none;border:none;cursor:pointer;
+  .footer{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:16px}
+  .footer-actions{display:flex;gap:9px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .ghost{
+    background:none;border:1px solid var(--border);cursor:pointer;
     font-family:inherit;font-size:11px;font-weight:700;
-    letter-spacing:.14em;text-transform:uppercase;
+    letter-spacing:.13em;text-transform:uppercase;
     color:var(--green);
     display:inline-flex;align-items:center;gap:8px;
-    padding:6px 4px;
-    transition:color .2s;
+    padding:11px 16px;
+    transition:border-color .18s,background .18s;
+    -webkit-tap-highlight-color:transparent;
   }
-  .share:hover{color:var(--green-dk)}
-  .share svg{width:14px;height:14px}
+  .ghost:hover{border-color:var(--green);background:var(--off-white)}
+  .ghost svg{width:14px;height:14px}
   .sig{font-size:11px;color:var(--gray-lt);letter-spacing:.04em}
   .sig b{color:var(--green);font-weight:700}
+
+  /* QR overlay */
+  .qr-modal{
+    position:fixed;inset:0;z-index:40;
+    display:flex;align-items:center;justify-content:center;padding:24px;
+    background:rgba(17,17,17,.55);
+    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+    opacity:0;animation:fade .25s var(--ease) forwards;
+  }
+  .qr-modal[hidden]{display:none}  /* author display:flex would otherwise override [hidden] */
+  @keyframes fade{to{opacity:1}}
+  .qr-sheet{
+    position:relative;background:var(--white);
+    border:1px solid var(--border);border-top:4px solid var(--green);
+    padding:32px 28px 24px;text-align:center;width:100%;max-width:300px;
+    box-shadow:0 30px 70px -30px rgba(17,17,17,.55);
+  }
+  .qr-close{
+    position:absolute;top:6px;right:12px;
+    background:none;border:none;cursor:pointer;
+    font-size:26px;line-height:1;color:var(--gray-lt);
+  }
+  .qr-close:hover{color:var(--ink)}
+  .qr-kicker{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:18px}
+  .qr-img{width:218px;height:218px;display:block;margin:0 auto;image-rendering:pixelated}
+  .qr-sub{margin-top:16px;font-size:12px;color:var(--gray-lt);letter-spacing:.03em}
 
   .toast{
     position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
@@ -247,13 +275,28 @@
     <nav class="actions reveal" id="actions" style="animation-delay:.46s"></nav>
 
     <div class="footer reveal" style="animation-delay:.54s">
-      <button class="share" id="share" hidden>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
-        Share my card
-      </button>
+      <div class="footer-actions">
+        <button class="ghost" id="show-qr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3M21 14v3M14 21h3"/></svg>
+          Show QR
+        </button>
+        <button class="ghost" id="share" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+          Share
+        </button>
+      </div>
       <p class="sig">Tap <b>save</b> so you don't lose me.</p>
     </div>
   </main>
+
+  <div class="qr-modal" id="qr-modal" hidden>
+    <div class="qr-sheet">
+      <button class="qr-close" id="qr-close" aria-label="Close">&times;</button>
+      <p class="qr-kicker">Scan to open my card</p>
+      <img class="qr-img" src="qr.png" alt="QR code linking to elzingacreativestudio.com/card" />
+      <p class="qr-sub">elzingacreativestudio.com/card</p>
+    </div>
+  </div>
 
   <div class="toast" id="toast"></div>
 
@@ -404,6 +447,14 @@ if (navigator.share){
     navigator.share({ title: fullName, text: `${fullName} — ${CARD.org}`, url: location.href }).catch(()=>{});
   });
 }
+
+/* QR overlay — let someone scan your card in person */
+const qrModal = $("qr-modal");
+const closeQR = ()=> qrModal.hidden = true;
+$("show-qr").addEventListener("click", ()=> qrModal.hidden = false);
+$("qr-close").addEventListener("click", closeQR);
+qrModal.addEventListener("click", (e)=>{ if (e.target === qrModal) closeQR(); });
+document.addEventListener("keydown", (e)=>{ if (e.key === "Escape") closeQR(); });
 </script>
 </body>
 </html>
