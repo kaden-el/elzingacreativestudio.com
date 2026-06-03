@@ -180,6 +180,19 @@
     .addon-desc { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px; }
     .btn-addon { display: inline-block; padding: 14px 36px; border: 1.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
     .btn-addon:hover { border-color: var(--white); color: var(--white); }
+    .pricing-reassure { font-size: 13px; color: var(--gray); margin: 22px 0 0; line-height: 1.7; }
+    .pricing-reassure a { color: var(--green); font-weight: 800; text-decoration: none; }
+    .pricing-reassure a:hover { text-decoration: underline; }
+    .alc { margin-top: 64px; }
+    .alc-header { margin-bottom: 32px; }
+    .alc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1.5px solid var(--border); }
+    .alc-item { padding: 28px 32px; border-right: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border); background: var(--white); }
+    .alc-item:nth-child(2n) { border-right: none; }
+    .alc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 8px; }
+    .alc-name { font-size: 16px; font-weight: 800; letter-spacing: -0.3px; color: var(--black); }
+    .alc-price { font-size: 13px; font-weight: 800; letter-spacing: 0.5px; color: var(--green); white-space: nowrap; text-align: right; }
+    .alc-desc { font-size: 12px; line-height: 1.7; color: var(--gray); }
+    .alc-note { font-size: 12px; color: var(--gray-lt); margin-top: 20px; line-height: 1.7; }
 
     /* COMPARISON */
     #compare { padding: 120px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
@@ -261,6 +274,9 @@
       .p-card { border-right: none; border-bottom: 1.5px solid var(--border); }
       .p-card:last-child { border-bottom: none; }
       .addon-strip { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+      .alc-grid { grid-template-columns: 1fr; }
+      .alc-item { border-right: none; }
+      .alc-item:last-child { border-bottom: none; }
       .compare-row { grid-template-columns: 1.5fr 1fr 1fr; }
       .compare-cell { padding: 14px 12px; font-size: 12px; }
       .why-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -428,6 +444,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       <a href="#" onclick="openCalendly(); return false;" class="btn-book">Book Signature</a>
     </div>
   </div>
+  <p class="pricing-reassure">Not sure which tier? Text Kaden at <a href="sms:+16162584578">(616) 258-4578</a>. He'll tell you straight, no pressure.</p>
   <div class="addon-strip">
     <div class="addon-left">
       <span class="addon-kicker">Add-On</span>
@@ -435,6 +452,59 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       <span class="addon-desc">Add a separate blue-hour shoot to Essential. Buyers respond differently to real twilight vs virtual edits.</span>
     </div>
     <a href="twilight.html" class="btn-addon">See Twilight Details →</a>
+  </div>
+
+  <div class="alc">
+    <div class="alc-header">
+      <span class="section-label">À la carte</span>
+      <h2 class="section-title">Add-ons, by the piece.</h2>
+    </div>
+    <p class="pricing-sub">Build any tier up to fit the listing. Everything here is bookable on its own, and several items are already baked into Showcase and Signature.</p>
+    <div class="alc-grid">
+      <div class="alc-item">
+        <div class="alc-row">
+          <span class="alc-name">Real twilight</span>
+          <span class="alc-price">$150</span>
+        </div>
+        <p class="alc-desc">A real blue-hour shoot, not a virtual edit. Included in Showcase &amp; Signature.</p>
+      </div>
+      <div class="alc-item">
+        <div class="alc-row">
+          <span class="alc-name">3D virtual tour (Zillow 3D)</span>
+          <span class="alc-price">$100</span>
+        </div>
+        <p class="alc-desc">Walkable 3D tour for the listing. Premium Matterport tours run $250 to $295, custom-quoted.</p>
+      </div>
+      <div class="alc-item">
+        <div class="alc-row">
+          <span class="alc-name">On-camera agent reels</span>
+          <span class="alc-price">$150 each / $300 for two</span>
+        </div>
+        <p class="alc-desc">You talk to camera in and around the listing. Personal-brand content that puts your face on the property.</p>
+      </div>
+      <div class="alc-item">
+        <div class="alc-row">
+          <span class="alc-name">Part 107 drone aerials</span>
+          <span class="alc-price">$125</span>
+        </div>
+        <p class="alc-desc">Licensed drone exteriors and lot context. Included in Signature.</p>
+      </div>
+      <div class="alc-item">
+        <div class="alc-row">
+          <span class="alc-name">2D floor plan (CubiCasa)</span>
+          <span class="alc-price">$75 on Essential</span>
+        </div>
+        <p class="alc-desc">Clean measured floor plan. Included in Showcase &amp; Signature, $75 standalone on Essential.</p>
+      </div>
+      <div class="alc-item">
+        <div class="alc-row">
+          <span class="alc-name">Cinematic listing walkthrough video</span>
+          <span class="alc-price">Custom quote</span>
+        </div>
+        <p class="alc-desc">Full edited walkthrough film for premium and waterfront listings. Quoted to the property.</p>
+      </div>
+    </div>
+    <p class="alc-note"><strong>Travel:</strong> free within 25 miles of Grand Rapids. Beyond that, 72.5¢ per mile (the 2026 IRS rate) or a flat tier of $50, $75, or $100 by distance band, whichever is simpler for the job.</p>
   </div>
 </section>
 

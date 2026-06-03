@@ -380,31 +380,31 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       <div class="addon-left">
         <div class="addon-check"><div class="addon-check-inner"></div></div>
         <div>
-          <div class="addon-name">Drone photography</div>
-          <div class="addon-desc">Exterior aerials, neighborhood context</div>
+          <div class="addon-name">Part 107 drone aerials</div>
+          <div class="addon-desc">Licensed exterior aerials, neighborhood context</div>
         </div>
       </div>
-      <div class="addon-price">+$165</div>
+      <div class="addon-price">+$125</div>
     </div>
     <div class="addon-row" data-addon="drone_video">
       <div class="addon-left">
         <div class="addon-check"><div class="addon-check-inner"></div></div>
         <div>
-          <div class="addon-name">Drone video</div>
-          <div class="addon-desc">Cinematic flyover, edited</div>
+          <div class="addon-name">Cinematic listing video</div>
+          <div class="addon-desc">Edited walkthrough / flyover — custom-quoted</div>
         </div>
       </div>
-      <div class="addon-price">+$225</div>
+      <div class="addon-price">from $250</div>
     </div>
     <div class="addon-row" data-addon="tour_3d">
       <div class="addon-left">
         <div class="addon-check"><div class="addon-check-inner"></div></div>
         <div>
-          <div class="addon-name">3D walkthrough</div>
-          <div class="addon-desc">Interactive tour, Street View-style</div>
+          <div class="addon-name">3D virtual tour</div>
+          <div class="addon-desc">Interactive Zillow 3D tour</div>
         </div>
       </div>
-      <div class="addon-price">+$200</div>
+      <div class="addon-price">+$100</div>
     </div>
   </div>
 </div>
@@ -414,18 +414,18 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <div class="total-bar">
   <div class="total-inner">
     <div class="total-label">Quoted total</div>
-    <div class="total-amount" id="total-display">$235</div>
+    <div class="total-amount" id="total-display">$305</div>
   </div>
   <div class="breakdown-list" id="breakdown"></div>
   <button class="copy-btn" id="copy-btn">Copy quote summary</button>
 </div>
 
 <script>
-const FLOOR = { residential: 175, luxury: 275, commercial: 250, rental: 150 };
+const FLOOR = { residential: 245, luxury: 345, commercial: 295, rental: 195 };
 const RATE = { residential: 0.030, luxury: 0.048, commercial: 0.040, rental: 0.022 };
 const TYPE_LABEL = { residential: 'Residential', luxury: 'Luxury / high-end', commercial: 'Commercial', rental: 'Rental / Airbnb' };
-const ADDON_PRICES = { drone_photo: 165, drone_video: 225, tour_3d: 200 };
-const ADDON_LABELS = { drone_photo: 'Drone photography', drone_video: 'Drone video', tour_3d: '3D walkthrough' };
+const ADDON_PRICES = { drone_photo: 125, drone_video: 250, tour_3d: 100 };
+const ADDON_LABELS = { drone_photo: 'Part 107 drone aerials', drone_video: 'Cinematic listing video (from)', tour_3d: '3D virtual tour' };
 
 let sqft = 2000;
 let propType = 'residential';
