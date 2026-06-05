@@ -112,6 +112,47 @@
     .footer-ecs { font-weight: 800; font-size: 18px; }
     .footer-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
     .footer-copy { font-size: 11px; color: rgba(255,255,255,0.35); width: 100%; }
+
+    /* Hero quick-path buttons */
+    .hero-paths { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-path-btn { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 12px 20px; background: var(--green); color: var(--white); text-decoration: none; transition: background 0.2s; }
+    .hero-path-btn.alt { background: var(--black); }
+    .hero-path-btn:hover { background: var(--green-dk); }
+    .hero-path-btn.alt:hover { background: #333; }
+
+    /* Trust bar */
+    #trust-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 16px 6vw; }
+    .trust-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: center; }
+    .trust-item { font-size: 11px; letter-spacing: 0.5px; color: var(--gray); text-transform: uppercase; font-weight: 500; }
+    .trust-item strong { color: var(--green); font-weight: 800; }
+
+    /* Privacy note + next steps */
+    .form-privacy { font-size: 12px; color: var(--gray-lt); margin-top: 12px; line-height: 1.5; }
+    .next-steps { margin-top: 28px; padding: 24px 26px; background: var(--off-white); border-left: 3px solid var(--green); }
+    .next-steps h3 { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+    .next-steps ol { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 10px; }
+    .next-steps li { font-size: 13px; line-height: 1.5; color: var(--gray); }
+    .next-steps li strong { color: var(--black); font-weight: 800; }
+
+    /* Quick objection FAQ */
+    #quick-faq { background: var(--off-white); padding: 64px 6vw; border-top: 1px solid var(--border); }
+    .qf-inner { max-width: 1100px; margin: 0 auto; }
+    .qf-inner h2 { font-size: clamp(26px,3.5vw,40px); font-weight: 800; letter-spacing: -1px; margin-bottom: 32px; }
+    .qf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px; }
+    .qf-item h3 { font-size: 16px; font-weight: 800; color: var(--black); margin-bottom: 8px; }
+    .qf-item p { font-size: 14px; line-height: 1.6; color: var(--gray); }
+    .qf-item p a { color: var(--green); font-weight: 800; text-decoration: none; }
+    @media (max-width: 700px) { .qf-grid { grid-template-columns: 1fr; } }
+
+    /* Sticky mobile CTA */
+    .mobile-cta { display: none; }
+    @media (max-width: 880px) {
+      .mobile-cta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; box-shadow: 0 -2px 16px rgba(0,0,0,0.14); }
+      .mobile-cta a { flex: 1; text-align: center; padding: 16px 8px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; }
+      .mcta-call { background: var(--black); color: var(--white); flex: 0 0 96px; }
+      .mcta-book { background: var(--green); color: var(--white); }
+      body { padding-bottom: 56px; }
+    }
   </style>
 </head>
 <body>
@@ -140,12 +181,25 @@
       <span class="pill active">24-Hour Delivery</span>
       <span class="pill active">Part 107 Drone</span>
     </div>
+    <div class="hero-paths">
+      <a href="#calendly" class="hero-path-btn">▸ Pick a time on the calendar</a>
+      <a href="#book-form" class="hero-path-btn alt">▸ Just send listing details</a>
+    </div>
+  </div>
+</section>
+
+<section id="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-item"><strong>FAA Part 107</strong> Licensed Drone Pilot</span>
+    <span class="trust-item"><strong>24-Hour</strong> MLS-Ready Delivery</span>
+    <span class="trust-item"><strong>50% Deposit</strong> Locks Your Date</span>
+    <span class="trust-item"><strong>No Contracts</strong> &middot; No Minimums</span>
   </div>
 </section>
 
 <div class="booking-wrap">
   <!-- Option 1: pick a time -->
-  <div>
+  <div id="calendly">
     <h2 class="col-head">Pick a time</h2>
     <p class="col-sub">Choose a slot that works for your listing. You'll get a confirmation, and I'll text you the prep checklist before shoot day.</p>
     <div class="calendly-inline-widget" data-url="https://calendly.com/kaden-elzingacreativestudio/real-estate-shoot" data-resize="true"></div>
@@ -212,7 +266,16 @@
       <div class="form-msg" id="bk-msg"></div>
       <button class="submit-btn" type="submit" id="bk-submit">Send Listing Details</button>
       <p class="form-alt">Prefer to text or call? <a href="tel:+16162584578">(616) 258-4578</a> &nbsp;·&nbsp; See the full program on the <a href="preferred-photographer.html">Preferred Photographer</a> page.</p>
+      <p class="form-privacy">&#128274; No spam, ever. Your details go straight to Kaden's phone &mdash; not a call center.</p>
     </form>
+    <div class="next-steps">
+      <h3>What happens next</h3>
+      <ol>
+        <li><strong>You send the listing</strong> &mdash; takes about 60 seconds.</li>
+        <li><strong>I text you back, usually within a few hours,</strong> with a quote and the next open shoot dates.</li>
+        <li><strong>Lock the date.</strong> A 50% deposit holds the slot, and I send the prep checklist before shoot day.</li>
+      </ol>
+    </div>
   </div>
 </div>
 
@@ -240,6 +303,37 @@
     <p class="tiers-note">Add-ons on any tier: real twilight $150 · drone $125 · 3D Zillow tour $100 · floor plan $75 · agent reel $150. Full details &amp; FAQ on the <a href="preferred-photographer.html">Preferred Photographer page</a>.</p>
   </div>
 </section>
+
+<section id="quick-faq">
+  <div class="qf-inner">
+    <span class="section-label">Quick Answers</span>
+    <h2>Before you book.</h2>
+    <div class="qf-grid">
+      <div class="qf-item">
+        <h3>Can you hit my list date?</h3>
+        <p>Almost always. Standard delivery is 24 hours from the shoot &mdash; shoot today, listing live tomorrow. Tell me your target date and I'll confirm I can hit it <em>before</em> you commit.</p>
+      </div>
+      <div class="qf-item">
+        <h3>What if I need to reschedule?</h3>
+        <p>No problem &mdash; weather and listing timelines move. Just text me and we'll grab the next slot. Your deposit carries over.</p>
+      </div>
+      <div class="qf-item">
+        <h3>Do you shoot outside Grand Rapids?</h3>
+        <p>Yes &mdash; all of West Michigan, from the lakeshore to the southern suburbs. No travel fee within ~25 miles of downtown GR. See the <a href="real-estate-photography-west-michigan.html">areas we serve</a>.</p>
+      </div>
+      <div class="qf-item">
+        <h3>How do I pay the deposit?</h3>
+        <p>Whatever's easiest &mdash; a Stripe card link, PayPal, Venmo, Zelle, CashApp, or Square. I send a secure link with your confirmation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky mobile CTA -->
+<div class="mobile-cta">
+  <a href="tel:+16162584578" class="mcta-call">Call</a>
+  <a href="#book-form" class="mcta-book">Send Listing Details</a>
+</div>
 
 <footer>
   <div class="footer-brand">

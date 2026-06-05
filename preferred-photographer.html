@@ -4,7 +4,7 @@
 <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T9PX92WS');</script><!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preferred Photographer Program for Grand Rapids Realtors | Elzinga Creative Studio</title>
+  <title>Preferred Photographer Program for Grand Rapids Realtors | ECS</title>
   <meta name="description" content="A standing photography partnership for Grand Rapids real estate agents. Three listing tiers ($245 / $325 / $495), real twilight, drone, and 24-hour delivery." />
   <link rel="canonical" href="https://elzingacreativestudio.com/preferred-photographer.html" />
 
@@ -284,6 +284,29 @@
       #cta-band { padding: 72px 24px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
+
+    /* Credibility trust strip */
+    #trust-strip { background: var(--white); border-bottom: 1px solid var(--border); padding: 22px 60px; }
+    .trust-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px 36px; justify-content: center; align-items: center; }
+    .trust-strip-item { font-size: 11px; letter-spacing: 0.5px; color: var(--gray); text-transform: uppercase; font-weight: 500; }
+    .trust-strip-item strong { color: var(--green); font-weight: 800; }
+    .trust-clients { width: 100%; text-align: center; font-size: 11px; color: var(--gray-lt); letter-spacing: 0.4px; margin-top: 6px; }
+    .trust-clients strong { color: var(--gray); font-weight: 800; }
+
+    /* Hero CTA microcopy */
+    .hero-microcopy { margin-top: 20px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.45); font-weight: 800; }
+
+    /* Sticky mobile CTA */
+    .mobile-cta { display: none; }
+    @media (max-width: 768px) {
+      .mobile-cta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 300; box-shadow: 0 -2px 16px rgba(0,0,0,0.18); }
+      .mobile-cta a { flex: 1; text-align: center; padding: 16px 8px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; }
+      .mcta-call { background: #333; color: var(--white); flex: 0 0 96px; }
+      .mcta-book { background: var(--green); color: var(--white); }
+      body { padding-bottom: 56px; }
+      #trust-strip { padding: 18px 24px; }
+      .trust-strip-inner { gap: 10px 20px; }
+    }
   </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <!-- Meta Pixel Code -->
@@ -350,6 +373,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       <a href="PASTE_PIXIESET_SHOWCASE_URL" target="_blank" rel="noopener" class="btn-outline" style="border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);">See a Recent Gallery →</a>
       -->
     </div>
+    <p class="hero-microcopy">No contracts &middot; No minimums &middot; 50% deposit locks your first date</p>
   </div>
   <!-- ═══════════════════════════════════════════════════════════════════════
        HERO-SWAP · MONDAY 6/8 — arm the funnel with the Richard Showcase gallery.
@@ -375,6 +399,16 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </div>
   </div>
   <!-- /HERO-SWAP -->
+</section>
+
+<section id="trust-strip">
+  <div class="trust-strip-inner">
+    <span class="trust-strip-item"><strong>FAA Part 107</strong> Certified Drone Pilot</span>
+    <span class="trust-strip-item"><strong>24-Hour Delivery</strong> &mdash; Never Missed a Window</span>
+    <span class="trust-strip-item"><strong>$110 Less</strong> Than Lakeshore's Showcase</span>
+    <span class="trust-strip-item"><strong>Same Photographer</strong> on Every Listing</span>
+    <span class="trust-clients"><strong>Brand &amp; commercial work has included:</strong> Grand Rapids Griffins &middot; Biggby Coffee &middot; Mars Hill Church</span>
+  </div>
 </section>
 
 
@@ -697,6 +731,12 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <a href="book-a-listing.html" onclick="openCalendly(); return false;" class="btn-white">Book a Shoot</a>
 </section>
 
+
+<!-- Sticky mobile CTA -->
+<div class="mobile-cta">
+  <a href="tel:+16162584578" class="mcta-call">Call</a>
+  <a href="book-a-listing.html" onclick="openCalendly(); return false;" class="mcta-book">Book a Shoot</a>
+</div>
 
 <footer>
   <div class="footer-brand">
