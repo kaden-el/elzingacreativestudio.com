@@ -307,6 +307,16 @@
       #trust-strip { padding: 18px 24px; }
       .trust-strip-inner { gap: 10px 20px; }
     }
+
+    /* Resources / internal-link hub */
+    #resources { padding: 100px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
+    .resources-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1000px; margin-top: 48px; }
+    .res-col h3 { font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 18px; }
+    .res-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .res-col li a { display: block; padding: 12px 16px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; transition: border-color 0.18s, color 0.18s; }
+    .res-col li a:hover { border-color: var(--green); color: var(--black); }
+    .res-col li a strong { color: var(--black); font-weight: 800; }
+    @media (max-width: 768px) { #resources { padding: 64px 24px; } .resources-grid { grid-template-columns: 1fr; gap: 32px; } }
   </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <!-- Meta Pixel Code -->
@@ -720,6 +730,35 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       <summary>How do I book my first listing?</summary>
       <p>Click "Book Your First Listing" or call (616) 258-4578. Send the address, pick a tier, lock the date on Calendly. 50% deposit secures the slot. Balance due before delivery.</p>
     </details>
+  </div>
+</section>
+
+
+<!-- RESOURCES -->
+<section id="resources">
+  <span class="section-label">Areas &amp; Resources</span>
+  <h2 class="section-title">Where we shoot &amp; what to read next.</h2>
+  <div class="resources-grid">
+    <div class="res-col">
+      <h3>Areas We Serve</h3>
+      <ul>
+        <li><a href="real-estate-photography-west-michigan.html"><strong>All West Michigan service areas &rarr;</strong></a></li>
+        <li><a href="real-estate-photography-grand-rapids.html"><strong>Grand Rapids</strong> &middot; metro + all neighborhoods</a></li>
+        <li><a href="real-estate-photography-east-grand-rapids.html"><strong>East Grand Rapids &amp; Ada</strong> &middot; estate-scale</a></li>
+        <li><a href="real-estate-photography-grand-haven.html"><strong>Grand Haven &amp; the lakeshore</strong> &middot; waterfront</a></li>
+        <li><a href="real-estate-photography-rockford.html"><strong>Rockford &amp; the north metro</strong></a></li>
+      </ul>
+    </div>
+    <div class="res-col">
+      <h3>Realtor Guides</h3>
+      <ul>
+        <li><a href="grand-rapids-real-estate-photography-guide.html"><strong>The complete 2026 RE photography guide</strong></a></li>
+        <li><a href="blog/how-much-does-real-estate-photography-cost-grand-rapids.html"><strong>How much does it cost?</strong></a></li>
+        <li><a href="blog/how-many-photos-real-estate-listing-grand-rapids.html"><strong>How many photos does a listing need?</strong></a></li>
+        <li><a href="blog/mls-photo-requirements-west-michigan.html"><strong>MLS photo requirements</strong></a></li>
+        <li><a href="blog/zillow-3d-tour-vs-matterport-grand-rapids.html"><strong>Zillow 3D vs Matterport</strong></a></li>
+      </ul>
+    </div>
   </div>
 </section>
 
