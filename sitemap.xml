@@ -272,6 +272,62 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- 2026-06-05 expansion: new town + long-tail service pages -->
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-cascade.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-south-haven.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-muskegon.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-norton-shores.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-greenville.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-plainwell.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/luxury-real-estate-photography-west-michigan.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-video-walkthrough-grand-rapids.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/matterport-3d-tour-grand-rapids.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Static pages -->
   <url>
     <loc>https://elzingacreativestudio.com/about.html</loc>
