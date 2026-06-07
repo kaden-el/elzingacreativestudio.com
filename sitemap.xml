@@ -596,6 +596,43 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Added 2026-06-07 (run 2): town pages -->
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-kent-city.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-sand-lake.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-marne.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-saranac.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-ravenna.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-nunica.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Added 2026-06-07: funnel blog posts -->
   <url>
@@ -612,6 +649,31 @@
   </url>
   <url>
     <loc>https://elzingacreativestudio.com/blog/floor-plans-real-estate-listings-grand-rapids.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Added 2026-06-07 (run 2): funnel blog posts -->
+  <url>
+    <loc>https://elzingacreativestudio.com/blog/real-estate-photography-vs-free-mls-photographer-grand-rapids.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/blog/why-listing-photos-look-dark-grand-rapids.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/blog/real-estate-photos-days-on-market-grand-rapids.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/blog/airbnb-rental-photography-grand-rapids.html</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
