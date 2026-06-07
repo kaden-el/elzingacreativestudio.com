@@ -135,7 +135,7 @@
   </url>
   <url>
     <loc>https://elzingacreativestudio.com/real-estate-photography-west-michigan.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -367,7 +367,7 @@
   </url>
   <url>
     <loc>https://elzingacreativestudio.com/blog.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -561,6 +561,58 @@
   <url>
     <loc>https://elzingacreativestudio.com/blog/real-estate-photo-turnaround-time-grand-rapids.html</loc>
     <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Added 2026-06-07: town pages -->
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-allegan.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-alto.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-fruitport.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-otsego.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/real-estate-photography-gun-lake.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Added 2026-06-07: funnel blog posts -->
+  <url>
+    <loc>https://elzingacreativestudio.com/blog/vacant-vs-staged-listing-photos-grand-rapids.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/blog/new-construction-listing-photography-grand-rapids.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elzingacreativestudio.com/blog/floor-plans-real-estate-listings-grand-rapids.html</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
