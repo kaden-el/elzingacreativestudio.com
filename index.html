@@ -87,6 +87,7 @@
           "name": "Photography, Videography & Marketing Services",
           "itemListElement": [
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Photography", "description": "Professional MLS-ready real estate photography for realtors and property listings in Grand Rapids and West Michigan. HDR interiors, twilight exteriors, aerial drone shots, and 24-hour delivery." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3D Virtual Tours", "description": "Interactive 3D virtual tours and walkthroughs for real estate listings in Grand Rapids and West Michigan — Zillow 3D Home and Matterport-style — captured alongside HDR photos as a $100 add-on, letting buyers walk the home remotely." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Senior Photography", "description": "Creative senior portrait sessions for high school seniors in West Michigan." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Photography", "description": "Natural, documentary-style wedding photography across Grand Rapids and West Michigan." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Photography", "description": "Lifestyle and portrait family photography sessions." } },
@@ -176,6 +177,11 @@
             "@type": "Question",
             "name": "How do I book a session with Elzinga Creative Studio?",
             "acceptedAnswer": { "@type": "Answer", "text": "Fill out the contact form on our website, call us at (616) 258-4578, or send an email to kaden@elzingacreativestudio.com. We typically respond within 24 hours. A 50% deposit holds your date." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer 3D virtual tours or Matterport?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We shoot interactive 3D virtual tours — both Zillow 3D Home and Matterport-style walkthroughs — as a $100 add-on to any photo package. The tour is captured during the same session as your HDR stills and delivered as one shareable link for the MLS, Zillow, and listing emails. A premium fully-hosted Matterport Pro tour for higher-end listings runs $250 to $295, custom-quoted." }
           }
         ]
       }
@@ -494,6 +500,8 @@
       color: var(--gray);
       margin-bottom: 22px;
     }
+    .svc-desc a { color: var(--green); font-weight: 800; text-decoration: none; }
+    .svc-desc a:hover { text-decoration: underline; }
     .svc-sub {
       font-size: 9.5px;
       font-weight: 400;
@@ -1032,6 +1040,8 @@
       margin-top: 24px; font-size: 12px;
       color: var(--gray-lt); letter-spacing: 0.3px;
     }
+    .pricing-note a { color: var(--green); font-weight: 800; text-decoration: none; }
+    .pricing-note a:hover { text-decoration: underline; }
     .pricing-stat {
       margin-bottom: 28px;
       padding: 14px 20px;
@@ -1306,7 +1316,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <div class="svc-col">
       <div class="svc-num">01</div>
       <h3 class="svc-name">Photography</h3>
-      <p class="svc-desc">Professional real estate photography in Grand Rapids with HDR interiors, real twilight exteriors, aerial drone shots, and 24-hour delivery. We also shoot senior portraits, weddings, family sessions, sports, and commercial brand work across West Michigan. Past clients include Biggby Coffee and the Grand Rapids Griffins.</p>
+      <p class="svc-desc">Professional real estate photography in Grand Rapids with HDR interiors, real twilight exteriors, aerial drone shots, <a href="matterport-3d-tour-grand-rapids.html">interactive 3D virtual tours</a>, and 24-hour delivery. We also shoot senior portraits, weddings, family sessions, sports, and commercial brand work across West Michigan. Past clients include Biggby Coffee and the Grand Rapids Griffins.</p>
       <p class="svc-sub">Real Estate &nbsp;·&nbsp; Seniors &nbsp;·&nbsp; Weddings<br>Sports &nbsp;·&nbsp; Family &nbsp;·&nbsp; Commercial</p>
       <a href="real-estate-photography-grand-rapids.html" class="svc-link">Learn More →</a>
     </div>
@@ -1450,7 +1460,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <button class="btn-custom" onclick="scrollToContact()">Get a Custom Quote</button>
   </div>
 
-  <p class="pricing-note">Drone add-on available for any package. 50% deposit holds your date, balance due before delivery.</p>
+  <p class="pricing-note">Add-ons for any package: <a href="matterport-3d-tour-grand-rapids.html">3D virtual tour</a> ($100), 2D floor plan ($75), Part 107 drone ($125), real twilight ($150). 50% deposit holds your date, balance due before delivery.</p>
 </section>
 
 
