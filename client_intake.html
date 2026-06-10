@@ -4,6 +4,7 @@
 <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T9PX92WS');</script><!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Client Onboarding — Elzinga Creative Studio</title>
 <script>
 let _supa = null;
@@ -66,6 +67,8 @@ body{font-family:'Georgia',serif;background:var(--cream);color:var(--text);min-h
 .login-btn:hover{background:var(--brown-dark);transform:translateY(-1px);}
 .login-err{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:#b04040;margin-top:14px;display:none;background:#FDECEA;padding:10px 14px;border-radius:10px;}
 .login-footer{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;color:var(--text-light);margin-top:24px;}
+.portal-offline-note{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;line-height:1.6;color:var(--text-light);background:var(--cream);border:1px solid var(--sand);border-radius:10px;padding:10px 14px;margin-bottom:24px;text-align:center;}
+.portal-offline-note a{color:var(--brown);}
 #app{display:none;}
 .app-header{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,196,176,.3);padding:16px 60px;display:flex;align-items:center;justify-content:space-between;}
 .header-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
@@ -161,9 +164,10 @@ input[type=range]{width:100%;border:none;background:none;padding:0;accent-color:
     <span class="login-eyebrow">Client Onboarding</span>
     <h2 class="login-title">Welcome to<br><em>Elzinga Creative</em></h2>
     <p class="login-sub">Enter the access code provided by your account manager to get started.</p>
+    <div class="portal-offline-note">Client portal is temporarily offline. Email <a href="mailto:kaden@elzingacreativestudio.com">kaden@elzingacreativestudio.com</a>.</div>
     <input type="text" id="access-input" placeholder="ACCESS CODE" onkeydown="if(event.key==='Enter')checkAccess()">
     <button class="login-btn" onclick="checkAccess()">Get Started →</button>
-    <div class="login-err" id="login-error">Invalid access code. Please contact <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7813191c1d16381d140211161f191b0a1d190c110e1d0b0c0d1c1117561b1715">[email&#160;protected]</a></div>
+    <div class="login-err" id="login-error">Invalid access code. Please contact <a href="mailto:kaden@elzingacreativestudio.com">kaden@elzingacreativestudio.com</a></div>
     <p class="login-footer">No code? Email kaden@elzingacreativestudio.com</p>
   </div>
 </div>

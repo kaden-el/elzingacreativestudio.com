@@ -9,4 +9,5 @@ window.ELZINGA_CONFIG = {
   emailjsPublicKey:  'YOUR_EMAILJS_PUBLIC_KEY',   // EmailJS dashboard → Account → Public Key
   emailjsServiceId:  'YOUR_EMAILJS_SERVICE_ID',   // EmailJS dashboard → Email Services
   emailjsTemplateId: 'YOUR_EMAILJS_TEMPLATE_ID',  // EmailJS dashboard → Email Templates
+  turnstileSiteKey:  'YOUR_TURNSTILE_SITE_KEY',   // Cloudflare dashboard → Turnstile → Site Key
 };

@@ -4,6 +4,7 @@
 <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T9PX92WS');</script><!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Client Dashboard — Elzinga Creative Studio</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
@@ -86,6 +87,8 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 }
 .login-hint{font-size:12px;color:var(--text-muted);margin-top:16px;text-align:center;}
 .login-hint a{color:var(--accent);}
+.portal-offline-note{font-size:12px;line-height:1.6;color:var(--text-secondary);background:var(--surface2);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:20px;text-align:center;}
+.portal-offline-note a{color:var(--accent);}
 
 /* ── APP ── */
 #app{display:none;min-height:100vh;}
@@ -277,6 +280,8 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       </div>
     </div>
 
+    <div class="portal-offline-note">Client portal is temporarily offline. Email <a href="mailto:kaden@elzingacreativestudio.com">kaden@elzingacreativestudio.com</a>.</div>
+
     <!-- Tab switcher: Username/Password vs Reference ID -->
     <div class="login-tabs">
       <button class="login-tab active" onclick="switchLoginTab('creds', this)">Username &amp; Password</button>
@@ -308,7 +313,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
         <input type="text" id="refid-input" placeholder="CLT-XXXXXX" style="text-transform:uppercase;letter-spacing:2px" onkeydown="if(event.key==='Enter')doLoginRefId()">
       </div>
       <button class="login-btn" id="login-btn-refid" onclick="doLoginRefId()">View Dashboard →</button>
-      <div class="login-err" id="login-err-refid">No account found. Check your confirmation email or contact <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1873797c7d76587d746271767f797b6a7d796c716e7d6b6c6d7c7177367b7775">[email&#160;protected]</a></div>
+      <div class="login-err" id="login-err-refid">No account found. Check your confirmation email or contact <a href="mailto:kaden@elzingacreativestudio.com">kaden@elzingacreativestudio.com</a></div>
       <p class="login-hint">Don't have a reference ID? <a href="client_intake.html">Complete onboarding →</a></p>
     </div>
   </div>
@@ -368,7 +373,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <div class="view" id="view-analytics">
       <div class="page-head">
         <div class="page-eyebrow">Analytics</div>
-        <h1 class="page-title">Campaign <em>Performance</em></h1>
+        <h2 class="page-title">Campaign <em>Performance</em></h2>
         <p class="page-sub">Simulated metrics based on your campaign setup. Live ad platform data available on request.</p>
       </div>
       <div class="card" style="margin-bottom:16px">
@@ -394,7 +399,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <div class="view" id="view-campaigns">
       <div class="page-head">
         <div class="page-eyebrow">Campaigns</div>
-        <h1 class="page-title">Active <em>Campaigns</em></h1>
+        <h2 class="page-title">Active <em>Campaigns</em></h2>
         <p class="page-sub">All campaigns currently running under your account.</p>
       </div>
       <div id="campaigns-content"></div>
@@ -404,7 +409,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <div class="view" id="view-profile">
       <div class="page-head">
         <div class="page-eyebrow">Account</div>
-        <h1 class="page-title">My <em>Profile</em></h1>
+        <h2 class="page-title">My <em>Profile</em></h2>
         <p class="page-sub">Your onboarding information on file with us.</p>
       </div>
       <div class="card" id="profile-content"></div>

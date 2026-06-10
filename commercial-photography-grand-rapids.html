@@ -82,7 +82,7 @@
     :root {
       --black: #111111; --white: #FFFFFF; --green: #2A5C3F;
       --green-dk: #1e4430; --off-white: #F7F7F7;
-      --gray: #666666; --gray-lt: #AAAAAA; --border: #E0E0E0;
+      --gray: #666666; --gray-lt: #767676; --border: #E0E0E0;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -96,6 +96,8 @@
     .btn-black:hover { background: #333; }
     .btn-outline { display: inline-block; padding: 12px 28px; background: transparent; border: 1.5px solid var(--black); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; }
     .btn-outline:hover { background: var(--black); color: var(--white); }
+    .btn-outline-white { display: inline-block; padding: 12px 28px; background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.8); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .btn-outline-white:hover { border-color: var(--white); color: var(--white); }
 
     /* HEADER */
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
@@ -131,15 +133,15 @@
       transition: transform 0.9s ease;
     }
     .re-strip-panel:hover .re-strip-fill { transform: scale(1.04); }
-    .hero-breadcrumb { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 32px; }
-    .hero-breadcrumb a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    .hero-breadcrumb { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: #7FBF9B; margin-bottom: 32px; }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
     .hero-breadcrumb a:hover { color: rgba(255,255,255,0.6); }
     .hero-h1 { font-size: clamp(48px, 8vw, 110px); font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--white); margin-bottom: 36px; }
     .hero-h1 em { font-style: normal; color: var(--green); }
     .hero-sub { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
     .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
     .pill { padding: 8px 18px; border: 1px solid rgba(255,255,255,0.15); font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-    .pill.active { border-color: var(--green); color: var(--green); }
+    .pill.active { border-color: #7FBF9B; color: #7FBF9B; }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
     /* WHAT YOU GET */
@@ -162,11 +164,11 @@
     .p-popular { display: none; position: absolute; top: -1px; left: 40px; background: var(--green); font-size: 8px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--white); padding: 5px 14px; }
     .p-card.p-featured .p-popular { display: block; }
     .p-name { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); margin-bottom: 20px; }
-    .p-card.p-featured .p-name { color: rgba(255,255,255,0.4); }
+    .p-card.p-featured .p-name { color: rgba(255,255,255,0.6); }
     .p-price { font-size: 64px; font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--black); margin-bottom: 6px; }
     .p-card.p-featured .p-price { color: var(--white); }
     .p-per { font-size: 11px; color: var(--gray-lt); margin-bottom: 36px; }
-    .p-card.p-featured .p-per { color: rgba(255,255,255,0.3); }
+    .p-card.p-featured .p-per { color: rgba(255,255,255,0.6); }
     .p-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 32px; }
     .p-card.p-featured .p-divider { background: rgba(255,255,255,0.1); }
     .p-features { list-style: none; display: flex; flex-direction: column; gap: 14px; flex: 1; margin-bottom: 40px; }
@@ -183,7 +185,7 @@
     .custom-left { display: flex; flex-direction: column; gap: 6px; }
     .custom-kicker { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); }
     .custom-title { font-size: clamp(20px, 2vw, 28px); font-weight: 800; letter-spacing: -0.5px; color: var(--white); }
-    .custom-desc { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+    .custom-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
     .btn-custom { display: inline-block; padding: 14px 36px; border: 1.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
     .btn-custom:hover { border-color: var(--white); color: var(--white); }
     .pricing-note { margin-top: 24px; font-size: 12px; color: var(--gray-lt); }
@@ -202,7 +204,7 @@
     .why-stat:first-child { padding-top: 0; }
     .why-stat:last-child { border-bottom: none; padding-bottom: 0; }
     .stat-num { font-size: 56px; font-weight: 800; letter-spacing: -2px; color: var(--white); line-height: 1; }
-    .stat-label { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .stat-label { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
 
     /* FAQ */
     #re-faq { padding: 120px 60px; background: var(--white); border-top: 1px solid var(--border); }
@@ -233,6 +235,8 @@
     .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.2); }
 
     @media (max-width: 768px) {
+      .nav-desktop a:not(.nav-book){display:none;}
+      .nav-desktop .nav-book{padding:10px 18px;}
       header { padding: 16px 24px; }
       .hero-inner { padding: 80px 24px 48px; }
       .hero-h1 { font-size: clamp(42px, 12vw, 72px); letter-spacing: -1.5px; }
@@ -248,6 +252,9 @@
       #cta-band { padding: 72px 24px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
+  
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
   </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <!-- Meta Pixel Code -->
@@ -263,7 +270,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '26293188720377993');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
+<noscript><img alt="" height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
@@ -271,6 +278,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://elzingacreativestudio.com/" }, { "@type": "ListItem", "position": 2, "name": "Commercial Photography", "item": "https://elzingacreativestudio.com/commercial-photography-grand-rapids.html" } ] }
   </script>
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -306,8 +314,8 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </div>
     <div class="hero-ctas">
       <a href="#" onclick="openCalendly(); return false;" class="btn-green">Get a Free Demo Shoot</a>
-      <a href="tel:+16162584578" class="btn-black">Call (616) 258-4578</a>
-      <a href="#comm-pricing" class="btn-outline" style="border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);">See Pricing</a>
+      <a href="tel:+16162584578" class="btn-outline-white">Call (616) 258-4578</a>
+      <a href="#comm-pricing" class="btn-outline-white">See Pricing</a>
     </div>
   </div>
   <div class="re-hero-strip">
@@ -315,10 +323,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       <img class="re-strip-fill" src="images/DSC07049.avif" alt="Commercial photography Grand Rapids - action sports brand" width="1200" height="800" loading="eager">
     </div>
     <div class="re-strip-panel">
-      <img class="re-strip-fill" src="images/DSC08625.avif" alt="Brand photography Grand Rapids Michigan" width="1200" height="800" loading="eager">
+      <picture><source srcset="images/web/DSC08625-1600.avif" type="image/avif"><img class="re-strip-fill" src="images/web/DSC08625-1600.jpg" alt="Brand photography Grand Rapids Michigan" width="1200" height="800" loading="eager"></picture>
     </div>
     <div class="re-strip-panel">
-      <img class="re-strip-fill" src="images/DSC07082.avif" alt="Commercial brand photography West Michigan" width="1200" height="800" loading="eager">
+      <picture><source srcset="images/web/DSC07082-1600.avif" type="image/avif"><img class="re-strip-fill" src="images/web/DSC07082-1600.jpg" alt="Commercial brand photography West Michigan" width="1200" height="800" loading="eager"></picture>
     </div>
   </div>
 </section>
@@ -538,12 +546,12 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <span class="footer-ecs">ECS</span>
     <span class="footer-tag">Photography · Video · Marketing</span>
   </div>
-  <a href="index.html" style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;">← Back to Main Site</a>
+  <a href="index.html" style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;">← Back to Main Site</a>
   <div style="display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.25);">
     <span>PARTNERS</span>
-    <a href="https://elevationhome.co" target="_blank" rel="noopener" title="Elevation Home Co" style="color:rgba(255,255,255,0.4);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EHC</a>
-    <a href="https://elevationdoorco.com" target="_blank" rel="noopener" title="Elevation Door Co" style="color:rgba(255,255,255,0.4);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EDC</a>
-    <a href="https://elevationexteriorcleaning.com" target="_blank" rel="noopener" title="Elevation Exterior Cleaning" style="color:rgba(255,255,255,0.4);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EEC</a>
+    <a href="https://elevationhome.co" target="_blank" rel="noopener" title="Elevation Home Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EHC</a>
+    <a href="https://elevationdoorco.com" target="_blank" rel="noopener" title="Elevation Door Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EDC</a>
+    <a href="https://elevationexteriorcleaning.com" target="_blank" rel="noopener" title="Elevation Exterior Cleaning" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EEC</a>
   </div>
   <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a></p>
 </footer>

@@ -8,8 +8,8 @@
   <meta name="description" content="Grand Rapids real estate photographer and videographer. HDR listing photography, twilight shoots, senior portraits, weddings, and commercial work across West Michigan. 24-hour turnaround.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://elzingacreativestudio.com/" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="preload" as="image" href="images/web/DSC08468-HDR-1600.jpg" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="preload" as="image" href="images/web/DSC08468-HDR-1600.avif" type="image/avif" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
@@ -104,7 +104,7 @@
         "name": "Kaden Elzinga",
         "jobTitle": "Photographer & Founder",
         "url": "https://elzingacreativestudio.com",
-        "image": "https://elzingacreativestudio.com/images/_DSC0643.JPG",
+        "image": "https://elzingacreativestudio.com/images/web/_DSC0643-1600.jpg",
         "sameAs": [
           "https://www.instagram.com/kaden_elzinga",
           "https://www.facebook.com/profile.php?id=100090268353324",
@@ -130,20 +130,6 @@
         "url": "https://elzingacreativestudio.com",
         "name": "Elzinga Creative Studio",
         "publisher": { "@id": "https://elzingacreativestudio.com/#business" }
-      },
-      {
-        "@type": "Review",
-        "@id": "https://elzingacreativestudio.com/#review-henry",
-        "itemReviewed": { "@id": "https://elzingacreativestudio.com/#business" },
-        "author": { "@type": "Person", "name": "Henry" },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "reviewBody": "Kaden is a great guy, and does great work. He took senior photos for me and my friend, and was willing to come to both of my locations — probably 40 minutes apart — for a reasonable price. He worked well in all scenarios we encountered: full sun, inside, and in shade, and processed the images very quickly.",
-        "publisher": { "@type": "Organization", "name": "Google" }
       },
       {
         "@type": "FAQPage",
@@ -204,7 +190,7 @@
       --green-dk:  #1e4430;
       --off-white: #F7F7F7;
       --gray:      #666666;
-      --gray-lt:   #AAAAAA;
+      --gray-lt:   #767676;
       --border:    #E0E0E0;
     }
 
@@ -360,6 +346,7 @@
       text-decoration: none;
       font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
       color: var(--gray); transition: color 0.2s;
+      padding: 14px 24px;
     }
     .nav-mobile a:hover { color: var(--black); }
     .nav-mobile .nav-book-mobile {
@@ -663,9 +650,8 @@
       background: var(--white);
       padding: 12px 16px;
       font-family: 'DM Sans', system-ui, sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       color: var(--black);
-      outline: none;
       width: 100%;
       transition: border-color 0.25s;
       appearance: none;
@@ -739,7 +725,7 @@
     .footer-ecs   { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
     .footer-tag   { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
     .footer-social { display: flex; gap: 20px; align-items: center; }
-    .footer-social a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-social a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
     .footer-social a:hover { color: rgba(255,255,255,0.9); }
     .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.2); }
 
@@ -789,7 +775,7 @@
     .lb-next { right: -60px; }
     .lb-counter {
       font-family: 'DM Sans', sans-serif; font-size: 11px;
-      letter-spacing: 2px; color: rgba(255,255,255,0.4); margin-top: 14px;
+      letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-top: 14px;
     }
     .lb-cat-label {
       font-family: 'DM Sans', sans-serif; font-size: 9px;
@@ -964,7 +950,7 @@
       font-size: 10px; font-weight: 800; letter-spacing: 3px;
       text-transform: uppercase; color: var(--gray-lt); margin-bottom: 20px;
     }
-    .p-card.p-featured .p-name { color: rgba(255,255,255,0.4); }
+    .p-card.p-featured .p-name { color: rgba(255,255,255,0.6); }
     .p-price {
       font-size: 64px; font-weight: 800; line-height: 1;
       letter-spacing: -2px; color: var(--black); margin-bottom: 6px;
@@ -974,7 +960,7 @@
       font-size: 11px; font-weight: 400; letter-spacing: 1px;
       color: var(--gray-lt); margin-bottom: 36px;
     }
-    .p-card.p-featured .p-per { color: rgba(255,255,255,0.3); }
+    .p-card.p-featured .p-per { color: rgba(255,255,255,0.6); }
     .p-divider {
       width: 100%; height: 1px; background: var(--border); margin-bottom: 32px;
     }
@@ -1025,7 +1011,7 @@
       font-size: clamp(20px, 2vw, 28px); font-weight: 800;
       letter-spacing: -0.5px; color: var(--white);
     }
-    .custom-desc { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+    .custom-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
     .btn-custom {
       display: inline-block; padding: 14px 36px;
       border: 1.5px solid rgba(255,255,255,0.25);
@@ -1147,7 +1133,7 @@
     }
     .t-attr-service {
       font-size: 10px; font-weight: 400; letter-spacing: 2px;
-      text-transform: uppercase; color: rgba(255,255,255,0.3);
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
     }
     .btn-review {
       display: inline-block; padding: 14px 36px;
@@ -1218,6 +1204,43 @@
       .hubs-grid { grid-template-columns: 1fr; gap: 56px; }
       .hubs-header { margin-bottom: 56px; }
     }
+  
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+  
+    /* ===== ECS motion system (Clean Editorial) ===== */
+    @media (prefers-reduced-motion: no-preference) {
+      .m-rise { opacity: 0; transform: translateY(14px); animation: mRise .7s cubic-bezier(.22,.61,.36,1) forwards; }
+      .m-rise.d1 { animation-delay: .05s } .m-rise.d2 { animation-delay: .15s }
+      .m-rise.d3 { animation-delay: .25s } .m-rise.d4 { animation-delay: .35s }
+      .m-rise.d5 { animation-delay: .45s }
+      @keyframes mRise { to { opacity: 1; transform: none; } }
+      .m-rule { transform: scaleX(0); transform-origin: left center; animation: mRule .8s .5s cubic-bezier(.22,.61,.36,1) forwards; }
+      @keyframes mRule { to { transform: scaleX(1); } }
+      html.m-on .m-reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s cubic-bezier(.22,.61,.36,1), transform .65s cubic-bezier(.22,.61,.36,1); }
+      html.m-on .m-reveal.in { opacity: 1; transform: none; }
+      html.m-on .m-stagger > * { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1); }
+      html.m-on .m-stagger.in > * { opacity: 1; transform: none; }
+      html.m-on .m-stagger.in > :nth-child(1) { transition-delay: 0s }
+      html.m-on .m-stagger.in > :nth-child(2) { transition-delay: .09s }
+      html.m-on .m-stagger.in > :nth-child(3) { transition-delay: .18s }
+      html.m-on .m-stagger.in > :nth-child(4) { transition-delay: .27s }
+      html.m-on .m-stagger.in > :nth-child(5) { transition-delay: .36s }
+      html.m-on .m-stagger.in > :nth-child(6) { transition-delay: .45s }
+      .m-tick { display: inline-block; vertical-align: -2px; margin-right: 8px; }
+      html.m-on .m-tick circle, html.m-on .m-tick line { stroke-dasharray: 60; stroke-dashoffset: 60; }
+      html.m-on .in .m-tick circle { animation: mDraw .7s ease-out forwards; }
+      html.m-on .in .m-tick line { animation: mDraw .7s .25s ease-out forwards; }
+      @keyframes mDraw { to { stroke-dashoffset: 0; } }
+      .m-arrow { display: inline-block; transition: transform .22s cubic-bezier(.22,.61,.36,1); }
+      a:hover .m-arrow, a:focus-visible .m-arrow { transform: translateX(5px); }
+      .m-lift { transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s cubic-bezier(.22,.61,.36,1); }
+      .m-lift:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(17,17,17,.10); }
+      .btn-green { position: relative; overflow: hidden; }
+      .btn-green::after { content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%; background: linear-gradient(105deg, transparent, rgba(255,255,255,.16), transparent); transition: left .5s cubic-bezier(.22,.61,.36,1); pointer-events: none; }
+      .btn-green:hover::after { left: 160%; }
+    }
+
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -1232,7 +1255,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '26293188720377993');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
+<noscript><img alt="" height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
@@ -1250,6 +1273,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <nav class="nav-desktop">
     <a href="#portfolio">Work</a>
     <a href="#services">Services</a>
+    <a href="preferred-photographer.html">For Realtors</a>
     <a href="about.html">About</a>
     <a href="#contact">Contact</a>
     <a href="blog.html">Blog</a>
@@ -1257,7 +1281,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <a href="#" onclick="openCalendly(); return false;" class="nav-book">Book a Session</a>
   </nav>
 
-  <button class="nav-burger" id="burger" aria-label="Menu">
+  <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile">
     <span></span><span></span><span></span>
   </button>
 </header>
@@ -1271,6 +1295,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   </button>
   <a href="#portfolio" onclick="closeMenu()">Work</a>
   <a href="#services"  onclick="closeMenu()">Services</a>
+  <a href="preferred-photographer.html" onclick="closeMenu()">For Realtors</a>
   <a href="about.html" onclick="closeMenu()">About</a>
   <a href="#contact"   onclick="closeMenu()">Contact</a>
   <a href="#" onclick="openCalendly(); closeMenu(); return false;" class="nav-book-mobile btn-green">Book a Session</a>
@@ -1280,26 +1305,27 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <!-- ═══════ HERO ═══════ -->
 <section id="home">
   <div class="hero-content">
-    <span class="hero-location">Grand Rapids, Michigan</span>
-    <div class="hero-title" aria-hidden="true">ELZINGA<br>CREATIVE</div>
-    <h1 class="hero-h1">Grand Rapids Real Estate Photographer &amp; Videographer</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-tagline">HDR listing photography, real twilight, and Part 107 drone with 24-hour delivery. Senior portraits, weddings, commercial content, and brand work across West Michigan.</p>
-    <div class="hero-ctas">
+    <span class="hero-location m-rise d1">Grand Rapids, Michigan</span>
+    <div class="hero-title m-rise d2" aria-hidden="true">ELZINGA<br>CREATIVE</div>
+    <h1 class="hero-h1 m-rise d3">Grand Rapids Real Estate Photographer &amp; Videographer</h1>
+    <div class="hero-rule m-rule"></div>
+    <p class="hero-tagline m-rise d4">HDR listing photography, real twilight, and Part 107 drone with 24-hour delivery. Senior portraits, weddings, commercial content, and brand work across West Michigan.</p>
+    <div class="hero-ctas m-rise d5">
       <a href="#portfolio" class="btn-black">View Work</a>
       <a href="#" onclick="openCalendly(); return false;" class="btn-green">Book a Session</a>
     </div>
     <p class="hero-phone">Call or text: <a href="tel:+16162584578">(616) 258-4578</a></p>
+    <p class="hero-phone" style="margin-top:8px;">Realtor? <a href="book-a-listing.html">Book a listing shoot</a></p>
   </div>
   <div class="hero-strip">
     <div class="strip-panel">
       <picture><source srcset="images/web/DSC08468-HDR-1600.avif" type="image/avif"><img class="strip-fill" src="images/web/DSC08468-HDR-1600.jpg" alt="Grand Rapids real estate photography - HDR interior by Elzinga Creative Studio" width="1200" height="800" fetchpriority="high"></picture>
     </div>
     <div class="strip-panel">
-      <img class="strip-fill" src="images/_DSC1170.avif" alt="Grand Rapids wedding photography by Elzinga Creative Studio" width="1200" height="800" loading="lazy">
+      <picture><source srcset="images/web/_DSC1170-1600.avif" type="image/avif"><img class="strip-fill" src="images/web/_DSC1170-1600.jpg" alt="Grand Rapids wedding photography by Elzinga Creative Studio" width="1200" height="800" loading="lazy"></picture>
     </div>
     <div class="strip-panel">
-      <img class="strip-fill" src="images/DSC08651.avif" alt="Portrait photography in Grand Rapids Michigan" width="1200" height="800" loading="lazy">
+      <picture><source srcset="images/web/DSC08651-1600.avif" type="image/avif"><img class="strip-fill" src="images/web/DSC08651-1600.jpg" alt="Portrait photography in Grand Rapids Michigan" width="1200" height="800" loading="lazy"></picture>
     </div>
   </div>
 </section>
@@ -1307,18 +1333,18 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ SERVICES ═══════ -->
 <section id="services">
-  <div class="services-header">
-    <span class="section-label">What We Do</span>
+  <div class="services-header m-reveal">
+    <span class="section-label"><svg class="m-tick" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.6" stroke="currentColor" stroke-width="1.3"/><line x1="7" y1="1.4" x2="9.8" y2="7" stroke="currentColor" stroke-width="1.1"/><line x1="12.6" y1="7" x2="4.2" y2="9.8" stroke="currentColor" stroke-width="1.1"/><line x1="4.2" y1="4.2" x2="7" y2="12.6" stroke="currentColor" stroke-width="1.1"/></svg>What We Do</span>
     <h2 class="section-title">Three disciplines,<br>one studio.</h2>
   </div>
-  <div class="services-cols">
+  <div class="services-cols m-stagger">
 
     <div class="svc-col">
       <div class="svc-num">01</div>
       <h3 class="svc-name">Photography</h3>
       <p class="svc-desc">Professional real estate photography in Grand Rapids with HDR interiors, real twilight exteriors, aerial drone shots, <a href="matterport-3d-tour-grand-rapids.html">interactive 3D virtual tours</a>, and 24-hour delivery. We also shoot senior portraits, weddings, family sessions, sports, and commercial brand work across West Michigan. Past clients include Biggby Coffee and the Grand Rapids Griffins.</p>
       <p class="svc-sub">Real Estate &nbsp;·&nbsp; Seniors &nbsp;·&nbsp; Weddings<br>Sports &nbsp;·&nbsp; Family &nbsp;·&nbsp; Commercial</p>
-      <a href="real-estate-photography-grand-rapids.html" class="svc-link">Learn More →</a>
+      <a href="real-estate-photography-grand-rapids.html" class="svc-link">Explore Real Estate Photography →</a>
     </div>
 
     <div class="svc-col">
@@ -1334,7 +1360,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       <h3 class="svc-name">Marketing</h3>
       <p class="svc-desc">Full-service social media marketing for local businesses in Grand Rapids and West Michigan. We run Meta Ads and Google Ads campaigns, create content, and optimize Google Business Profiles — all built around leads and revenue you can actually measure.</p>
       <p class="svc-sub">Meta Ads &nbsp;·&nbsp; Google Ads<br>Content Creation &nbsp;·&nbsp; GBP Optimization</p>
-      <a href="social-media-marketing-grand-rapids.html" class="svc-link">Learn More →</a>
+      <a href="social-media-marketing-grand-rapids.html" class="svc-link">Explore Marketing Services →</a>
     </div>
 
   </div>
@@ -1343,35 +1369,35 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ PORTFOLIO ═══════ -->
 <section id="portfolio">
-  <div class="portfolio-header">
+  <div class="portfolio-header m-reveal">
     <div>
-      <span class="section-label">Our Work</span>
+      <span class="section-label"><svg class="m-tick" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.6" stroke="currentColor" stroke-width="1.3"/><line x1="7" y1="1.4" x2="9.8" y2="7" stroke="currentColor" stroke-width="1.1"/><line x1="12.6" y1="7" x2="4.2" y2="9.8" stroke="currentColor" stroke-width="1.1"/><line x1="4.2" y1="4.2" x2="7" y2="12.6" stroke="currentColor" stroke-width="1.1"/></svg>Our Work</span>
       <h2 class="section-title">Crafted<br>with purpose.</h2>
     </div>
     <button class="btn-outline" onclick="openGallery()">View Full Gallery</button>
   </div>
-  <div class="portfolio-grid">
-    <div class="pg-item" onclick="openLightbox('Weddings')">
-      <img class="pg-fill" src="images/_DSC1170.avif" alt="Wedding photography in Grand Rapids Michigan" width="800" height="600" loading="lazy">
+  <div class="portfolio-grid m-stagger">
+    <div class="pg-item" onclick="openLightbox('Weddings')" tabindex="0" role="button" aria-label="View Weddings gallery">
+      <picture><source srcset="images/web/_DSC1170-1600.avif" type="image/avif"><img class="pg-fill" src="images/web/_DSC1170-1600.jpg" alt="Wedding photography in Grand Rapids Michigan" width="800" height="600" loading="lazy"></picture>
       <div class="pg-overlay"><span class="pg-label">Weddings</span></div>
     </div>
-    <div class="pg-item" onclick="openLightbox('Seniors')">
+    <div class="pg-item" onclick="openLightbox('Seniors')" tabindex="0" role="button" aria-label="View Seniors gallery">
       <img class="pg-fill" src="images/DSC02295.avif" alt="Senior portrait photography in West Michigan" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Seniors</span></div>
     </div>
-    <div class="pg-item" onclick="openLightbox('Sports')">
+    <div class="pg-item" onclick="openLightbox('Sports')" tabindex="0" role="button" aria-label="View Sports gallery">
       <img class="pg-fill" src="images/DSC07049.avif" alt="Sports action photography - Grand Rapids Griffins hockey" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Sports</span></div>
     </div>
-    <div class="pg-item" onclick="openLightbox('Family')">
-      <img class="pg-fill" src="images/DSC01597.jpg" alt="Family photography sessions in Grand Rapids Michigan" width="800" height="600" loading="lazy">
+    <div class="pg-item" onclick="openLightbox('Family')" tabindex="0" role="button" aria-label="View Family gallery">
+      <picture><source srcset="images/web/DSC01597-1600.avif" type="image/avif"><img class="pg-fill" src="images/web/DSC01597-1600.jpg" alt="Family photography sessions in Grand Rapids Michigan" width="800" height="600" loading="lazy"></picture>
       <div class="pg-overlay"><span class="pg-label">Family</span></div>
     </div>
-    <div class="pg-item" onclick="openLightbox('Portraits')">
-      <img class="pg-fill" src="images/DSC08625.avif" alt="Portrait photography by Elzinga Creative Studio" width="800" height="600" loading="lazy">
+    <div class="pg-item" onclick="openLightbox('Portraits')" tabindex="0" role="button" aria-label="View Portraits gallery">
+      <picture><source srcset="images/web/DSC08625-1600.avif" type="image/avif"><img class="pg-fill" src="images/web/DSC08625-1600.jpg" alt="Portrait photography by Elzinga Creative Studio" width="800" height="600" loading="lazy"></picture>
       <div class="pg-overlay"><span class="pg-label">Portraits</span></div>
     </div>
-    <div class="pg-item" onclick="openLightbox('Real Estate')">
+    <div class="pg-item" onclick="openLightbox('Real Estate')" tabindex="0" role="button" aria-label="View Real Estate gallery">
       <img class="pg-fill" src="images/web/DSC08468-HDR-1600.jpg" alt="Real estate photography Grand Rapids - HDR listing photos" width="800" height="600" loading="lazy">
       <div class="pg-overlay"><span class="pg-label">Real Estate</span></div>
     </div>
@@ -1403,9 +1429,8 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
   <p class="pricing-stat">Listings with real twilight photos receive up to <strong>300% more online views</strong> — included in Showcase &amp; Signature.</p>
 
-  <div class="pricing-cards">
-    <div class="p-card">
-      <span class="p-popular">Most Popular</span>
+  <div class="pricing-cards m-stagger">
+    <div class="m-lift p-card">
       <span class="p-name">Essential</span>
       <div class="p-price">$245</div>
       <div class="p-per">per listing</div>
@@ -1416,10 +1441,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
         <li><span class="p-check"></span>24-hour delivery</li>
         <li><span class="p-check"></span>Pixieset gallery download</li>
       </ul>
-      <button class="btn-book" onclick="bookPackage('Essential — $245')">Book This Package</button>
+      <a class="btn-book" href="book-a-listing.html?tier=essential#book-form">Book Essential</a>
     </div>
 
-    <div class="p-card p-featured">
+    <div class="m-lift p-card p-featured">
       <span class="p-popular">Most Popular</span>
       <span class="p-name">Showcase</span>
       <div class="p-price">$325</div>
@@ -1432,11 +1457,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
         <li><span class="p-check"></span>Social media graphics</li>
         <li><span class="p-check"></span>Vertical cuts for Reels &amp; Stories</li>
       </ul>
-      <button class="btn-book" onclick="bookPackage('Showcase — $325')">Book This Package</button>
+      <a class="btn-book" href="book-a-listing.html?tier=showcase#book-form">Book Showcase</a>
     </div>
 
-    <div class="p-card">
-      <span class="p-popular">Most Popular</span>
+    <div class="m-lift p-card">
       <span class="p-name">Signature</span>
       <div class="p-price">$495</div>
       <div class="p-per">per listing</div>
@@ -1444,10 +1468,11 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       <ul class="p-features">
         <li><span class="p-check"></span>Everything in Showcase</li>
         <li><span class="p-check"></span>Golden hour exteriors</li>
+        <li><span class="p-check"></span>Part 107 drone aerial included</li>
         <li><span class="p-check"></span>60-second listing Reel</li>
         <li><span class="p-check"></span>55–70 total images</li>
       </ul>
-      <button class="btn-book" onclick="bookPackage('Signature — $495')">Book This Package</button>
+      <a class="btn-book" href="book-a-listing.html?tier=signature#book-form">Book Signature</a>
     </div>
   </div>
 
@@ -1460,7 +1485,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <button class="btn-custom" onclick="scrollToContact()">Get a Custom Quote</button>
   </div>
 
-  <p class="pricing-note">Add-ons for any package: <a href="matterport-3d-tour-grand-rapids.html">3D virtual tour</a> ($100), 2D floor plan ($75), Part 107 drone ($125), real twilight ($150). 50% deposit holds your date, balance due before delivery.</p>
+  <p class="pricing-note">Add-ons for Essential (drone, twilight, and floor plan are included as you move up the tiers): <a href="matterport-3d-tour-grand-rapids.html">3D virtual tour</a> ($100), Part 107 drone ($125), real twilight ($150), 2D floor plan ($75), agent reel ($150). 50% deposit holds your date, balance due before delivery.</p>
 </section>
 
 
@@ -1594,9 +1619,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <span class="section-label">The Studio</span>
   <div class="about-grid">
     <div class="about-img">
-      <img src="images/_DSC0643.JPG"
+      <picture><source srcset="images/web/_DSC0643-1600.avif" type="image/avif"><img src="images/web/_DSC0643-1600.jpg"
            alt="Kaden Elzinga, Grand Rapids photographer and founder of Elzinga Creative Studio"
-           loading="lazy" width="6192" height="4128">
+           loading="lazy" width="1600" height="1067"></picture>
     </div>
     <div class="about-text">
       <h2 class="about-title">Craft-first.<br>Always.</h2>
@@ -1677,20 +1702,20 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <form class="contact-form" id="inquiry-form" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="fg">
-          <label>First Name</label>
+          <label for="inq-first">First Name</label>
           <input type="text" id="inq-first" name="first_name" placeholder="Jane" />
         </div>
         <div class="fg">
-          <label>Last Name</label>
+          <label for="inq-last">Last Name</label>
           <input type="text" id="inq-last" name="last_name" placeholder="Smith" />
         </div>
       </div>
       <div class="fg">
-        <label>Email Address</label>
+        <label for="inq-email">Email Address</label>
         <input type="email" id="inq-email" name="reply_to" placeholder="your@email.com" />
       </div>
       <div class="fg">
-        <label>Service</label>
+        <label for="inq-service">Service</label>
         <select id="inq-service" name="service">
           <option value="">Select a service...</option>
           <option>Real Estate Photography</option>
@@ -1705,7 +1730,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
         </select>
       </div>
       <div class="fg">
-        <label>Tell us about your project</label>
+        <label for="inq-message">Tell us about your project</label>
         <textarea id="inq-message" name="message" placeholder="Share details about your session, preferred dates, location ideas..."></textarea>
       </div>
       <div class="form-msg" id="form-msg"></div>
@@ -1779,9 +1804,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   </div>
   <div style="display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.25);">
     <span>PARTNERS</span>
-    <a href="https://elevationhome.co" target="_blank" rel="noopener" title="Elevation Home Co" style="color:rgba(255,255,255,0.4);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EHC</a>
-    <a href="https://elevationdoorco.com" target="_blank" rel="noopener" title="Elevation Door Co" style="color:rgba(255,255,255,0.4);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EDC</a>
-    <a href="https://elevationexteriorcleaning.com" target="_blank" rel="noopener" title="Elevation Exterior Cleaning" style="color:rgba(255,255,255,0.4);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EEC</a>
+    <a href="https://elevationhome.co" target="_blank" rel="noopener" title="Elevation Home Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EHC</a>
+    <a href="https://elevationdoorco.com" target="_blank" rel="noopener" title="Elevation Door Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EDC</a>
+    <a href="https://elevationexteriorcleaning.com" target="_blank" rel="noopener" title="Elevation Exterior Cleaning" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EEC</a>
   </div>
   <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a></p>
 </footer>
@@ -1789,7 +1814,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ LIGHTBOX ═══════ -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <span class="lb-close" onclick="closeLightbox()">&#215;</span>
+  <span class="lb-close" onclick="closeLightbox()" role="button" tabindex="0" aria-label="Close gallery" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();closeLightbox();}">&#215;</span>
   <div class="lb-placeholder" id="lb-placeholder"></div>
   <div class="lb-carousel" id="lb-carousel">
     <button class="lb-arrow lb-prev" onclick="lbPrev(event)">&#8592;</button>
@@ -1801,7 +1826,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 </div>
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   /* ── Header scroll border ── */
   const hdr = document.getElementById('site-header');
@@ -1815,13 +1839,23 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   burger.addEventListener('click', () => {
     burger.classList.toggle('open');
     mobileNav.classList.toggle('open');
-    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    const navOpen = mobileNav.classList.contains('open');
+    burger.setAttribute('aria-expanded', navOpen ? 'true' : 'false');
+    document.body.style.overflow = navOpen ? 'hidden' : '';
   });
   function closeMenu() {
     burger.classList.remove('open');
     mobileNav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
+
+  /* ── Keyboard access for portfolio tiles ── */
+  document.querySelectorAll('.pg-item').forEach(el => {
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+    });
+  });
 
   /* ── Lightbox ── */
   const bgColors = {
@@ -1832,12 +1866,12 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
   const photoCategories = {
     'Weddings': [
-      'images/_DSC0475.avif','images/_DSC0554.avif','images/_DSC1170.avif',
-      'images/_DSC1367.avif','images/_DSC1402.avif','images/_DSC2831.avif',
-      'images/_DSC9926.avif','images/DSC01094.avif','images/DSC01135.avif',
-      'images/DSC01591.avif','images/DSC01747.avif','images/DSC02790.avif',
-      'images/DSC02834.avif','images/DSC02917.avif','images/DSC03049.avif',
-      'images/DSC03731.avif',
+      'images/web/_DSC0475-1600.jpg','images/web/_DSC0554-1600.jpg','images/web/_DSC1170-1600.jpg',
+      'images/web/_DSC1367-1600.jpg','images/_DSC1402.avif','images/web/_DSC2831-1600.jpg',
+      'images/web/_DSC9926-1600.jpg','images/web/DSC01094-1600.jpg','images/web/DSC01135-1600.jpg',
+      'images/web/DSC01591-1600.jpg','images/web/DSC01747-1600.jpg','images/web/DSC02790-1600.jpg',
+      'images/web/DSC02834-1600.jpg','images/web/DSC02917-1600.jpg','images/web/DSC03049-1600.jpg',
+      'images/web/DSC03731-1600.jpg',
     ],
     'Seniors': [
       'images/DSC02053.avif','images/DSC02106.avif','images/DSC02213.avif',
@@ -1846,14 +1880,14 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       'images/DSC02342.avif','images/DSC02451.avif','images/DSC02464.avif',
     ],
     'Sports': [
-      'images/DSC07049.avif','images/DSC06667.avif','images/DSC06685.avif',
-      'images/DSC06690.avif','images/DSC06777.avif','images/DSC06854.avif',
-      'images/DSC06876.avif','images/DSC06923.avif','images/DSC06926.avif',
-      'images/DSC06951.avif','images/DSC06993.avif','images/DSC07011.avif',
-      'images/DSC07017.avif','images/DSC07018.avif','images/DSC07048.avif',
-      'images/DSC07072.avif','images/DSC07082.avif','images/DSC07097.avif',
-      'images/DSC07122.avif','images/DSC07124.avif','images/DSC07206.avif',
-      'images/DSC07230.avif','images/DSC07242.avif',
+      'images/DSC07049.avif','images/web/DSC06667-1600.jpg','images/web/DSC06685-1600.jpg',
+      'images/web/DSC06690-1600.jpg','images/web/DSC06777-1600.jpg','images/web/DSC06854-1600.jpg',
+      'images/web/DSC06876-1600.jpg','images/web/DSC06923-1600.jpg','images/web/DSC06926-1600.jpg',
+      'images/web/DSC06951-1600.jpg','images/DSC06993.avif','images/web/DSC07011-1600.jpg',
+      'images/web/DSC07017-1600.jpg','images/web/DSC07018-1600.jpg','images/DSC07048.avif',
+      'images/web/DSC07072-1600.jpg','images/web/DSC07082-1600.jpg','images/web/DSC07097-1600.jpg',
+      'images/web/DSC07122-1600.jpg','images/web/DSC07124-1600.jpg','images/web/DSC07206-1600.jpg',
+      'images/web/DSC07230-1600.jpg','images/web/DSC07242-1600.jpg',
     ],
     'Real Estate': [
       'images/web/DSC08468-HDR-1600.jpg','images/web/DSC08876-HDR-1600.jpg','images/web/DSC08901-HDR-1600.jpg',
@@ -1861,14 +1895,14 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       'images/web/DSC08483-HDR-1600.jpg','images/web/DSC08881-HDR-1600.jpg','images/web/DSC08891-HDR-1600.jpg',
     ],
     'Family': [
-      'images/DSC01597.jpg','images/DSC01659.jpg','images/DSC01737.jpg',
-      'images/DSC01840.jpg','images/DSC01851.jpg','images/DSC01952.jpg',
-      'images/DSC01954.jpg',
+      'images/web/DSC01597-1600.jpg','images/web/DSC01659-1600.jpg','images/web/DSC01737-1600.jpg',
+      'images/web/DSC01840-1600.jpg','images/web/DSC01851-1600.jpg','images/web/DSC01952-1600.jpg',
+      'images/web/DSC01954-1600.jpg',
     ],
     'Portraits': [
-      'images/DSC08651.avif','images/DSC08518.jpg','images/DSC08525.jpg',
-      'images/DSC08586.jpg','images/DSC08623.jpg','images/DSC08625.avif',
-      'images/DSC08677.jpg',
+      'images/web/DSC08651-1600.jpg','images/web/DSC08518-1600.jpg','images/web/DSC08525-1600.jpg',
+      'images/web/DSC08586-1600.jpg','images/web/DSC08623-1600.jpg','images/web/DSC08625-1600.jpg',
+      'images/web/DSC08677-1600.jpg',
     ],
   };
 
@@ -1893,7 +1927,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       ph.style.display = '';
       ph.style.background = bgColors[cat] || '#111';
       ph.innerHTML = '<span class="lb-category">' + cat + '</span>'
-        + '<span style="font-family:\'DM Sans\',sans-serif;font-size:10px;letter-spacing:2px;font-weight:800;color:rgba(255,255,255,0.3);text-transform:uppercase;">Photos Coming Soon</span>';
+        + '<span style="font-family:\'DM Sans\',sans-serif;font-size:10px;letter-spacing:2px;font-weight:800;color:rgba(255,255,255,0.6);text-transform:uppercase;">Photos Coming Soon</span>';
     }
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1924,7 +1958,12 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     }
   }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') });
+    if (e.key === 'Escape') {
+      closeLightbox({ target: document.getElementById('lightbox') });
+      const galleryOverlay = document.getElementById('full-gallery-overlay');
+      if (galleryOverlay) galleryOverlay.remove();
+      if (mobileNav.classList.contains('open')) closeMenu();
+    }
     if (e.key === 'ArrowRight' && lbPhotos.length) lbNext(e);
     if (e.key === 'ArrowLeft'  && lbPhotos.length) lbPrev(e);
   });
@@ -1950,11 +1989,11 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
           <div style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#2A5C3F;margin-bottom:4px">Full Portfolio</div>
           <div style="font-family:'DM Sans',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.5px">${allPhotos.length} images</div>
         </div>
-        <button onclick="document.getElementById('full-gallery-overlay').remove()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;padding:10px 22px;cursor:pointer">Close</button>
+        <button onclick="document.getElementById('full-gallery-overlay').remove()" aria-label="Close full gallery" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;padding:10px 22px;cursor:pointer">Close</button>
       </div>`;
 
     const imgs = allPhotos.map((p, i) => `
-      <div onclick="openGalleryItem(${i})" style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;position:relative;">
+      <div onclick="openGalleryItem(${i})" tabindex="0" role="button" aria-label="View ${p.cat} gallery" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGalleryItem(${i});}" style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;position:relative;">
         <img src="${p.src}" loading="lazy" alt="${p.cat}"
           style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;"
           onmouseover="this.style.transform='scale(1.04)'"
@@ -2059,6 +2098,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       );
       msg.className = 'form-msg success';
       msg.textContent = 'Message sent — we\'ll be in touch within 24 hours.';
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'homepage-inquiry' });
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'lead_form_submit' });
       document.getElementById('inquiry-form').reset();
     } catch (err) {
       msg.className = 'form-msg error';
@@ -2067,6 +2109,42 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     btn.textContent = 'Send Inquiry';
     btn.disabled = false;
   }
+</script>
+
+<script>
+window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendly.event_scheduled'){window.dataLayer=window.dataLayer||[];dataLayer.push({event:'booking_complete'});if(window.fbq)fbq('track','Schedule');}});
+</script>
+
+
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('m-on');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.m-reveal, .m-stagger').forEach(function (el) { io.observe(el); });
+  var cio = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      var el = e.target, end = parseFloat(el.getAttribute('data-count')),
+          pre = el.getAttribute('data-prefix') || '', suf = el.getAttribute('data-suffix') || '',
+          t0 = null, dur = 900;
+      function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = pre + Math.round(end * eased) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.m-count').forEach(function (el) { cio.observe(el); });
+})();
 </script>
 
 </body>

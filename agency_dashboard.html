@@ -4,6 +4,7 @@
 <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T9PX92WS');</script><!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Agency Dashboard — Elzinga Creative Studio</title>
 <style>
 /* ── DESIGN TOKENS ── */
@@ -87,6 +88,8 @@ body{font-family:Helvetica Neue,Arial,sans-serif;background:var(--bg);color:var(
 }
 .login-btn:hover{background:var(--brown-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(139,99,71,.3);}
 .login-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.portal-offline-note{font-size:12px;line-height:1.6;color:var(--text-secondary);background:var(--surface2);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:20px;text-align:center;}
+.portal-offline-note a{color:var(--accent);}
 .login-err{
   background:var(--danger-light);color:var(--danger);
   border-radius:var(--radius-sm);padding:10px 14px;
@@ -502,6 +505,7 @@ textarea{resize:vertical;min-height:80px;}
 
       <h2>Welcome <em>back</em></h2>
       <p>Sign in to access the agency dashboard, client CRM, and campaign tools.</p>
+      <div class="portal-offline-note">Client portal is temporarily offline. Email <a href="mailto:kaden@elzingacreativestudio.com">kaden@elzingacreativestudio.com</a>.</div>
       <div class="field-group">
         <label>Username</label>
         <input type="text" id="login-username" placeholder="Your username" autocomplete="username" onkeydown="if(event.key==='Enter')document.getElementById('login-password').focus()">
@@ -591,7 +595,7 @@ textarea{resize:vertical;min-height:80px;}
     <div id="view-overview" class="active">
       <div class="page-head">
         <div class="page-eyebrow">Dashboard</div>
-        <div class="page-title">Agency <em>Overview</em></div>
+        <h1 class="page-title">Agency <em>Overview</em></h1>
         <div class="page-sub">Your snapshot for today</div>
       </div>
       <div class="kpi-grid" id="kpi-grid"></div>

@@ -7,7 +7,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/_DSC1170.avif</image:loc>
+      <image:loc>https://elzingacreativestudio.com/images/web/_DSC1170-1600.jpg</image:loc>
       <image:title>Grand Rapids wedding photography by Elzinga Creative Studio</image:title>
     </image:image>
     <image:image>
@@ -23,11 +23,11 @@
       <image:title>Sports action photography - Grand Rapids Griffins</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC08625.avif</image:loc>
+      <image:loc>https://elzingacreativestudio.com/images/web/DSC08625-1600.jpg</image:loc>
       <image:title>Portrait photography in Grand Rapids Michigan</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://elzingacreativestudio.com/images/DSC01597.jpg</image:loc>
+      <image:loc>https://elzingacreativestudio.com/images/web/DSC01597-1600.jpg</image:loc>
       <image:title>Family photography sessions in West Michigan</image:title>
     </image:image>
   </url>
@@ -378,10 +378,10 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://elzingacreativestudio.com/elzinga-pricing-calculator.html</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://elzingacreativestudio.com/privacy-policy.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
   <!-- Blog posts -->
@@ -679,10 +679,5 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- RSS feed reference -->
-  <url>
-    <loc>https://elzingacreativestudio.com/feed.xml</loc>
-    <lastmod>2026-05-20</lastmod>
-  </url>
 
 </urlset>
