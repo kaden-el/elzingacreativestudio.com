@@ -37,60 +37,84 @@
   }
   </script>
 
+  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cobalt Gallery canonical design system (shared across all pages) -->
+  <link rel="stylesheet" href="css/cobalt-gallery.css">
   <style>
-    :root { --black: #111111; --white: #FFFFFF; --green: #2A5C3F; --green-dk: #1e4430; --off-white: #F7F7F7; --gray: #666666; --gray-lt: #767676; --border: #E0E0E0; }
+    /* ── DESIGN SYSTEM — Cobalt Gallery ──
+       Legacy class names kept; tokens remapped to Cobalt palette.
+       VISUAL reskin only — no copy, structure, schema, or funnel changes. */
+    :root {
+      --black:     #15120D;   /* ink */
+      --white:     #FFFFFF;   /* paper — cards/forms only */
+      --bone:      #FAF8F2;   /* canvas */
+      --green:     #2B5196;   /* COBALT (legacy name kept) */
+      --green-dk:  #234277;   /* cobalt hover-darken */
+      --off-white: #F4F1E8;   /* warm sand — alt section bg */
+      --gray:      #4D4940;   /* muted */
+      --gray-lt:   #79746A;   /* lighter caption */
+      --border:    #ECE6D9;   /* hairline */
+    }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); line-height: 1.6; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
     .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); }
     .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
     .nav-desktop { display: flex; align-items: center; gap: 4px; }
-    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; }
-    .nav-book { background: var(--green) !important; color: var(--white) !important; padding: 10px 20px !important; }
+    .nav-desktop a { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-desktop a:hover { color: var(--green); }
+    .nav-book { background: var(--green) !important; color: var(--bone) !important; padding: 10px 20px !important; border-radius: 44px !important; }
+    .nav-book:hover { background: var(--green-dk) !important; color: var(--bone) !important; }
     #hero { background: var(--black); padding: 140px 60px 80px; }
     .hero-inner { max-width: 880px; margin: 0 auto; }
-    .breadcrumb { font-size: 11px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-    .breadcrumb a { color: #7FBF9B; text-decoration: none; }
-    .hero-eyebrow { color: #7FBF9B; font-size: 11px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
-    .hero-h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; color: var(--white); margin-bottom: 24px; }
-    .hero-sub { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 24px; }
-    .hero-cta { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; }
+    .breadcrumb { font-size: 11px; color: rgba(250,248,242,0.65); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+    .breadcrumb a { color: var(--green); text-decoration: none; }
+    .hero-eyebrow { color: var(--green); font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+    .hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 6vw, 64px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 24px; font-optical-sizing: auto; }
+    .hero-h1 em { font-style: italic; color: var(--green); }
+    .hero-sub { font-size: 17px; color: rgba(250,248,242,0.72); line-height: 1.7; margin-bottom: 24px; }
+    .hero-cta { display: inline-flex; align-items: center; padding: 14px 32px; background: var(--green); color: var(--bone); font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; border-radius: 44px; transition: background 0.2s; }
+    .hero-cta:hover { background: var(--green-dk); }
     article { max-width: 880px; margin: 0 auto; padding: 80px 60px; }
-    article h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin: 56px 0 18px; }
+    article h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(26px, 4vw, 40px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin: 56px 0 18px; font-optical-sizing: auto; }
+    article h2 em { font-style: italic; color: var(--green); }
     article h2:first-of-type { margin-top: 0; }
     article p { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 18px; }
-    article p strong { color: var(--black); font-weight: 800; }
+    article p strong { color: var(--black); font-weight: 600; }
     article ul { margin: 16px 0 24px 24px; }
     article li { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 8px; }
     article a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
-    .pricing-strip { background: var(--off-white); padding: 32px 36px; margin: 32px 0; border-left: 4px solid var(--green); }
-    .pricing-strip h3 { font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .pricing-strip { background: var(--off-white); padding: 32px 36px; margin: 32px 0; border-left: 4px solid var(--green); border-radius: 4px; }
+    .pricing-strip h3 { font-family: 'Inter', system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
     .pricing-strip .tiers { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 8px; }
     .pricing-strip .tier { display: flex; flex-direction: column; }
-    .pricing-strip .tier-name { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
-    .pricing-strip .tier-price { font-size: 28px; font-weight: 800; color: var(--black); letter-spacing: -1px; }
+    .pricing-strip .tier-name { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+    .pricing-strip .tier-price { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 300; color: var(--black); letter-spacing: -0.02em; }
     #cta-band { background: var(--green); padding: 80px 60px; text-align: center; }
-    .cta-title { font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: var(--white); margin-bottom: 28px; }
-    .btn-white { display: inline-block; padding: 14px 36px; background: var(--white); color: var(--black); font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; }
+    .cta-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 28px; font-optical-sizing: auto; }
+    .cta-title em { font-style: italic; color: var(--sky, #A9C0D8); }
+    .btn-white { display: inline-flex; align-items: center; padding: 14px 32px; background: var(--bone); color: var(--black); font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; border-radius: 44px; transition: background 0.2s, color 0.2s; }
+    .btn-white:hover { background: var(--white); }
     footer { background: var(--black); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer > * { flex: 1; }
     footer > *:nth-child(2) { text-align: center; }
     footer > *:last-child { text-align: right; }
-    .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
-    .footer-tag { font-size: 7.5px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
-    .footer-copy { font-size: 10px; color: rgba(255,255,255,0.2); }
+    .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(250,248,242,0.8); }
+    .footer-tag { font-size: 7.5px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(250,248,242,0.25); }
+    .footer-copy { font-size: 10px; color: rgba(250,248,242,0.2); }
     .work-gallery { max-width: 880px; margin: 0 auto; padding: 0 60px 80px; }
-    .work-gallery-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: block; }
-    .work-gallery-title { font-size: clamp(24px, 4vw, 36px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: var(--black); margin-bottom: 16px; }
+    .work-gallery-label { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: block; }
+    .work-gallery-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(24px, 4vw, 36px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 16px; font-optical-sizing: auto; }
+    .work-gallery-title em { font-style: italic; color: var(--green); }
     .work-gallery-sub { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 32px; max-width: 720px; }
     .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .work-grid img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
+    .work-grid img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; border-radius: 14px; }
     @media (max-width: 768px) {
       .nav-desktop a:not(.nav-book){display:none;}
       .nav-desktop .nav-book{padding:10px 18px;}
@@ -104,16 +128,17 @@
     }
     .nearby-areas { background: var(--off-white); padding: 64px 60px; border-top: 1px solid var(--border); }
     .nearby-inner { max-width: 880px; margin: 0 auto; }
-    .nearby-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
-    .nearby-title { font-size: clamp(22px, 3.6vw, 30px); font-weight: 800; line-height: 1.15; letter-spacing: -0.8px; color: var(--black); margin-bottom: 28px; }
+    .nearby-label { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
+    .nearby-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; color: var(--black); margin-bottom: 28px; font-optical-sizing: auto; }
+    .nearby-title em { font-style: italic; color: var(--green); }
     .nearby-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; transition: border-color 0.18s, transform 0.18s; }
-    .nearby-list a strong { color: var(--black); font-weight: 800; }
+    .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; border-radius: 8px; transition: border-color 0.18s, transform 0.18s; }
+    .nearby-list a strong { color: var(--black); font-weight: 600; }
     .nearby-list a:hover { border-color: var(--green); transform: translateX(2px); }
     @media (max-width: 768px) { .nearby-areas { padding: 48px 24px; } .nearby-list { grid-template-columns: 1fr; } }
-  
+
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -122,7 +147,7 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -142,19 +167,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <div class="hero-inner">
     <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="grand-rapids-real-estate-photography-guide.html">Real Estate Photography</a> &nbsp;/&nbsp; Plainwell</p>
     <p class="hero-eyebrow">Plainwell, MI</p>
-    <h1 class="hero-h1">Real estate photography for Plainwell listings.</h1>
+    <h1 class="hero-h1">Real estate photography for <em>Plainwell</em> listings.</h1>
     <p class="hero-sub">HDR, drone, and 24-hour delivery built for Plainwell's US-131 commuter-value market between Grand Rapids and Kalamazoo. In-town value homes, Kalamazoo River frontage in the Island City, lake and acreage parcels near Gun Lake, and the Plainwell Community Schools zone. Starting at $245.</p>
     <a href="preferred-photographer.html" class="hero-cta">See Pricing</a>
   </div>
 </section>
 
 <article>
-  <h2>Why Plainwell listings sell to two metros at once</h2>
+  <h2 class="reveal">Why Plainwell listings sell to <em>two metros</em> at once</h2>
   <p>Plainwell sits in Allegan County about 30 miles south of Grand Rapids, right on the US-131 corridor and almost exactly between the Grand Rapids and Kalamazoo metros. That location defines the market: it is a price-competitive commuter town that draws buyers from both directions, people who want a walkable historic downtown and a value home without paying metro prices. Plainwell carries a strong local identity, the "Island City" where the Kalamazoo River splits around the town center, with paper-mill heritage, a tight downtown, and Plainwell Community Schools. But the listings split into clear lanes. <strong>One is the in-town value home, another is Kalamazoo River frontage, and a third is rural acreage and lake parcels out toward Gun Lake, and each one sells to a different buyer.</strong></p>
 
   <p>Elzinga Creative Studio shoots Plainwell listings around what those buyers actually search. For the commuter, it is clean, bright HDR interiors, the small-town downtown feel, and the easy US-131 access north to Grand Rapids or south to Kalamazoo. For the waterfront and acreage buyer, it is drone aerials that show the riverline, lot size, and how much room a parcel really has. Pricing here is competitive against both metros, so the photography has to make a value-priced home read as the obvious pick the moment a buyer scrolls past it. If you list here often, it is worth becoming a <a href="preferred-photographer.html">preferred photographer</a> partner so every Plainwell listing ships fast at a standing rate.</p>
 
-  <div class="pricing-strip">
+  <div class="pricing-strip reveal">
     <h3>Pricing for Plainwell listings</h3>
     <div class="tiers">
       <div class="tier"><span class="tier-name">Essential</span><span class="tier-price">$245</span></div>
@@ -164,7 +189,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <p style="margin-top: 16px; margin-bottom: 0; font-size: 14px;">Most in-town Plainwell homes do well on Essential or Showcase. Add drone ($125) on river-frontage and lake or acreage parcels, or a 2D floor plan ($75) on Essential. A <a href="matterport-3d-tour-grand-rapids.html">3D virtual tour</a> (Zillow 3D Home or Matterport-style) is a $100 add-on to any tier. <a href="preferred-photographer.html">See full breakdown</a>.</p>
   </div>
 
-  <h2>What we shoot in Plainwell</h2>
+  <h2 class="reveal">What we shoot in <em>Plainwell</em></h2>
   <ul>
     <li><strong>In-town commuter-value homes:</strong> bright HDR interiors and clean exteriors that make a price-competitive listing stand out for both Grand Rapids and Kalamazoo buyers</li>
     <li><strong>Kalamazoo River frontage in the Island City:</strong> drone aerials showing the waterline, lot shape, and how the home sits on the river that splits the town center</li>
@@ -173,19 +198,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <li><strong>New-build and larger-lot properties off the US-131 corridor:</strong> full Showcase with drone, because the lot and two-metro commute access are the value</li>
   </ul>
 
-  <h2>Drone for river frontage and lot context</h2>
+  <h2 class="reveal">Drone for river frontage and <em>lot context</em></h2>
   <p>On a Plainwell river-frontage, lake, or acreage listing, the land and the water are the value, and you can only show them from the air. Drone aerials make a parcel legible at a glance: where the Kalamazoo River bends along the lot, how the acreage lays out, where the outbuildings sit, and how the home relates to the road and the US-131 corridor. For a buyer comparing waterfront or rural parcels on price, that aerial is often what earns the showing. <strong>Drone is a $125 add-on</strong> on Essential or Showcase, or included in the Signature tier. For the full breakdown see <a href="blog/drone-laws-grand-rapids-real-estate-agents.html">drone laws for Grand Rapids real estate agents</a>.</p>
 
-  <h2>Drone in Plainwell airspace</h2>
+  <h2 class="reveal">Drone in <em>Plainwell</em> airspace</h2>
   <p>Plainwell sits in Class G uncontrolled airspace with no towered airport in town, the friendliest tier for commercial drone work. In most cases no LAANC authorization is needed, which keeps river-frontage and lot-context flights simple. ECS flies Part 107 RPIC compliant on every shoot and checks airspace ahead of time, so the flight is legal and the shoot stays on schedule. Plainwell is beyond the roughly 25-mile free travel radius around Grand Rapids, so the slightly longer drive to Plainwell is handled with a small travel arrangement, confirmed when you book.</p>
 
-  <h2>Plainwell listing FAQ</h2>
+  <h2 class="reveal">Plainwell listing <em>FAQ</em></h2>
   <p><strong>Do you shoot Kalamazoo River frontage and lake parcels around Plainwell?</strong> Yes. River frontage and lake or acreage parcels near Gun Lake are a real part of this market, and drone is how you sell them. Aerials show the waterline, lot size and shape, outbuildings, and how the property sits along the US-131 corridor. Drone is included in the Signature tier ($495), or a $125 add-on on Essential or Showcase.</p>
   <p><strong>Can you fly a drone over a Plainwell listing legally?</strong> Yes. Plainwell is in Class G uncontrolled airspace with no towered airport in town, so most listings need no LAANC authorization. We fly Part 107 RPIC compliant and check airspace before we arrive.</p>
   <p><strong>How fast is delivery?</strong> Within 24 hours of the shoot, MLS-ready via Pixieset. For a price-competitive US-131 listing selling to buyers from two metros, that turnaround gets it live and in front of both Grand Rapids and Kalamazoo commuters fast.</p>
   <p><strong>What does it cost?</strong> Three tiers: Essential $245, Showcase $325, Signature $495. Drone is $125 as an add-on (included in Signature) and a 2D floor plan is $75 on Essential. Most in-town homes land on Essential or Showcase; river-frontage and lake parcels are worth adding drone. Plainwell is beyond the free travel radius, so a small travel arrangement is confirmed when you book.</p>
 
-  <h2>How to book a Plainwell listing shoot</h2>
+  <h2 class="reveal">How to book a Plainwell <em>listing shoot</em></h2>
   <ul>
     <li><strong>For agents listing in Plainwell regularly:</strong> join the <a href="preferred-photographer.html">Preferred Photographer Program</a> for standing 3-tier pricing, priority calendar, and a $50 referral credit.</li>
     <li><strong>For one-off listings:</strong> book on the <a href="real-estate-photography-grand-rapids.html">main real estate photography page</a>.</li>
@@ -195,9 +220,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <p>Or <a href="sms:+16162584578">text Kaden directly at (616) 258-4578</a>.</p>
 </article>
 
-<section class="work-gallery">
+<section class="work-gallery reveal">
   <span class="work-gallery-label">Sample Work / Plainwell</span>
-  <h2 class="work-gallery-title">Commuter-value HDR for Plainwell listings.</h2>
+  <h2 class="work-gallery-title">Commuter-value HDR for <em>Plainwell</em> listings.</h2>
   <p class="work-gallery-sub">Plainwell buyers are comparing value-priced homes against two metros at once, so the gallery has to make a listing the obvious pick at a glance. Bright HDR interiors that read clean and move-in ready, sharp exteriors, and drone aerials that show the river frontage, lot, and acreage that justify the price.</p>
   <div class="work-grid">
     <picture><source srcset="images/web/DSC08468-HDR-1600.avif" type="image/avif"><img src="images/web/DSC08468-HDR-1600.jpg" alt="Bright HDR living room with fireplace and natural window light, West Michigan listing photographed by Elzinga Creative Studio" width="1200" height="800" loading="lazy"></picture>
@@ -208,10 +233,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 </section>
 
 
-<section class="nearby-areas">
+<section class="nearby-areas reveal">
   <div class="nearby-inner">
     <span class="nearby-label">Other Service Areas</span>
-    <h2 class="nearby-title">Real estate photography in nearby West Michigan towns.</h2>
+    <h2 class="nearby-title">Real estate photography in nearby <em>West Michigan</em> towns.</h2>
     <ul class="nearby-list">
     <li><a href="real-estate-photography-wayland.html"><strong>Wayland, MI</strong> · US-131, Gun Lake</a></li>
     <li><a href="real-estate-photography-middleville.html"><strong>Middleville, MI</strong> · Thornapple, TK schools</a></li>
@@ -224,8 +249,8 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   </div>
 </section>
 
-<section id="cta-band">
-  <h2 class="cta-title">List in Plainwell? Let's photograph it right.</h2>
+<section id="cta-band" class="reveal">
+  <h2 class="cta-title">List in Plainwell? Let's <em>photograph</em> it right.</h2>
   <a href="preferred-photographer.html" class="btn-white">See Realtor Pricing</a>
   <a href="book-a-listing.html" class="btn-white" style="margin-left:12px;">Book this listing →</a>
 </section>
@@ -245,6 +270,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <script>
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('cg-motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

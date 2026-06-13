@@ -75,85 +75,228 @@
   }
   </script>
 
+  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cobalt Gallery canonical design system (shared across all pages) -->
+  <link rel="stylesheet" href="css/cobalt-gallery.css">
   <style>
-    :root { --black: #111111; --white: #FFFFFF; --green: #2A5C3F; --green-dk: #1e4430; --off-white: #F7F7F7; --gray: #666666; --gray-lt: #767676; --border: #E0E0E0; --twilight: #2c3e6b; }
+    /* ── DESIGN SYSTEM — Cobalt Gallery ──
+       Legacy class names kept; tokens remapped to Cobalt palette.
+       Visual reskin only — no copy, structure, schema, or funnel changes. */
+    :root {
+      --black:     #15120D;   /* ink */
+      --white:     #FFFFFF;   /* paper — cards/forms only */
+      --bone:      #FAF8F2;   /* canvas */
+      --green:     #2B5196;   /* COBALT (legacy name kept) */
+      --green-dk:  #234277;   /* cobalt hover-darken */
+      --off-white: #F4F1E8;   /* warm sand — alt section bg */
+      --gray:      #4D4940;   /* muted */
+      --gray-lt:   #79746A;   /* lighter caption */
+      --border:    #ECE6D9;   /* hairline */
+      --twilight:  #1b2a4a;   /* deep cobalt night — hero bg */
+    }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
-    .section-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-    .section-title { font-size: clamp(36px, 5vw, 68px); font-weight: 800; line-height: 1.0; letter-spacing: -1.5px; }
-    .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+    .section-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--green);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(36px, 5vw, 68px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      font-optical-sizing: auto;
+    }
+    .section-title em { font-style: italic; color: var(--green); }
+
+    .btn-green {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 30px;
+      border-radius: 44px;
+      background: var(--green);
+      color: var(--bone);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
     .btn-green:hover { background: var(--green-dk); }
-    .btn-black { display: inline-block; padding: 14px 36px; background: var(--black); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
-    .btn-black:hover { background: #333; }
-    .btn-outline-white { display: inline-block; padding: 12px 28px; background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.8); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .btn-black {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 30px;
+      border-radius: 44px;
+      background: var(--black);
+      color: var(--bone);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-black:hover { background: #2b2620; }
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 44px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.8);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
     .btn-outline-white:hover { border-color: var(--white); color: var(--white); }
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 60px;
+      background: rgba(250,248,242,0.92);
+      backdrop-filter: saturate(1.1) blur(8px);
+      -webkit-backdrop-filter: saturate(1.1) blur(8px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
-    .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
-    .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
-    .nav-desktop { display: flex; align-items: center; gap: 4px; }
-    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .logo-ecs { font-size: 20px; font-weight: 700; letter-spacing: 4px; color: var(--black); line-height: 1; }
+    .logo-full { font-size: 8px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-lt); }
+    .nav-desktop { display: flex; align-items: center; gap: 6px; }
+    .nav-desktop a { font-size: 13px; font-weight: 500; letter-spacing: 0.01em; color: var(--gray); padding: 8px 12px; text-decoration: none; transition: color 0.2s; }
     .nav-desktop a:hover { color: var(--black); }
-    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; }
+    .nav-book {
+      background: var(--green) !important; color: var(--bone) !important;
+      margin-left: 8px; padding: 10px 20px !important;
+      border-radius: 44px !important;
+      font-weight: 600 !important;
+    }
     .nav-book:hover { background: var(--green-dk) !important; }
 
-    #hero { background: linear-gradient(180deg, var(--twilight) 0%, var(--black) 100%); min-height: 100vh; padding-top: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-left: 60px; padding-right: 60px; padding-bottom: 60px; text-align: center; }
-    .hero-h1 { font-size: clamp(48px, 8vw, 110px); font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--white); margin-bottom: 32px; }
-    .hero-h1 em { font-style: normal; color: #f4c95e; }
-    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 640px; line-height: 1.7; margin-bottom: 40px; }
+    #hero {
+      background: linear-gradient(180deg, var(--twilight) 0%, var(--black) 100%);
+      min-height: 100vh; padding-top: 80px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding-left: 60px; padding-right: 60px; padding-bottom: 60px;
+      text-align: center;
+    }
+    .hero-h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(48px, 8vw, 110px);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 32px;
+      font-optical-sizing: auto;
+    }
+    .hero-h1 em { font-style: italic; color: #A9C0D8; }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 640px; line-height: 1.7; margin-bottom: 40px; font-family: 'Inter', sans-serif; }
     .hero-stat-row { display: flex; gap: 48px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
     .hero-stat-item { display: flex; flex-direction: column; gap: 6px; align-items: center; }
-    .hero-stat-num { font-size: 56px; font-weight: 800; color: var(--white); line-height: 1; letter-spacing: -2px; }
-    .hero-stat-label { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); max-width: 140px; }
+    .hero-stat-num { font-family: 'Fraunces', Georgia, serif; font-size: 56px; font-weight: 300; color: var(--white); line-height: 1; letter-spacing: -0.03em; }
+    .hero-stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); max-width: 140px; font-family: 'Inter', sans-serif; }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-    .hero-img { width: 100%; max-width: 1100px; margin-top: 56px; aspect-ratio: 16/9; background: url('images/web/DSC08881-HDR-1600.jpg') center/cover; border: 4px solid rgba(255,255,255,0.1); }
+    .hero-img { width: 100%; max-width: 1100px; margin-top: 56px; aspect-ratio: 16/9; background: url('images/web/DSC08881-HDR-1600.jpg') center/cover; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); }
 
     #compare-section { padding: 120px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
     .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; }
-    .compare-side { padding: 36px; border: 1px solid var(--border); background: var(--white); }
+    .compare-side { padding: 36px; border: 1px solid var(--border); background: var(--white); border-radius: 14px; }
     .compare-side.real { border: 2px solid var(--green); }
-    .compare-tag { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; padding: 5px 12px; margin-bottom: 16px; }
-    .compare-side.real .compare-tag { background: var(--green); color: var(--white); }
+    .compare-tag { display: inline-flex; align-items: center; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 14px; margin-bottom: 16px; border-radius: 44px; }
+    .compare-side.real .compare-tag { background: var(--green); color: var(--bone); }
     .compare-side.virtual .compare-tag { background: var(--off-white); color: var(--gray); border: 1px solid var(--border); }
-    .compare-side h3 { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; }
+    .compare-side h3 { font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 16px; }
     .compare-side ul { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
     .compare-side li { font-size: 14px; line-height: 1.6; color: var(--gray); display: flex; gap: 10px; align-items: flex-start; }
-    .compare-side.real li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .compare-side.real li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
     .compare-side.virtual li::before { content: '✗'; color: #c14a3a; flex-shrink: 0; }
 
-    #pricing { padding: 120px 60px; background: var(--white); border-top: 1px solid var(--border); text-align: center; }
-    .pricing-box { display: inline-flex; flex-direction: column; align-items: center; gap: 12px; padding: 56px 64px; border: 2px solid var(--green); background: var(--off-white); margin-top: 56px; }
-    .pricing-box .price { font-size: 96px; font-weight: 800; color: var(--green); line-height: 1; letter-spacing: -3px; }
-    .pricing-box .label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); }
+    #pricing { padding: 120px 60px; background: var(--bone); border-top: 1px solid var(--border); text-align: center; }
+    .pricing-box { display: inline-flex; flex-direction: column; align-items: center; gap: 12px; padding: 56px 64px; border: 2px solid var(--green); background: var(--white); border-radius: 14px; margin-top: 56px; }
+    .pricing-box .price { font-family: 'Fraunces', Georgia, serif; font-size: 96px; font-weight: 300; color: var(--green); line-height: 1; letter-spacing: -0.03em; }
+    .pricing-box .label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); }
     .pricing-box .sub { font-size: 14px; color: var(--gray); max-width: 320px; line-height: 1.6; margin-top: 6px; margin-bottom: 24px; }
 
     #faq { padding: 120px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
     .faq-header { margin-bottom: 60px; }
     .faq-list { max-width: 800px; }
     .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-item summary { padding: 24px 0; font-size: 16px; font-weight: 800; color: var(--black); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-    .faq-item summary::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--green); transition: transform 0.2s; }
+    .faq-item summary { padding: 24px 0; font-size: 16px; font-weight: 600; color: var(--black); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; }
+    .faq-item summary::after { content: '+'; font-size: 22px; font-weight: 300; color: var(--green); transition: transform 0.2s; }
     .faq-item[open] summary::after { transform: rotate(45deg); }
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item p { padding: 0 0 24px; font-size: 15px; line-height: 1.85; color: var(--gray); }
 
     #cta-band { background: var(--twilight); padding: 100px 60px; text-align: center; }
     #cta-band .section-label { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
-    .cta-title { font-size: clamp(36px, 5vw, 72px); font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--white); margin-bottom: 48px; }
-    .btn-white { display: inline-block; padding: 16px 48px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
-    .btn-white:hover { background: var(--off-white); }
+    #cta-band .section-label::before { background: rgba(255,255,255,0.4); }
+    .cta-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 5vw, 72px); font-weight: 300; line-height: 1.02; letter-spacing: -0.025em; color: var(--white); margin-bottom: 48px; font-optical-sizing: auto; }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 40px;
+      border-radius: 44px;
+      background: var(--white);
+      color: var(--black);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-white:hover { background: var(--bone); }
 
     footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer > * { flex: 1; }
     footer > *:nth-child(2) { text-align: center; }
     footer > *:last-child { text-align: right; }
     .footer-brand { display: flex; flex-direction: column; gap: 4px; }
-    .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
+    .footer-ecs { font-size: 14px; font-weight: 700; letter-spacing: 4px; color: rgba(255,255,255,0.8); }
     .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
     .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.2); }
 
@@ -162,16 +305,16 @@
       .nav-desktop .nav-book{padding:10px 18px;}
       header { padding: 16px 24px; }
       #hero { padding: 100px 24px 48px; }
-      .hero-h1 { font-size: clamp(42px, 12vw, 72px); letter-spacing: -1.5px; }
+      .hero-h1 { font-size: clamp(42px, 12vw, 72px); letter-spacing: -0.02em; }
       .hero-stat-row { gap: 24px; }
       #compare-section, #pricing, #faq, #cta-band { padding: 72px 24px; }
       .compare-grid { grid-template-columns: 1fr; gap: 24px; }
       .pricing-box { padding: 36px 28px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
-  
+
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
   </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script>
@@ -191,7 +334,7 @@ fbq('track', 'PageView');
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://elzingacreativestudio.com/" }, { "@type": "ListItem", "position": 2, "name": "Real Twilight Photography", "item": "https://elzingacreativestudio.com/twilight.html" } ] }
   </script>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -212,11 +355,11 @@ fbq('track', 'PageView');
 
 
 <section id="hero">
-  <p style="color: #f4c95e; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 24px;">Real twilight, not a Photoshop trick</p>
-  <h1 class="hero-h1">The shot that<br><em>stops the scroll.</em></h1>
-  <p class="hero-sub">Real blue-hour twilight real estate photography in Grand Rapids. Shot during the actual golden window — not faked in post. The single biggest engagement lift in your listing gallery.</p>
+  <p class="reveal" style="display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#A9C0D8;margin-bottom:24px;"><span style="width:26px;height:2px;background:#A9C0D8;display:inline-block;flex-shrink:0;"></span>Real twilight, not a Photoshop trick</p>
+  <h1 class="hero-h1 reveal">The shot that<br><em>stops the scroll.</em></h1>
+  <p class="hero-sub reveal">Real blue-hour twilight real estate photography in Grand Rapids. Shot during the actual golden window — not faked in post. The single biggest engagement lift in your listing gallery.</p>
 
-  <div class="hero-stat-row">
+  <div class="hero-stat-row reveal-stagger">
     <div class="hero-stat-item">
       <span class="hero-stat-num">+300%</span>
       <span class="hero-stat-label">Avg. view lift cited for twilight</span>
@@ -231,20 +374,22 @@ fbq('track', 'PageView');
     </div>
   </div>
 
-  <div class="hero-ctas">
+  <div class="hero-ctas reveal">
     <a href="book-a-listing.html" onclick="openCalendly(); return false;" class="btn-green">Book a Twilight Shoot</a>
     <a href="preferred-photographer.html" class="btn-outline-white">See All Tiers</a>
   </div>
 
-  <div class="hero-img" role="img" aria-label="Real twilight real estate photography Grand Rapids — blue-hour exterior with warm interior lights"></div>
+  <div class="hero-img reveal" role="img" aria-label="Real twilight real estate photography Grand Rapids — blue-hour exterior with warm interior lights"></div>
 </section>
 
 
 <!-- COMPARISON -->
 <section id="compare-section">
-  <span class="section-label">Real vs Virtual</span>
-  <h2 class="section-title">Two photos. One looks like a magazine.<br>The other looks like Photoshop.</h2>
-  <div class="compare-grid">
+  <div class="reveal">
+    <span class="section-label">Real vs Virtual</span>
+    <h2 class="section-title">Two photos. One looks like a <em>magazine.</em><br>The other looks like Photoshop.</h2>
+  </div>
+  <div class="compare-grid reveal-stagger">
     <div class="compare-side real">
       <span class="compare-tag">Real Twilight (ECS)</span>
       <h3>Shot during the actual blue hour.</h3>
@@ -255,7 +400,7 @@ fbq('track', 'PageView');
         <li>Sky and foreground match because they were shot at the same time</li>
         <li>Buyers click through. Showings rise. Days-on-market drops.</li>
       </ul>
-      <a href="blog/real-vs-virtual-twilight-grand-rapids.html" style="font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--green); text-decoration: none;">Read the breakdown →</a>
+      <a href="blog/real-vs-virtual-twilight-grand-rapids.html" style="font-size: 13px; font-weight: 600; color: var(--green); text-decoration: none; display:inline-flex; align-items:center; gap:6px;">Read the breakdown <span style="color:var(--green);">→</span></a>
     </div>
     <div class="compare-side virtual">
       <span class="compare-tag">Virtual Twilight (typical)</span>
@@ -274,12 +419,14 @@ fbq('track', 'PageView');
 
 <!-- PRICING -->
 <section id="pricing">
-  <span class="section-label">Pricing</span>
-  <h2 class="section-title">Real twilight, simple math.</h2>
-  <div class="pricing-box">
+  <div class="reveal">
+    <span class="section-label">Pricing</span>
+    <h2 class="section-title">Real twilight, <em>simple</em> math.</h2>
+  </div>
+  <div class="pricing-box reveal">
     <span class="label">Add-on price</span>
     <div class="price">$150</div>
-    <p class="sub">Real blue-hour shoot. 5-8 dusk exteriors delivered alongside your main gallery. Add to any package — or get it free with Showcase ($325) and Signature ($495). Pairs well with a <a href="matterport-3d-tour-grand-rapids.html" style="color:var(--green);font-weight:800;">3D virtual tour</a> ($100 add-on).</p>
+    <p class="sub">Real blue-hour shoot. 5-8 dusk exteriors delivered alongside your main gallery. Add to any package — or get it free with Showcase ($325) and Signature ($495). Pairs well with a <a href="matterport-3d-tour-grand-rapids.html" style="color:var(--green);font-weight:600;">3D virtual tour</a> ($100 add-on).</p>
     <a href="book-a-listing.html" onclick="openCalendly(); return false;" class="btn-green">Book a Twilight Shoot</a>
   </div>
 </section>
@@ -287,9 +434,9 @@ fbq('track', 'PageView');
 
 <!-- FAQ -->
 <section id="faq">
-  <div class="faq-header">
+  <div class="faq-header reveal">
     <span class="section-label">Common Questions</span>
-    <h2 class="section-title">Real Twilight FAQ.</h2>
+    <h2 class="section-title">Real Twilight <em>FAQ.</em></h2>
   </div>
   <div class="faq-list">
     <details class="faq-item">
@@ -321,9 +468,9 @@ fbq('track', 'PageView');
 
 
 <section id="cta-band">
-  <span class="section-label">Real twilight. Same listing. More views.</span>
-  <h2 class="cta-title">Add it to your<br>next listing.</h2>
-  <a href="book-a-listing.html" onclick="openCalendly(); return false;" class="btn-white">Book a Shoot</a>
+  <span class="section-label reveal">Real twilight. Same listing. More views.</span>
+  <h2 class="cta-title reveal">Add it to your<br>next listing.</h2>
+  <a href="book-a-listing.html" onclick="openCalendly(); return false;" class="btn-white reveal">Book a Shoot</a>
 </section>
 
 
@@ -332,12 +479,12 @@ fbq('track', 'PageView');
     <span class="footer-ecs">ECS</span>
     <span class="footer-tag">Photography · Video · Marketing</span>
   </div>
-  <a href="index.html" style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;">← Back to Main Site</a>
+  <a href="index.html" style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;">← Back to Main Site</a>
   <div style="display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.25);">
     <span>PARTNERS</span>
-    <a href="https://elevationhome.co" target="_blank" rel="noopener" title="Elevation Home Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EHC</a>
-    <a href="https://elevationdoorco.com" target="_blank" rel="noopener" title="Elevation Door Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EDC</a>
-    <a href="https://elevationexteriorcleaning.com" target="_blank" rel="noopener" title="Elevation Exterior Cleaning" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EEC</a>
+    <a href="https://elevationhome.co" target="_blank" rel="noopener" title="Elevation Home Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:600;">EHC</a>
+    <a href="https://elevationdoorco.com" target="_blank" rel="noopener" title="Elevation Door Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:600;">EDC</a>
+    <a href="https://elevationexteriorcleaning.com" target="_blank" rel="noopener" title="Elevation Exterior Cleaning" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:600;">EEC</a>
   </div>
   <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a></p>
 </footer>
@@ -353,6 +500,19 @@ fbq('track', 'PageView');
     if (window.Calendly) { Calendly.initPopupWidget({ url: CALENDLY_URL }); }
     else { window.open(CALENDLY_URL, '_blank'); }
   }
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('cg-motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

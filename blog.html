@@ -311,7 +311,7 @@
       },
       {
         "@type": "BlogPosting",
-        "headline": "Real vs. Virtual Twilight Photography \u2014 Why Grand Rapids Listings Need the Real Glow",
+        "headline": "Real vs. Virtual Twilight Photography — Why Grand Rapids Listings Need the Real Glow",
         "url": "https://elzingacreativestudio.com/blog/real-vs-virtual-twilight-grand-rapids.html",
         "datePublished": "2026-05-09",
         "author": { "@type": "Person", "name": "Kaden Elzinga" }
@@ -342,32 +342,59 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="Elzinga Creative Studio Blog" href="/feed.xml" />
 
+  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cobalt Gallery canonical design system (shared across all pages) -->
+  <link rel="stylesheet" href="css/cobalt-gallery.css">
   <style>
     :root {
-      --black: #111111; --white: #FFFFFF; --green: #2A5C3F;
-      --green-dk: #1e4430; --off-white: #F7F7F7;
-      --gray: #666666; --gray-lt: #767676; --border: #E0E0E0;
+      --black:     #15120D;
+      --white:     #FFFFFF;
+      --bone:      #FAF8F2;
+      --green:     #2B5196;
+      --green-dk:  #234277;
+      --off-white: #F4F1E8;
+      --gray:      #4D4940;
+      --gray-lt:   #79746A;
+      --border:    #ECE6D9;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
 
-    .section-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+    .section-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--green);
+      display: inline-block;
+      flex-shrink: 0;
+    }
 
     /* HEADER */
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: saturate(1.1) blur(8px); -webkit-backdrop-filter: saturate(1.1) blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
     .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
     .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
     .nav-desktop { display: flex; align-items: center; gap: 4px; }
-    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
-    .nav-desktop a:hover, .nav-desktop a.active { color: var(--black); }
-    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; }
-    .nav-book:hover { background: var(--green-dk) !important; }
+    .nav-desktop a { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-desktop a:hover, .nav-desktop a.active { color: var(--green); }
+    .nav-book { background: var(--green) !important; color: var(--bone) !important; margin-left: 8px; padding: 10px 20px !important; border-radius: 44px !important; }
+    .nav-book:hover { background: var(--green-dk) !important; color: var(--bone) !important; }
 
     /* PAGE HEADER */
     #blog-header {
@@ -376,11 +403,21 @@
       border-bottom: 1px solid var(--border);
     }
     .blog-header-inner { max-width: 680px; }
-    .blog-h1 { font-size: clamp(48px, 7vw, 96px); font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--black); margin-bottom: 24px; }
+    .blog-h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      color: var(--black);
+      margin-bottom: 24px;
+      font-optical-sizing: auto;
+    }
+    .blog-h1 em { font-style: italic; color: var(--green); }
     .blog-sub { font-size: 15px; line-height: 1.7; color: var(--gray); }
 
     /* POSTS GRID */
-    #posts { padding: 80px 60px 120px; }
+    #posts { padding: 80px 60px 120px; background: var(--bone); }
     .posts-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -393,19 +430,20 @@
       background: var(--off-white);
       overflow: hidden;
       margin-bottom: 20px;
+      border-radius: 14px;
       border: 1px solid var(--border);
     }
     .post-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
     .post-card:hover .post-thumb img { transform: scale(1.03); }
     .post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
     .post-tag {
-      font-size: 8px; font-weight: 800; letter-spacing: 3px;
+      font-size: 8px; font-weight: 600; letter-spacing: 3px;
       text-transform: uppercase; color: var(--green);
     }
     .post-date { font-size: 11px; color: var(--gray-lt); }
     .post-title {
-      font-size: 20px; font-weight: 800; letter-spacing: -0.5px;
-      line-height: 1.2; color: var(--black);
+      font-size: 18px; font-weight: 600; letter-spacing: -0.3px;
+      line-height: 1.25; color: var(--black);
       margin-bottom: 10px; transition: color 0.2s;
     }
     .post-excerpt { font-size: 13px; line-height: 1.75; color: var(--gray); }
@@ -433,9 +471,9 @@
       .posts-grid { grid-template-columns: 1fr; gap: 40px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
-  
+
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -454,7 +492,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -475,16 +513,16 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 
 <section id="blog-header">
-  <div class="blog-header-inner">
+  <div class="blog-header-inner reveal">
     <span class="section-label">Journal</span>
-    <h1 class="blog-h1">Stories,<br>Tips &amp;<br>Locations.</h1>
+    <h1 class="blog-h1">Stories,<br>Tips &amp;<br><em>Locations.</em></h1>
     <p class="blog-sub">Photography guides, West Michigan venue recaps, and behind-the-scenes from Elzinga Creative Studio. Updated weekly.</p>
   </div>
 </section>
 
 
 <section id="posts">
-  <div class="posts-grid" id="posts-grid">
+  <div class="posts-grid reveal-stagger" id="posts-grid">
 
     <!-- POSTS GO HERE — copy a .post-card block for each new post -->
 
@@ -1040,6 +1078,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   window.addEventListener('scroll', () => {
     hdr.classList.toggle('scrolled', window.scrollY > 40);
   });
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('cg-motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

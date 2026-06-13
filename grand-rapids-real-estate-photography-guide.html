@@ -47,70 +47,113 @@
   }
   </script>
 
+  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cobalt Gallery canonical design system (shared across all pages) -->
+  <link rel="stylesheet" href="css/cobalt-gallery.css">
   <style>
-    :root { --black: #111111; --white: #FFFFFF; --green: #2A5C3F; --green-dk: #1e4430; --off-white: #F7F7F7; --gray: #666666; --gray-lt: #767676; --border: #E0E0E0; --accent: #c14a3a; }
+    :root {
+      --black:     #15120D;
+      --white:     #FFFFFF;
+      --bone:      #FAF8F2;
+      --green:     #2B5196;
+      --green-dk:  #234277;
+      --off-white: #F4F1E8;
+      --gray:      #4D4940;
+      --gray-lt:   #79746A;
+      --border:    #ECE6D9;
+      --accent:    #2B5196;
+    }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; line-height: 1.6; }
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; line-height: 1.6; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: saturate(1.1) blur(8px); -webkit-backdrop-filter: saturate(1.1) blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
     .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
     .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
     .nav-desktop { display: flex; align-items: center; gap: 4px; }
-    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; }
-    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; }
+    .nav-desktop a { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-desktop a:hover { color: var(--green); }
+    .nav-book { background: var(--green) !important; color: var(--bone) !important; margin-left: 8px; padding: 10px 20px !important; border-radius: 44px !important; }
+    .nav-book:hover { background: var(--green-dk) !important; }
     .breadcrumb { font-size: 11px; color: var(--gray-lt); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
     .breadcrumb a { color: var(--green); text-decoration: none; }
 
     #hero { background: var(--black); padding: 140px 60px 80px; }
     .hero-inner { max-width: 880px; margin: 0 auto; }
-    .hero-eyebrow { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
-    .hero-h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; color: var(--white); margin-bottom: 24px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      color: var(--green); font-family: 'Inter', system-ui, sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px;
+    }
+    .hero-eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; }
+    .hero-h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(36px, 6vw, 64px); font-weight: 300; line-height: 1.05; letter-spacing: -0.025em;
+      color: var(--white); margin-bottom: 24px; font-optical-sizing: auto;
+    }
+    .hero-h1 em { font-style: italic; color: var(--green); }
     .hero-sub { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.7; }
     .hero-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 28px; font-size: 12px; color: rgba(255,255,255,0.5); }
     .hero-meta span { display: flex; gap: 8px; align-items: center; }
 
     article.guide { max-width: 880px; margin: 0 auto; padding: 80px 60px; }
-    article.guide h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin: 64px 0 20px; padding-top: 28px; border-top: 2px solid var(--green); }
+    article.guide h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(28px, 4vw, 44px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em;
+      margin: 64px 0 20px; padding-top: 28px; border-top: 2px solid var(--green);
+      font-optical-sizing: auto;
+    }
+    article.guide h2 em { font-style: italic; color: var(--green); }
     article.guide h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
-    article.guide h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 32px 0 14px; }
+    article.guide h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; margin: 32px 0 14px; color: var(--black); }
     article.guide p { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 18px; }
-    article.guide p strong { color: var(--black); font-weight: 800; }
+    article.guide p strong { color: var(--black); font-weight: 700; }
     article.guide ul { margin: 16px 0 24px 24px; }
     article.guide li { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 8px; }
     article.guide a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
     article.guide a:hover { color: var(--green-dk); }
 
-    .toc { background: var(--off-white); padding: 32px 36px; border-left: 4px solid var(--green); margin: 40px 0; }
-    article.guide .toc h2 { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin: 0 0 16px; padding-top: 0; border-top: none; line-height: 1.6; }
+    .toc { background: var(--off-white); padding: 32px 36px; border-left: 4px solid var(--green); margin: 40px 0; border-radius: 0 8px 8px 0; }
+    article.guide .toc h2 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--green); margin: 0 0 16px; padding-top: 0; border-top: none; line-height: 1.6;
+    }
     .toc ol { list-style: decimal-leading-zero; margin-left: 24px; }
     .toc li { font-size: 14px; color: var(--gray); margin-bottom: 6px; line-height: 1.6; }
-    .toc a { color: var(--black); text-decoration: none; font-weight: 800; }
+    .toc a { color: var(--black); text-decoration: none; font-weight: 600; }
     .toc a:hover { color: var(--green); }
 
     .pricing-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
-    .pricing-table th { background: var(--black); color: var(--white); padding: 14px 16px; text-align: left; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .pricing-table th { background: var(--black); color: var(--bone); padding: 14px 16px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
     .pricing-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--gray); }
     .pricing-table tr:hover td { background: var(--off-white); }
-    .pricing-table .tier { font-weight: 800; color: var(--black); }
+    .pricing-table .tier { font-weight: 700; color: var(--black); }
 
-    .callout { background: rgba(42, 92, 63, 0.08); border-left: 4px solid var(--green); padding: 24px 32px; margin: 32px 0; }
+    .callout { background: rgba(43,81,150,0.06); border-left: 4px solid var(--green); padding: 24px 32px; margin: 32px 0; border-radius: 0 8px 8px 0; }
     .callout strong { color: var(--green-dk); }
 
     .cluster-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
-    .cluster-card { padding: 24px; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, transform 0.2s; display: block; }
+    .cluster-card { padding: 24px; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, transform 0.2s; display: block; background: var(--white); border-radius: 8px; }
     .cluster-card:hover { border-color: var(--green); transform: translateY(-2px); }
-    article.guide .cluster-card h3 { font-size: 16px; font-weight: 800; color: var(--black); margin: 0 0 6px; }
+    article.guide .cluster-card h3 { font-family: 'Inter', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: var(--black); margin: 0 0 6px; letter-spacing: -0.2px; }
     .cluster-card p { font-size: 13px !important; color: var(--gray) !important; line-height: 1.6 !important; margin-bottom: 0 !important; }
 
     #cta-band { background: var(--green); padding: 80px 60px; text-align: center; }
-    .cta-band .section-label { color: rgba(255,255,255,0.7); font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; display: block; }
-    .cta-title { font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: var(--white); margin-bottom: 32px; }
-    .btn-white { display: inline-block; padding: 14px 36px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; }
+    .cta-band .section-label { color: rgba(255,255,255,0.7); font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; display: inline-flex; align-items: center; gap: 12px; }
+    .cta-band .section-label::before { content: ""; width: 26px; height: 2px; background: rgba(255,255,255,0.5); display: inline-block; }
+    .cta-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(28px, 4vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--white); margin-bottom: 32px; font-optical-sizing: auto;
+    }
+    .cta-title em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .btn-white { display: inline-flex; align-items: center; justify-content: center; padding: 15px 36px; border-radius: 44px; background: var(--white); color: var(--black); font-family: inherit; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; transition: background 0.2s; }
+    .btn-white:hover { background: var(--bone); }
 
     footer { background: var(--black); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer > * { flex: 1; }
@@ -131,9 +174,9 @@
       .cluster-links { grid-template-columns: 1fr; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
-  
+
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -142,7 +185,7 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -163,10 +206,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 
 <section id="hero">
-  <div class="hero-inner">
+  <div class="hero-inner reveal">
     <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Grand Rapids Real Estate Photography Guide</p>
     <p class="hero-eyebrow">The Complete 2026 Guide</p>
-    <h1 class="hero-h1">How Real Estate Photography Works in Grand Rapids: Pricing, Prep &amp; Process.</h1>
+    <h1 class="hero-h1">How Real Estate Photography Works in Grand Rapids: Pricing, Prep &amp; <em>Process.</em></h1>
     <p class="hero-sub">Everything a Grand Rapids realtor or homeowner needs to know about hiring a real estate photographer in 2026 — pricing tiers, real vs virtual twilight, FAA Part 107 drone rules, how to prep a home for a shoot, neighborhood notes for the GR market, and the questions that separate a working photographer from a hobbyist.</p>
     <div class="hero-meta">
       <span>📅 Updated May 15, 2026</span>
@@ -179,7 +222,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <article class="guide">
 
-  <div class="toc">
+  <div class="toc reveal">
     <h2>What's in this guide</h2>
     <ol>
       <li><a href="#pricing">How much does real estate photography cost in Grand Rapids?</a></li>
@@ -208,7 +251,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </tbody>
   </table>
 
-  <p class="table-note" style="font-size:14px;color:#888;font-style:italic;margin:-4px 0 22px;">Ranges above are market-wide across West Michigan photographers, not ECS's prices. Elzinga Creative Studio's rates are fixed: Essential $245 &middot; Showcase $325 (real twilight included) &middot; Signature $495. Add-ons attach to any tier: a <a href="matterport-3d-tour-grand-rapids.html">3D virtual tour</a> ($100), a 2D floor plan ($75), Part 107 drone ($125), and real twilight ($150).</p>
+  <p class="table-note" style="font-size:14px;color:#79746A;font-style:italic;margin:-4px 0 22px;">Ranges above are market-wide across West Michigan photographers, not ECS's prices. Elzinga Creative Studio's rates are fixed: Essential $245 &middot; Showcase $325 (real twilight included) &middot; Signature $495. Add-ons attach to any tier: a <a href="matterport-3d-tour-grand-rapids.html">3D virtual tour</a> ($100), a 2D floor plan ($75), Part 107 drone ($125), and real twilight ($150).</p>
 
   <p>The biggest variable that moves price within a tier is <strong>real vs virtual twilight</strong>. Virtual twilight is a Photoshop overlay; real twilight is a second shoot. We charge $325 for our Showcase tier with real twilight included; the closest competitor (Lakeshore Lens) charges $435 for a similar bundle with virtual twilight only.</p>
 
@@ -283,7 +326,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
   <p>The Grand Rapids real estate market is not monolithic. Different neighborhoods have different architectural styles, lot sizes, and buyer expectations — which means the shot list changes from listing to listing.</p>
 
-  <div class="cluster-links">
+  <div class="cluster-links reveal-stagger">
     <a href="real-estate-photography-east-grand-rapids.html" class="cluster-card">
       <h3>East Grand Rapids</h3>
       <p>Mid-century brick, walkable streets, established trees. Shot for character + walkable lifestyle.</p>
@@ -343,7 +386,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <section id="cta-band">
   <span class="section-label">Ready to upgrade your listing photos?</span>
-  <h2 class="cta-title">Send us your next listing.</h2>
+  <h2 class="cta-title">Send us your next <em>listing.</em></h2>
   <a href="preferred-photographer.html" class="btn-white">See Realtor Pricing</a>
 </section>
 
@@ -366,6 +409,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <script>
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('cg-motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

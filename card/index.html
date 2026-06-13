@@ -10,25 +10,29 @@
 <meta property="og:title" content="Kaden Elzinga — Elzinga Creative Studio" />
 <meta property="og:description" content="Tap to save my contact — photo, phone, email, the works." />
 <meta property="og:type" content="profile" />
-<meta name="theme-color" content="#f7f7f7" />
+<meta name="theme-color" content="#FAF8F2" />
 
+<!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<!-- Cobalt Gallery canonical design system (shared across all pages) -->
+<link rel="stylesheet" href="../css/cobalt-gallery.css">
 
 <style>
-  /* Brand tokens — pulled straight from elzingacreativestudio.com */
+  /* Brand tokens — Cobalt Gallery palette */
   :root{
-    --black:#111111;
-    --ink:#111111;
+    --black:#15120D;
+    --ink:#15120D;
     --white:#ffffff;
-    --off-white:#f7f7f7;
-    --border:#e0e0e0;
-    --gray:#666666;
-    --gray-lt:#aaaaaa;
-    --green:#2a5c3f;
-    --green-dk:#1e4430;
-    --green-tint:rgba(42,92,63,.08);
+    --bone:#FAF8F2;
+    --off-white:#F4F1E8;
+    --border:#ECE6D9;
+    --gray:#4D4940;
+    --gray-lt:#79746A;
+    --green:#2B5196;
+    --green-dk:#234277;
+    --green-tint:rgba(43,81,150,.08);
     --ease:cubic-bezier(.2,.7,.2,1);
   }
 
@@ -37,9 +41,9 @@
 
   body{
     min-height:100svh;
-    font-family:"DM Sans",system-ui,-apple-system,sans-serif;
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
     color:var(--ink);
-    background:var(--off-white);
+    background:var(--bone);
     -webkit-font-smoothing:antialiased;
     display:flex;
     align-items:center;
@@ -55,9 +59,9 @@
     padding:40px 26px 24px;
     text-align:center;
     position:relative;
-    box-shadow:0 1px 2px rgba(17,17,17,.03),0 24px 60px -34px rgba(17,17,17,.22);
+    box-shadow:0 1px 2px rgba(21,18,13,.03),0 24px 60px -34px rgba(21,18,13,.22);
   }
-  /* green keyline at the very top — the brand's accent band, distilled */
+  /* cobalt keyline at the very top — the brand's accent band, distilled */
   .card::before{
     content:"";
     position:absolute;top:0;left:0;right:0;
@@ -70,7 +74,7 @@
 
   .kicker{
     font-size:11px;
-    font-weight:700;
+    font-weight:600;
     letter-spacing:.26em;
     text-transform:uppercase;
     color:var(--gray);
@@ -94,12 +98,12 @@
     display:flex;align-items:center;justify-content:center;
     background:var(--green);
     color:var(--white);
-    font-weight:800;
+    font-weight:700;
     font-size:42px;
     letter-spacing:.02em;
     border:none;
   }
-  /* small green corner tab — a quiet brand mark */
+  /* small cobalt corner tab — a quiet brand mark */
   .avatar-wrap::after{
     content:"";
     position:absolute;
@@ -109,7 +113,8 @@
   }
 
   .name{
-    font-weight:800;
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:300;
     font-size:clamp(2.2rem,9vw,2.7rem);
     line-height:.96;
     letter-spacing:-.03em;
@@ -117,17 +122,17 @@
     margin-bottom:2px;
   }
 
-  /* primary CTA — brand .btn-green DNA: green, square, uppercase, tracked */
+  /* primary CTA — cobalt pill */
   .save{
     display:flex;align-items:center;justify-content:center;gap:10px;
     width:100%;
     margin-top:28px;
     padding:18px 20px;
     border:none;
-    border-radius:0;
+    border-radius:44px;
     font-family:inherit;
     font-size:12.5px;
-    font-weight:800;
+    font-weight:600;
     letter-spacing:.16em;
     text-transform:uppercase;
     color:var(--white);
@@ -152,7 +157,7 @@
     margin:26px 2px 18px;
     color:var(--gray-lt);
     font-size:10px;
-    font-weight:700;
+    font-weight:600;
     letter-spacing:.24em;
     text-transform:uppercase;
   }
@@ -190,31 +195,32 @@
     color:var(--green);
   }
   .ico svg{width:17px;height:17px}
-  .action .meta{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25;min-width:0;font-size:14px;font-weight:700}
+  .action .meta{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25;min-width:0;font-size:14px;font-weight:600}
   .action .meta small{font-size:11px;font-weight:500;color:var(--gray);letter-spacing:.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;text-transform:none}
 
   .footer{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:16px}
   .footer-actions{display:flex;gap:9px;align-items:center;justify-content:center;flex-wrap:wrap}
   .ghost{
     background:none;border:1px solid var(--border);cursor:pointer;
-    font-family:inherit;font-size:11px;font-weight:700;
+    font-family:inherit;font-size:11px;font-weight:600;
     letter-spacing:.13em;text-transform:uppercase;
     color:var(--green);
     display:inline-flex;align-items:center;gap:8px;
     padding:11px 16px;
+    border-radius:44px;
     transition:border-color .18s,background .18s;
     -webkit-tap-highlight-color:transparent;
   }
   .ghost:hover{border-color:var(--green);background:var(--off-white)}
   .ghost svg{width:14px;height:14px}
   .sig{font-size:11px;color:var(--gray-lt);letter-spacing:.04em}
-  .sig b{color:var(--green);font-weight:700}
+  .sig b{color:var(--green);font-weight:600}
 
   /* QR overlay */
   .qr-modal{
     position:fixed;inset:0;z-index:40;
     display:flex;align-items:center;justify-content:center;padding:24px;
-    background:rgba(17,17,17,.55);
+    background:rgba(21,18,13,.55);
     -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
     opacity:0;animation:fade .25s var(--ease) forwards;
   }
@@ -224,7 +230,7 @@
     position:relative;background:var(--white);
     border:1px solid var(--border);border-top:4px solid var(--green);
     padding:32px 28px 24px;text-align:center;width:100%;max-width:300px;
-    box-shadow:0 30px 70px -30px rgba(17,17,17,.55);
+    box-shadow:0 30px 70px -30px rgba(21,18,13,.55);
   }
   .qr-close{
     position:absolute;top:6px;right:12px;
@@ -232,7 +238,7 @@
     font-size:26px;line-height:1;color:var(--gray-lt);
   }
   .qr-close:hover{color:var(--ink)}
-  .qr-kicker{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:18px}
+  .qr-kicker{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:18px}
   .qr-img{width:218px;height:218px;display:block;margin:0 auto;image-rendering:pixelated}
   .qr-sub{margin-top:16px;font-size:12px;color:var(--gray-lt);letter-spacing:.03em}
 
@@ -241,7 +247,7 @@
     background:var(--black);color:var(--white);
     padding:13px 18px;
     font-size:13px;font-weight:500;letter-spacing:.01em;
-    box-shadow:0 20px 50px -20px rgba(17,17,17,.5);
+    box-shadow:0 20px 50px -20px rgba(21,18,13,.5);
     opacity:0;pointer-events:none;
     transition:opacity .3s,transform .3s var(--ease);
     z-index:20;

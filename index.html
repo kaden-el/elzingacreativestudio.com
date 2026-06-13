@@ -8,7 +8,7 @@
   <meta name="description" content="Grand Rapids real estate photographer and videographer. HDR listing photography, twilight shoots, senior portraits, weddings, and commercial work across West Michigan. 24-hour turnaround.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://elzingacreativestudio.com/" />
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
   <link rel="preload" as="image" href="images/web/DSC08468-HDR-1600.avif" type="image/avif" />
 
   <!-- Open Graph -->
@@ -175,99 +175,134 @@
   }
   </script>
 
-  <!-- Google Fonts: DM Sans -->
+  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cobalt Gallery canonical design system (shared across all pages) -->
+  <link rel="stylesheet" href="css/cobalt-gallery.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <style>
-    /* ── DESIGN SYSTEM ── */
+    /* ── DESIGN SYSTEM — Cobalt Gallery ──
+       The page's legacy class names are kept; the tokens below are remapped to
+       the Cobalt palette (see css/cobalt-gallery.css :root for the canonical
+       names --bone/--ink/--cobalt/--sky/--stone/--line/--muted). This is a
+       VISUAL reskin only — no copy, structure, schema, or funnel logic changes. */
     :root {
-      --black:     #111111;
-      --white:     #FFFFFF;
-      --green:     #2A5C3F;
-      --green-dk:  #1e4430;
-      --off-white: #F7F7F7;
-      --gray:      #666666;
-      --gray-lt:   #767676;
-      --border:    #E0E0E0;
+      --black:     #15120D;   /* ink — headlines, body, dark UI            */
+      --white:     #FFFFFF;   /* paper — cards/forms that lift off the bone */
+      --bone:      #FAF8F2;   /* canvas */
+      --green:     #2B5196;   /* COBALT — the one accent (legacy name kept) */
+      --green-dk:  #234277;   /* cobalt hover-darken */
+      --off-white: #F4F1E8;   /* warm sand — alt section bg on bone        */
+      --gray:      #4D4940;   /* muted sub-copy */
+      --gray-lt:   #79746A;   /* lighter caption */
+      --border:    #ECE6D9;   /* hairline */
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-      background: var(--white);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bone);
       color: var(--black);
       overflow-x: hidden;
     }
 
     /* ── SHARED ── */
     .section-label {
-      display: block;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--green);
-      margin-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    /* Eyebrow rule — short cobalt tick before the label (DESIGN.md eyebrow). */
+    .section-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--green);
+      display: inline-block;
+      flex-shrink: 0;
     }
     .section-title {
-      font-size: clamp(36px, 5vw, 68px);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -1.5px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(40px, 5.4vw, 78px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
       color: var(--black);
+      font-optical-sizing: auto;
     }
+    .section-title em { font-style: italic; color: var(--green); }
+    /* Legacy green checkmark motif retired — the cobalt eyebrow rule is the
+       single consistent label marker brand-wide. */
+    .section-label .m-tick { display: none; }
+    /* Pill buttons — Cobalt Gallery. Primary = cobalt pill (bone text);
+       .btn-black is the secondary ink pill; .btn-outline is the ghost pill. */
     .btn-black {
-      display: inline-block;
-      padding: 14px 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 30px;
+      border-radius: 44px;
       background: var(--black);
-      color: var(--white);
+      color: var(--bone);
       font-family: inherit;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
       text-decoration: none;
       border: none;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
     }
-    .btn-black:hover { background: #333; }
+    .btn-black:hover { background: #2b2620; }
     .btn-green {
-      display: inline-block;
-      padding: 14px 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 30px;
+      border-radius: 44px;
       background: var(--green);
-      color: var(--white);
+      color: var(--bone);
       font-family: inherit;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
       text-decoration: none;
       border: none;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
     }
     .btn-green:hover { background: var(--green-dk); }
     .btn-outline {
-      display: inline-block;
-      padding: 12px 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 44px;
       background: transparent;
       border: 1.5px solid var(--black);
       color: var(--black);
       font-family: inherit;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
       cursor: pointer;
       text-decoration: none;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
-    .btn-outline:hover { background: var(--black); color: var(--white); }
+    .btn-outline:hover { background: var(--green); border-color: var(--green); color: var(--bone); }
     .btn-outline-white {
       display: inline-block;
       padding: 12px 28px;
@@ -290,35 +325,40 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; justify-content: space-between; align-items: center;
       padding: 20px 60px;
-      background: var(--white);
+      background: rgba(250,248,242,0.92);
+      backdrop-filter: saturate(1.1) blur(8px);
+      -webkit-backdrop-filter: saturate(1.1) blur(8px);
       border-bottom: 1px solid transparent;
       transition: border-color 0.3s;
     }
     header.scrolled { border-bottom-color: var(--border); }
 
-    .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
-    .logo-ecs  { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
-    .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
+    /* Logo — ECS lockup with a cobalt mark cue via the accent rule below. */
+    .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; position: relative; }
+    .logo-ecs  { font-size: 20px; font-weight: 700; letter-spacing: 4px; color: var(--black); line-height: 1; }
+    .logo-full { font-size: 8px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-lt); }
 
-    .nav-desktop { display: flex; align-items: center; gap: 4px; }
+    .nav-desktop { display: flex; align-items: center; gap: 6px; }
     .nav-desktop a {
       text-decoration: none;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
       color: var(--gray);
-      padding: 8px 14px;
+      padding: 8px 12px;
       transition: color 0.2s;
     }
-    .nav-desktop a:hover { color: var(--black); }
+    .nav-desktop a:hover { color: var(--green); }
     .nav-book {
       background: var(--green) !important;
-      color: var(--white) !important;
-      margin-left: 8px;
-      padding: 10px 20px !important;
+      color: var(--bone) !important;
+      margin-left: 10px;
+      padding: 10px 22px !important;
+      border-radius: 44px;
+      font-weight: 600 !important;
+      font-size: 13px !important;
     }
-    .nav-book:hover { background: var(--green-dk) !important; color: var(--white) !important; }
+    .nav-book:hover { background: var(--green-dk) !important; color: var(--bone) !important; }
 
     /* Hamburger */
     .nav-burger {
@@ -337,7 +377,7 @@
     /* Mobile nav drawer */
     .nav-mobile {
       display: none; position: fixed; inset: 0;
-      background: var(--white); z-index: 300;
+      background: var(--bone); z-index: 300;
       flex-direction: column; align-items: center; justify-content: center;
       gap: 32px;
     }
@@ -373,32 +413,45 @@
       padding: 60px 60px 52px;
     }
     .hero-location {
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--green);
       margin-bottom: 28px;
     }
-    .hero-title {
-      font-size: clamp(72px, 14vw, 200px);
-      font-weight: 800;
-      line-height: 0.84;
-      letter-spacing: -4px;
-      color: var(--black);
+    .hero-location::before {
+      content: "";
+      width: 26px; height: 2px;
+      background: var(--green);
+      display: inline-block;
     }
+    .hero-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(66px, 12.5vw, 180px);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      font-optical-sizing: auto;
+    }
+    .hero-title em { font-style: italic; color: var(--green); }
     .hero-h1 {
-      font-size: clamp(18px, 2.4vw, 26px);
-      font-weight: 600;
-      letter-spacing: -0.3px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(20px, 2.6vw, 30px);
+      font-weight: 300;
+      letter-spacing: -0.015em;
       color: var(--black);
       margin-top: 24px;
-      line-height: 1.25;
-      max-width: 640px;
+      line-height: 1.3;
+      max-width: 680px;
     }
     .hero-rule {
       width: 80px;
-      height: 1px;
+      height: 2px;
       background: var(--green);
       margin: 28px auto;
     }
@@ -467,17 +520,18 @@
     .svc-col:last-child { border-right: none; padding-right: 0; }
     .svc-col + .svc-col { padding-left: 52px; }
     .svc-num {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
       color: var(--green);
       margin-bottom: 18px;
     }
     .svc-name {
-      font-size: clamp(28px, 3vw, 40px);
-      font-weight: 800;
-      letter-spacing: -1px;
-      line-height: 1.0;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(30px, 3.2vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.02;
       color: var(--black);
       margin-bottom: 18px;
     }
@@ -499,18 +553,18 @@
       margin-bottom: 32px;
     }
     .svc-link {
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
       color: var(--green);
       text-decoration: none;
+      transition: opacity 0.2s;
     }
-    .svc-link:hover { text-decoration: underline; }
+    .svc-link:hover { opacity: 0.7; }
 
     /* ── PORTFOLIO ── */
     #portfolio {
-      background: var(--white);
+      background: var(--bone);
       padding: 120px 60px;
       border-top: 1px solid var(--border);
     }
@@ -593,13 +647,15 @@
       object-fit: cover; display: block;
     }
     .about-title {
-      font-size: clamp(36px, 4vw, 60px);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      line-height: 1.0;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(38px, 4.2vw, 64px);
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 1.02;
       color: var(--black);
       margin-bottom: 28px;
     }
+    .about-title em { font-style: italic; color: var(--green); }
     .about-body {
       font-size: 15px;
       line-height: 1.9;
@@ -649,7 +705,7 @@
       border: 1.5px solid var(--border);
       background: var(--white);
       padding: 12px 16px;
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: 16px;
       color: var(--black);
       width: 100%;
@@ -665,7 +721,7 @@
       background: var(--green);
       color: var(--white);
       border: none;
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: 10px;
       font-weight: 800;
       letter-spacing: 2.5px;
@@ -685,10 +741,11 @@
 
     .contact-info { padding-top: 8px; }
     .contact-info h3 {
-      font-size: clamp(24px, 3vw, 40px);
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(26px, 3.2vw, 42px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
       color: var(--white);
       margin-bottom: 20px;
     }
@@ -750,7 +807,7 @@
       flex-direction: column; gap: 16px;
     }
     .lb-category {
-      font-family: 'DM Sans', sans-serif; font-size: 13px;
+      font-family: 'Inter', sans-serif; font-size: 13px;
       font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.9);
     }
     .lb-carousel {
@@ -774,11 +831,11 @@
     .lb-prev { left: -60px; }
     .lb-next { right: -60px; }
     .lb-counter {
-      font-family: 'DM Sans', sans-serif; font-size: 11px;
+      font-family: 'Inter', sans-serif; font-size: 11px;
       letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-top: 14px;
     }
     .lb-cat-label {
-      font-family: 'DM Sans', sans-serif; font-size: 9px;
+      font-family: 'Inter', sans-serif; font-size: 9px;
       font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.25);
       margin-top: 6px;
     }
@@ -841,7 +898,7 @@
 
     /* ── CLIENTS ── */
     #clients {
-      background: var(--white);
+      background: var(--bone);
       padding: 80px 60px;
       border-top: 1px solid var(--border);
       text-align: center;
@@ -952,8 +1009,9 @@
     }
     .p-card.p-featured .p-name { color: rgba(255,255,255,0.6); }
     .p-price {
-      font-size: 64px; font-weight: 800; line-height: 1;
-      letter-spacing: -2px; color: var(--black); margin-bottom: 6px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 68px; font-weight: 300; line-height: 1;
+      letter-spacing: -0.03em; color: var(--black); margin-bottom: 6px;
     }
     .p-card.p-featured .p-price { color: var(--white); }
     .p-per {
@@ -1032,12 +1090,12 @@
       margin-bottom: 28px;
       padding: 14px 20px;
       border-left: 3px solid var(--green);
-      background: rgba(42,92,63,0.06);
+      background: rgba(43,81,150,0.06);
       font-size: 13px;
       color: var(--gray);
       letter-spacing: 0.2px;
     }
-    .pricing-stat strong { color: var(--green); font-weight: 800; }
+    .pricing-stat strong { color: var(--green); font-weight: 700; }
     @media (max-width: 768px) {
       #pricing { padding: 72px 24px; }
       .pricing-cards { grid-template-columns: 1fr; }
@@ -1063,8 +1121,9 @@
     .osvc-row:last-child { border-bottom: none; }
     .osvc-left { display: flex; flex-direction: column; gap: 8px; }
     .osvc-name {
-      font-size: clamp(22px, 2.5vw, 32px); font-weight: 800;
-      letter-spacing: -0.75px; color: var(--black); line-height: 1;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(24px, 2.6vw, 34px); font-weight: 300;
+      letter-spacing: -0.02em; color: var(--black); line-height: 1.04;
     }
     .osvc-desc {
       font-size: 13px; line-height: 1.7; color: var(--gray); max-width: 560px;
@@ -1076,7 +1135,8 @@
       display: block; margin-bottom: 4px;
     }
     .osvc-price-num {
-      font-size: 40px; font-weight: 800; letter-spacing: -1.5px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 44px; font-weight: 300; letter-spacing: -0.03em;
       color: var(--black); display: block; line-height: 1;
     }
     .osvc-price-note {
@@ -1114,13 +1174,15 @@
     #testimonials .section-label { color: var(--green); }
     .t-quote-wrap { max-width: 860px; }
     .t-quote-mark {
-      font-size: 120px; font-weight: 800; line-height: 0.6;
+      font-size: 120px; font-weight: 300; line-height: 0.6;
       color: var(--green); margin-bottom: 32px;
-      display: block; font-family: Georgia, serif;
+      display: block; font-family: 'Fraunces', Georgia, serif; font-style: italic;
     }
     .t-blockquote {
-      font-size: clamp(22px, 2.5vw, 30px);
-      font-weight: 400; line-height: 1.55;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(24px, 2.6vw, 32px);
+      font-weight: 300; line-height: 1.5;
+      letter-spacing: -0.01em;
       color: rgba(255,255,255,0.92);
       margin-bottom: 40px;
     }
@@ -1153,7 +1215,7 @@
 
     /* ── Service Areas + Resources hubs ── */
     .hubs-section {
-      background: var(--white);
+      background: var(--bone);
       padding: 120px 64px;
       border-top: 1px solid rgba(0,0,0,0.06);
     }
@@ -1206,7 +1268,7 @@
     }
   
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
   
     /* ===== ECS motion system (Clean Editorial) ===== */
     @media (prefers-reduced-motion: no-preference) {
@@ -1306,7 +1368,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <section id="home">
   <div class="hero-content">
     <span class="hero-location m-rise d1">Grand Rapids, Michigan</span>
-    <div class="hero-title m-rise d2" aria-hidden="true">ELZINGA<br>CREATIVE</div>
+    <div class="hero-title m-rise d2" aria-hidden="true">Elzinga<br><em>Creative</em></div>
     <h1 class="hero-h1 m-rise d3">Grand Rapids Real Estate Photographer &amp; Videographer</h1>
     <div class="hero-rule m-rule"></div>
     <p class="hero-tagline m-rise d4">HDR listing photography, real twilight, and Part 107 drone with 24-hour delivery. Senior portraits, weddings, commercial content, and brand work across West Michigan.</p>
@@ -1335,7 +1397,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <section id="services">
   <div class="services-header m-reveal">
     <span class="section-label"><svg class="m-tick" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.6" stroke="currentColor" stroke-width="1.3"/><line x1="7" y1="1.4" x2="9.8" y2="7" stroke="currentColor" stroke-width="1.1"/><line x1="12.6" y1="7" x2="4.2" y2="9.8" stroke="currentColor" stroke-width="1.1"/><line x1="4.2" y1="4.2" x2="7" y2="12.6" stroke="currentColor" stroke-width="1.1"/></svg>What We Do</span>
-    <h2 class="section-title">Three disciplines,<br>one studio.</h2>
+    <h2 class="section-title">Three disciplines,<br><em>one studio.</em></h2>
   </div>
   <div class="services-cols m-stagger">
 
@@ -1372,7 +1434,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <div class="portfolio-header m-reveal">
     <div>
       <span class="section-label"><svg class="m-tick" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.6" stroke="currentColor" stroke-width="1.3"/><line x1="7" y1="1.4" x2="9.8" y2="7" stroke="currentColor" stroke-width="1.1"/><line x1="12.6" y1="7" x2="4.2" y2="9.8" stroke="currentColor" stroke-width="1.1"/><line x1="4.2" y1="4.2" x2="7" y2="12.6" stroke="currentColor" stroke-width="1.1"/></svg>Our Work</span>
-      <h2 class="section-title">Crafted<br>with purpose.</h2>
+      <h2 class="section-title">Crafted<br>with <em>purpose.</em></h2>
     </div>
     <button class="btn-outline" onclick="openGallery()">View Full Gallery</button>
   </div>
@@ -1421,9 +1483,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ PRICING ═══════ -->
 <section id="pricing">
-  <div class="section-header">
+  <div class="section-header reveal">
     <span class="section-label">Real Estate Photography</span>
-    <h2 class="section-title">Simple pricing.<br>Fast delivery.</h2>
+    <h2 class="section-title">Simple <em>pricing.</em><br>Fast delivery.</h2>
     <p class="section-sub">All packages include 24-hour turnaround and MLS-ready images delivered via Pixieset. Serving Grand Rapids and all of West Michigan.</p>
   </div>
 
@@ -1564,9 +1626,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ SERVICE AREAS + RESOURCES ═══════ -->
 <section id="hubs" class="hubs-section">
-  <div class="hubs-header">
+  <div class="hubs-header reveal">
     <span class="section-label">Coverage &amp; Resources</span>
-    <h2 class="section-title">Where we shoot.<br>What we share.</h2>
+    <h2 class="section-title">Where we <em>shoot.</em><br>What we share.</h2>
   </div>
   <div class="hubs-grid">
 
@@ -1616,15 +1678,15 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ ABOUT ═══════ -->
 <section id="about">
-  <span class="section-label">The Studio</span>
-  <div class="about-grid">
+  <span class="section-label reveal">The Studio</span>
+  <div class="about-grid reveal">
     <div class="about-img">
       <picture><source srcset="images/web/_DSC0643-1600.avif" type="image/avif"><img src="images/web/_DSC0643-1600.jpg"
            alt="Kaden Elzinga, Grand Rapids photographer and founder of Elzinga Creative Studio"
            loading="lazy" width="1600" height="1067"></picture>
     </div>
     <div class="about-text">
-      <h2 class="about-title">Craft-first.<br>Always.</h2>
+      <h2 class="about-title">Craft-first.<br><em>Always.</em></h2>
       <p class="about-body">Elzinga Creative Studio is a Grand Rapids photography, video, and marketing studio built on a simple standard: nothing inherently wrong in the frame. Not trendy. Not over-edited. Just proper lighting, clean composition, and work that holds up.</p>
       <p class="about-body">Founded by Kaden Elzinga, the studio serves real estate agents, commercial brands, and local businesses across West Michigan — from Kent and Ottawa counties to Holland, Rockford, and beyond. Commercial clients have included Biggby Coffee, the Grand Rapids Griffins, and Mars Hill.</p>
       <div class="about-rule"></div>
@@ -1636,9 +1698,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ TESTIMONIALS ═══════ -->
 <section id="testimonials">
-  <span class="section-label">Client Voices</span>
+  <span class="section-label reveal">Client Voices</span>
 
-  <div class="t-quote-wrap">
+  <div class="t-quote-wrap reveal">
     <span class="t-quote-mark">"</span>
     <p class="t-blockquote">Kaden is a great guy, and does great work. He took senior photos for me and my friend, and was willing to come to both of my locations — probably 40 minutes apart — for a reasonable price. He worked well in all scenarios we encountered: full sun, inside, and in shade, and processed the images very quickly.</p>
     <div class="t-stars">
@@ -1660,11 +1722,11 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ FAQ ═══════ -->
 <section id="faq">
-  <div class="faq-header">
+  <div class="faq-header reveal">
     <span class="section-label">Common Questions</span>
     <h2 class="section-title">FAQ</h2>
   </div>
-  <div class="faq-list">
+  <div class="faq-list reveal-stagger">
     <details class="faq-item">
       <summary>What areas does Elzinga Creative Studio serve?</summary>
       <p>We serve all of West Michigan including Grand Rapids, Wyoming, Kentwood, Walker, Grandville, Rockford, Holland, Hudsonville, and the surrounding areas across Kent and Ottawa counties. We also travel for weddings and commercial projects beyond our standard service area.</p>
@@ -1695,9 +1757,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <!-- ═══════ CONTACT ═══════ -->
 <section id="contact">
-  <span class="section-label">Get In Touch</span>
-  <h2 class="section-title">Start a<br>conversation.</h2>
-  <div class="contact-grid">
+  <span class="section-label reveal">Get In Touch</span>
+  <h2 class="section-title reveal">Start a<br><em>conversation.</em></h2>
+  <div class="contact-grid reveal">
 
     <form class="contact-form" id="inquiry-form" onsubmit="handleSubmit(event)">
       <div class="form-row">
@@ -1927,7 +1989,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       ph.style.display = '';
       ph.style.background = bgColors[cat] || '#111';
       ph.innerHTML = '<span class="lb-category">' + cat + '</span>'
-        + '<span style="font-family:\'DM Sans\',sans-serif;font-size:10px;letter-spacing:2px;font-weight:800;color:rgba(255,255,255,0.6);text-transform:uppercase;">Photos Coming Soon</span>';
+        + '<span style="font-family:\'Inter\',sans-serif;font-size:10px;letter-spacing:2px;font-weight:800;color:rgba(255,255,255,0.6);text-transform:uppercase;">Photos Coming Soon</span>';
     }
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1986,10 +2048,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     const header = `
       <div style="position:sticky;top:0;z-index:10;background:rgba(10,10,10,.96);padding:22px 40px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.06)">
         <div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#2A5C3F;margin-bottom:4px">Full Portfolio</div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.5px">${allPhotos.length} images</div>
+          <div style="font-family:'Inter',sans-serif;font-size:9px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#2B5196;margin-bottom:4px">Full Portfolio</div>
+          <div style="font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.5px">${allPhotos.length} images</div>
         </div>
-        <button onclick="document.getElementById('full-gallery-overlay').remove()" aria-label="Close full gallery" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;padding:10px 22px;cursor:pointer">Close</button>
+        <button onclick="document.getElementById('full-gallery-overlay').remove()" aria-label="Close full gallery" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;padding:10px 22px;cursor:pointer">Close</button>
       </div>`;
 
     const imgs = allPhotos.map((p, i) => `
@@ -2120,13 +2182,16 @@ window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendl
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
+  // m-on = legacy motion hook; cg-motion = Cobalt Gallery .reveal hook.
+  // Both gate their hidden state on a class so JS-off degrades to visible.
   document.documentElement.classList.add('m-on');
+  document.documentElement.classList.add('cg-motion');
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-  document.querySelectorAll('.m-reveal, .m-stagger').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.m-reveal, .m-stagger, .reveal, .reveal-stagger').forEach(function (el) { io.observe(el); });
   var cio = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;

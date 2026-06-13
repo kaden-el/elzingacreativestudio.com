@@ -36,47 +36,57 @@
   }
   </script>
 
+  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cobalt Gallery canonical design system (shared across all pages) -->
+  <link rel="stylesheet" href="css/cobalt-gallery.css">
   <style>
-    :root { --black: #111111; --white: #FFFFFF; --green: #2A5C3F; --green-dk: #1e4430; --off-white: #F7F7F7; --gray: #666666; --gray-lt: #767676; --border: #E0E0E0; }
+    :root { --black: #15120D; --white: #FFFFFF; --bone: #FAF8F2; --green: #2B5196; --green-dk: #234277; --off-white: #F4F1E8; --gray: #4D4940; --gray-lt: #79746A; --border: #ECE6D9; }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); line-height: 1.6; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
     .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); }
     .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
     .nav-desktop { display: flex; align-items: center; gap: 4px; }
-    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; }
-    .nav-book { background: var(--green) !important; color: var(--white) !important; padding: 10px 20px !important; }
+    .nav-desktop a { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-desktop a:hover { color: var(--green); }
+    .nav-book { background: var(--green) !important; color: var(--white) !important; padding: 10px 20px !important; border-radius: 44px !important; }
+    .nav-book:hover { background: var(--green-dk) !important; color: var(--white) !important; }
     #hero { background: var(--black); padding: 140px 60px 80px; }
     .hero-inner { max-width: 880px; margin: 0 auto; }
     .breadcrumb { font-size: 11px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-    .breadcrumb a { color: #7FBF9B; text-decoration: none; }
-    .hero-eyebrow { color: #7FBF9B; font-size: 11px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
-    .hero-h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; color: var(--white); margin-bottom: 24px; }
+    .breadcrumb a { color: #A9C0D8; text-decoration: none; }
+    .hero-eyebrow { color: #A9C0D8; font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+    .hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 6vw, 64px); font-weight: 300; line-height: 1.05; letter-spacing: -0.025em; color: var(--white); margin-bottom: 24px; }
+    .hero-h1 em { font-style: italic; color: #A9C0D8; }
     .hero-sub { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 24px; }
-    .hero-cta { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; }
+    .hero-cta { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-size: 15px; font-weight: 600; border-radius: 44px; text-decoration: none; transition: background 0.2s; }
+    .hero-cta:hover { background: var(--green-dk); }
     article { max-width: 880px; margin: 0 auto; padding: 80px 60px; }
-    article h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin: 56px 0 18px; }
+    article h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(26px, 4vw, 40px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin: 56px 0 18px; color: var(--black); }
+    article h2 em { font-style: italic; color: var(--green); }
     article h2:first-of-type { margin-top: 0; }
     article p { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 18px; }
-    article p strong { color: var(--black); font-weight: 800; }
+    article p strong { color: var(--black); font-weight: 700; }
     article ul { margin: 16px 0 24px 24px; }
     article li { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 8px; }
     article a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
     .pricing-strip { background: var(--off-white); padding: 32px 36px; margin: 32px 0; border-left: 4px solid var(--green); }
-    .pricing-strip h3 { font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .pricing-strip h3 { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
     .pricing-strip .tiers { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 8px; }
     .pricing-strip .tier { display: flex; flex-direction: column; }
-    .pricing-strip .tier-name { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
-    .pricing-strip .tier-price { font-size: 28px; font-weight: 800; color: var(--black); letter-spacing: -1px; }
+    .pricing-strip .tier-name { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+    .pricing-strip .tier-price { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 300; color: var(--black); letter-spacing: -0.02em; }
     #cta-band { background: var(--green); padding: 80px 60px; text-align: center; }
-    .cta-title { font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: var(--white); margin-bottom: 28px; }
-    .btn-white { display: inline-block; padding: 14px 36px; background: var(--white); color: var(--black); font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; }
+    .cta-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -0.025em; color: var(--white); margin-bottom: 28px; }
+    .cta-title em { font-style: italic; color: #A9C0D8; }
+    .btn-white { display: inline-block; padding: 14px 36px; background: var(--white); color: var(--black); font-size: 15px; font-weight: 600; border-radius: 44px; text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .btn-white:hover { background: var(--bone); }
     footer { background: var(--black); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer > * { flex: 1; }
     footer > *:nth-child(2) { text-align: center; }
@@ -85,11 +95,13 @@
     .footer-tag { font-size: 7.5px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
     .footer-copy { font-size: 10px; color: rgba(255,255,255,0.2); }
     .work-gallery { max-width: 880px; margin: 0 auto; padding: 0 60px 80px; }
-    .work-gallery-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: block; }
-    .work-gallery-title { font-size: clamp(24px, 4vw, 36px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: var(--black); margin-bottom: 16px; }
+    .work-gallery-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: block; }
+    .work-gallery-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(24px, 4vw, 36px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 16px; }
+    .work-gallery-title em { font-style: italic; color: var(--green); }
     .work-gallery-sub { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 32px; max-width: 720px; }
     .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .work-grid img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
+    .work-grid img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; border-radius: 14px; }
+    .work-grid picture { display: block; border-radius: 14px; overflow: hidden; }
     @media (max-width: 768px) {
       .nav-desktop a:not(.nav-book){display:none;}
       .nav-desktop .nav-book{padding:10px 18px;}
@@ -103,16 +115,16 @@
     }
     .nearby-areas { background: var(--off-white); padding: 64px 60px; border-top: 1px solid var(--border); }
     .nearby-inner { max-width: 880px; margin: 0 auto; }
-    .nearby-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
-    .nearby-title { font-size: clamp(22px, 3.6vw, 30px); font-weight: 800; line-height: 1.15; letter-spacing: -0.8px; color: var(--black); margin-bottom: 28px; }
+    .nearby-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
+    .nearby-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; color: var(--black); margin-bottom: 28px; }
     .nearby-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; transition: border-color 0.18s, transform 0.18s; }
-    .nearby-list a strong { color: var(--black); font-weight: 800; }
+    .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; border-radius: 8px; transition: border-color 0.18s, transform 0.18s; }
+    .nearby-list a strong { color: var(--black); font-weight: 700; }
     .nearby-list a:hover { border-color: var(--green); transform: translateX(2px); }
     @media (max-width: 768px) { .nearby-areas { padding: 48px 24px; } .nearby-list { grid-template-columns: 1fr; } }
-  
+
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -121,7 +133,7 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -141,7 +153,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <div class="hero-inner">
     <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="grand-rapids-real-estate-photography-guide.html">Real Estate Photography</a> &nbsp;/&nbsp; Fennville</p>
     <p class="hero-eyebrow">Fennville, MI</p>
-    <h1 class="hero-h1">Real estate photography for Fennville listings.</h1>
+    <h1 class="hero-h1">Real estate photography for Fennville <em>listings.</em></h1>
     <p class="hero-sub">HDR and drone built for Allegan County's orchard-and-vineyard country between Saugatuck and South Haven — farmhouses, hobby farms, rural acreage, and lakeshore-adjacent country homes. 24-hour delivery, from $245.</p>
     <a href="preferred-photographer.html" class="hero-cta">See Pricing</a>
   </div>
@@ -191,9 +203,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <p>Or <a href="sms:+16162584578">text Kaden directly at (616) 258-4578</a>.</p>
 </article>
 
-<section class="work-gallery">
+<section class="work-gallery reveal">
   <span class="work-gallery-label">Sample Work — Fennville</span>
-  <h2 class="work-gallery-title">HDR and aerial that sell the whole property.</h2>
+  <h2 class="work-gallery-title">HDR and aerial that sell the whole <em>property.</em></h2>
   <p class="work-gallery-sub">On Fennville acreage the land is the product, so the gallery leads with it: warm HDR farmhouse interiors, drone aerials that show the full parcel and outbuildings, and real twilight that captures the rural-escape feeling buyers come here for.</p>
   <div class="work-grid">
     <picture><source srcset="images/web/DSC08901-HDR-1600.avif" type="image/avif"><img src="images/web/DSC08901-HDR-1600.jpg" alt="Real twilight exterior of a two-story West Michigan home photographed by Elzinga Creative Studio" width="1200" height="800" loading="lazy"></picture>
@@ -204,7 +216,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 </section>
 
 
-<section class="nearby-areas">
+<section class="nearby-areas reveal">
   <div class="nearby-inner">
     <span class="nearby-label">Other Service Areas</span>
     <h2 class="nearby-title">Real estate photography across the Allegan County lakeshore.</h2>
@@ -248,6 +260,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <script>
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('cg-motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

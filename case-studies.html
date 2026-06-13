@@ -31,55 +31,234 @@
   }
   </script>
 
+  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cobalt Gallery canonical design system (shared across all pages) -->
+  <link rel="stylesheet" href="css/cobalt-gallery.css">
   <style>
-    :root { --black: #111111; --white: #FFFFFF; --green: #2A5C3F; --green-dk: #1e4430; --off-white: #F7F7F7; --gray: #666666; --gray-lt: #767676; --border: #E0E0E0; }
+    :root {
+      --black:     #15120D;
+      --white:     #FFFFFF;
+      --bone:      #FAF8F2;
+      --green:     #2B5196;
+      --green-dk:  #234277;
+      --off-white: #F4F1E8;
+      --gray:      #4D4940;
+      --gray-lt:   #79746A;
+      --border:    #ECE6D9;
+    }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
-    .section-label { display: block; font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-    .section-title { font-size: clamp(36px, 5vw, 68px); font-weight: 800; line-height: 1.0; letter-spacing: -1.5px; }
-    .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .section-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--green);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(36px, 5vw, 68px);
+      line-height: 1.0;
+      letter-spacing: -.025em;
+    }
+    .section-title em { font-style: italic; color: var(--green); }
+
+    .btn-green {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 30px;
+      border-radius: 44px;
+      border: none;
+      background: var(--green);
+      color: var(--bone);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .01em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
     .btn-green:hover { background: var(--green-dk); }
 
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 60px;
+      background: rgba(250,248,242,0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
-    .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
-    .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
+    .logo-ecs { font-size: 20px; font-weight: 700; letter-spacing: 5px; color: var(--black); line-height: 1; font-family: 'Inter', system-ui, sans-serif; }
+    .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); font-family: 'Inter', system-ui, sans-serif; }
     .nav-desktop { display: flex; align-items: center; gap: 4px; }
-    .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
-    .nav-desktop a:hover { color: var(--black); }
-    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; }
+    .nav-desktop a { font-size: 13px; font-weight: 500; color: var(--black); padding: 8px 14px; text-decoration: none; opacity: .72; transition: opacity 0.2s; font-family: 'Inter', system-ui, sans-serif; }
+    .nav-desktop a:hover { opacity: 1; }
+    .nav-book {
+      background: var(--green) !important;
+      color: var(--bone) !important;
+      margin-left: 8px;
+      padding: 10px 20px !important;
+      border-radius: 44px !important;
+      font-weight: 600 !important;
+      opacity: 1 !important;
+    }
+    .nav-book:hover { background: var(--green-dk) !important; }
 
-    #hero { background: var(--black); min-height: 60vh; padding: 140px 60px 80px; display: flex; flex-direction: column; justify-content: center; }
+    #hero {
+      background: var(--black);
+      min-height: 60vh;
+      padding: 140px 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     .hero-inner { max-width: 900px; }
-    .hero-h1 { font-size: clamp(42px, 7vw, 88px); font-weight: 800; line-height: 0.95; letter-spacing: -2px; color: var(--white); margin-bottom: 24px; }
-    .hero-h1 em { font-style: normal; color: var(--green); }
-    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 640px; line-height: 1.7; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(250,248,242,0.6);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--green);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .hero-h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(42px, 7vw, 88px);
+      line-height: 1.0;
+      letter-spacing: -.025em;
+      color: var(--bone);
+      margin-bottom: 24px;
+    }
+    .hero-h1 em { font-style: italic; color: var(--green); }
+    .hero-sub { font-size: 16px; color: rgba(250,248,242,0.65); max-width: 640px; line-height: 1.7; font-family: 'Inter', system-ui, sans-serif; }
 
     #cases { padding: 120px 60px; }
     .case-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 56px; }
-    .case-card { background: var(--white); border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
+    .case-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+      overflow: hidden;
+    }
     .case-card:hover { transform: translateY(-4px); border-color: var(--green); }
-    .case-image { aspect-ratio: 4/3; background: var(--off-white); display: flex; align-items: center; justify-content: center; color: var(--gray-lt); font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
-    .case-image.coming { background: repeating-linear-gradient(135deg, var(--off-white) 0 12px, #ededed 12px 24px); }
+    .case-image {
+      aspect-ratio: 4/3;
+      background: var(--off-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-lt);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .case-image.coming { background: repeating-linear-gradient(135deg, var(--off-white) 0 12px, #e8e4d9 12px 24px); }
     .case-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
-    .case-tag { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); padding: 4px 10px; border: 1px solid var(--green); margin-bottom: 16px; align-self: flex-start; }
-    .case-h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
-    .case-desc { font-size: 13px; line-height: 1.7; color: var(--gray); margin-bottom: 20px; flex: 1; }
+    .case-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--bone);
+      background: var(--green);
+      padding: 5px 12px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      align-self: flex-start;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .case-h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 300;
+      font-size: 22px;
+      letter-spacing: -.02em;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+    .case-desc { font-size: 13px; line-height: 1.7; color: var(--gray); margin-bottom: 20px; flex: 1; font-family: 'Inter', system-ui, sans-serif; }
     .case-stats { display: flex; gap: 16px; padding: 16px 0; border-top: 1px solid var(--border); flex-wrap: wrap; }
     .case-stat { display: flex; flex-direction: column; gap: 2px; }
-    .case-stat-num { font-size: 18px; font-weight: 800; color: var(--black); }
-    .case-stat-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-lt); }
-    .case-coming-soon { padding: 56px 24px; text-align: center; color: var(--gray-lt); font-size: 13px; font-style: italic; }
+    .case-stat-num { font-family: 'Fraunces', Georgia, serif; font-weight: 300; font-size: 18px; color: var(--black); letter-spacing: -.01em; }
+    .case-stat-label { font-size: 9px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gray-lt); font-family: 'Inter', system-ui, sans-serif; }
+    .case-coming-soon { padding: 56px 24px; text-align: center; color: var(--gray-lt); font-size: 13px; font-style: italic; font-family: 'Inter', system-ui, sans-serif; }
 
-    #cta-band { background: var(--green); padding: 100px 60px; text-align: center; }
-    #cta-band .section-label { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
-    .cta-title { font-size: clamp(36px, 5vw, 72px); font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--white); margin-bottom: 48px; }
-    .btn-white { display: inline-block; padding: 16px 48px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    #cta-band { background: var(--black); padding: 100px 60px; text-align: center; }
+    #cta-band .section-label { color: rgba(250,248,242,0.6); margin-bottom: 20px; }
+    #cta-band .section-label::before { background: rgba(250,248,242,0.4); }
+    .cta-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: 1.0;
+      letter-spacing: -.025em;
+      color: var(--bone);
+      margin-bottom: 48px;
+    }
+    .cta-title em { font-style: italic; color: var(--green); }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 48px;
+      border-radius: 44px;
+      background: var(--bone);
+      color: var(--black);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
     .btn-white:hover { background: var(--off-white); }
 
     footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -87,22 +266,22 @@
     footer > *:nth-child(2) { text-align: center; }
     footer > *:last-child { text-align: right; }
     .footer-brand { display: flex; flex-direction: column; gap: 4px; }
-    .footer-ecs { font-size: 14px; font-weight: 800; letter-spacing: 5px; color: rgba(255,255,255,0.8); }
-    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
-    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.2); }
+    .footer-ecs { font-size: 14px; font-weight: 700; letter-spacing: 5px; color: rgba(250,248,242,0.8); font-family: 'Inter', system-ui, sans-serif; }
+    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(250,248,242,0.25); font-family: 'Inter', system-ui, sans-serif; }
+    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(250,248,242,0.2); font-family: 'Inter', system-ui, sans-serif; }
 
     @media (max-width: 768px) {
       .nav-desktop a:not(.nav-book){display:none;}
-      .nav-desktop .nav-book{padding:10px 18px;}
+      .nav-desktop .nav-book{padding:10px 18px !important;}
       header { padding: 16px 24px; }
       #hero { padding: 100px 24px 56px; }
       #cases, #cta-band { padding: 72px 24px; }
       .case-grid { grid-template-columns: 1fr; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
-  
+
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -115,7 +294,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://elzingacreativestudio.com/" }, { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://elzingacreativestudio.com/case-studies.html" } ] }
   </script>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -137,7 +316,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <section id="hero">
   <div class="hero-inner">
-    <p style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;">Real work. Real results.</p>
+    <p class="hero-eyebrow">Real work. Real results.</p>
     <h1 class="hero-h1">Case <em>studies</em>.</h1>
     <p class="hero-sub">How we work with Grand Rapids realtors, trade-service operators, and brands. Each case below documents the goal, the work, and the result — measured in showings, leads, or revenue.</p>
   </div>
@@ -146,9 +325,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <section id="cases">
   <span class="section-label">Featured Work</span>
-  <h2 class="section-title">Built for service businesses<br>in West Michigan.</h2>
+  <h2 class="section-title">Built for service businesses<br>in West <em>Michigan.</em></h2>
 
-  <div class="case-grid">
+  <div class="case-grid reveal-stagger">
 
     <article class="case-card">
       <div class="case-image coming">Case study in progress</div>
@@ -231,7 +410,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 <section id="cta-band">
   <span class="section-label">Want results like these?</span>
-  <h2 class="cta-title">Let's talk<br>about your work.</h2>
+  <h2 class="cta-title">Let's talk<br>about your <em>work.</em></h2>
   <a href="index.html#contact" class="btn-white">Get a Quote</a>
 </section>
 
@@ -241,12 +420,12 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <span class="footer-ecs">ECS</span>
     <span class="footer-tag">Photography · Video · Marketing</span>
   </div>
-  <a href="index.html" style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;">← Back to Main Site</a>
-  <div style="display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.25);">
+  <a href="index.html" style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'Inter',system-ui,sans-serif;">← Back to Main Site</a>
+  <div style="display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.25);font-family:'Inter',system-ui,sans-serif;">
     <span>PARTNERS</span>
-    <a href="https://elevationhome.co" target="_blank" rel="noopener" title="Elevation Home Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EHC</a>
-    <a href="https://elevationdoorco.com" target="_blank" rel="noopener" title="Elevation Door Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EDC</a>
-    <a href="https://elevationexteriorcleaning.com" target="_blank" rel="noopener" title="Elevation Exterior Cleaning" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:800;">EEC</a>
+    <a href="https://elevationhome.co" target="_blank" rel="noopener" title="Elevation Home Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:700;">EHC</a>
+    <a href="https://elevationdoorco.com" target="_blank" rel="noopener" title="Elevation Door Co" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:700;">EDC</a>
+    <a href="https://elevationexteriorcleaning.com" target="_blank" rel="noopener" title="Elevation Exterior Cleaning" style="color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(255,255,255,0.12);padding:3px 6px;font-weight:700;">EEC</a>
   </div>
   <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a></p>
 </footer>
@@ -254,6 +433,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <script>
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('cg-motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

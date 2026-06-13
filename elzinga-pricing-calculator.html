@@ -8,9 +8,12 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ECS Pricing">
 <title>Elzinga Creative Studio — Pricing</title>
+<!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Cobalt Gallery canonical design system (shared across all pages) -->
+<link rel="stylesheet" href="css/cobalt-gallery.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,14 +22,14 @@
     --surface: #181816;
     --surface2: #201f1c;
     --border: rgba(255,255,255,0.08);
-    --border-active: #1D9E75;
+    --border-active: #2B5196;
     --text: #f0ede8;
     --text-muted: #888680;
     --text-dim: #504e4a;
-    --accent: #1D9E75;
-    --accent-soft: rgba(29,158,117,0.12);
-    --font-display: 'Fraunces', serif;
-    --font-mono: 'DM Mono', monospace;
+    --accent: #2B5196;
+    --accent-soft: rgba(43,81,150,0.12);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-mono: 'Inter', system-ui, sans-serif;
     --radius: 14px;
     --radius-sm: 9px;
   }
@@ -51,17 +54,29 @@
   }
   .header-eyebrow {
     font-size: 10px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--accent);
     margin-bottom: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 2px;
+    background: var(--accent);
+    display: inline-block;
+    flex-shrink: 0;
   }
   .header-title {
     font-family: var(--font-display);
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: -0.025em;
     color: var(--text);
-    line-height: 1.15;
+    line-height: 1.1;
   }
   .header-title em {
     font-style: italic;
@@ -74,17 +89,29 @@
   }
   .section-label {
     font-size: 10px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--accent);
     margin-bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    width: 22px;
+    height: 2px;
+    background: var(--accent);
+    display: inline-block;
+    flex-shrink: 0;
   }
 
   /* Sqft slider */
   .sqft-display {
     font-family: var(--font-display);
     font-size: 42px;
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: -0.025em;
     color: var(--text);
     line-height: 1;
     margin-bottom: 16px;
@@ -115,7 +142,7 @@
     border-radius: 50%;
     background: var(--accent);
     cursor: pointer;
-    box-shadow: 0 0 0 4px rgba(29,158,117,0.2);
+    box-shadow: 0 0 0 4px rgba(43,81,150,0.2);
   }
   .sqft-labels {
     display: flex;
@@ -264,7 +291,8 @@
   .total-amount {
     font-family: var(--font-display);
     font-size: 38px;
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: -0.025em;
     color: var(--text);
     line-height: 1;
   }
@@ -287,11 +315,11 @@
     padding: 13px;
     background: var(--accent);
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: 44px;
     font-family: var(--font-mono);
     font-size: 13px;
-    font-weight: 500;
-    color: #fff;
+    font-weight: 600;
+    color: #FAF8F2;
     cursor: pointer;
     letter-spacing: 0.04em;
     -webkit-tap-highlight-color: transparent;
@@ -495,6 +523,19 @@ document.getElementById('copy-btn').addEventListener('click', function() {
 });
 
 render();
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('cg-motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

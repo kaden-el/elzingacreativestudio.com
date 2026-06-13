@@ -31,52 +31,59 @@
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://elzingacreativestudio.com/blog/listing-photo-add-ons-worth-it-grand-rapids.html" }
   }
   </script>
+  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cobalt Gallery canonical design system (shared across all pages) -->
+  <link rel="stylesheet" href="../css/cobalt-gallery.css">
   <style>
-    :root{--black:#111111;--white:#FFFFFF;--green:#2A5C3F;--green-dk:#1e4430;--off-white:#F7F7F7;--gray:#666666;--gray-lt:#767676;--border:#E0E0E0;}
+    :root{--black:#15120D;--white:#FFFFFF;--bone:#FAF8F2;--green:#2B5196;--green-dk:#234277;--off-white:#F4F1E8;--gray:#4D4940;--gray-lt:#79746A;--border:#ECE6D9;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
-    body{font-family:'DM Sans',system-ui,sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;}
-    header{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:var(--white);border-bottom:1px solid transparent;transition:border-color 0.3s;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bone);color:var(--black);overflow-x:hidden;}
+    header{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(250,248,242,0.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color 0.3s;}
     header.scrolled{border-bottom-color:var(--border);}
     .logo-link{display:flex;flex-direction:column;gap:3px;text-decoration:none;}
     .logo-ecs{font-size:20px;font-weight:800;letter-spacing:5px;color:var(--black);line-height:1;}
     .logo-full{font-size:7.5px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--gray-lt);}
     .nav-desktop{display:flex;align-items:center;gap:4px;}
-    .nav-desktop a{font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);padding:8px 14px;text-decoration:none;transition:color 0.2s;}
-    .nav-desktop a:hover{color:var(--black);}
-    .nav-book{background:var(--green)!important;color:var(--white)!important;margin-left:8px;padding:10px 20px!important;}
-    #post-header{padding:140px 60px 60px;background:var(--off-white);border-bottom:1px solid var(--border);}
-    .post-breadcrumb{font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:28px;}
+    .nav-desktop a{font-family:'Inter',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--gray);padding:8px 14px;text-decoration:none;transition:color 0.2s;}
+    .nav-desktop a:hover{color:var(--green);}
+    .nav-book{background:var(--green)!important;color:var(--white)!important;margin-left:8px;padding:10px 20px!important;border-radius:44px!important;}
+    #post-header{padding:140px 60px 60px;background:var(--bone);border-bottom:1px solid var(--border);}
+    .post-breadcrumb{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:28px;}
     .post-breadcrumb a{color:var(--gray-lt);text-decoration:none;}
-    .post-tag-header{font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:20px;display:block;}
-    .post-h1{font-size:clamp(32px,5vw,64px);font-weight:800;line-height:1.0;letter-spacing:-2px;color:var(--black);max-width:820px;margin-bottom:24px;}
+    .post-tag-header{font-family:'Inter',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--green);margin-bottom:20px;display:block;}
+    .post-tag-header::before{content:'';display:inline-block;width:26px;height:2px;background:var(--green);margin-right:12px;vertical-align:middle;}
+    .post-h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.0;letter-spacing:-0.025em;color:var(--black);max-width:820px;margin-bottom:24px;}
+    .post-h1 em{font-style:italic;color:var(--green);}
     .post-byline{display:flex;align-items:center;gap:16px;}
-    .post-author{font-size:11px;font-weight:800;letter-spacing:1px;color:var(--black);}
+    .post-author{font-size:11px;font-weight:600;letter-spacing:1px;color:var(--black);}
     .post-date-label{font-size:11px;color:var(--gray-lt);}
-    #post-body{padding:80px 60px 120px;}
+    #post-body{padding:80px 60px 120px;background:var(--bone);}
     .post-content{max-width:720px;}
     .post-content p{font-size:17px;line-height:1.85;color:var(--gray);margin-bottom:28px;}
-    .post-content h2{font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-0.75px;color:var(--black);margin:52px 0 18px;line-height:1.1;}
+    .post-content h2{font-family:'Fraunces',Georgia,serif;font-size:clamp(22px,3vw,32px);font-weight:300;letter-spacing:-0.02em;color:var(--black);margin:52px 0 18px;line-height:1.1;}
+    .post-content h2 em{font-style:italic;color:var(--green);}
     .post-content ul,.post-content ol{padding-left:24px;margin-bottom:28px;}
     .post-content li{font-size:16px;line-height:1.8;color:var(--gray);margin-bottom:8px;}
-    .post-content strong{font-weight:800;color:var(--black);}
-    .post-content a{color:var(--green);text-decoration:none;font-weight:800;}
+    .post-content strong{font-weight:700;color:var(--black);}
+    .post-content a{color:var(--green);text-decoration:none;font-weight:600;}
     .post-content a:hover{text-decoration:underline;}
     .post-content .btn-cta{color:var(--white)!important;text-decoration:none!important;}
-    .post-cta-inline{background:var(--black);padding:40px 48px;margin:52px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
-    .post-cta-text{font-size:18px;font-weight:800;color:var(--white);letter-spacing:-0.3px;}
-    .btn-cta{display:inline-block;padding:14px 32px;background:var(--green);color:var(--white);font-family:inherit;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background 0.2s;}
+    .post-cta-inline{background:var(--black);padding:40px 48px;margin:52px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-radius:14px;}
+    .post-cta-text{font-size:18px;font-weight:700;color:var(--white);letter-spacing:-0.3px;}
+    .btn-cta{display:inline-block;padding:14px 32px;background:var(--green);color:var(--white);font-family:'Inter',system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background 0.2s;border-radius:44px;}
     .btn-cta:hover{background:var(--green-dk);}
     #related{padding:80px 60px;background:var(--off-white);border-top:1px solid var(--border);}
-    .related-label{font-size:10px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--green);margin-bottom:40px;display:block;}
+    .related-label{font-family:'Inter',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--green);margin-bottom:40px;display:block;}
+    .related-label::before{content:'';display:inline-block;width:26px;height:2px;background:var(--green);margin-right:12px;vertical-align:middle;}
     .related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;}
     .related-card{text-decoration:none;}
     .related-card:hover .related-title{color:var(--green);}
-    .related-tag{font-size:8px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--green);display:block;margin-bottom:8px;}
-    .related-title{font-size:16px;font-weight:800;color:var(--black);line-height:1.3;transition:color 0.2s;}
+    .related-tag{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:8px;}
+    .related-title{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:300;color:var(--black);line-height:1.3;transition:color 0.2s;}
     footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.08);padding:32px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
     footer>*{flex:1;}
     footer>*:nth-child(2){text-align:center;}
@@ -88,9 +95,9 @@
     @media(max-width:768px){
       .nav-desktop a:not(.nav-book){display:none;}
       .nav-desktop .nav-book{padding:10px 18px;}header{padding:16px 24px;}#post-header{padding:110px 24px 48px;}#post-body{padding:52px 24px 80px;}#related{padding:60px 24px;}.related-grid{grid-template-columns:1fr;gap:24px;}.post-cta-inline{padding:28px 24px;flex-direction:column;align-items:flex-start;}footer{padding:24px;flex-direction:column;align-items:flex-start;}}
-  
+
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -109,7 +116,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -125,17 +132,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 </header>
 
 <section id="post-header">
+  <div class="reveal">
   <p class="post-breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="../blog.html">Blog</a> &nbsp;/&nbsp; Real Estate</p>
   <span class="post-tag-header">Real Estate</span>
-  <h1 class="post-h1">Matterport, Floor Plans &amp; Virtual Tours: Which Listing Add-Ons Are Actually Worth It?</h1>
+  <h1 class="post-h1">Matterport, Floor Plans &amp; Virtual Tours: Which Listing Add-Ons Are <em>Actually</em> Worth It?</h1>
   <div class="post-byline">
     <span class="post-author">Kaden Elzinga</span>
     <span class="post-date-label">June 2, 2026 &nbsp;·&nbsp; 7 min read</span>
   </div>
+  </div>
 </section>
 
 <section id="post-body">
-  <div class="post-content">
+  <div class="post-content reveal">
 
     <p>Every listing photographer in Grand Rapids hands you a menu of add-ons: floor plans, 3D tours, Matterport, drone aerials, twilight, video. The pitch is always the same, that every one of them sells your listing faster. The truth is that some of these add-ons earn their cost on almost every home, and some only pay off at certain price points or property types. Spend on the wrong ones and you have padded the invoice. Skip the right ones and you have under-marketed the listing.</p>
 
@@ -201,8 +210,8 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 </section>
 
 <section id="related">
-  <span class="related-label">More from the Blog</span>
-  <div class="related-grid">
+  <span class="related-label reveal">More from the Blog</span>
+  <div class="related-grid reveal-stagger">
     <a class="related-card" href="how-much-does-real-estate-photography-cost-grand-rapids.html">
       <span class="related-tag">Real Estate</span>
       <span class="related-title">How Much Does Real Estate Photography Cost in Grand Rapids?</span>
@@ -232,6 +241,19 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <script>
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('cg-motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

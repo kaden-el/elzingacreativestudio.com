@@ -39,45 +39,61 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/cobalt-gallery.css">
   <style>
-    :root { --black: #111111; --white: #FFFFFF; --green: #2A5C3F; --green-dk: #1e4430; --off-white: #F7F7F7; --gray: #666666; --gray-lt: #767676; --border: #E0E0E0; }
+    :root {
+      --black: #111111;
+      --white: #FFFFFF;
+      --bone: #FAF8F2;
+      --green: #2B5196;
+      --green-dk: #1e3a75;
+      --off-white: #F3F1EC;
+      --gray: #555555;
+      --gray-lt: #888888;
+      --border: #E2DDD6;
+      --ink: #1A1A1A;
+    }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: var(--white); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); line-height: 1.6; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
-    .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); }
+    .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
     .logo-full { font-size: 7.5px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-lt); }
     .nav-desktop { display: flex; align-items: center; gap: 4px; }
     .nav-desktop a { font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; }
-    .nav-book { background: var(--green) !important; color: var(--white) !important; padding: 10px 20px !important; }
+    .nav-book { background: var(--green) !important; color: var(--white) !important; padding: 10px 20px !important; border-radius: 44px !important; }
     #hero { background: var(--black); padding: 140px 60px 80px; }
     .hero-inner { max-width: 880px; margin: 0 auto; }
     .breadcrumb { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
     .breadcrumb a { color: var(--green); text-decoration: none; }
-    .hero-eyebrow { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
-    .hero-h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; color: var(--white); margin-bottom: 24px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 26px; height: 2px; background: var(--green); flex-shrink: 0; }
+    .hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 6vw, 64px); font-weight: 300; line-height: 1.05; letter-spacing: -1.5px; color: var(--white); margin-bottom: 24px; }
+    .hero-h1 em { font-style: italic; color: #7B9FD4; }
     .hero-sub { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 24px; }
-    .hero-cta { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; }
+    .hero-cta { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 44px; }
     article { max-width: 880px; margin: 0 auto; padding: 80px 60px; }
-    article h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin: 56px 0 18px; }
+    article h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(26px, 4vw, 40px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin: 56px 0 18px; }
+    article h2 em { font-style: italic; color: var(--green); }
     article h2:first-of-type { margin-top: 0; }
     article p { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 18px; }
-    article p strong { color: var(--black); font-weight: 800; }
+    article p strong { color: var(--black); font-weight: 700; }
     article ul { margin: 16px 0 24px 24px; }
     article li { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 8px; }
     article a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
-    .pricing-strip { background: var(--off-white); padding: 32px 36px; margin: 32px 0; border-left: 4px solid var(--green); }
+    .pricing-strip { background: var(--off-white); padding: 32px 36px; margin: 32px 0; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
     .pricing-strip h3 { font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
     .pricing-strip .tiers { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 8px; }
     .pricing-strip .tier { display: flex; flex-direction: column; }
     .pricing-strip .tier-name { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
-    .pricing-strip .tier-price { font-size: 28px; font-weight: 800; color: var(--black); letter-spacing: -1px; }
+    .pricing-strip .tier-price { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 300; color: var(--black); letter-spacing: -1px; }
     #cta-band { background: var(--green); padding: 80px 60px; text-align: center; }
-    .cta-title { font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: var(--white); margin-bottom: 28px; }
-    .btn-white { display: inline-block; padding: 14px 36px; background: var(--white); color: var(--black); font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; }
+    .cta-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -1px; color: var(--white); margin-bottom: 28px; }
+    .cta-title em { font-style: italic; color: rgba(255,255,255,0.75); }
+    .btn-white { display: inline-block; padding: 14px 36px; background: var(--white); color: var(--black); font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 44px; }
     footer { background: var(--black); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer > * { flex: 1; }
     footer > *:nth-child(2) { text-align: center; }
@@ -87,10 +103,10 @@
     .footer-copy { font-size: 10px; color: rgba(255,255,255,0.2); }
     .work-gallery { max-width: 880px; margin: 0 auto; padding: 0 60px 80px; }
     .work-gallery-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: block; }
-    .work-gallery-title { font-size: clamp(24px, 4vw, 36px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: var(--black); margin-bottom: 16px; }
+    .work-gallery-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(24px, 4vw, 36px); font-weight: 300; line-height: 1.1; letter-spacing: -1px; color: var(--black); margin-bottom: 16px; }
     .work-gallery-sub { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 32px; max-width: 720px; }
     .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .work-grid img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
+    .work-grid img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; border-radius: 14px; }
     @media (max-width: 768px) {
       .nav-desktop a:not(.nav-book){display:none;}
       .nav-desktop .nav-book{padding:10px 18px;}
@@ -105,15 +121,21 @@
     .nearby-areas { background: var(--off-white); padding: 64px 60px; border-top: 1px solid var(--border); }
     .nearby-inner { max-width: 880px; margin: 0 auto; }
     .nearby-label { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
-    .nearby-title { font-size: clamp(22px, 3.6vw, 30px); font-weight: 800; line-height: 1.15; letter-spacing: -0.8px; color: var(--black); margin-bottom: 28px; }
+    .nearby-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -0.8px; color: var(--black); margin-bottom: 28px; }
     .nearby-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; transition: border-color 0.18s, transform 0.18s; }
-    .nearby-list a strong { color: var(--black); font-weight: 800; }
+    .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; color: var(--gray); text-decoration: none; font-size: 14px; transition: border-color 0.18s, transform 0.18s; }
+    .nearby-list a strong { color: var(--black); font-weight: 700; }
     .nearby-list a:hover { border-color: var(--green); transform: translateX(2px); }
     @media (max-width: 768px) { .nearby-areas { padding: 48px 24px; } .nearby-list { grid-template-columns: 1fr; } }
-  
+
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2A5C3F;outline-offset:3px}
+    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    .reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity 0.45s ease, transform 0.45s ease; }
+    .reveal-stagger > *.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; } }
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -122,7 +144,7 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -139,17 +161,18 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 </header>
 
 <section id="hero">
-  <div class="hero-inner">
+  <div class="hero-inner reveal">
     <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="grand-rapids-real-estate-photography-guide.html">Real Estate Photography</a> &nbsp;/&nbsp; Luxury Real Estate Photography</p>
     <p class="hero-eyebrow">West Michigan · Luxury Listings</p>
-    <h1 class="hero-h1">Luxury real estate photography for West Michigan estates.</h1>
+    <h1 class="hero-h1">Luxury real estate photography for West Michigan <em>estates.</em></h1>
     <p class="hero-sub">Magazine-grade listing photography for the premium market: $1M+ estates, Lake Michigan waterfront, and architecturally significant homes across the lakeshore corridor and the affluent Grand Rapids metro. The full Signature package pairs real twilight, drone, cinematic video, and Matterport 3D. Signature is the luxury baseline at $495.</p>
     <a href="preferred-photographer.html" class="hero-cta">See Pricing</a>
   </div>
 </section>
 
 <article>
-  <h2>Marketing that matches the price point</h2>
+  <div class="reveal">
+  <h2>Marketing that matches the <em>price point</em></h2>
   <p>A $1.4M lakefront estate and a starter home do not sell the same way, and they should not be photographed the same way. At the top of West Michigan's market, buyers are not scrolling for square footage, they are buying a lifestyle, an address, and architecture. When a luxury listing goes live with the same flat phone snaps as everything else in the MLS, the price point and the marketing fall out of sync, and a buyer notices in the first frame. <strong>Luxury listing photography is not a daytime shoot with a markup, it is a different production built to do the property justice.</strong></p>
 
   <p>Elzinga Creative Studio shoots West Michigan's high-end listings as the full premium package: magazine-grade architectural photography, real twilight, drone aerials, a cinematic video walkthrough, and a Matterport 3D tour, delivered as one cohesive marketing set that makes a seven-figure home read like the asset it is. If you work the luxury tier regularly, becoming a <a href="preferred-photographer.html">preferred photographer</a> partner keeps every estate listing on standing pricing and a priority calendar.</p>
@@ -163,8 +186,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </div>
     <p style="margin-top: 16px; margin-bottom: 0; font-size: 14px;">Signature ($495) is the luxury baseline and includes real twilight in scope. Part 107 drone aerial is included in Signature. Layer on a <a href="matterport-3d-tour-grand-rapids.html">3D virtual tour</a> ($100), a 2D floor plan ($75), and agent social reels ($150 or $300). For a seven-figure listing, step the tour up to a premium, fully-hosted Matterport Pro at $250–$295, custom-quoted. <a href="preferred-photographer.html">See full breakdown</a>.</p>
   </div>
+  </div>
 
-  <h2>What the Signature package includes</h2>
+  <div class="reveal">
+  <h2>What the Signature package <em>includes</em></h2>
   <ul>
     <li><strong>Magazine-grade architectural photography:</strong> deliberate composition, controlled light, and clean verticals that present a home the way an architecture or design magazine would</li>
     <li><strong>Real twilight, included on Signature:</strong> an actual blue-hour shoot of the exterior and key views, never a daytime frame faked dark, so the home reads cinematic and high-end</li>
@@ -173,19 +198,27 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <li><strong>Matterport 3D tour:</strong> a $100 add-on <a href="matterport-3d-tour-grand-rapids.html">3D Matterport tour</a> so relocating buyers can walk the whole floor plan before they ever fly in</li>
     <li><strong>Agent social reels:</strong> short-form vertical edits at $150 or $300 to market the listing and the agent on Instagram and Facebook</li>
   </ul>
+  </div>
 
-  <h2>Drone, aerial, and real twilight</h2>
+  <div class="reveal">
+  <h2>Drone, aerial, and <em>real twilight</em></h2>
   <p>On a waterfront or estate listing, the setting is the value, and you can only show it from the air. Drone aerials make the property legible at a glance: the water frontage, the shoreline, and how the home sits on its ground. <strong>Part 107 drone aerial is included in Signature</strong> (a $125 add-on on Essential and Showcase). Twilight is the other half of the luxury look, included in scope on Signature. A real twilight is an actual blue-hour shoot, warm interior light glowing against a deep sky, and it is consistently the frame that stops a buyer mid-scroll. For why it pulls its weight, see <a href="blog/do-twilight-photos-sell-homes-grand-rapids.html">do twilight photos sell homes</a>, or the dedicated <a href="twilight.html">twilight photography</a> page. ECS flies Part 107 RPIC compliant and pulls LAANC authorization in controlled airspace, so lakeshore and metro flights stay legal. For the full waterfront playbook, see <a href="blog/lakefront-property-photography-west-michigan.html">lakefront property photography in West Michigan</a>.</p>
+  </div>
 
-  <h2>Cinematic video and Matterport 3D</h2>
+  <div class="reveal">
+  <h2>Cinematic video and <em>Matterport 3D</em></h2>
   <p>Luxury buyers are often out of market, buying from another state before they ever stand in the home, which is why the premium package leans on motion and 3D. A <a href="real-estate-video-walkthrough-grand-rapids.html">cinematic video walkthrough</a> paces a buyer through the spaces, views, and amenities, telling the lifestyle story a grid of stills cannot. A <a href="matterport-3d-tour-grand-rapids.html">3D virtual tour</a> lets a relocating buyer walk the whole floor plan on demand and understand the flow before booking a private showing. The standard tour is a $100 add-on covering Zillow 3D Home and a Matterport-style walkthrough; for an estate or waterfront listing that warrants it, the premium, fully-hosted Matterport Pro tour at $250–$295, custom-quoted, delivers the sharpest dollhouse view and the most polished presentation. Together they pre-qualify serious interest and protect the seller's time. Standard photo delivery is within 24 hours, MLS-ready, via Pixieset; video and 3D follow shortly after.</p>
+  </div>
 
+  <div class="reveal">
   <h2>Luxury listing FAQ</h2>
   <p><strong>What makes a real estate shoot luxury-grade?</strong> It is the package, not a markup. A luxury listing gets the Signature tier at $495 — magazine-grade architectural photography with real twilight and Part 107 drone aerials included in scope — then a cinematic video walkthrough and a Matterport 3D tour ($100) added on so the marketing matches the price point. Real twilight is an actual blue-hour shoot, not a daytime frame faked dark.</p>
   <p><strong>Do you photograph Lake Michigan waterfront and estate properties?</strong> Yes. The lakeshore corridor is the heart of this work, from Macatawa and Holland to Saugatuck, Spring Lake, Grand Haven, and South Haven, plus affluent metro pockets like Ada, Cascade, East Grand Rapids, Forest Hills, and Reeds Lake. These listings sell on lifestyle, amenity, and architecture, so drone and twilight do a lot of the work.</p>
   <p><strong>How discreet is the process for high-net-worth sellers?</strong> Discretion is standard. We work around the seller's schedule, keep the shoot tight and professional, and never publish a property without the agent's say-so. The agent controls what gets used.</p>
   <p><strong>How fast is delivery?</strong> Photos are delivered within 24 hours of the shoot, MLS-ready, via Pixieset. Video and Matterport 3D follow shortly after. For a premium listing where time on market matters, that gets the gallery live fast without cutting quality.</p>
+  </div>
 
+  <div class="reveal">
   <h2>How to book a luxury listing shoot</h2>
   <ul>
     <li><strong>For agents listing in the luxury tier regularly:</strong> join the <a href="preferred-photographer.html">Preferred Photographer Program</a> for standing 3-tier pricing, priority calendar, and a $50 referral credit.</li>
@@ -193,13 +226,16 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <li><strong>For a free critique first:</strong> submit a <a href="free-audit.html">free listing photo audit</a> and get a video walkthrough of your current photos back within 48 hours.</li>
   </ul>
   <p>Or text Kaden directly at (616) 258-4578.</p>
+  </div>
 </article>
 
 <section class="work-gallery">
+  <div class="reveal">
   <span class="work-gallery-label">Sample Work / Luxury Listings</span>
-  <h2 class="work-gallery-title">Magazine-grade photography for West Michigan estates.</h2>
+  <h2 class="work-gallery-title">Magazine-grade photography for West Michigan <em>estates.</em></h2>
   <p class="work-gallery-sub">At the top of the market the gallery has to do the home justice: deliberate architectural framing, controlled light, and the lifestyle, amenity, and architecture story that a seven-figure listing is actually selling. Waterfront setting, real twilight, and clean editorial interiors that read like a design magazine, not a phone snap.</p>
-  <div class="work-grid">
+  </div>
+  <div class="work-grid reveal-stagger">
     <picture><source srcset="images/web/_DSC8548-HDR-1600.avif" type="image/avif"><img src="images/web/_DSC8548-HDR-1600.jpg" alt="Magazine-grade architectural photography of a luxury West Michigan lakeshore estate listing" width="1200" height="800" loading="lazy"></picture>
     <picture><source srcset="images/web/_DSC8528-HDR-1600.avif" type="image/avif"><img src="images/web/_DSC8528-HDR-1600.jpg" alt="Editorial HDR interior of a high-end Lake Michigan waterfront home in West Michigan" width="1200" height="800" loading="lazy"></picture>
     <picture><source srcset="images/web/DSC08881-HDR-1600.avif" type="image/avif"><img src="images/web/DSC08881-HDR-1600.jpg" alt="Luxury kitchen photography for an architecturally significant West Michigan estate" width="1200" height="800" loading="lazy"></picture>
@@ -209,10 +245,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
 
 <section class="nearby-areas">
-  <div class="nearby-inner">
+  <div class="nearby-inner reveal">
     <span class="nearby-label">Luxury Corridor</span>
     <h2 class="nearby-title">Luxury real estate photography across the West Michigan lakeshore.</h2>
-    <ul class="nearby-list">
+    <ul class="nearby-list reveal-stagger">
     <li><a href="real-estate-photography-saugatuck.html"><strong>Saugatuck</strong> · arts-colony lakeshore</a></li>
     <li><a href="real-estate-photography-holland.html"><strong>Holland</strong> · Macatawa, lakeshore</a></li>
     <li><a href="real-estate-photography-spring-lake.html"><strong>Spring Lake</strong> · waterfront estates</a></li>
@@ -223,7 +259,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 </section>
 
 <section id="cta-band">
-  <h2 class="cta-title">Listing a West Michigan estate? Let's photograph it right.</h2>
+  <h2 class="cta-title">Listing a West Michigan estate? Let's photograph it <em>right.</em></h2>
   <a href="preferred-photographer.html" class="btn-white">See Realtor Pricing</a>
 </section>
 
@@ -242,6 +278,31 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <script>
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('cg-motion');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          if (el.classList.contains('reveal-stagger')) {
+            Array.from(el.children).forEach((child, i) => {
+              setTimeout(() => child.classList.add('in-view'), i * 80);
+            });
+          } else {
+            el.classList.add('in-view');
+          }
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal, .reveal-stagger > *').forEach(el => {
+      el.style.opacity = '1'; el.style.transform = 'none';
+    });
+  }
 </script>
 </body>
 </html>
