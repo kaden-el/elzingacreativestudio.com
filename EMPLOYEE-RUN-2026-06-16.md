@@ -134,7 +134,7 @@ Each post is a complete standalone `.html` file placed in `blog/`. The `blog.htm
 
 ## Notes
 
-- No fabricated stats, reviews, or credentials used anywhere. All pricing figures match the published ECS pricing ($245/$325/$495, add-ons at stated prices).
+- No fabricated stats, reviews, or credentials used anywhere. All pricing figures match the published ECS pricing ($245/$375/$525, add-ons at stated prices).
 - All internal links point to real pages that exist in the repo.
 - External links in posts are to verifiable real sources: Rockford city website, FAA LAANC system.
 - The `best-time-of-year-real-estate-photos-michigan.html` post already covers season-by-season broadly; the new seasonal calendar post is differentiated by going month-by-month (12 months, not 4 seasons) and by focusing on the photographer's decision-making process rather than the seller's timing question.
