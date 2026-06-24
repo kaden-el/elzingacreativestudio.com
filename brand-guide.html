@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brand Identity System · Elzinga Creative Studio</title>
+  <meta name="description" content="The Elzinga Creative Studio brand identity system — wordmark, palette, typography, voice and principles. Edition 02.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://elzingacreativestudio.com/brand-guide.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/brand.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--text); min-height: 100vh; position: relative; overflow-x: hidden; }
+    .topbar { max-width: 1180px; margin: 0 auto; padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; }
+    .topbar .center, .topbar .right { opacity: .5; }
+    section { max-width: 1180px; margin: 0 auto; padding: 92px 48px; }
+    section + section, .ruled { border-top: 1px solid var(--line); }
+    .hero { padding: 60px 48px 104px; }
+    .hero-word { font-family: var(--display); font-weight: 600; font-size: clamp(88px,17vw,232px); line-height: .86; letter-spacing: -.02em; margin: 18px 0 0; display: flex; }
+    .hero-word span { display: inline-block; }
+    .lockup { background: var(--soft); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; position: relative; color: var(--ink); transition: background .5s ease, color .5s ease; }
+    .lockup:hover { background: var(--ink); color: var(--paper); }
+    .tag-bl { position: absolute; bottom: 16px; left: 18px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; opacity: .5; }
+    .tag-tl { position: absolute; top: 14px; left: 16px; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+    .swatch { padding: 24px 20px; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; position: relative; cursor: pointer; transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+    .swatch:hover { transform: scale(1.05); z-index: 3; box-shadow: 0 24px 60px rgba(25,21,15,.28); }
+    @media (max-width: 900px) {
+      section { padding: 64px 24px; }
+      .hero { padding: 40px 24px 72px; }
+      .grid-5, .grid-3, .grid-2, .grid-mark-a, .grid-mark-b { grid-template-columns: 1fr 1fr !important; }
+      .grid-6 { grid-template-columns: repeat(3,1fr) !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span style="display:flex;align-items:center;gap:10px;"><span class="ez-pulse-dot"></span>Elzinga Creative Studio</span>
+    <span class="center">Brand Identity System</span>
+    <span class="right">Edition 02 — MMXXVI</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="ez-eyebrow">Guidelines &amp; Usage</div>
+    <h1 class="hero-word">
+      <span>E</span><span>l</span><span>z</span><span>i</span><span>n</span><span>g</span><span>a</span><span data-ez-magnet class="ez-dot" style="will-change:transform;">.</span>
+    </h1>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:48px;flex-wrap:wrap;margin-top:26px;">
+      <div style="font-size:13px;letter-spacing:.42em;text-transform:uppercase;font-weight:600;">Creative&nbsp;&nbsp;Studio</div>
+      <p style="max-width:430px;font-family:var(--display);font-style:italic;font-size:23px;line-height:1.4;opacity:.85;">A design practice building brands with conviction — where craft, clarity and a little tension meet.</p>
+    </div>
+    <div style="height:1px;background:var(--line);margin-top:50px;"></div>
+    <div class="grid-6" style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);margin-top:1px;">
+      <div style="background:var(--paper);padding:26px 4px 0;"><div style="font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;">01</div><div style="font-family:var(--display);font-size:21px;margin-top:8px;">The Mark</div></div>
+      <div style="background:var(--paper);padding:26px 4px 0;"><div style="font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;">02</div><div style="font-family:var(--display);font-size:21px;margin-top:8px;">Palette</div></div>
+      <div style="background:var(--paper);padding:26px 4px 0;"><div style="font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;">03</div><div style="font-family:var(--display);font-size:21px;margin-top:8px;">Typography</div></div>
+      <div style="background:var(--paper);padding:26px 4px 0;"><div style="font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;">04</div><div style="font-family:var(--display);font-size:21px;margin-top:8px;">Voice</div></div>
+      <div style="background:var(--paper);padding:26px 4px 0;"><div style="font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;">05</div><div style="font-family:var(--display);font-size:21px;margin-top:8px;">Principles</div></div>
+      <div style="background:var(--paper);padding:26px 4px 0;"><div style="font-size:11px;letter-spacing:.2em;color:var(--accent);font-weight:600;">06</div><div style="font-family:var(--display);font-size:21px;margin-top:8px;">In Use</div></div>
+    </div>
+  </section>
+
+  <!-- KINETIC MARQUEE -->
+  <div class="ez-marquee">
+    <div class="track">
+      <span class="lane">Elzinga Creative Studio<span class="star">✳</span>Est. MMXXVI<span class="star">✳</span>Grand Rapids, MI<span class="star">✳</span>Brands With a Point of View<span class="star">✳</span></span>
+      <span class="lane" aria-hidden="true">Elzinga Creative Studio<span class="star">✳</span>Est. MMXXVI<span class="star">✳</span>Grand Rapids, MI<span class="star">✳</span>Brands With a Point of View<span class="star">✳</span></span>
+    </div>
+  </div>
+
+  <!-- STUDIO NOTE -->
+  <section>
+    <div class="grid-2" style="display:grid;grid-template-columns:.42fr 1fr;gap:48px;align-items:start;">
+      <div data-reveal style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;line-height:2.1;">
+        <div style="color:var(--accent);">A Studio Note</div>
+        <div style="opacity:.5;margin-top:10px;">On the system<br>&amp; how to use it</div>
+        <div style="width:46px;height:2px;background:var(--accent);margin-top:22px;"></div>
+      </div>
+      <div data-reveal>
+        <p style="font-family:var(--display);font-size:clamp(24px,2.4vw,32px);line-height:1.32;letter-spacing:-.005em;text-wrap:pretty;">
+          <span style="float:left;font-family:var(--display);font-weight:700;font-size:118px;line-height:.74;padding:8px 18px 0 0;color:var(--accent);">T</span>his is not a rulebook to trap us — it is a set of decisions made once, so we don't re-litigate them on every project. The wordmark, the dot, the bone paper and the single accent are fixed. Everything else is judgement, applied with care.
+        </p>
+        <p style="font-size:15px;line-height:1.7;opacity:.7;margin-top:22px;max-width:560px;">Used well, the system should feel invisible — the work looks unmistakably ours without ever shouting about it. When in doubt, choose the quieter option and let the typography carry the weight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 THE MARK -->
+  <section>
+    <div data-reveal class="ez-section-head"><span class="num">01</span><h2>The Mark</h2></div>
+    <p data-reveal style="max-width:560px;font-size:15px;line-height:1.6;opacity:.7;margin-bottom:44px;">The wordmark is set in Syne with a single accent period — the "dot" — that anchors the identity. It works as a full wordmark, a stacked lockup, or a standalone monogram.</p>
+
+    <div data-reveal class="grid-mark-a" style="display:grid;grid-template-columns:1.5fr 1fr;gap:24px;">
+      <div class="lockup" style="min-height:300px;">
+        <span style="font-family:var(--display);font-weight:600;font-size:84px;letter-spacing:-.02em;color:inherit;">Elzinga<span style="color:var(--accent);">.</span></span>
+        <span class="tag-bl">A — Primary Wordmark</span>
+      </div>
+      <div class="lockup" style="min-height:300px;flex-direction:column;gap:12px;background:var(--paper);">
+        <span style="font-family:var(--display);font-weight:600;font-size:52px;letter-spacing:-.02em;line-height:1;color:inherit;">Elzinga<span style="color:var(--accent);">.</span></span>
+        <span style="font-size:10px;letter-spacing:.4em;text-transform:uppercase;font-weight:600;opacity:.7;">Creative Studio</span>
+        <span class="tag-bl">B — Stacked Lockup</span>
+      </div>
+    </div>
+    <div data-reveal class="grid-mark-b" style="display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:24px;margin-top:24px;">
+      <div style="background:var(--ink);min-height:230px;display:flex;align-items:center;justify-content:center;position:relative;">
+        <span style="font-family:var(--display);font-weight:600;font-size:118px;color:var(--paper);line-height:1;">E<span style="color:var(--accent);">.</span></span>
+        <span class="tag-bl" style="color:var(--paper);opacity:.55;">C — Monogram</span>
+      </div>
+      <div style="background:var(--accent);min-height:230px;display:flex;align-items:center;justify-content:center;position:relative;">
+        <span style="font-family:var(--display);font-weight:600;font-size:58px;color:#fff;letter-spacing:-.02em;">Elzinga<span style="opacity:.55;">.</span></span>
+        <span class="tag-bl" style="color:#fff;opacity:.7;">D — Reversed</span>
+      </div>
+      <div style="background:var(--paper);border:1px solid var(--line);min-height:230px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:26px 26px;">
+        <div style="border:1px dashed var(--accent);padding:20px 26px;background:var(--paper);">
+          <span style="font-family:var(--display);font-weight:600;font-size:46px;letter-spacing:-.02em;">E<span style="color:var(--accent);">.</span></span>
+        </div>
+        <span class="tag-tl">Clear space = 1×</span>
+        <span class="tag-bl">E — Construction</span>
+      </div>
+    </div>
+
+    <!-- misuse -->
+    <div data-reveal style="margin-top:48px;">
+      <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;opacity:.5;margin-bottom:16px;">Misuse — never do this</div>
+      <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
+        <div style="background:var(--paper);padding:26px 20px;min-height:158px;display:flex;flex-direction:column;justify-content:space-between;"><div style="height:54px;display:flex;align-items:center;"><span style="font-family:var(--display);font-weight:600;font-size:30px;transform:scaleX(1.7);letter-spacing:-.02em;">El<span style="color:var(--accent);">.</span></span></div><div style="display:flex;align-items:center;gap:8px;"><span style="width:16px;height:16px;border-radius:50%;border:1.5px solid var(--error);color:var(--error);font-size:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">✕</span><span style="font-size:12.5px;line-height:1.35;opacity:.75;">Don't stretch or distort</span></div></div>
+        <div style="background:var(--paper);padding:26px 20px;min-height:158px;display:flex;flex-direction:column;justify-content:space-between;"><div style="height:54px;display:flex;align-items:center;"><span style="font-family:var(--display);font-weight:600;font-size:30px;transform:rotate(-13deg);letter-spacing:-.02em;">El<span style="color:var(--accent);">.</span></span></div><div style="display:flex;align-items:center;gap:8px;"><span style="width:16px;height:16px;border-radius:50%;border:1.5px solid var(--error);color:var(--error);font-size:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">✕</span><span style="font-size:12.5px;line-height:1.35;opacity:.75;">Don't rotate the mark</span></div></div>
+        <div style="background:var(--paper);padding:26px 20px;min-height:158px;display:flex;flex-direction:column;justify-content:space-between;"><div style="height:54px;display:flex;align-items:center;"><span style="font-family:var(--display);font-weight:600;font-size:30px;color:#9A8F7C;letter-spacing:-.02em;">El<span style="color:var(--accent);">.</span></span></div><div style="display:flex;align-items:center;gap:8px;"><span style="width:16px;height:16px;border-radius:50%;border:1.5px solid var(--error);color:var(--error);font-size:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">✕</span><span style="font-size:12.5px;line-height:1.35;opacity:.75;">Don't recolour the wordmark</span></div></div>
+        <div style="background:var(--paper);padding:26px 20px;min-height:158px;display:flex;flex-direction:column;justify-content:space-between;"><div style="height:54px;display:flex;align-items:center;"><span style="font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-.02em;">El</span></div><div style="display:flex;align-items:center;gap:8px;"><span style="width:16px;height:16px;border-radius:50%;border:1.5px solid var(--error);color:var(--error);font-size:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">✕</span><span style="font-size:12.5px;line-height:1.35;opacity:.75;">Don't drop the accent dot</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 PALETTE -->
+  <section>
+    <div data-reveal class="ez-section-head"><span class="num">02</span><h2>Palette</h2></div>
+    <div data-reveal class="grid-5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
+      <div class="swatch" data-hex="#1E5C8B" style="background:#1E5C8B;color:#fff;">
+        <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:.7;">Primary</span>
+        <div><div style="font-family:var(--display);font-size:26px;">Cobalt</div><div style="font-size:12px;letter-spacing:.08em;margin-top:6px;opacity:.7;">#1E5C8B</div><div style="font-size:10px;letter-spacing:.06em;line-height:1.7;opacity:.6;margin-top:10px;font-variant-numeric:tabular-nums;">RGB&nbsp;&nbsp;30 92 139<br>CMYK&nbsp;78 34 0 45</div><div style="font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-top:12px;">Click to copy</div></div>
+      </div>
+      <div class="swatch" data-hex="#19150F" style="background:#19150F;color:#F2EEE5;">
+        <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:.7;">Foundation</span>
+        <div><div style="font-family:var(--display);font-size:26px;">Ink</div><div style="font-size:12px;letter-spacing:.08em;margin-top:6px;opacity:.7;">#19150F</div><div style="font-size:10px;letter-spacing:.06em;line-height:1.7;opacity:.6;margin-top:10px;font-variant-numeric:tabular-nums;">RGB&nbsp;&nbsp;25 21 15<br>CMYK&nbsp;0 16 40 90</div><div style="font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-top:12px;">Click to copy</div></div>
+      </div>
+      <div class="swatch" data-hex="#F2EEE5" style="background:#F2EEE5;color:#19150F;">
+        <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:.7;">Surface</span>
+        <div><div style="font-family:var(--display);font-size:26px;">Bone</div><div style="font-size:12px;letter-spacing:.08em;margin-top:6px;opacity:.7;">#F2EEE5</div><div style="font-size:10px;letter-spacing:.06em;line-height:1.7;opacity:.6;margin-top:10px;font-variant-numeric:tabular-nums;">RGB&nbsp;&nbsp;242 238 229<br>CMYK&nbsp;0 2 5 5</div><div style="font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-top:12px;">Click to copy</div></div>
+      </div>
+      <div class="swatch" data-hex="#C9B79C" style="background:#C9B79C;color:#19150F;">
+        <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:.7;">Support</span>
+        <div><div style="font-family:var(--display);font-size:26px;">Clay</div><div style="font-size:12px;letter-spacing:.08em;margin-top:6px;opacity:.7;">#C9B79C</div><div style="font-size:10px;letter-spacing:.06em;line-height:1.7;opacity:.6;margin-top:10px;font-variant-numeric:tabular-nums;">RGB&nbsp;&nbsp;201 183 156<br>CMYK&nbsp;0 9 22 21</div><div style="font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-top:12px;">Click to copy</div></div>
+      </div>
+      <div class="swatch" data-hex="#44504D" style="background:#44504D;color:#F2EEE5;">
+        <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:.7;">Support</span>
+        <div><div style="font-family:var(--display);font-size:26px;">Slate</div><div style="font-size:12px;letter-spacing:.08em;margin-top:6px;opacity:.7;">#44504D</div><div style="font-size:10px;letter-spacing:.06em;line-height:1.7;opacity:.6;margin-top:10px;font-variant-numeric:tabular-nums;">RGB&nbsp;&nbsp;68 80 77<br>CMYK&nbsp;15 0 4 69</div><div style="font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-top:12px;">Click to copy</div></div>
+      </div>
+    </div>
+    <div data-reveal style="margin-top:28px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:.5;margin-bottom:12px;"><span>Recommended Proportion</span><span>Surface → Accent</span></div>
+      <div style="display:flex;height:54px;border:1px solid var(--line);">
+        <div style="flex:62;background:var(--soft);"></div><div style="flex:20;background:var(--ink);"></div><div style="flex:8;background:#C9B79C;"></div><div style="flex:6;background:#44504D;"></div><div style="flex:4;background:var(--accent);"></div>
+      </div>
+      <div style="display:flex;font-size:11px;letter-spacing:.04em;opacity:.6;margin-top:8px;"><span style="flex:62;">Bone 62</span><span style="flex:20;">Ink 20</span><span style="flex:8;">Clay 8</span><span style="flex:6;">Slate 6</span><span style="flex:4;text-align:right;">Accent 4</span></div>
+    </div>
+  </section>
+
+  <!-- 03 TYPOGRAPHY -->
+  <section>
+    <div data-reveal class="ez-section-head"><span class="num">03</span><h2>Typography</h2></div>
+    <div data-reveal class="grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);">
+      <div style="background:var(--paper);padding:40px;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;"><span style="color:var(--accent);">Display</span><span style="opacity:.5;">Syne</span></div>
+        <div style="font-family:var(--display);font-weight:600;font-size:150px;line-height:1;margin-top:24px;">Aa</div>
+        <div style="font-family:var(--display);font-size:28px;margin-top:12px;">Form follows feeling.</div>
+        <div style="font-size:13px;opacity:.55;margin-top:20px;letter-spacing:.04em;">ABCDEFGHIJKLM · 1234567890 · &amp;</div>
+      </div>
+      <div style="background:var(--paper);padding:40px;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;"><span style="color:var(--accent);">Text</span><span style="opacity:.5;">Spline Sans</span></div>
+        <div style="font-weight:600;font-size:150px;line-height:1;margin-top:24px;letter-spacing:-.03em;">Aa</div>
+        <div style="font-size:26px;font-weight:500;margin-top:12px;">Clarity is a kindness.</div>
+        <div style="font-size:13px;opacity:.55;margin-top:20px;letter-spacing:.04em;">Regular · Medium · Semibold · Bold</div>
+      </div>
+    </div>
+    <div data-reveal class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none;">
+      <div style="background:var(--paper);padding:26px;"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.5;">Display</div><div style="font-family:var(--display);font-size:30px;margin-top:10px;">88–232px · Syne 600</div></div>
+      <div style="background:var(--paper);padding:26px;"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.5;">Heading</div><div style="font-family:var(--display);font-size:30px;margin-top:10px;">30–46px · Syne 600</div></div>
+      <div style="background:var(--paper);padding:26px;"><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.5;">Body &amp; Label</div><div style="font-family:var(--display);font-size:30px;margin-top:10px;">11–18px · Spline 400–600</div></div>
+    </div>
+    <div data-reveal class="grid-2" style="display:grid;grid-template-columns:1.1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-top:none;">
+      <div style="background:var(--ink);color:var(--paper);min-height:300px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+        <span style="font-family:var(--display);font-weight:700;font-size:300px;line-height:.7;">&amp;</span>
+        <span class="tag-tl" style="color:var(--paper);opacity:.55;">Signature Glyph</span>
+        <span style="position:absolute;bottom:18px;right:20px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;opacity:.55;">Ampersand · Syne</span>
+      </div>
+      <div style="background:var(--paper);min-height:300px;padding:40px;display:flex;flex-direction:column;justify-content:center;gap:18px;">
+        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--accent);">Character Set</div>
+        <div style="font-family:var(--display);font-size:38px;line-height:1.18;letter-spacing:.01em;">ABCDEFGHIJKLM<br>NOPQRSTUVWXYZ</div>
+        <div style="font-family:var(--display);font-size:26px;line-height:1.2;opacity:.65;">abcdefghijklmnopqrstuvwxyz</div>
+        <div style="font-family:var(--display);font-size:26px;letter-spacing:.04em;opacity:.65;">0123456789 — &amp; @ . , ! ?</div>
+      </div>
+    </div>
+    <div data-reveal style="border:1px solid var(--line);border-top:none;background:var(--paper);padding:34px 40px 44px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:8px;">
+        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--accent);">Type Tester — click &amp; type</div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.5;">Weight</span>
+          <input type="range" min="500" max="800" step="100" value="700" data-ez-weight style="accent-color:var(--accent);width:150px;">
+          <span data-ez-weight-label style="font-size:12px;font-weight:600;width:34px;opacity:.7;font-variant-numeric:tabular-nums;">700</span>
+        </div>
+      </div>
+      <div data-ez-tester contenteditable="true" spellcheck="false" style="font-family:var(--display);font-weight:700;font-size:clamp(54px,9vw,128px);line-height:1.04;letter-spacing:-.02em;outline:none;cursor:text;padding:8px 0;text-wrap:balance;">Make it mean something<span style="color:var(--accent);">.</span></div>
+    </div>
+  </section>
+
+  <!-- 04 VOICE -->
+  <section>
+    <div data-reveal class="ez-section-head"><span class="num">04</span><h2>Voice</h2></div>
+    <p data-reveal style="font-family:var(--display);font-style:italic;font-size:30px;line-height:1.4;max-width:760px;margin-bottom:44px;">We write the way we design — direct, warm and unafraid of a strong opinion. Plain words, real craft, no jargon.</p>
+    <div data-reveal class="grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);">
+      <div style="background:var(--paper);padding:30px 34px;display:flex;gap:24px;align-items:flex-start;"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--accent);flex:0 0 56px;padding-top:5px;">We say</span><span style="font-family:var(--display);font-size:23px;line-height:1.35;">"A logo that earns its place."</span></div>
+      <div style="background:var(--paper);padding:30px 34px;display:flex;gap:24px;align-items:flex-start;"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--error);flex:0 0 56px;padding-top:5px;">Not</span><span style="font-family:var(--display);font-size:23px;line-height:1.35;">"Synergistic brand-forward solutions."</span></div>
+      <div style="background:var(--paper);padding:30px 34px;display:flex;gap:24px;align-items:flex-start;"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--accent);flex:0 0 56px;padding-top:5px;">We say</span><span style="font-family:var(--display);font-size:23px;line-height:1.35;">"Let's make it sharper."</span></div>
+      <div style="background:var(--paper);padding:30px 34px;display:flex;gap:24px;align-items:flex-start;"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--error);flex:0 0 56px;padding-top:5px;">Not</span><span style="font-family:var(--display);font-size:23px;line-height:1.35;">"Let's circle back and ideate."</span></div>
+    </div>
+  </section>
+
+  <!-- 05 PRINCIPLES -->
+  <section>
+    <div data-reveal class="ez-section-head"><span class="num">05</span><h2>Principles</h2></div>
+    <div data-reveal class="grid-2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);">
+      <div style="background:var(--paper);padding:40px;min-height:200px;"><div style="font-family:var(--display);font-size:42px;color:var(--accent);line-height:1;">01</div><div style="font-family:var(--display);font-size:30px;margin-top:14px;">Tension over noise</div><p style="font-size:15px;line-height:1.6;opacity:.7;margin-top:12px;max-width:420px;">One bold move beats ten timid ones. We design with contrast and conviction.</p></div>
+      <div style="background:var(--paper);padding:40px;min-height:200px;"><div style="font-family:var(--display);font-size:42px;color:var(--accent);line-height:1;">02</div><div style="font-family:var(--display);font-size:30px;margin-top:14px;">Craft is the message</div><p style="font-size:15px;line-height:1.6;opacity:.7;margin-top:12px;max-width:420px;">Spacing, kerning and rhythm carry the brand as much as the logo does.</p></div>
+      <div style="background:var(--paper);padding:40px;min-height:200px;"><div style="font-family:var(--display);font-size:42px;color:var(--accent);line-height:1;">03</div><div style="font-family:var(--display);font-size:30px;margin-top:14px;">Warm, not soft</div><p style="font-size:15px;line-height:1.6;opacity:.7;margin-top:12px;max-width:420px;">Bone paper and a single accent keep the system human while staying decisive.</p></div>
+      <div style="background:var(--paper);padding:40px;min-height:200px;"><div style="font-family:var(--display);font-size:42px;color:var(--accent);line-height:1;">04</div><div style="font-family:var(--display);font-size:30px;margin-top:14px;">Built to flex</div><p style="font-size:15px;line-height:1.6;opacity:.7;margin-top:12px;max-width:420px;">The mark, the dot and the palette adapt across every surface without losing identity.</p></div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section data-ez-spot style="max-width:none;background:var(--ink);color:var(--paper);padding:148px 48px;position:relative;overflow:hidden;border-top:1px solid var(--line);">
+    <div data-ez-spot-glow style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s ease;"></div>
+    <span style="position:absolute;right:-70px;bottom:-90px;font-size:clamp(280px,30vw,420px);line-height:0;color:var(--accent);opacity:.18;animation:ezSpin 24s linear infinite;pointer-events:none;user-select:none;">✳</span>
+    <div style="max-width:1180px;margin:0 auto;position:relative;">
+      <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:32px;">The Manifesto</div>
+      <p data-ez-scramble style="font-family:var(--display);font-weight:700;font-size:clamp(46px,6.6vw,96px);line-height:1.01;letter-spacing:-.025em;max-width:18ch;">We don't decorate.<br>We <span class="ez-dot" style="color:var(--accent);">decide</span>.</p>
+      <p style="font-family:var(--display);font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.45;opacity:.72;max-width:640px;margin-top:34px;">Every brand we touch leaves with a spine — a clear idea, held with conviction, expressed with restraint.</p>
+    </div>
+  </section>
+
+  <!-- 06 IN USE -->
+  <section>
+    <div data-reveal class="ez-section-head"><span class="num">06</span><h2>In Use</h2></div>
+    <div data-reveal class="grid-2" style="display:grid;grid-template-columns:1.3fr 1fr;gap:24px;">
+      <div data-ez-tilt style="background:var(--accent);color:#fff;min-height:440px;padding:40px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;"><span>Studio Night</span><span>No. 02</span></div>
+        <div style="font-family:var(--display);font-weight:600;font-size:96px;line-height:.9;">Make<br>it<br><span style="font-style:italic;">mean</span><br>something.</div>
+        <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;">Elzinga Creative Studio · MMXXVI</div>
+      </div>
+      <div style="display:grid;grid-template-rows:1fr 1fr;gap:24px;">
+        <div data-ez-tilt style="background:var(--ink);color:var(--paper);padding:30px;display:flex;flex-direction:column;justify-content:space-between;">
+          <span style="font-family:var(--display);font-size:40px;">Elzinga<span style="color:var(--accent);">.</span></span>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;"><div style="font-size:12px;line-height:1.7;opacity:.75;">iskaden@elzingacreativestudio.com<br>(616) 258-4578<br>elzingacreativestudio.com</div><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.6;text-align:right;">Creative<br>Direction</div></div>
+        </div>
+        <div style="background:var(--soft);border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;justify-content:space-between;">
+          <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--accent);">Social — Avatar</span>
+          <div style="display:flex;align-items:center;gap:18px;"><div style="width:72px;height:72px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:42px;">E</div><div><div style="font-family:var(--display);font-size:26px;">@elzinga</div><div style="font-size:13px;opacity:.6;">Creative Studio</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOPHON -->
+  <section style="max-width:none;background:var(--ink);color:var(--paper);border-top:1px solid rgba(243,239,230,.16);padding:0;">
+    <div style="max-width:1180px;margin:0 auto;padding:72px 48px 40px;">
+      <div style="display:flex;align-items:center;gap:18px;margin-bottom:40px;">
+        <span style="position:relative;width:26px;height:26px;flex:0 0 auto;display:inline-block;"><span style="position:absolute;inset:0;border-radius:50%;border:1px solid var(--accent);"></span><span style="position:absolute;top:50%;left:-6px;right:-6px;height:1px;background:var(--accent);"></span><span style="position:absolute;left:50%;top:-6px;bottom:-6px;width:1px;background:var(--accent);"></span></span>
+        <span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;opacity:.55;">Colophon</span>
+        <span style="flex:1;height:1px;background:rgba(243,239,230,.16);"></span>
+      </div>
+      <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+        <div><div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:12px;">Typefaces</div><div style="font-size:13.5px;line-height:1.75;opacity:.8;">Syne (display) &amp; Spline Sans (text)</div></div>
+        <div><div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:12px;">Edition</div><div style="font-size:13.5px;line-height:1.75;opacity:.8;">Edition 02 — Spring MMXXVI</div></div>
+        <div><div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:12px;">Compiled In</div><div style="font-size:13.5px;line-height:1.75;opacity:.8;">Grand Rapids, Michigan</div></div>
+        <div><div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:12px;">Maintained By</div><div style="font-size:13.5px;line-height:1.75;opacity:.8;">Elzinga Creative Studio</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:var(--paper);">
+    <div style="max-width:1180px;margin:0 auto;padding:48px 48px 80px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px;">
+      <div>
+        <div style="font-family:var(--display);font-weight:600;font-size:72px;line-height:.9;">Elzinga<span class="ez-dot" style="color:var(--accent);">.</span></div>
+        <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-top:16px;opacity:.65;">Creative Studio · Identity System</div>
+      </div>
+      <div style="font-size:12px;letter-spacing:.04em;line-height:1.9;text-align:right;opacity:.7;">iskaden@elzingacreativestudio.com<br>(616) 258-4578<br>elzingacreativestudio.com<br>© MMXXVI Elzinga Creative Studio</div>
+    </div>
+  </footer>
+
+  <script src="js/brand.js" defer></script>
+</body>
+</html>

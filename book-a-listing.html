@@ -25,22 +25,23 @@
     { "@type": "ListItem", "position": 3, "name": "Book a Listing Shoot", "item": "https://elzingacreativestudio.com/book-a-listing.html" } ] }
   </script>
 
-  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
+  <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
+  <link rel="stylesheet" href="css/brand.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
     /* ── DESIGN SYSTEM — Cobalt Gallery ──
        Legacy class names kept; tokens remapped to Cobalt palette. VISUAL reskin only. */
     :root {
-      --black:     #15120D;   /* ink */
+      --black:     #19150F;   /* ink */
       --white:     #FFFFFF;   /* paper — cards/forms only */
-      --bone:      #FAF8F2;   /* canvas */
-      --green:     #2B5196;   /* COBALT (legacy name kept) */
-      --green-dk:  #234277;   /* cobalt hover-darken */
+      --bone:      #F2EEE5;   /* canvas */
+      --green:     #1E5C8B;   /* COBALT (legacy name kept) */
+      --green-dk:  #184B73;   /* cobalt hover-darken */
       --off-white: #F4F1E8;   /* warm sand — alt section bg */
       --gray:      #4D4940;   /* muted */
       --gray-lt:   #79746A;   /* lighter caption */
@@ -48,7 +49,7 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
     a { color: inherit; }
     .section-label { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
     .section-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
@@ -75,7 +76,7 @@
     .hero-inner { max-width: 1100px; margin: 0 auto; }
     .hero-breadcrumb { font-size: 11px; color: var(--gray); margin-bottom: 18px; }
     .hero-breadcrumb a { color: var(--gray); text-decoration: none; }
-    .hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(34px, 5vw, 60px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; font-optical-sizing: auto; }
+    .hero-h1 { font-family: 'Syne', Georgia, serif; font-size: clamp(34px, 5vw, 60px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; font-optical-sizing: auto; }
     .hero-h1 em { font-style: italic; color: var(--green); }
     .hero-sub { margin-top: 16px; font-size: 16px; line-height: 1.62; color: var(--gray); max-width: 620px; }
     .hero-pills { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -85,7 +86,7 @@
     /* Two-column booking */
     .booking-wrap { max-width: 1100px; margin: 0 auto; padding: 56px 6vw 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
     @media (max-width: 880px) { .booking-wrap { grid-template-columns: 1fr; gap: 40px; } }
-    .col-head { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .col-head { font-family: 'Syne', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 6px; }
     .col-sub { font-size: 14px; color: var(--gray); line-height: 1.5; margin-bottom: 20px; }
     .calendly-inline-widget { min-width: 300px; height: 700px; border: 1px solid var(--border); border-radius: 14px; }
 
@@ -115,7 +116,7 @@
     @media (max-width: 700px) { .tiers-grid { grid-template-columns: 1fr; } }
     .tier { border: 1px solid rgba(250,248,242,0.15); padding: 22px; border-radius: 14px; }
     .tier h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
-    .tier .price { font-family: 'Fraunces', Georgia, serif; font-size: 34px; font-weight: 300; margin: 8px 0 10px; letter-spacing: -0.02em; color: var(--bone); }
+    .tier .price { font-family: 'Syne', Georgia, serif; font-size: 34px; font-weight: 300; margin: 8px 0 10px; letter-spacing: -0.02em; color: var(--bone); }
     .tier p { font-size: 13px; line-height: 1.5; color: rgba(250,248,242,0.7); }
     .tiers-note { font-size: 13px; color: rgba(250,248,242,0.6); margin-top: 18px; }
     .tiers-note a { color: var(--bone); font-weight: 600; text-decoration: underline; }
@@ -151,7 +152,7 @@
     /* Quick objection FAQ */
     #quick-faq { background: var(--off-white); padding: 64px 6vw; border-top: 1px solid var(--border); }
     .qf-inner { max-width: 1100px; margin: 0 auto; }
-    .qf-inner h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(26px,3.5vw,40px); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 32px; font-optical-sizing: auto; }
+    .qf-inner h2 { font-family: 'Syne', Georgia, serif; font-size: clamp(26px,3.5vw,40px); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 32px; font-optical-sizing: auto; }
     .qf-inner h2 em { font-style: italic; color: var(--green); }
     .qf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px; }
     .qf-item h3 { font-size: 16px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
@@ -203,7 +204,7 @@
     }
 
   </style>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -211,7 +212,7 @@
 <header id="site-header">
   <a href="index.html" class="logo-link">
     <span class="logo-ecs">ECS</span>
-    <span class="logo-full">Elzinga Creative Studio</span>
+    <span class="logo-full">Elzinga<span class="ez-dot-accent">.</span> Creative Studio</span>
   </a>
   <nav class="nav-desktop">
     <a href="real-estate-photography-grand-rapids.html">Real Estate</a>
@@ -333,7 +334,7 @@
 <section id="tiers">
   <div class="tiers-inner">
     <span class="section-label" style="color:rgba(250,248,242,0.55);">Listing Tiers</span>
-    <h2 style="font-family:'Fraunces',Georgia,serif;font-size:clamp(26px,3.5vw,40px);font-weight:300;letter-spacing:-0.02em;font-optical-sizing:auto;" class="reveal">Three tiers. One photographer on every <em style="font-style:italic;color:#2B5196;">listing.</em></h2>
+    <h2 style="font-family:'Syne',Georgia,serif;font-size:clamp(26px,3.5vw,40px);font-weight:300;letter-spacing:-0.02em;font-optical-sizing:auto;" class="reveal">Three tiers. One photographer on every <em style="font-style:italic;color:#1E5C8B;">listing.</em></h2>
     <div class="hero-pills" style="justify-content:flex-start;margin:14px 0 4px;"><span class="pill active">Published pricing — no surprise quotes</span></div>
     <div class="tiers-grid m-stagger">
       <div class="tier">
@@ -563,5 +564,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 })();
 </script>
 
+  <script src="js/brand.js" defer></script>
 </body>
 </html>

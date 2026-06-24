@@ -37,19 +37,20 @@
   }
   </script>
 
-  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
+  <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
+  <link rel="stylesheet" href="css/brand.css">
   <style>
     :root {
-      --black:     #15120D;   /* ink */
+      --black:     #19150F;   /* ink */
       --white:     #FFFFFF;   /* paper — keep TRUE white for cards/forms only */
-      --bone:      #FAF8F2;   /* canvas */
-      --green:     #2B5196;   /* COBALT (legacy name kept) */
-      --green-dk:  #234277;   /* cobalt hover-darken */
+      --bone:      #F2EEE5;   /* canvas */
+      --green:     #1E5C8B;   /* COBALT (legacy name kept) */
+      --green-dk:  #184B73;   /* cobalt hover-darken */
       --off-white: #F4F1E8;   /* warm sand — alt section bg */
       --gray:      #4D4940;   /* muted */
       --gray-lt:   #79746A;   /* lighter caption */
@@ -57,7 +58,7 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); line-height: 1.6; }
+    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); line-height: 1.6; }
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: saturate(1.1) blur(8px); -webkit-backdrop-filter: saturate(1.1) blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
@@ -74,13 +75,13 @@
     .breadcrumb a { color: rgba(169,192,216,0.8); text-decoration: none; }
     .hero-eyebrow { color: var(--green); font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 12px; }
     .hero-eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 6vw, 64px); font-weight: 300; line-height: 1.05; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 24px; font-optical-sizing: auto; }
+    .hero-h1 { font-family: 'Syne', Georgia, serif; font-size: clamp(36px, 6vw, 64px); font-weight: 300; line-height: 1.05; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 24px; font-optical-sizing: auto; }
     .hero-h1 em { font-style: italic; color: var(--green); }
     .hero-sub { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 24px; }
-    .hero-cta { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border-radius: 44px; background: var(--green); color: var(--bone); font-family: 'Inter', system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; }
+    .hero-cta { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border-radius: 44px; background: var(--green); color: var(--bone); font-family: 'Spline Sans', system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; }
     .hero-cta:hover { background: var(--green-dk); }
     article { max-width: 880px; margin: 0 auto; padding: 80px 60px; }
-    article h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(26px, 4vw, 40px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin: 56px 0 18px; color: var(--black); }
+    article h2 { font-family: 'Syne', Georgia, serif; font-size: clamp(26px, 4vw, 40px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin: 56px 0 18px; color: var(--black); }
     article h2 em { font-style: italic; color: var(--green); }
     article h2:first-of-type { margin-top: 0; }
     article p { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 18px; }
@@ -94,11 +95,11 @@
     .pricing-strip .tiers { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 8px; }
     .pricing-strip .tier { display: flex; flex-direction: column; }
     .pricing-strip .tier-name { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
-    .pricing-strip .tier-price { font-family: 'Fraunces', Georgia, serif; font-size: 36px; font-weight: 300; color: var(--black); letter-spacing: -0.02em; }
+    .pricing-strip .tier-price { font-family: 'Syne', Georgia, serif; font-size: 36px; font-weight: 300; color: var(--black); letter-spacing: -0.02em; }
     #cta-band { background: var(--black); padding: 80px 60px; text-align: center; }
-    .cta-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 28px; }
+    .cta-title { font-family: 'Syne', Georgia, serif; font-size: clamp(28px, 4vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 28px; }
     .cta-title em { font-style: italic; color: var(--green); }
-    .btn-white { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border-radius: 44px; background: var(--bone); color: var(--black); font-family: 'Inter', system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; }
+    .btn-white { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border-radius: 44px; background: var(--bone); color: var(--black); font-family: 'Spline Sans', system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; }
     .btn-white:hover { background: var(--off-white); }
     footer { background: var(--black); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer > * { flex: 1; }
@@ -110,7 +111,7 @@
     .work-gallery { max-width: 880px; margin: 0 auto; padding: 0 60px 80px; }
     .work-gallery-label { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: inline-flex; align-items: center; gap: 12px; }
     .work-gallery-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .work-gallery-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(24px, 4vw, 36px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 16px; }
+    .work-gallery-title { font-family: 'Syne', Georgia, serif; font-size: clamp(24px, 4vw, 36px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 16px; }
     .work-gallery-title em { font-style: italic; color: var(--green); }
     .work-gallery-sub { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 32px; max-width: 720px; }
     .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -130,7 +131,7 @@
     .nearby-inner { max-width: 880px; margin: 0 auto; }
     .nearby-label { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: inline-flex; align-items: center; gap: 12px; }
     .nearby-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .nearby-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; color: var(--black); margin-bottom: 28px; }
+    .nearby-title { font-family: 'Syne', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; color: var(--black); margin-bottom: 28px; }
     .nearby-title em { font-style: italic; color: var(--green); }
     .nearby-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; transition: border-color 0.18s, transform 0.18s; border-radius: 4px; }
@@ -139,7 +140,7 @@
     @media (max-width: 768px) { .nearby-areas { padding: 48px 24px; } .nearby-list { grid-template-columns: 1fr; } }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
+    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -148,13 +149,13 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 
 <header id="site-header">
-  <a href="index.html" class="logo-link"><span class="logo-ecs">ECS</span><span class="logo-full">Elzinga Creative Studio</span></a>
+  <a href="index.html" class="logo-link"><span class="logo-ecs">ECS</span><span class="logo-full">Elzinga<span class="ez-dot-accent">.</span> Creative Studio</span></a>
   <nav class="nav-desktop">
     <a href="preferred-photographer.html">For Realtors</a>
     <a href="real-estate-photography-grand-rapids.html">Real Estate</a>
@@ -289,5 +290,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
 })();
 </script>
+  <script src="js/brand.js" defer></script>
 </body>
 </html>

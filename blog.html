@@ -342,19 +342,20 @@
   </script>
   <link rel="alternate" type="application/rss+xml" title="Elzinga Creative Studio Blog" href="/feed.xml" />
 
-  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
+  <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
+  <link rel="stylesheet" href="css/brand.css">
   <style>
     :root {
-      --black:     #15120D;
+      --black:     #19150F;
       --white:     #FFFFFF;
-      --bone:      #FAF8F2;
-      --green:     #2B5196;
-      --green-dk:  #234277;
+      --bone:      #F2EEE5;
+      --green:     #1E5C8B;
+      --green-dk:  #184B73;
       --off-white: #F4F1E8;
       --gray:      #4D4940;
       --gray-lt:   #79746A;
@@ -362,7 +363,7 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
 
     .section-label {
       display: inline-flex;
@@ -404,7 +405,7 @@
     }
     .blog-header-inner { max-width: 680px; }
     .blog-h1 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: clamp(48px, 7vw, 96px);
       font-weight: 300;
       line-height: 0.95;
@@ -473,7 +474,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
+    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -492,7 +493,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -500,7 +501,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <header id="site-header">
   <a href="index.html" class="logo-link">
     <span class="logo-ecs">ECS</span>
-    <span class="logo-full">Elzinga Creative Studio</span>
+    <span class="logo-full">Elzinga<span class="ez-dot-accent">.</span> Creative Studio</span>
   </a>
   <nav class="nav-desktop">
     <a href="index.html#portfolio">Work</a>
@@ -1092,5 +1093,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
 })();
 </script>
+  <script src="js/brand.js" defer></script>
 </body>
 </html>

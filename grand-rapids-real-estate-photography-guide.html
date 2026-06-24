@@ -47,28 +47,29 @@
   }
   </script>
 
-  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
+  <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
+  <link rel="stylesheet" href="css/brand.css">
   <style>
     :root {
-      --black:     #15120D;
+      --black:     #19150F;
       --white:     #FFFFFF;
-      --bone:      #FAF8F2;
-      --green:     #2B5196;
-      --green-dk:  #234277;
+      --bone:      #F2EEE5;
+      --green:     #1E5C8B;
+      --green-dk:  #184B73;
       --off-white: #F4F1E8;
       --gray:      #4D4940;
       --gray-lt:   #79746A;
       --border:    #ECE6D9;
-      --accent:    #2B5196;
+      --accent:    #1E5C8B;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; line-height: 1.6; }
+    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; line-height: 1.6; }
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: saturate(1.1) blur(8px); -webkit-backdrop-filter: saturate(1.1) blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
@@ -86,12 +87,12 @@
     .hero-inner { max-width: 880px; margin: 0 auto; }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 12px;
-      color: var(--green); font-family: 'Inter', system-ui, sans-serif;
+      color: var(--green); font-family: 'Spline Sans', system-ui, sans-serif;
       font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px;
     }
     .hero-eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; }
     .hero-h1 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: clamp(36px, 6vw, 64px); font-weight: 300; line-height: 1.05; letter-spacing: -0.025em;
       color: var(--white); margin-bottom: 24px; font-optical-sizing: auto;
     }
@@ -102,7 +103,7 @@
 
     article.guide { max-width: 880px; margin: 0 auto; padding: 80px 60px; }
     article.guide h2 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: clamp(28px, 4vw, 44px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em;
       margin: 64px 0 20px; padding-top: 28px; border-top: 2px solid var(--green);
       font-optical-sizing: auto;
@@ -119,7 +120,7 @@
 
     .toc { background: var(--off-white); padding: 32px 36px; border-left: 4px solid var(--green); margin: 40px 0; border-radius: 0 8px 8px 0; }
     article.guide .toc h2 {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Spline Sans', system-ui, sans-serif;
       font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
       color: var(--green); margin: 0 0 16px; padding-top: 0; border-top: none; line-height: 1.6;
     }
@@ -140,14 +141,14 @@
     .cluster-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
     .cluster-card { padding: 24px; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, transform 0.2s; display: block; background: var(--white); border-radius: 8px; }
     .cluster-card:hover { border-color: var(--green); transform: translateY(-2px); }
-    article.guide .cluster-card h3 { font-family: 'Inter', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: var(--black); margin: 0 0 6px; letter-spacing: -0.2px; }
+    article.guide .cluster-card h3 { font-family: 'Spline Sans', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: var(--black); margin: 0 0 6px; letter-spacing: -0.2px; }
     .cluster-card p { font-size: 13px !important; color: var(--gray) !important; line-height: 1.6 !important; margin-bottom: 0 !important; }
 
     #cta-band { background: var(--green); padding: 80px 60px; text-align: center; }
     .cta-band .section-label { color: rgba(255,255,255,0.7); font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; display: inline-flex; align-items: center; gap: 12px; }
     .cta-band .section-label::before { content: ""; width: 26px; height: 2px; background: rgba(255,255,255,0.5); display: inline-block; }
     .cta-title {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: clamp(28px, 4vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em;
       color: var(--white); margin-bottom: 32px; font-optical-sizing: auto;
     }
@@ -176,7 +177,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
+    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -185,7 +186,7 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -193,7 +194,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <header id="site-header">
   <a href="index.html" class="logo-link">
     <span class="logo-ecs">ECS</span>
-    <span class="logo-full">Elzinga Creative Studio</span>
+    <span class="logo-full">Elzinga<span class="ez-dot-accent">.</span> Creative Studio</span>
   </a>
   <nav class="nav-desktop">
     <a href="preferred-photographer.html">For Realtors</a>
@@ -423,5 +424,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
 })();
 </script>
+  <script src="js/brand.js" defer></script>
 </body>
 </html>

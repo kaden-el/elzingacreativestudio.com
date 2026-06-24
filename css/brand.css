@@ -1,0 +1,271 @@
+/* ==========================================================================
+   ELZINGA. — Brand Identity System · Edition 02 (MMXXVI)
+   Single source of truth for the site's look. Linked by EVERY page.
+   Source design: Claude Design "Elzinga Brand Guide" handoff (warm editorial).
+
+   ── HOW TO RE-SKIN THE WHOLE SITE (the pipeline) ─────────────────────────
+   A new Claude Design brand drop applies to all 77 pages by editing this ONE
+   file plus js/brand.js. The per-page wiring (font link, palette hexes, the
+   accent dot, the brand.css/brand.js includes) is done by scripts/apply-brand.py
+   — re-run it after editing tokens here and every page inherits the change.
+   See DESIGN.md › "Edition 02 pipeline".
+
+   Feel: warm editorial — bone paper, one cobalt accent, a geometric display
+   face (Syne), and the recurring "dot" (the period after Elzinga.) as the
+   signature device. Restraint over decoration. "We don't decorate. We decide."
+   ========================================================================== */
+
+/* Fonts live here so a font change is a ONE-LINE edit that flows site-wide.
+   (Pages also carry a <link> for the same families for first-paint speed;
+   identical URLs are de-duped by the browser.) */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap');
+
+/* ── 1. TOKENS ──────────────────────────────────────────────────────────── */
+:root {
+  /* Edition 02 palette (authoritative hexes from the brand guide). */
+  --paper:   #F2EEE5;            /* Bone — page surface, everywhere          */
+  --ink:     #19150F;            /* Ink — text + dark sections               */
+  --accent:  #1E5C8B;            /* Cobalt — the ONE pop, and the "dot"      */
+  --accent-dk: #184B73;          /* cobalt hover-darken (derived)            */
+  --soft:    #EAE4D7;            /* secondary surface                        */
+  --clay:    #C9B79C;            /* support                                  */
+  --slate:   #44504D;            /* support                                  */
+  --line:    rgba(25,21,15,.14); /* 1px rules / hairline borders             */
+  --muted:   #4D4940;            /* sub-copy / captions                      */
+  --error:   #B23A2E;            /* misuse ✕ / "Not" tags — warnings only    */
+
+  /* Back-compat aliases — legacy markup across the site still references
+     these names; they now resolve to the Edition 02 values so old pages
+     re-skin with zero markup changes. */
+  --bone:      #F2EEE5;
+  --cobalt:    #1E5C8B;
+  --cobalt-dk: #184B73;
+  --green:     #1E5C8B;          /* legacy alias for the accent */
+  --green-dk:  #184B73;
+  --sky:       #A9C0D8;
+  --stone:     #C9C0AE;
+
+  /* Type families — the only place fonts are named. */
+  --display:      'Syne', 'Space Grotesk', system-ui, sans-serif;
+  --text:         'Spline Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--display);  /* legacy alias */
+  --font-body:    var(--text);     /* legacy alias */
+
+  /* Rhythm + motion. */
+  --radius-media: 14px;
+  --radius-pill:  44px;
+  --grain-opacity: .28;   /* subtle film — warms the bone canvas without muddying photos */
+  --ease:  cubic-bezier(.2,.7,.2,1);  /* the brand easing — used everywhere */
+}
+
+/* ── 2. SELECTION + FOCUS ───────────────────────────────────────────────── */
+::selection { background: var(--accent); color: #fff; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ── 3. THE DOT (signature device) ──────────────────────────────────────── */
+/* Plain accent period — use right after the "Elzinga" wordmark anywhere. */
+.ez-dot-accent { color: var(--accent); }
+
+/* Shimmering accent dot — a light-sweep clipped to the glyph. Use on hero /
+   footer wordmarks for the living "dot". */
+.ez-dot {
+  color: var(--accent);
+  background: linear-gradient(105deg,
+    var(--accent) 30%,
+    color-mix(in srgb, var(--accent) 35%, #fff) 50%,
+    var(--accent) 70%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ezShimmer 4.5s linear infinite;
+}
+
+/* ── 4. FIXED CHROME (injected by js/brand.js on every page) ────────────── */
+/* Grain overlay — fixed fractal-noise texture, multiply blend. */
+.ez-grain {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  mix-blend-mode: multiply;
+  opacity: var(--grain-opacity);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.55%22/></svg>');
+}
+
+/* Scroll-progress bar — 3px accent bar pinned to top. */
+.ez-progress {
+  position: fixed; top: 0; left: 0;
+  height: 3px; width: 0;
+  background: var(--accent);
+  z-index: 9999;
+  transition: width .12s linear;
+}
+
+/* Custom dot cursor — the brand mark as interface. Added alongside the native
+   cursor (native stays visible). Desktop + fine-pointer only (see §10). */
+.ez-cursor {
+  position: fixed; top: 0; left: 0;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 10001;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: width .25s var(--ease), height .25s var(--ease),
+              opacity .3s ease, background .3s ease, border-color .3s ease;
+}
+.ez-cursor.is-interactive {
+  width: 46px; height: 46px;
+  background: transparent;
+  border: 1.5px solid var(--accent);
+}
+
+/* Copy toast (palette page). */
+.ez-toast {
+  position: fixed; bottom: 34px; left: 50%;
+  z-index: 10002;
+  background: var(--ink); color: var(--paper);
+  padding: 13px 22px; border-radius: 999px;
+  font-family: var(--text);
+  font-size: 12px; letter-spacing: .06em; font-weight: 600;
+  display: flex; align-items: center; gap: 10px;
+  box-shadow: 0 16px 44px rgba(25,21,15,.32);
+  transform: translateX(-50%);
+  animation: ezToast .35s var(--ease) both;
+}
+.ez-toast::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent); display: inline-block;
+}
+
+/* ── 5. EDITORIAL COMPONENTS (for the guide + new builds) ────────────────── */
+.ez-wrap { max-width: 1180px; margin: 0 auto; padding: 0 48px; }
+
+.ez-eyebrow {
+  font-family: var(--text);
+  font-size: 12px; letter-spacing: .24em; text-transform: uppercase;
+  font-weight: 600; color: var(--accent);
+}
+
+.ez-display {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  line-height: .92;
+  color: var(--ink);
+}
+
+/* Numbered section header: solid accent numeral + h2 title baseline-aligned. */
+.ez-section-head { display: flex; align-items: flex-end; gap: 24px; margin-bottom: 24px; }
+.ez-section-head .num {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(66px, 8.5vw, 112px); line-height: .7;
+  color: var(--accent);
+}
+.ez-section-head h2 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(34px, 4vw, 46px); letter-spacing: -.01em;
+  padding-bottom: 9px; margin: 0;
+}
+
+/* Buttons — square-ish editorial primary + ghost. (Legacy pages keep their
+   own pill buttons; these are for the guide / new pages.) */
+.ez-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 15px 28px;
+  background: var(--accent); color: #fff;
+  font-family: var(--text); font-size: 14px; font-weight: 600;
+  letter-spacing: .04em; text-decoration: none; border: none; cursor: pointer;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.ez-btn:hover { background: var(--accent-dk); }
+.ez-btn-ghost {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 15px 6px; background: transparent; border: none;
+  color: var(--ink); font-family: var(--text); font-size: 14px; font-weight: 600;
+  letter-spacing: .04em; text-decoration: none; cursor: pointer;
+}
+.ez-btn-ghost .arr { color: var(--accent); transition: transform .22s var(--ease); }
+.ez-btn-ghost:hover .arr { transform: translateX(5px); }
+
+/* Hairline card-grid: container is --line, cells are --paper, gap:1px → crisp
+   1px rules bleed through. */
+.ez-grid { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.ez-grid > * { background: var(--paper); }
+
+/* ── 6. KINETIC MARQUEE ─────────────────────────────────────────────────── */
+.ez-marquee {
+  overflow: hidden;
+  background: var(--ink); color: var(--paper);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 24px 0;
+}
+.ez-marquee .track { display: flex; width: max-content; will-change: transform; }
+.ez-marquee .lane {
+  display: inline-flex; align-items: center; gap: 34px; padding-right: 34px;
+  font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: .01em; text-transform: uppercase; white-space: nowrap;
+}
+.ez-marquee .star { color: var(--accent); font-size: .62em; display: inline-block; animation: ezSpin 9s linear infinite; }
+
+/* ── 7. SCROLL REVEAL ───────────────────────────────────────────────────── */
+/* Gated behind html.ez-motion so JS-off / reduced-motion shows everything. */
+html.ez-motion [data-reveal] {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+  will-change: opacity, transform;
+}
+html.ez-motion [data-reveal].in { opacity: 1; transform: none; }
+
+html.ez-motion [data-reveal-stagger] > * {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .75s var(--ease), transform .75s var(--ease);
+}
+html.ez-motion [data-reveal-stagger].in > * { opacity: 1; transform: none; }
+html.ez-motion [data-reveal-stagger].in > :nth-child(1){ transition-delay:0s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(2){ transition-delay:.08s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(3){ transition-delay:.16s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(4){ transition-delay:.24s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(5){ transition-delay:.32s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(6){ transition-delay:.40s }
+
+/* 3D tilt base. */
+[data-ez-tilt] { transform-style: preserve-3d; will-change: transform; transition: transform .3s var(--ease), box-shadow .3s ease; }
+
+/* ── 8. KEYFRAMES ───────────────────────────────────────────────────────── */
+@keyframes ezRise   { from{ opacity:0; transform:translateY(26px) } to{ opacity:1; transform:translateY(0) } }
+@keyframes ezWipe   { from{ transform:scaleX(0) } to{ transform:scaleX(1) } }
+@keyframes ezShimmer{ 0%{ background-position:200% 0 } 100%{ background-position:-200% 0 } }
+@keyframes ezSpin   { to{ transform:rotate(360deg) } }
+@keyframes ezPulse  { 0%,100%{ transform:scale(1); opacity:1 } 50%{ transform:scale(1.55); opacity:.45 } }
+@keyframes ezToast  { from{ opacity:0; transform:translate(-50%,16px) } to{ opacity:1; transform:translate(-50%,0) } }
+
+/* ── 9. PULSING STATUS DOT (top bars) ───────────────────────────────────── */
+.ez-pulse-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); display: inline-block;
+  animation: ezPulse 2.6s ease-in-out infinite;
+}
+
+/* ── 10. REDUCED MOTION / COARSE POINTER — HARD STOP ────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  html.ez-motion [data-reveal],
+  html.ez-motion [data-reveal-stagger] > * { opacity: 1 !important; transform: none !important; }
+  .ez-cursor { display: none !important; }
+  .ez-dot { -webkit-text-fill-color: var(--accent); background: none; }
+}
+/* The custom cursor only makes sense with a fine pointer. */
+@media (pointer: coarse) { .ez-cursor { display: none !important; } }
+
+/* ── 11. RESPONSIVE ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ez-wrap { padding: 0 24px; }
+  .ez-marquee { padding: 18px 0; }
+}

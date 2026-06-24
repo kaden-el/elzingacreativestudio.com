@@ -74,22 +74,23 @@
   }
   </script>
 
-  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
+  <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
+  <link rel="stylesheet" href="css/brand.css">
   <style>
     /* ── DESIGN SYSTEM — Cobalt Gallery ──
        Legacy class names kept; tokens remapped to Cobalt palette.
        Visual reskin only — no copy, structure, schema, or funnel changes. */
     :root {
-      --black:     #15120D;   /* ink */
+      --black:     #19150F;   /* ink */
       --white:     #FFFFFF;   /* paper — cards/forms only */
-      --bone:      #FAF8F2;   /* canvas */
-      --green:     #2B5196;   /* COBALT (legacy name kept) */
-      --green-dk:  #234277;   /* cobalt hover-darken */
+      --bone:      #F2EEE5;   /* canvas */
+      --green:     #1E5C8B;   /* COBALT (legacy name kept) */
+      --green-dk:  #184B73;   /* cobalt hover-darken */
       --off-white: #F4F1E8;   /* warm sand — alt section bg */
       --gray:      #4D4940;   /* muted */
       --gray-lt:   #79746A;   /* lighter caption */
@@ -97,7 +98,7 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
 
     .section-label {
       display: inline-flex;
@@ -119,7 +120,7 @@
       flex-shrink: 0;
     }
     .section-title {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: clamp(36px, 5vw, 68px);
       font-weight: 300;
       line-height: 1.02;
@@ -261,7 +262,7 @@
     .hero-breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
     .hero-breadcrumb a:hover { color: rgba(255,255,255,0.7); }
     .hero-h1 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: clamp(48px, 8vw, 110px);
       font-weight: 300;
       line-height: 0.95;
@@ -291,7 +292,7 @@
     .del-item { display: flex; flex-direction: column; gap: 16px; }
     .del-icon { width: 48px; height: 48px; background: var(--black); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
     .del-icon svg { width: 22px; height: 22px; stroke: var(--bone); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .del-title { font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
+    .del-title { font-family: 'Syne', Georgia, serif; font-size: 18px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
     .del-desc { font-size: 13px; line-height: 1.8; color: var(--gray); }
 
     /* PRICING */
@@ -302,7 +303,7 @@
       .nav-desktop a:not(.nav-book){display:none;}
       .nav-desktop .nav-book{padding:10px 18px;} .pricing-row { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; } }
     .p-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
-    .p-price { font-family: 'Fraunces', Georgia, serif; font-size: 64px; font-weight: 300; line-height: 1; letter-spacing: -0.03em; color: var(--white); margin-bottom: 6px; }
+    .p-price { font-family: 'Syne', Georgia, serif; font-size: 64px; font-weight: 300; line-height: 1; letter-spacing: -0.03em; color: var(--white); margin-bottom: 6px; }
     .p-per { font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 36px; }
     .p-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 32px; }
     .p-features { list-style: none; display: flex; flex-direction: column; gap: 14px; flex: 1; margin-bottom: 40px; }
@@ -324,7 +325,7 @@
     .custom-strip { background: var(--black); border-radius: 0 0 14px 14px; padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
     .custom-left { display: flex; flex-direction: column; gap: 6px; }
     .custom-kicker { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #A9C0D8; }
-    .custom-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -0.02em; color: var(--white); }
+    .custom-title { font-family: 'Syne', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -0.02em; color: var(--white); }
     .custom-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
     .btn-custom {
       display: inline-flex;
@@ -351,13 +352,13 @@
     .why-item { display: flex; flex-direction: column; gap: 8px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
     .why-item:last-child { border-bottom: none; padding-bottom: 0; }
     .why-num { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; color: var(--green); }
-    .why-title { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
+    .why-title { font-family: 'Syne', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
     .why-desc { font-size: 14px; line-height: 1.8; color: var(--gray); }
     .why-right { background: var(--black); border-radius: 14px; padding: 56px 48px; }
     .why-stat { display: flex; flex-direction: column; gap: 4px; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .why-stat:first-child { padding-top: 0; }
     .why-stat:last-child { border-bottom: none; padding-bottom: 0; }
-    .stat-num { font-family: 'Fraunces', Georgia, serif; font-size: 56px; font-weight: 300; letter-spacing: -0.03em; color: var(--white); line-height: 1; }
+    .stat-num { font-family: 'Syne', Georgia, serif; font-size: 56px; font-weight: 300; letter-spacing: -0.03em; color: var(--white); line-height: 1; }
     .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 
     /* FAQ */
@@ -375,7 +376,7 @@
     #cta-band { background: var(--green); padding: 100px 60px; text-align: center; display: flex; flex-direction: column; align-items: center; }
     #cta-band .section-label { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
     #cta-band .section-label::before { background: rgba(255,255,255,0.4); }
-    .cta-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 5vw, 72px); font-weight: 300; line-height: 1.02; letter-spacing: -0.025em; color: var(--white); margin-bottom: 48px; font-optical-sizing: auto; }
+    .cta-title { font-family: 'Syne', Georgia, serif; font-size: clamp(36px, 5vw, 72px); font-weight: 300; line-height: 1.02; letter-spacing: -0.025em; color: var(--white); margin-bottom: 48px; font-optical-sizing: auto; }
     .btn-white {
       display: inline-flex;
       align-items: center;
@@ -421,7 +422,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
+    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
   </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <!-- Meta Pixel Code -->
@@ -445,7 +446,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://elzingacreativestudio.com/" }, { "@type": "ListItem", "position": 2, "name": "Wedding Photography", "item": "https://elzingacreativestudio.com/wedding-photographer-grand-rapids.html" } ] }
   </script>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -453,7 +454,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <header id="site-header">
   <a href="index.html" class="logo-link">
     <span class="logo-ecs">ECS</span>
-    <span class="logo-full">Elzinga Creative Studio</span>
+    <span class="logo-full">Elzinga<span class="ez-dot-accent">.</span> Creative Studio</span>
   </a>
   <nav class="nav-desktop">
     <a href="index.html#portfolio">Work</a>
@@ -565,7 +566,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </div>
     <div style="text-align:right;">
       <span style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-lt);display:block;margin-bottom:4px;">Starting at</span>
-      <span style="font-family:'Fraunces',Georgia,serif;font-size:40px;font-weight:300;letter-spacing:-0.03em;color:var(--black);display:block;line-height:1;">$1,000</span>
+      <span style="font-family:'Syne',Georgia,serif;font-size:40px;font-weight:300;letter-spacing:-0.03em;color:var(--black);display:block;line-height:1;">$1,000</span>
       <span style="font-size:11px;color:var(--gray-lt);display:block;margin-top:4px;">Final quote based on coverage</span>
     </div>
     <a href="#" onclick="openCalendly(); return false;" class="btn-green" style="text-align:center;white-space:nowrap;">Get a Quote</a>
@@ -710,5 +711,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
 })();
 </script>
+  <script src="js/brand.js" defer></script>
 </body>
 </html>

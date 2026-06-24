@@ -31,22 +31,23 @@
   }
   </script>
 
-  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
+  <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
+  <link rel="stylesheet" href="css/brand.css">
   <style>
     /* ── DESIGN SYSTEM — Cobalt Gallery ──
        Legacy class names kept; tokens remapped to Cobalt palette.
        VISUAL reskin only — no copy, structure, schema, or funnel logic changes. */
     :root {
-      --black:     #15120D;   /* ink */
+      --black:     #19150F;   /* ink */
       --white:     #FFFFFF;   /* paper — cards/forms only */
-      --bone:      #FAF8F2;   /* canvas */
-      --green:     #2B5196;   /* COBALT (legacy name kept) */
-      --green-dk:  #234277;   /* cobalt hover-darken */
+      --bone:      #F2EEE5;   /* canvas */
+      --green:     #1E5C8B;   /* COBALT (legacy name kept) */
+      --green-dk:  #184B73;   /* cobalt hover-darken */
       --off-white: #F4F1E8;   /* warm sand — alt section bg */
       --gray:      #4D4940;   /* muted */
       --gray-lt:   #79746A;   /* lighter caption */
@@ -54,7 +55,7 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
 
     .section-label {
       display: inline-flex;
@@ -76,7 +77,7 @@
       flex-shrink: 0;
     }
     .section-title {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: clamp(36px, 5vw, 68px);
       font-weight: 300;
       line-height: 1.02;
@@ -155,7 +156,7 @@
       justify-content: center; align-items: center; text-align: center;
     }
     .hero-h1 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: clamp(48px, 8vw, 110px);
       font-weight: 300;
       line-height: 0.95;
@@ -174,7 +175,7 @@
       margin-bottom: 36px;
     }
     .hero-amount .amt {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Syne', Georgia, serif;
       font-size: 96px; font-weight: 300; color: var(--bone);
       line-height: 1; letter-spacing: -0.03em;
     }
@@ -218,7 +219,7 @@
     .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 56px; }
     .how-item { display: flex; flex-direction: column; gap: 12px; padding: 32px 28px; background: var(--off-white); }
     .how-num { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; color: var(--green); }
-    .how-title { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
+    .how-title { font-family: 'Syne', Georgia, serif; font-size: 20px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
     .how-desc { font-size: 13px; line-height: 1.8; color: var(--gray); }
 
     #form-sec { padding: 120px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
@@ -268,7 +269,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
+    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -277,7 +278,7 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -285,7 +286,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <header id="site-header">
   <a href="index.html" class="logo-link">
     <span class="logo-ecs">ECS</span>
-    <span class="logo-full">Elzinga Creative Studio</span>
+    <span class="logo-full">Elzinga<span class="ez-dot-accent">.</span> Creative Studio</span>
   </a>
   <nav class="nav-desktop">
     <a href="preferred-photographer.html">For Realtors</a>
@@ -476,5 +477,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el){ io.observe(el); });
 })();
 </script>
+  <script src="js/brand.js" defer></script>
 </body>
 </html>

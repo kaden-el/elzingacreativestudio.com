@@ -83,19 +83,20 @@
   }
   </script>
 
-  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
+  <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
+  <link rel="stylesheet" href="css/brand.css">
   <style>
     :root {
-      --black:     #15120D;
+      --black:     #19150F;
       --white:     #FFFFFF;
-      --bone:      #FAF8F2;
-      --green:     #2B5196;
-      --green-dk:  #234277;
+      --bone:      #F2EEE5;
+      --green:     #1E5C8B;
+      --green-dk:  #184B73;
       --off-white: #F4F1E8;
       --gray:      #4D4940;
       --gray-lt:   #79746A;
@@ -103,10 +104,10 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
 
     .section-label { display: block; font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-    .section-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 5vw, 68px); font-weight: 300; line-height: 1.0; letter-spacing: -.025em; }
+    .section-title { font-family: 'Syne', Georgia, serif; font-size: clamp(36px, 5vw, 68px); font-weight: 300; line-height: 1.0; letter-spacing: -.025em; }
     .section-title em { font-style: italic; color: var(--green); }
     .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 44px; transition: background 0.2s; }
     .btn-green:hover { background: var(--green-dk); }
@@ -152,7 +153,7 @@
     .hero-breadcrumb { font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--green); margin-bottom: 32px; }
     .hero-breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
     .hero-breadcrumb a:hover { color: rgba(255,255,255,0.6); }
-    .hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(48px, 8vw, 110px); font-weight: 300; line-height: 0.95; letter-spacing: -.025em; color: var(--white); margin-bottom: 36px; }
+    .hero-h1 { font-family: 'Syne', Georgia, serif; font-size: clamp(48px, 8vw, 110px); font-weight: 300; line-height: 0.95; letter-spacing: -.025em; color: var(--white); margin-bottom: 36px; }
     .hero-h1 em { font-style: italic; color: var(--green); }
     .hero-sub { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
     .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
@@ -167,7 +168,7 @@
     .del-item { display: flex; flex-direction: column; gap: 16px; }
     .del-icon { width: 48px; height: 48px; background: var(--black); display: flex; align-items: center; justify-content: center; }
     .del-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .del-title { font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 300; letter-spacing: -.02em; color: var(--black); }
+    .del-title { font-family: 'Syne', Georgia, serif; font-size: 18px; font-weight: 300; letter-spacing: -.02em; color: var(--black); }
     .del-desc { font-size: 13px; line-height: 1.8; color: var(--gray); }
 
     /* PRICING */
@@ -181,7 +182,7 @@
     .p-card.p-featured .p-popular { display: block; }
     .p-name { font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gray-lt); margin-bottom: 20px; }
     .p-card.p-featured .p-name { color: rgba(255,255,255,0.6); }
-    .p-price { font-family: 'Fraunces', Georgia, serif; font-size: 64px; font-weight: 300; line-height: 1; letter-spacing: -.025em; color: var(--black); margin-bottom: 6px; }
+    .p-price { font-family: 'Syne', Georgia, serif; font-size: 64px; font-weight: 300; line-height: 1; letter-spacing: -.025em; color: var(--black); margin-bottom: 6px; }
     .p-card.p-featured .p-price { color: var(--white); }
     .p-per { font-size: 11px; color: var(--gray-lt); margin-bottom: 36px; }
     .p-card.p-featured .p-per { color: rgba(255,255,255,0.6); }
@@ -200,7 +201,7 @@
     .custom-strip { background: var(--black); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
     .custom-left { display: flex; flex-direction: column; gap: 6px; }
     .custom-kicker { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); }
-    .custom-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -.02em; color: var(--white); }
+    .custom-title { font-family: 'Syne', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -.02em; color: var(--white); }
     .custom-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
     .btn-custom { display: inline-block; padding: 14px 36px; border: 1.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
     .btn-custom:hover { border-color: var(--white); color: var(--white); }
@@ -213,7 +214,7 @@
     .why-item { display: flex; flex-direction: column; gap: 8px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
     .why-item:last-child { border-bottom: none; padding-bottom: 0; }
     .why-num { font-size: 10px; font-weight: 800; letter-spacing: 3px; color: var(--green); }
-    .why-title { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -.02em; color: var(--black); }
+    .why-title { font-family: 'Syne', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -.02em; color: var(--black); }
     .why-desc { font-size: 14px; line-height: 1.8; color: var(--gray); }
     .why-right { background: var(--black); padding: 56px 48px; }
     .why-stat { display: flex; flex-direction: column; gap: 4px; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -236,7 +237,7 @@
     /* CTA BAND */
     #cta-band { background: var(--green); padding: 100px 60px; text-align: center; }
     #cta-band .section-label { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
-    .cta-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 5vw, 72px); font-weight: 300; line-height: 1; letter-spacing: -.025em; color: var(--white); margin-bottom: 48px; }
+    .cta-title { font-family: 'Syne', Georgia, serif; font-size: clamp(36px, 5vw, 72px); font-weight: 300; line-height: 1; letter-spacing: -.025em; color: var(--white); margin-bottom: 48px; }
     .cta-title em { font-style: italic; }
     .btn-white { display: inline-block; padding: 16px 48px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 44px; transition: background 0.2s; }
     .btn-white:hover { background: var(--off-white); }
@@ -272,7 +273,7 @@
     .nearby-areas { background: var(--off-white); padding: 64px 60px; border-top: 1px solid var(--border); }
     .nearby-inner { max-width: 880px; margin: 0 auto; }
     .nearby-label { font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
-    .nearby-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -.02em; color: var(--black); margin-bottom: 28px; }
+    .nearby-title { font-family: 'Syne', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -.02em; color: var(--black); margin-bottom: 28px; }
     .nearby-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; border-radius: 8px; transition: border-color 0.18s, transform 0.18s; }
     .nearby-list a strong { color: var(--black); font-weight: 700; }
@@ -280,7 +281,7 @@
     @media (max-width: 768px) { .nearby-areas { padding: 48px 24px; } .nearby-list { grid-template-columns: 1fr; } }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #2B5196;outline-offset:3px}
+    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
   
     /* ===== ECS motion system (Clean Editorial) ===== */
     @media (prefers-reduced-motion: no-preference) {
@@ -338,7 +339,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://elzingacreativestudio.com/" }, { "@type": "ListItem", "position": 2, "name": "Real Estate Photography", "item": "https://elzingacreativestudio.com/real-estate-photography-grand-rapids.html" } ] }
   </script>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -346,7 +347,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <header id="site-header">
   <a href="index.html" class="logo-link">
     <span class="logo-ecs">ECS</span>
-    <span class="logo-full">Elzinga Creative Studio</span>
+    <span class="logo-full">Elzinga<span class="ez-dot-accent">.</span> Creative Studio</span>
   </a>
   <nav class="nav-desktop">
     <a href="index.html#portfolio">Work</a>
@@ -746,5 +747,6 @@ window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendl
 })();
 </script>
 
+  <script src="js/brand.js" defer></script>
 </body>
 </html>

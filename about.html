@@ -41,21 +41,22 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://elzingacreativestudio.com/images/web/_DSC0643-1600.jpg" />
 
-  <!-- Google Fonts: Fraunces (display) + Inter (body/UI) — Cobalt Gallery -->
+  <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
+  <link rel="stylesheet" href="css/brand.css">
   <style>
     /* ── DESIGN SYSTEM — Cobalt Gallery ──
        Legacy class names kept; tokens remapped to Cobalt palette. VISUAL reskin only. */
     :root {
-      --black:     #15120D;   /* ink */
+      --black:     #19150F;   /* ink */
       --white:     #FFFFFF;   /* paper — cards/forms only */
-      --bone:      #FAF8F2;   /* canvas */
-      --green:     #2B5196;   /* COBALT (legacy name kept) */
-      --green-dk:  #234277;   /* cobalt hover-darken */
+      --bone:      #F2EEE5;   /* canvas */
+      --green:     #1E5C8B;   /* COBALT (legacy name kept) */
+      --green-dk:  #184B73;   /* cobalt hover-darken */
       --off-white: #F4F1E8;   /* warm sand — alt section bg */
       --gray:      #4D4940;   /* muted */
       --gray-lt:   #79746A;   /* lighter caption */
@@ -63,7 +64,7 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
 
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
@@ -85,7 +86,7 @@
     .hero-text { display: flex; flex-direction: column; }
     .hero-label { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 24px; }
     .hero-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .hero-name { font-family: 'Fraunces', Georgia, serif; font-size: clamp(52px, 7vw, 96px); font-weight: 300; line-height: 0.95; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 12px; font-optical-sizing: auto; }
+    .hero-name { font-family: 'Syne', Georgia, serif; font-size: clamp(52px, 7vw, 96px); font-weight: 300; line-height: 0.95; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 12px; font-optical-sizing: auto; }
     .hero-title { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(250,248,242,0.55); margin-bottom: 40px; }
     .hero-rule { width: 40px; height: 2px; background: var(--green); margin-bottom: 32px; }
     .hero-bio { font-size: 16px; line-height: 1.85; color: rgba(250,248,242,0.65); }
@@ -99,11 +100,11 @@
     #credentials { padding: 100px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
     .cred-label { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
     .cred-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .cred-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 72px; font-optical-sizing: auto; }
+    .cred-title { font-family: 'Syne', Georgia, serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 72px; font-optical-sizing: auto; }
     .cred-title em { font-style: italic; color: var(--green); }
     .cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
     .cred-item { display: flex; flex-direction: column; gap: 12px; }
-    .cred-num { font-family: 'Fraunces', Georgia, serif; font-size: 56px; font-weight: 300; line-height: 1; letter-spacing: -0.02em; color: var(--green); }
+    .cred-num { font-family: 'Syne', Georgia, serif; font-size: 56px; font-weight: 300; line-height: 1; letter-spacing: -0.02em; color: var(--green); }
     .cred-desc { font-size: 14px; line-height: 1.6; color: var(--gray); }
 
     /* STORY */
@@ -111,7 +112,7 @@
     .story-inner { max-width: 760px; }
     .story-label { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
     .story-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .story-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 48px; font-optical-sizing: auto; }
+    .story-title { font-family: 'Syne', Georgia, serif; font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 48px; font-optical-sizing: auto; }
     .story-title em { font-style: italic; color: var(--green); }
     .story-body { font-size: 17px; line-height: 1.85; color: var(--gray); margin-bottom: 28px; }
     .story-body strong { font-weight: 600; color: var(--black); }
@@ -120,7 +121,7 @@
     #gear { padding: 100px 60px; background: var(--off-white); border-top: 1px solid var(--border); }
     .gear-label { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
     .gear-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .gear-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 56px; font-optical-sizing: auto; }
+    .gear-title { font-family: 'Syne', Georgia, serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 56px; font-optical-sizing: auto; }
     .gear-title em { font-style: italic; color: var(--green); }
     .gear-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
     .gear-card { background: var(--white); padding: 36px 40px; border-radius: 14px; }
@@ -132,7 +133,7 @@
     #clients { padding: 100px 60px; background: var(--bone); border-top: 1px solid var(--border); }
     .clients-label { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
     .clients-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .clients-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 48px; font-optical-sizing: auto; }
+    .clients-title { font-family: 'Syne', Georgia, serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; margin-bottom: 48px; font-optical-sizing: auto; }
     .clients-title em { font-style: italic; color: var(--green); }
     .client-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
     .client-item { background: var(--off-white); padding: 32px 36px; border-radius: 14px; }
@@ -143,7 +144,7 @@
     #about-cta { background: var(--black); padding: 80px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
     .cta-label { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
     .cta-label::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; flex-shrink: 0; }
-    .cta-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(36px, 5vw, 64px); font-weight: 300; line-height: 1.02; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 12px; font-optical-sizing: auto; }
+    .cta-title { font-family: 'Syne', Georgia, serif; font-size: clamp(36px, 5vw, 64px); font-weight: 300; line-height: 1.02; letter-spacing: -0.025em; color: var(--bone); margin-bottom: 12px; font-optical-sizing: auto; }
     .cta-title em { font-style: italic; color: var(--green); }
     .cta-sub { font-size: 15px; color: rgba(250,248,242,0.6); margin-bottom: 40px; }
     .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
@@ -228,7 +229,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#FAF8F2">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -236,7 +237,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <header id="site-header">
   <a href="index.html" class="logo-link">
     <span class="logo-ecs">ECS</span>
-    <span class="logo-full">Elzinga Creative Studio</span>
+    <span class="logo-full">Elzinga<span class="ez-dot-accent">.</span> Creative Studio</span>
   </a>
   <nav class="nav-desktop">
     <a href="index.html#portfolio">Work</a>
@@ -437,5 +438,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 })();
 </script>
 
+  <script src="js/brand.js" defer></script>
 </body>
 </html>
