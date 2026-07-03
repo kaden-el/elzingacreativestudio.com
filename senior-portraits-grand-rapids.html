@@ -93,7 +93,7 @@
       --green-dk:  #8F2110;   /* cobalt hover-darken */
       --off-white: #EBEDE8;   /* warm sand — alt section bg */
       --gray:      #5A5E63;   /* muted */
-      --gray-lt:   #79746A;   /* lighter caption */
+      --gray-lt:   #75797E;   /* lighter caption */
       --border:    #E7E9E4;   /* hairline */
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -183,8 +183,8 @@
       padding: 13px 28px;
       border-radius: 2px;
       background: transparent;
-      border: 1.5px solid rgba(250,248,242,0.4);
-      color: rgba(250,248,242,0.8);
+      border: 1.5px solid rgba(244,245,242,0.4);
+      color: rgba(244,245,242,0.8);
       font-family: inherit;
       font-size: 14px;
       font-weight: 600;
@@ -199,7 +199,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; justify-content: space-between; align-items: center;
       padding: 20px 60px;
-      background: rgba(250,248,242,0.92);
+      background: rgba(244,245,242,0.92);
       backdrop-filter: saturate(1.1) blur(8px);
       -webkit-backdrop-filter: saturate(1.1) blur(8px);
       border-bottom: 1px solid transparent;
@@ -244,9 +244,9 @@
       transition: transform 0.9s ease;
     }
     .re-strip-panel:hover .re-strip-fill { transform: scale(1.04); }
-    .hero-breadcrumb { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(169,192,216,0.9); margin-bottom: 32px; }
-    .hero-breadcrumb a { color: rgba(250,248,242,0.5); text-decoration: none; }
-    .hero-breadcrumb a:hover { color: rgba(250,248,242,0.7); }
+    .hero-breadcrumb { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(198,203,209,0.9); margin-bottom: 32px; }
+    .hero-breadcrumb a { color: rgba(244,245,242,0.5); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: rgba(244,245,242,0.7); }
     .hero-h1 {
       font-family: 'Archivo', Georgia, serif;
       font-size: clamp(48px, 8vw, 110px);
@@ -258,10 +258,10 @@
       font-optical-sizing: auto;
     }
     .hero-h1 em { font-style: italic; color: #C6CBD1; }
-    .hero-sub { font-size: 15px; color: rgba(250,248,242,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+    .hero-sub { font-size: 15px; color: rgba(244,245,242,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
     .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
-    .pill { padding: 8px 18px; border-radius: 2px; border: 1px solid rgba(250,248,242,0.15); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,248,242,0.5); }
-    .pill.active { border-color: rgba(169,192,216,0.6); color: #C6CBD1; }
+    .pill { padding: 8px 18px; border-radius: 2px; border: 1px solid rgba(244,245,242,0.15); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,245,242,0.5); }
+    .pill.active { border-color: rgba(198,203,209,0.6); color: #C6CBD1; }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
     /* WHAT YOU GET */
@@ -306,8 +306,8 @@
     .custom-left { display: flex; flex-direction: column; gap: 6px; }
     .custom-kicker { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); }
     .custom-title { font-family: 'Archivo', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -0.02em; color: var(--bone); }
-    .custom-desc { font-size: 13px; color: rgba(250,248,242,0.6); margin-top: 4px; }
-    .btn-custom { display: inline-flex; align-items: center; padding: 13px 28px; border-radius: 2px; border: 1.5px solid rgba(250,248,242,0.25); color: rgba(250,248,242,0.8); font-family: inherit; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
+    .custom-desc { font-size: 13px; color: rgba(244,245,242,0.6); margin-top: 4px; }
+    .btn-custom { display: inline-flex; align-items: center; padding: 13px 28px; border-radius: 2px; border: 1.5px solid rgba(244,245,242,0.25); color: rgba(244,245,242,0.8); font-family: inherit; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
     .btn-custom:hover { border-color: var(--bone); color: var(--bone); }
 
     /* WHY ECS */
@@ -320,11 +320,11 @@
     .why-title { font-family: 'Archivo', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
     .why-desc { font-size: 14px; line-height: 1.8; color: var(--gray); }
     .why-right { background: var(--black); padding: 56px 48px; }
-    .why-stat { display: flex; flex-direction: column; gap: 4px; padding: 28px 0; border-bottom: 1px solid rgba(250,248,242,0.08); }
+    .why-stat { display: flex; flex-direction: column; gap: 4px; padding: 28px 0; border-bottom: 1px solid rgba(244,245,242,0.08); }
     .why-stat:first-child { padding-top: 0; }
     .why-stat:last-child { border-bottom: none; padding-bottom: 0; }
     .stat-num { font-family: 'Archivo', Georgia, serif; font-size: 56px; font-weight: 300; letter-spacing: -0.03em; color: var(--bone); line-height: 1; }
-    .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,248,242,0.6); }
+    .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(244,245,242,0.6); }
 
     /* FAQ */
     #senior-faq { padding: 120px 60px; background: var(--bone); border-top: 1px solid var(--border); }
@@ -338,9 +338,9 @@
     .faq-item p { padding: 0 0 24px; font-size: 15px; line-height: 1.85; color: var(--gray); }
 
     /* CTA BAND */
-    #cta-band { background: var(--black); padding: 100px 60px; text-align: center; display: flex; flex-direction: column; align-items: center; border-top: 1px solid rgba(250,248,242,0.06); }
-    #cta-band .section-label { color: rgba(169,192,216,0.8); margin-bottom: 20px; }
-    #cta-band .section-label::before { background: rgba(169,192,216,0.8); }
+    #cta-band { background: var(--black); padding: 100px 60px; text-align: center; display: flex; flex-direction: column; align-items: center; border-top: 1px solid rgba(244,245,242,0.06); }
+    #cta-band .section-label { color: rgba(198,203,209,0.8); margin-bottom: 20px; }
+    #cta-band .section-label::before { background: rgba(198,203,209,0.8); }
     .cta-title {
       font-family: 'Archivo', Georgia, serif;
       font-size: clamp(36px, 5vw, 72px);
@@ -368,14 +368,14 @@
     .btn-white:hover { background: #EBEDE8; }
 
     /* FOOTER */
-    footer { background: var(--black); border-top: 1px solid rgba(250,248,242,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer { background: var(--black); border-top: 1px solid rgba(244,245,242,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer > * { flex: 1; }
     footer > *:nth-child(2) { text-align: center; }
     footer > *:last-child { text-align: right; }
     .footer-brand { display: flex; flex-direction: column; gap: 4px; }
-    .footer-ecs { font-size: 14px; font-weight: 700; letter-spacing: 5px; color: rgba(250,248,242,0.8); }
-    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(250,248,242,0.25); }
-    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(250,248,242,0.2); }
+    .footer-ecs { font-size: 14px; font-weight: 700; letter-spacing: 5px; color: rgba(244,245,242,0.8); }
+    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(244,245,242,0.25); }
+    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(244,245,242,0.2); }
 
     @media (max-width: 768px) {
       header { padding: 16px 24px; }

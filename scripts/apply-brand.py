@@ -65,7 +65,37 @@ PALETTE = {
     '#ede4d8': '#E7E9E4',
     '#f5efe8': '#EFF1ED',
     '#fdecea': '#FBEAE6',
+    # warm grays / stray accents found in the long tail
+    '#79746a': '#75797E',   # warm gray text -> silver
+    '#64748b': '#5A5E63',   # slate-blue text -> muted
+    '#b04040': '#B22A12',   # old error red -> mark family
+    '#f1f5f9': '#EFF1ED',   # bluish-white bg -> cool paper
+    '#eef2ff': '#EBEDE8',   # indigo-white bg -> cool soft
+    '#4f46e5': '#B22A12',   # dashboard indigo -> mark
+    # the app pages' brown theme (intake / login / dashboards) -> proof room
+    '#8b6347': '#B22A12',
+    '#5c3d28': '#3E4348',
+    '#7a6355': '#5A5E63',
+    '#3d2b1f': '#17181A',
+    '#2c1f14': '#141517',
+    '#2b2620': '#1E2023',
+    '#d4c4b0': '#E2E5E0',
+    '#f0d9be': '#EFF1ED',
+    '#fff8e7': '#F4F5F2',
 }
+
+# Old palette written as rgb()/rgba() triples — hex maps can't catch these.
+# (old r,g,b) -> "r,g,b" replacement; alpha and prefix are preserved.
+RGB_TRIPLES = [
+    ((169, 192, 216), '198,203,209'),   # sky -> silver-light
+    ((250, 248, 242), '244,245,242'),   # Ed.01 bone -> paper
+    ((242, 238, 229), '244,245,242'),   # Ed.02 bone -> paper
+    ((43, 81, 150),   '178,42,18'),     # Ed.01 cobalt -> mark-deep
+    ((30, 92, 139),   '178,42,18'),     # Ed.02 cobalt -> mark-deep
+    ((25, 21, 15),    '23,24,26'),      # Ed.02 ink -> ink
+    ((21, 18, 13),    '23,24,26'),      # Ed.01 ink -> ink
+    ((234, 228, 215), '235,237,232'),   # Ed.02 soft -> cool soft
+]
 
 # Prints aren't rounded: square every px-radius (circles/50% stay untouched).
 RADIUS_RE = re.compile(r'(border-radius:\s*)(\d+)px', re.IGNORECASE)
@@ -80,6 +110,15 @@ FONT_SWAPS = [
     ("'Space Grotesk'", "'Archivo'"), ('"Space Grotesk"', '"Archivo"'),
     ("'Space Mono'", "'Fragment Mono'"), ('"Space Mono"', '"Fragment Mono"'),
     ("'IBM Plex Mono'", "'Fragment Mono'"), ('"IBM Plex Mono"', '"Fragment Mono"'),
+    # app pages (intake/login/dashboards) ran on system fonts + Georgia
+    ("'Helvetica Neue',Arial", "'Archivo',Arial"),
+    ("'Helvetica Neue', Arial", "'Archivo', Arial"),
+    ("font-family:Helvetica Neue,Arial", "font-family:'Archivo',Arial"),
+    ("'Georgia',serif", "'Archivo',sans-serif"),
+    ("'Georgia', serif", "'Archivo', sans-serif"),
+    ("font-family:Georgia,serif", "font-family:'Archivo',sans-serif"),
+    ("'Courier New',monospace", "'Fragment Mono',monospace"),
+    ("font-family:Courier New,monospace", "font-family:'Fragment Mono',monospace"),
 ]
 
 # Any Google-Fonts css2 link that names a retired family gets swapped whole.
@@ -131,6 +170,15 @@ def convert(html, fname):
         pal += c
     if pal:
         changes.append(f'palette×{pal}')
+
+    # 3b. rgb()/rgba() forms of the old palette
+    rgbn = 0
+    for (r, g, b), new_triple in RGB_TRIPLES:
+        pat = re.compile(r'(rgba?\(\s*)%d\s*,\s*%d\s*,\s*%d' % (r, g, b))
+        html, c = pat.subn(r'\g<1>' + new_triple, html)
+        rgbn += c
+    if rgbn:
+        changes.append(f'rgb×{rgbn}')
 
     # 4. inline font-family names
     fs = 0

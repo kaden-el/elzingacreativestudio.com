@@ -50,7 +50,7 @@
       --green-dk:  #8F2110;   /* cobalt hover-darken */
       --off-white: #EBEDE8;   /* warm sand — alt section bg */
       --gray:      #5A5E63;   /* muted */
-      --gray-lt:   #79746A;   /* lighter caption */
+      --gray-lt:   #75797E;   /* lighter caption */
       --border:    #E7E9E4;   /* hairline */
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -125,7 +125,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; justify-content: space-between; align-items: center;
       padding: 20px 60px;
-      background: rgba(250,248,242,0.92);
+      background: rgba(244,245,242,0.92);
       backdrop-filter: saturate(1.1) blur(8px);
       -webkit-backdrop-filter: saturate(1.1) blur(8px);
       border-bottom: 1px solid transparent;
@@ -166,12 +166,12 @@
       font-optical-sizing: auto;
     }
     .hero-h1 em { font-style: italic; color: var(--sky, #C6CBD1); }
-    .hero-sub { font-size: 16px; color: rgba(250,248,242,0.75); max-width: 640px; line-height: 1.7; margin-bottom: 36px; }
+    .hero-sub { font-size: 16px; color: rgba(244,245,242,0.75); max-width: 640px; line-height: 1.7; margin-bottom: 36px; }
     .hero-amount {
       display: inline-flex; flex-direction: column; gap: 4px; align-items: center;
       padding: 32px 56px;
-      background: rgba(43,81,150,0.25);
-      border: 1px solid rgba(169,192,216,0.25);
+      background: rgba(178,42,18,0.25);
+      border: 1px solid rgba(198,203,209,0.25);
       margin-bottom: 36px;
     }
     .hero-amount .amt {
@@ -179,7 +179,7 @@
       font-size: 96px; font-weight: 300; color: var(--bone);
       line-height: 1; letter-spacing: -0.03em;
     }
-    .hero-amount .amt-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,248,242,0.55); }
+    .hero-amount .amt-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(244,245,242,0.55); }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .btn-white {
       display: inline-flex;
@@ -204,8 +204,8 @@
       padding: 13px 28px;
       border-radius: 2px;
       background: transparent;
-      border: 1.5px solid rgba(250,248,242,0.4);
-      color: rgba(250,248,242,0.8);
+      border: 1.5px solid rgba(244,245,242,0.4);
+      color: rgba(244,245,242,0.8);
       font-family: inherit;
       font-size: 14px;
       font-weight: 600;
@@ -233,7 +233,7 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-submit { width: 100%; padding: 16px 24px; border-radius: 2px; background: var(--green); color: var(--bone); font-family: inherit; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; border: none; cursor: pointer; transition: background 0.2s; }
     .form-submit:hover { background: var(--green-dk); }
-    .form-success { display: none; padding: 24px; background: rgba(43,81,150,0.08); border: 1px solid var(--green); color: var(--green); font-size: 14px; line-height: 1.6; }
+    .form-success { display: none; padding: 24px; background: rgba(178,42,18,0.08); border: 1px solid var(--green); color: var(--green); font-size: 14px; line-height: 1.6; }
     .form-card.success-state .form-actual { display: none; }
     .form-card.success-state .form-success { display: block; }
 
@@ -251,9 +251,9 @@
     footer > *:nth-child(2) { text-align: center; }
     footer > *:last-child { text-align: right; }
     .footer-brand { display: flex; flex-direction: column; gap: 4px; }
-    .footer-ecs { font-size: 14px; font-weight: 700; letter-spacing: 5px; color: rgba(250,248,242,0.8); }
-    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(250,248,242,0.25); }
-    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(250,248,242,0.2); }
+    .footer-ecs { font-size: 14px; font-weight: 700; letter-spacing: 5px; color: rgba(244,245,242,0.8); }
+    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(244,245,242,0.25); }
+    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(244,245,242,0.2); }
 
     @media (max-width: 768px) {
       .nav-desktop a:not(.nav-book){display:none;}

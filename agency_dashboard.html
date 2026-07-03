@@ -10,14 +10,14 @@
 <style>
 /* ── DESIGN TOKENS ── */
 :root {
-  --cream:#F4F5F2; --sand:#E7E9E4; --brown:#8B6347; --brown-dark:#3D2B1F;
-  --green:#7A9E7E; --text:#2C1F14; --text-light:#7A6355; --border:#D4C4B0;
+  --cream:#F4F5F2; --sand:#E7E9E4; --brown:#B22A12; --brown-dark:#17181A;
+  --green:#7A9E7E; --text:#141517; --text-light:#5A5E63; --border:#E2E5E0;
 
   /* New curved UI palette */
   --bg:#F5F0EB;
   --surface:#FFFFFF;
   --surface2:#FDF9F5;
-  --accent:#8B6347;
+  --accent:#B22A12;
   --accent-light:#F2E8DE;
   --accent2:#7A9E7E;
   --accent2-light:#E8F2E9;
@@ -35,12 +35,12 @@
   --shadow-lg:0 12px 40px rgba(61,43,31,.12), 0 4px 8px rgba(61,43,31,.06);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Helvetica Neue,Arial,sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh;display:flex;}
+body{font-family:'Archivo',Arial,sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh;display:flex;}
 
 /* ── LOGIN SCREEN ── */
 #login-screen{
   position:fixed;inset:0;
-  background:linear-gradient(135deg,var(--brown-dark) 0%,#5C3D28 50%,var(--brown) 100%);
+  background:linear-gradient(135deg,var(--brown-dark) 0%,#3E4348 50%,var(--brown) 100%);
   display:flex;align-items:center;justify-content:center;z-index:999;padding:24px;
 }
 .login-card{
@@ -52,14 +52,14 @@ body{font-family:Helvetica Neue,Arial,sans-serif;background:var(--bg);color:var(
 @keyframes loginFadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .login-logo{display:flex;align-items:center;gap:12px;margin-bottom:32px;}
 .login-brand{display:flex;flex-direction:column;}
-.login-brand .name{font-family:Georgia,serif;font-size:15px;font-weight:400;letter-spacing:3px;color:var(--brown-dark);}
+.login-brand .name{font-family:'Archivo',sans-serif;font-size:15px;font-weight:400;letter-spacing:3px;color:var(--brown-dark);}
 .login-brand .tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
 .login-badge{
   display:inline-block;background:var(--accent-light);color:var(--accent);
   padding:4px 12px;border-radius:2px;font-size:10px;font-weight:600;letter-spacing:1.5px;
   text-transform:uppercase;margin-bottom:20px;
 }
-.login-card h2{font-family:Georgia,serif;font-size:26px;font-weight:300;color:var(--text-primary);margin-bottom:6px;}
+.login-card h2{font-family:'Archivo',sans-serif;font-size:26px;font-weight:300;color:var(--text-primary);margin-bottom:6px;}
 .login-card h2 em{font-style:italic;color:var(--accent);}
 .login-card p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:28px;}
 
@@ -112,7 +112,7 @@ body{font-family:Helvetica Neue,Arial,sans-serif;background:var(--bg);color:var(
 }
 .sidebar-top{padding:24px 20px 20px;border-bottom:1px solid rgba(212,196,176,.2);}
 .sidebar-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-.sidebar-logo .name{font-family:Georgia,serif;font-size:13px;letter-spacing:3px;color:var(--brown-dark);}
+.sidebar-logo .name{font-family:'Archivo',sans-serif;font-size:13px;letter-spacing:3px;color:var(--brown-dark);}
 .sidebar-logo .sub{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
 .sidebar-user{
   background:var(--bg);border-radius:var(--radius-sm);
@@ -160,7 +160,7 @@ body{font-family:Helvetica Neue,Arial,sans-serif;background:var(--bg);color:var(
 /* ── PAGE HEADER ── */
 .page-head{margin-bottom:28px;}
 .page-eyebrow{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;}
-.page-title{font-family:Georgia,serif;font-size:28px;font-weight:300;color:var(--text-primary);line-height:1.2;}
+.page-title{font-family:'Archivo',sans-serif;font-size:28px;font-weight:300;color:var(--text-primary);line-height:1.2;}
 .page-title em{font-style:italic;color:var(--accent);}
 .page-sub{font-size:13px;color:var(--text-secondary);margin-top:4px;line-height:1.6;}
 
@@ -178,7 +178,7 @@ body{font-family:Helvetica Neue,Arial,sans-serif;background:var(--bg);color:var(
 
 /* ── KPI GRID ── */
 .kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
-.anl-tab{padding:7px 16px;border:none;background:none;border-radius:2px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .2s;}
+.anl-tab{padding:7px 16px;border:none;background:none;border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .2s;}
 .anl-tab.active{background:var(--surface);color:var(--accent);box-shadow:var(--shadow-sm);}
 .kpi-card{
   background:var(--surface);border-radius:var(--radius-md);
@@ -186,7 +186,7 @@ body{font-family:Helvetica Neue,Arial,sans-serif;background:var(--bg);color:var(
   box-shadow:var(--shadow-sm);
 }
 .kpi-label{font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:8px;letter-spacing:.3px;}
-.kpi-value{font-family:Georgia,serif;font-size:30px;font-weight:300;color:var(--text-primary);margin-bottom:4px;}
+.kpi-value{font-family:'Archivo',sans-serif;font-size:30px;font-weight:300;color:var(--text-primary);margin-bottom:4px;}
 .kpi-sub{font-size:11px;color:var(--text-muted);}
 .kpi-pill{
   display:inline-block;padding:3px 10px;border-radius:2px;
@@ -197,10 +197,10 @@ body{font-family:Helvetica Neue,Arial,sans-serif;background:var(--bg);color:var(
 
 /* ── BADGES ── */
 .badge{display:inline-block;padding:3px 10px;border-radius:2px;font-size:11px;font-weight:600;}
-.badge-new{background:#EEF2FF;color:#4F46E5;}
+.badge-new{background:#EBEDE8;color:#B22A12;}
 .badge-active{background:var(--accent2-light);color:var(--accent2);}
 .badge-onboarding{background:var(--accent-light);color:var(--accent);}
-.badge-paused{background:#F1F5F9;color:#64748B;}
+.badge-paused{background:#EFF1ED;color:#5A5E63;}
 .score-g{background:var(--accent2-light);color:var(--accent2);padding:3px 10px;border-radius:2px;font-size:12px;font-weight:700;}
 .score-y{background:#FEF9C3;color:#854D0E;padding:3px 10px;border-radius:2px;font-size:12px;font-weight:700;}
 .score-r{background:var(--danger-light);color:var(--danger);padding:3px 10px;border-radius:2px;font-size:12px;font-weight:700;}
@@ -298,7 +298,7 @@ textarea{resize:vertical;min-height:80px;}
   display:flex;align-items:center;justify-content:space-between;
   margin-top:12px;padding-top:12px;border-top:1px solid #F0E8E0;
 }
-.client-ref{font-size:10px;font-family:Courier New,monospace;color:var(--text-muted);}
+.client-ref{font-size:10px;font-family:'Fragment Mono',monospace;color:var(--text-muted);}
 
 /* ── TABLE ── */
 .table{width:100%;border-collapse:collapse;font-size:13px;}
@@ -386,7 +386,7 @@ textarea{resize:vertical;min-height:80px;}
 /* ── MODAL ── */
 .modal-overlay{
   position:fixed;inset:0;
-  background:linear-gradient(135deg,var(--brown-dark) 0%,#5C3D28 50%,var(--brown) 100%);
+  background:linear-gradient(135deg,var(--brown-dark) 0%,#3E4348 50%,var(--brown) 100%);
   z-index:500;display:flex;align-items:center;justify-content:center;
   padding:40px 20px;overflow-y:auto;
 }
@@ -400,11 +400,11 @@ textarea{resize:vertical;min-height:80px;}
 @keyframes modalIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .modal-lg{max-width:680px;}
 /* Modal typography — matches login card */
-#modal-box h2,#modal-box .modal-title{font-family:Georgia,serif;font-size:26px;font-weight:300;color:var(--text-primary);margin-bottom:6px;}
+#modal-box h2,#modal-box .modal-title{font-family:'Archivo',sans-serif;font-size:26px;font-weight:300;color:var(--text-primary);margin-bottom:6px;}
 #modal-box h2 em,#modal-box .modal-title em{font-style:italic;color:var(--accent);}
-#modal-box p,#modal-box .modal-sub{font-family:Helvetica Neue,Arial,sans-serif;font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px;}
-#modal-box label{font-family:Helvetica Neue,Arial,sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:6px;}
-#modal-box input,#modal-box select,#modal-box textarea{font-family:Helvetica Neue,Arial,sans-serif;font-size:13px;color:var(--text-primary);}
+#modal-box p,#modal-box .modal-sub{font-family:'Archivo',Arial,sans-serif;font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px;}
+#modal-box label{font-family:'Archivo',Arial,sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:6px;}
+#modal-box input,#modal-box select,#modal-box textarea{font-family:'Archivo',Arial,sans-serif;font-size:13px;color:var(--text-primary);}
 #modal-box .separator{border:none;border-top:1px solid var(--border);margin:20px 0;}
 .modal-close{
   position:absolute;top:16px;right:16px;
@@ -415,7 +415,7 @@ textarea{resize:vertical;min-height:80px;}
   transition:all .18s;
 }
 .modal-close:hover{background:var(--danger-light);color:var(--danger);}
-.modal-title{font-family:Georgia,serif;font-size:20px;font-weight:300;color:var(--text-primary);margin-bottom:4px;}
+.modal-title{font-family:'Archivo',sans-serif;font-size:20px;font-weight:300;color:var(--text-primary);margin-bottom:4px;}
 .modal-title em{font-style:italic;color:var(--accent);}
 .modal-sub{font-size:12px;color:var(--text-muted);margin-bottom:24px;}
 
@@ -436,15 +436,15 @@ textarea{resize:vertical;min-height:80px;}
   cursor:pointer;border:2px solid transparent;transition:all .18s;
 }
 .status-chip:hover{transform:translateY(-1px);}
-.status-chip.new{background:#EEF2FF;color:#4F46E5;border-color:#EEF2FF;}
+.status-chip.new{background:#EBEDE8;color:#B22A12;border-color:#EBEDE8;}
 .status-chip.onboarding{background:var(--accent-light);color:var(--accent);border-color:var(--accent-light);}
 .status-chip.active{background:var(--accent2-light);color:var(--accent2);border-color:var(--accent2-light);}
-.status-chip.paused{background:#F1F5F9;color:#64748B;border-color:#F1F5F9;}
+.status-chip.paused{background:#EFF1ED;color:#5A5E63;border-color:#EFF1ED;}
 .status-chip.selected{border-width:2px;}
-.status-chip.new.selected{border-color:#4F46E5;}
+.status-chip.new.selected{border-color:#B22A12;}
 .status-chip.onboarding.selected{border-color:var(--accent);}
 .status-chip.active.selected{border-color:var(--accent2);}
-.status-chip.paused.selected{border-color:#64748B;}
+.status-chip.paused.selected{border-color:#5A5E63;}
 
 /* ── CLIENT DETAIL MODAL ── */
 .detail-section{margin-bottom:20px;}
@@ -481,7 +481,7 @@ textarea{resize:vertical;min-height:80px;}
 
 /* ── ENV OUTPUT ── */
 #env-output{display:none;margin-top:16px;}
-#env-output textarea{font-family:Courier New,monospace;font-size:12px;background:var(--bg);}
+#env-output textarea{font-family:'Fragment Mono',monospace;font-size:12px;background:var(--bg);}
 </style>
 </head>
 <body>
@@ -491,10 +491,10 @@ textarea{resize:vertical;min-height:80px;}
   <div class="login-card">
     <div class="login-logo">
       <svg width="32" height="32" viewBox="0 0 80 80" fill="none">
-        <path d="M5 36L5 5L36 5" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M44 75L75 75L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity=".35"/>
-        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+        <path d="M5 36L5 5L36 5" stroke="#B22A12" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75L75 75L75 44" stroke="#B22A12" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="#B22A12" stroke-width="1.1" fill="none" opacity=".35"/>
+        <circle cx="40" cy="40" r="3.5" fill="#B22A12"/>
       </svg>
       <div class="login-brand">
         <span class="name">ELZINGA</span>
@@ -530,9 +530,9 @@ textarea{resize:vertical;min-height:80px;}
     <div class="sidebar-top">
       <div class="sidebar-logo">
         <svg width="24" height="24" viewBox="0 0 80 80" fill="none">
-          <path d="M5 36L5 5L36 5" stroke="#8B6347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M44 75L75 75L75 44" stroke="#8B6347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+          <path d="M5 36L5 5L36 5" stroke="#B22A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M44 75L75 75L75 44" stroke="#B22A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="40" r="3.5" fill="#B22A12"/>
         </svg>
         <div>
           <div class="name" id="sb-name">Elzinga</div>
@@ -642,10 +642,10 @@ textarea{resize:vertical;min-height:80px;}
         <button class="filter-tab" data-filter="Paused" onclick="setClientFilter(this)">Paused</button>
       </div>
       <div id="bulk-action-bar" style="display:none;align-items:center;justify-content:space-between;background:var(--brown-dark);color:var(--cream);padding:10px 16px;border-radius:2px;margin-bottom:12px;gap:12px">
-        <span id="bulk-count" style="font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px"></span>
+        <span id="bulk-count" style="font-family:'Archivo',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px"></span>
         <div style="display:flex;gap:8px">
-          <button onclick="clearSelection()" style="background:rgba(255,255,255,.15);border:none;color:var(--cream);padding:6px 14px;border-radius:2px;font-size:11px;cursor:pointer;font-family:Helvetica Neue,Arial,sans-serif">Clear</button>
-          <button onclick="bulkDeleteClients()" style="background:#b04040;border:none;color:white;padding:6px 14px;border-radius:2px;font-size:11px;cursor:pointer;font-family:Helvetica Neue,Arial,sans-serif;font-weight:600">Delete Selected</button>
+          <button onclick="clearSelection()" style="background:rgba(255,255,255,.15);border:none;color:var(--cream);padding:6px 14px;border-radius:2px;font-size:11px;cursor:pointer;font-family:'Archivo',Arial,sans-serif">Clear</button>
+          <button onclick="bulkDeleteClients()" style="background:#B22A12;border:none;color:white;padding:6px 14px;border-radius:2px;font-size:11px;cursor:pointer;font-family:'Archivo',Arial,sans-serif;font-weight:600">Delete Selected</button>
         </div>
       </div>
       <div class="client-grid" id="client-grid"></div>
@@ -662,7 +662,7 @@ textarea{resize:vertical;min-height:80px;}
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <button class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4)" onclick="saveCampaign()">💾 Save Draft</button>
           <button class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4)" onclick="generateScript()">⬇️ Python Script</button>
-          <label style="display:flex;align-items:center;gap:6px;color:#fff;font-family:Helvetica Neue,Arial,sans-serif;font-size:11px;cursor:pointer">
+          <label style="display:flex;align-items:center;gap:6px;color:#fff;font-family:'Archivo',Arial,sans-serif;font-size:11px;cursor:pointer">
             <input type="checkbox" id="test-mode-toggle" checked onchange="toggleTestMode(this.checked)" style="accent-color:#7A9E7E">
             Test Mode
           </label>
@@ -675,9 +675,9 @@ textarea{resize:vertical;min-height:80px;}
 
       <!-- Launch status panel -->
       <div id="launch-status-panel" style="display:none;background:var(--surface);border-radius:2px;padding:24px;margin-bottom:20px;border:1.5px solid var(--border)">
-        <div id="launch-status-title" style="font-family:Georgia,serif;font-size:18px;font-weight:300;color:var(--text-primary);margin-bottom:16px">Launching Campaign…</div>
+        <div id="launch-status-title" style="font-family:'Archivo',sans-serif;font-size:18px;font-weight:300;color:var(--text-primary);margin-bottom:16px">Launching Campaign…</div>
         <div id="launch-steps-list" style="display:flex;flex-direction:column;gap:8px"></div>
-        <div id="launch-final-msg" style="margin-top:16px;font-family:Helvetica Neue,Arial,sans-serif;font-size:13px"></div>
+        <div id="launch-final-msg" style="margin-top:16px;font-family:'Archivo',Arial,sans-serif;font-size:13px"></div>
       </div>
 
       <div class="card" style="margin-bottom:16px">
@@ -1273,11 +1273,11 @@ https://yourcdn.com/image2.jpg"></textarea></div>
       <!-- Launched Campaigns List -->
       <div style="margin-top:40px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-          <div style="font-family:Helvetica Neue,Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)">Launched Campaigns</div>
+          <div style="font-family:'Archivo',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)">Launched Campaigns</div>
           <button class="btn btn-outline" onclick="loadLaunchedCampaigns()" style="font-size:11px;padding:6px 14px">↻ Refresh</button>
         </div>
         <div id="launched-campaigns-list">
-          <div style="text-align:center;padding:32px;font-family:Helvetica Neue,Arial,sans-serif;font-size:13px;color:var(--text-muted)">No launched campaigns yet</div>
+          <div style="text-align:center;padding:32px;font-family:'Archivo',Arial,sans-serif;font-size:13px;color:var(--text-muted)">No launched campaigns yet</div>
         </div>
       </div>
     </div><!-- end view-campaigns -->
@@ -1316,7 +1316,7 @@ https://yourcdn.com/image2.jpg"></textarea></div>
 
       <!-- Controls -->
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px">
-        <select id="analytics-client" onchange="analyticsClientChanged()" style="padding:9px 14px;border:1.5px solid var(--border);border-radius:2px;font-family:Helvetica Neue,Arial,sans-serif;font-size:13px;background:var(--surface);color:var(--text-primary);min-width:200px">
+        <select id="analytics-client" onchange="analyticsClientChanged()" style="padding:9px 14px;border:1.5px solid var(--border);border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:13px;background:var(--surface);color:var(--text-primary);min-width:200px">
           <option value="">— Select Client —</option>
         </select>
         <div style="display:flex;gap:4px;background:var(--bg);border-radius:2px;padding:4px">
@@ -1324,7 +1324,7 @@ https://yourcdn.com/image2.jpg"></textarea></div>
           <button class="anl-tab" onclick="setAnalyticsPlatform('google',this)" id="anl-tab-google">Google</button>
           <button class="anl-tab" onclick="setAnalyticsPlatform('all',this)" id="anl-tab-all">All</button>
         </div>
-        <select id="analytics-daterange" onchange="loadAnalytics()" style="padding:9px 14px;border:1.5px solid var(--border);border-radius:2px;font-family:Helvetica Neue,Arial,sans-serif;font-size:13px;background:var(--surface);color:var(--text-primary)">
+        <select id="analytics-daterange" onchange="loadAnalytics()" style="padding:9px 14px;border:1.5px solid var(--border);border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:13px;background:var(--surface);color:var(--text-primary)">
           <option value="last_7d">Last 7 days</option>
           <option value="last_30d" selected>Last 30 days</option>
           <option value="last_90d">Last 90 days</option>
@@ -1337,10 +1337,10 @@ https://yourcdn.com/image2.jpg"></textarea></div>
       </div>
 
       <!-- Status message -->
-      <div id="analytics-status" style="display:none;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;padding:10px 16px;border-radius:2px;margin-bottom:16px"></div>
+      <div id="analytics-status" style="display:none;font-family:'Archivo',Arial,sans-serif;font-size:12px;padding:10px 16px;border-radius:2px;margin-bottom:16px"></div>
 
       <!-- Last updated -->
-      <div id="analytics-updated" style="font-family:Helvetica Neue,Arial,sans-serif;font-size:11px;color:var(--text-muted);margin-bottom:20px"></div>
+      <div id="analytics-updated" style="font-family:'Archivo',Arial,sans-serif;font-size:11px;color:var(--text-muted);margin-bottom:20px"></div>
 
       <!-- KPI totals -->
       <div class="kpi-grid" id="analytics-kpi-grid" style="margin-bottom:28px">
@@ -1351,9 +1351,9 @@ https://yourcdn.com/image2.jpg"></textarea></div>
 
       <!-- Campaign breakdown table -->
       <div id="analytics-campaigns-wrap" style="display:none">
-        <div style="font-family:Helvetica Neue,Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px">Campaign Breakdown</div>
+        <div style="font-family:'Archivo',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px">Campaign Breakdown</div>
         <div style="overflow-x:auto">
-          <table style="width:100%;border-collapse:collapse;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px">
+          <table style="width:100%;border-collapse:collapse;font-family:'Archivo',Arial,sans-serif;font-size:12px">
             <thead>
               <tr style="border-bottom:2px solid var(--border)">
                 <th style="text-align:left;padding:10px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);font-weight:600">Campaign</th>
@@ -1890,7 +1890,7 @@ async function launchCampaignLive() {
 
   const allSuccess = results.length > 0 && results.every(r => !r.error);
   titleEl.textContent = allSuccess ? '✓ Campaign Launched' : 'Launch Complete (with errors)';
-  finalMsg.style.color = allSuccess ? '#4A7A4E' : '#b04040';
+  finalMsg.style.color = allSuccess ? '#4A7A4E' : '#B22A12';
   finalMsg.textContent = allSuccess
     ? 'Your campaign is live and set to ' + (camp.meta?.status || 'PAUSED') + ' status. Activate it in your ad platform when ready.'
     : 'Some steps failed — check your credentials in the API Credentials tab.';
@@ -1901,11 +1901,11 @@ async function launchCampaignLive() {
 }
 
 function addLaunchStep(container, label, status, detail) {
-  const colors = { pending: '#F0D9BE', success: '#EAF4EA', error: '#FBEAE6' };
-  const textColors = { pending: '#8B6000', success: '#3A7A3A', error: '#b04040' };
+  const colors = { pending: '#EFF1ED', success: '#EAF4EA', error: '#FBEAE6' };
+  const textColors = { pending: '#8B6000', success: '#3A7A3A', error: '#B22A12' };
   const el = document.createElement('div');
   el.id = 'lstep-' + label.trim().replace(/\s+/g, '-');
-  el.style.cssText = `display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:2px;background:${colors[status]};font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;color:${textColors[status]}`;
+  el.style.cssText = `display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:2px;background:${colors[status]};font-family:'Archivo',Arial,sans-serif;font-size:12px;color:${textColors[status]}`;
   el.innerHTML = `<span style="font-weight:700;min-width:100px">${label}</span><span>${detail}</span>`;
   container.appendChild(el);
 }
@@ -1913,8 +1913,8 @@ function addLaunchStep(container, label, status, detail) {
 function updateLaunchStep(container, label, status, detail) {
   const el = document.getElementById('lstep-' + label.trim().replace(/\s+/g, '-'));
   if (el) {
-    const colors = { pending: '#F0D9BE', success: '#EAF4EA', error: '#FBEAE6' };
-    const textColors = { pending: '#8B6000', success: '#3A7A3A', error: '#b04040' };
+    const colors = { pending: '#EFF1ED', success: '#EAF4EA', error: '#FBEAE6' };
+    const textColors = { pending: '#8B6000', success: '#3A7A3A', error: '#B22A12' };
     el.style.background = colors[status];
     el.style.color = textColors[status];
     el.querySelector('span:last-child').textContent = detail;
@@ -1936,13 +1936,13 @@ async function loadLaunchedCampaigns() {
       .limit(20);
     if (error) throw error;
     if (!data || data.length === 0) {
-      el.innerHTML = '<div style="text-align:center;padding:32px;font-family:Helvetica Neue,Arial,sans-serif;font-size:13px;color:var(--text-muted)">No launched campaigns yet</div>';
+      el.innerHTML = '<div style="text-align:center;padding:32px;font-family:'Archivo',Arial,sans-serif;font-size:13px;color:var(--text-muted)">No launched campaigns yet</div>';
       return;
     }
     el.innerHTML = data.map(row => {
       const r = row.launch_result || {};
-      const statusColor = row.status === 'launched' ? '#4A7A4E' : '#b04040';
-      const testBadge = r.test_mode ? '<span style="font-size:9px;background:#FFF8E7;color:#8B6000;padding:2px 8px;border-radius:2px;margin-left:8px;letter-spacing:1px;text-transform:uppercase;font-weight:600">TEST</span>' : '';
+      const statusColor = row.status === 'launched' ? '#4A7A4E' : '#B22A12';
+      const testBadge = r.test_mode ? '<span style="font-size:9px;background:#F4F5F2;color:#8B6000;padding:2px 8px;border-radius:2px;margin-left:8px;letter-spacing:1px;text-transform:uppercase;font-weight:600">TEST</span>' : '';
       const campId = r.campaign_id || r.campaign_resource_name || '';
       const isPaused = row.status === 'paused';
       const isArchived = row.status === 'archived';
@@ -1950,7 +1950,7 @@ async function loadLaunchedCampaigns() {
       return `<div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);gap:12px;flex-wrap:wrap">
         <div style="flex:1;min-width:200px">
           <div style="font-weight:600;font-size:13px;color:var(--text-primary)">${row.campaign_name || 'Unnamed'}${testBadge}</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-top:2px">${row.platform?.toUpperCase()} · ${new Date(row.launched_at).toLocaleDateString()} · <span style="font-family:Courier New,monospace">${campId || '—'}</span></div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:2px">${row.platform?.toUpperCase()} · ${new Date(row.launched_at).toLocaleDateString()} · <span style="font-family:'Fragment Mono',monospace">${campId || '—'}</span></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
           <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${statusColor}">${row.status}</span>
@@ -1960,14 +1960,14 @@ async function loadLaunchedCampaigns() {
               : `<button onclick="manageCampaign('${row.id}','${row.platform}','${campId}','pause','${row.client_id}')" class="btn btn-outline" style="font-size:10px;padding:4px 12px">⏸ Pause</button>`
             }
             <button onclick="editCampaignBudget('${row.id}','${row.platform}','${campId}','${row.client_id}')" class="btn btn-outline" style="font-size:10px;padding:4px 12px">💰 Budget</button>
-            <button onclick="manageCampaign('${row.id}','${row.platform}','${campId}','archive','${row.client_id}')" class="btn btn-outline" style="font-size:10px;padding:4px 12px;color:#b04040;border-color:#b04040">Archive</button>
+            <button onclick="manageCampaign('${row.id}','${row.platform}','${campId}','archive','${row.client_id}')" class="btn btn-outline" style="font-size:10px;padding:4px 12px;color:#B22A12;border-color:#B22A12">Archive</button>
             <button onclick="duplicateCampaign('${row.id}')" class="btn btn-outline" style="font-size:10px;padding:4px 12px">⧉ Duplicate</button>
           ` : ''}
         </div>
       </div>`;
     }).join('');
   } catch(e) {
-    el.innerHTML = `<div style="font-size:12px;color:#b04040;padding:12px">Error loading: ${e.message}</div>`;
+    el.innerHTML = `<div style="font-size:12px;color:#B22A12;padding:12px">Error loading: ${e.message}</div>`;
   }
 }
 
@@ -2233,8 +2233,8 @@ async function refreshAnalytics() {
 function showAnalyticsStatus(msg, type = 'info') {
   const el = document.getElementById('analytics-status');
   el.style.display = 'block';
-  el.style.background = type === 'error' ? '#FBEAE6' : type === 'warn' ? '#FFF8E7' : '#EAF4EA';
-  el.style.color = type === 'error' ? '#b04040' : type === 'warn' ? '#8B6000' : '#3A7A3A';
+  el.style.background = type === 'error' ? '#FBEAE6' : type === 'warn' ? '#F4F5F2' : '#EAF4EA';
+  el.style.color = type === 'error' ? '#B22A12' : type === 'warn' ? '#8B6000' : '#3A7A3A';
   el.textContent = msg;
   if (type !== 'error') setTimeout(() => el.style.display = 'none', 4000);
 }
@@ -2352,10 +2352,10 @@ function renderOverview(){
   ].map(([l,v,s])=>`<div class="kpi-card"><div class="kpi-label">${l}</div><div class="kpi-value">${v}</div><div class="kpi-sub">${s}</div></div>`).join('');
   const rc=document.getElementById('recent-clients');
   const recent=clients.slice(-5).reverse();
-  rc.innerHTML=recent.length?recent.map(c=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #F1F5F9"><div><div style="font-weight:600;font-size:13px">${c.business?.name||c.name||'Unnamed'}</div><div style="font-size:11px;color:#64748B">${c.business?.industry||''}</div></div><span class="badge badge-${(c.status||'new').toLowerCase()}">${c.status||'New'}</span></div>`).join(''):`<div class="empty-state"><div class="empty-text">No clients yet</div></div>`;
+  rc.innerHTML=recent.length?recent.map(c=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #EFF1ED"><div><div style="font-weight:600;font-size:13px">${c.business?.name||c.name||'Unnamed'}</div><div style="font-size:11px;color:#5A5E63">${c.business?.industry||''}</div></div><span class="badge badge-${(c.status||'new').toLowerCase()}">${c.status||'New'}</span></div>`).join(''):`<div class="empty-state"><div class="empty-text">No clients yet</div></div>`;
   const rt=document.getElementById('recent-tests');
   const recentT=tests.slice(-5).reverse();
-  rt.innerHTML=recentT.length?recentT.map(t=>{const sc=calcScore(t);const cls=sc>=80?'score-g':sc>=50?'score-y':'score-r';return`<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #F1F5F9"><div><div style="font-weight:600;font-size:13px">${t.campaign||'Test'}</div><div style="font-size:11px;color:#64748B">${t.platform||''} · $${parseFloat(t.spend||0).toFixed(0)} spend</div></div><span class="${cls}">${sc}</span></div>`}).join(''):`<div class="empty-state"><div class="empty-text">No tests yet</div></div>`;
+  rt.innerHTML=recentT.length?recentT.map(t=>{const sc=calcScore(t);const cls=sc>=80?'score-g':sc>=50?'score-y':'score-r';return`<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #EFF1ED"><div><div style="font-weight:600;font-size:13px">${t.campaign||'Test'}</div><div style="font-size:11px;color:#5A5E63">${t.platform||''} · $${parseFloat(t.spend||0).toFixed(0)} spend</div></div><span class="${cls}">${sc}</span></div>`}).join(''):`<div class="empty-state"><div class="empty-text">No tests yet</div></div>`;
 }
 
 // ── CLIENTS ───────────────────────────────────────────────────────
@@ -2386,7 +2386,7 @@ function renderClients(q=''){
           </div>
           <div class="client-meta">${c.business?.industry||''}</div>
           <div class="client-meta">${c.business?.location||''}</div>
-          <div class="client-meta" style="margin-top:8px;font-family:Courier New,monospace;font-size:10px;letter-spacing:1px">${id}</div>
+          <div class="client-meta" style="margin-top:8px;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:1px">${id}</div>
         </div>
       </div>
     </div>`;
@@ -2408,7 +2408,7 @@ function openClientDetail(id){
   function row(label, val) {
     if (!val) return '';
     return `<div style="padding:10px 0;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:3px">
-      <span style="font-family:Helvetica Neue,Arial,sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)">${label}</span>
+      <span style="font-family:'Archivo',Arial,sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)">${label}</span>
       <span style="font-size:13px;color:var(--text-primary);font-weight:500">${val}</span>
     </div>`;
   }
@@ -2418,14 +2418,14 @@ function openClientDetail(id){
 
     <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;gap:16px">
       <div>
-        <div style="font-family:Georgia,serif;font-size:24px;font-weight:400;color:var(--text-primary);margin-bottom:4px">${biz.name||c.name||'Client'}</div>
-        <div style="font-family:Helvetica Neue,Arial,sans-serif;font-size:10px;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase">${biz.industry||''} ${biz.location ? '· '+biz.location : ''}</div>
+        <div style="font-family:'Archivo',sans-serif;font-size:24px;font-weight:400;color:var(--text-primary);margin-bottom:4px">${biz.name||c.name||'Client'}</div>
+        <div style="font-family:'Archivo',Arial,sans-serif;font-size:10px;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase">${biz.industry||''} ${biz.location ? '· '+biz.location : ''}</div>
       </div>
       <span class="badge badge-${(c.status||'new').toLowerCase()}" style="flex-shrink:0">${c.status||'New'}</span>
     </div>
 
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)">
-      <select onchange="updateClientStatus('${id}',this.value)" style="flex:1;padding:8px 12px;border:1.5px solid var(--border);border-radius:2px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;background:var(--bg);color:var(--text-primary);cursor:pointer">
+      <select onchange="updateClientStatus('${id}',this.value)" style="flex:1;padding:8px 12px;border:1.5px solid var(--border);border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:12px;background:var(--bg);color:var(--text-primary);cursor:pointer">
         ${statusOptions}
       </select>
       <button class="btn btn-outline" onclick="copyAccessCode('${c.accessCode||''}','${id}')" style="font-size:11px">📋 Copy Code</button>
@@ -2452,14 +2452,14 @@ function openClientDetail(id){
       ${adAccess.googleCustomerId ? row('Google Customer ID', adAccess.googleCustomerId) : ''}
     </div>
 
-    ${c.client_username ? `<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:2px;padding:12px 16px;margin-bottom:20px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;color:var(--text-secondary)">
+    ${c.client_username ? `<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:2px;padding:12px 16px;margin-bottom:20px;font-family:'Archivo',Arial,sans-serif;font-size:12px;color:var(--text-secondary)">
       <span style="font-weight:600;color:var(--green-text,#4a7a4e)">✓ Onboarding complete</span> · Client login: <strong>${c.client_username}</strong>
-    </div>` : `<div style="background:#FFF8F0;border:1.5px solid #F0D9BE;border-radius:2px;padding:12px 16px;margin-bottom:20px;font-family:Helvetica Neue,Arial,sans-serif;font-size:12px;color:var(--text-secondary)">
-      Awaiting onboarding · Access code: <strong style="letter-spacing:2px;font-family:Courier New,monospace">${c.accessCode||'—'}</strong>
+    </div>` : `<div style="background:#FFF8F0;border:1.5px solid #EFF1ED;border-radius:2px;padding:12px 16px;margin-bottom:20px;font-family:'Archivo',Arial,sans-serif;font-size:12px;color:var(--text-secondary)">
+      Awaiting onboarding · Access code: <strong style="letter-spacing:2px;font-family:'Fragment Mono',monospace">${c.accessCode||'—'}</strong>
     </div>`}
 
     ${tests.length ? `
-    <div style="font-family:Helvetica Neue,Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px">Ad Tests (${tests.length})</div>
+    <div style="font-family:'Archivo',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px">Ad Tests (${tests.length})</div>
     <div>${tests.map(t=>{const sc=calcScore(t);const cls=sc>=80?'score-g':sc>=50?'score-y':'score-r';return`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px"><span style="color:var(--text-primary)">${t.campaign||'Test'}</span><span class="${cls}" style="font-weight:700">${sc}/100</span></div>`;}).join('')}</div>` : ''}
   `,'modal-lg');
 }
@@ -2576,7 +2576,7 @@ function renderTests(){
   document.getElementById('test-kpis').innerHTML=[['Tests Logged',filtered.length,''],['Avg Score',avgSc+'/100',''],['Winners (80+)',winners,'Scale these'],['Total Spend','$'+totalSpend.toFixed(2),'']].map(([l,v,s])=>`<div class="kpi-card"><div class="kpi-label">${l}</div><div class="kpi-value">${v}</div><div class="kpi-sub">${s}</div></div>`).join('');
   const clients=getClients();
   const tbody=document.getElementById('tests-body');
-  tbody.innerHTML=filtered.length?filtered.slice().reverse().map(t=>{const sc=calcScore(t);const cls=sc>=80?'score-g':sc>=50?'score-y':'score-r';const client=clients.find(c=>(c.id||c.referenceId)===t.clientId);return`<tr><td>${client?.business?.name||t.clientId||'—'}</td><td>${t.campaign||'—'}</td><td>${t.platform||'—'}</td><td>${t.creative||'—'}</td><td>${t.ctr||'—'}</td><td>${t.cpl?'$'+t.cpl:'—'}</td><td>${t.roas||'—'}</td><td>${t.hookRate||t.hook||'—'}</td><td>${t.spend?'$'+t.spend:'—'}</td><td><span class="${cls}">${sc}</span></td><td>${t.date||'—'}</td></tr>`;}).join(''):`<tr><td colspan="11" style="text-align:center;padding:32px;color:#64748B">No tests logged yet.</td></tr>`;
+  tbody.innerHTML=filtered.length?filtered.slice().reverse().map(t=>{const sc=calcScore(t);const cls=sc>=80?'score-g':sc>=50?'score-y':'score-r';const client=clients.find(c=>(c.id||c.referenceId)===t.clientId);return`<tr><td>${client?.business?.name||t.clientId||'—'}</td><td>${t.campaign||'—'}</td><td>${t.platform||'—'}</td><td>${t.creative||'—'}</td><td>${t.ctr||'—'}</td><td>${t.cpl?'$'+t.cpl:'—'}</td><td>${t.roas||'—'}</td><td>${t.hookRate||t.hook||'—'}</td><td>${t.spend?'$'+t.spend:'—'}</td><td><span class="${cls}">${sc}</span></td><td>${t.date||'—'}</td></tr>`;}).join(''):`<tr><td colspan="11" style="text-align:center;padding:32px;color:#5A5E63">No tests logged yet.</td></tr>`;
 }
 function openLogTest(){
   const clients=getClients();
@@ -2759,7 +2759,7 @@ function gBidToggle(){const v=document.getElementById('g_bid_strategy').value;do
 function gTypeToggle(){const v=document.getElementById('g_camp_type').value;document.getElementById('g-yt-settings').style.display=v==='VIDEO'?'block':'none';document.getElementById('g-search-adgroup').style.display=v==='SEARCH'?'block':'none';document.getElementById('g-yt-targeting').style.display=v==='VIDEO'?'block':'none';document.getElementById('g-pmax-signals').style.display=v==='PERFORMANCE_MAX'?'block':'none';document.getElementById('g-rsa-form').style.display=v==='SEARCH'?'block':'none';document.getElementById('g-yt-ad-form').style.display=v==='VIDEO'?'block':'none';document.getElementById('g-pmax-form').style.display=v==='PERFORMANCE_MAX'?'block':'none';}
 function adFormatToggle(){const v=document.getElementById('m_ad_format').value;document.getElementById('cond-image-url').style.display=v==='SINGLE_IMAGE'?'flex':'none';document.getElementById('cond-video-id').style.display=v==='SINGLE_VIDEO'?'flex':'none';document.getElementById('cond-thumb').style.display=v==='SINGLE_VIDEO'?'flex':'none';}
 function placementToggle(){document.getElementById('manual-placements').style.display=document.getElementById('m_place_mode').value==='manual'?'block':'none';}
-function buildDayPartGrid(){const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];document.getElementById('day-part-grid').innerHTML=days.map((d,i)=>`<div style="text-align:center"><div style="font-size:11px;font-weight:600;margin-bottom:4px">${d}</div><label class="check-item" style="justify-content:center"><input type="checkbox" id="dp_${i}" checked></label><select id="dps_${i}" style="margin-top:4px;font-size:11px;padding:3px 4px;width:100%"><option value="0">12am</option><option value="6">6am</option><option value="8" selected>8am</option><option value="9">9am</option><option value="17">5pm</option><option value="20">8pm</option></select><div style="font-size:10px;color:#64748B;margin:2px 0">to</div><select id="dpe_${i}" style="font-size:11px;padding:3px 4px;width:100%"><option value="18">6pm</option><option value="20">8pm</option><option value="22" selected>10pm</option><option value="0">Midnight</option></select></div>`).join('');}
+function buildDayPartGrid(){const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];document.getElementById('day-part-grid').innerHTML=days.map((d,i)=>`<div style="text-align:center"><div style="font-size:11px;font-weight:600;margin-bottom:4px">${d}</div><label class="check-item" style="justify-content:center"><input type="checkbox" id="dp_${i}" checked></label><select id="dps_${i}" style="margin-top:4px;font-size:11px;padding:3px 4px;width:100%"><option value="0">12am</option><option value="6">6am</option><option value="8" selected>8am</option><option value="9">9am</option><option value="17">5pm</option><option value="20">8pm</option></select><div style="font-size:10px;color:#5A5E63;margin:2px 0">to</div><select id="dpe_${i}" style="font-size:11px;padding:3px 4px;width:100%"><option value="18">6pm</option><option value="20">8pm</option><option value="22" selected>10pm</option><option value="0">Midnight</option></select></div>`).join('');}
 function buildHeadlineFields(){document.getElementById('g-headlines-grid').innerHTML=Array.from({length:15},(_,i)=>`<input type="text" id="g_h${i+1}" placeholder="Headline ${i+1} (max 30 chars)" maxlength="30">`).join('');document.getElementById('g-descs-grid').innerHTML=Array.from({length:4},(_,i)=>`<textarea id="g_d${i+1}" placeholder="Description ${i+1} (max 90 chars)" maxlength="90" rows="2"></textarea>`).join('');}
 function buildPmaxFields(){document.getElementById('g-pmax-headlines').innerHTML=Array.from({length:5},(_,i)=>`<input type="text" id="g_ph${i+1}" placeholder="Headline ${i+1} (max 30 chars)" maxlength="30">`).join('');document.getElementById('g-pmax-descs').innerHTML=Array.from({length:5},(_,i)=>`<textarea id="g_pd${i+1}" placeholder="Description ${i+1} (max 90 chars)" maxlength="90" rows="2"></textarea>`).join('');}
 
@@ -3508,7 +3508,7 @@ function openAddClient() {
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="client-modal-header">
       <div class="client-modal-icon">
-        <svg width="24" height="24" fill="none" stroke="#8B6347" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <svg width="24" height="24" fill="none" stroke="#B22A12" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
       </div>
       <div>
         <div class="modal-title">Add <em>New Client</em></div>
@@ -3518,7 +3518,7 @@ function openAddClient() {
     <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:2px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;">
       <div>
         <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px">Onboarding Access Code</div>
-        <div style="font-family:Georgia,serif;font-size:22px;letter-spacing:4px;color:var(--accent)" id="preview-code">${newCode}</div>
+        <div style="font-family:'Archivo',sans-serif;font-size:22px;letter-spacing:4px;color:var(--accent)" id="preview-code">${newCode}</div>
       </div>
       <div style="font-size:11px;color:var(--text-muted);max-width:160px;line-height:1.5">Send this to your client — they enter it to start their onboarding form.</div>
     </div>
@@ -3654,7 +3654,7 @@ async function submitAddClient() {
       <div style="font-size:15px;color:var(--text-primary);margin-bottom:24px">Send this access code to <strong>${name}</strong> so they can complete their onboarding form.</div>
       <div style="background:var(--bg);border:2px solid var(--accent);border-radius:2px;padding:24px;margin-bottom:16px">
         <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Access Code</div>
-        <div style="font-family:Georgia,serif;font-size:32px;letter-spacing:6px;color:var(--accent)">${accessCode}</div>
+        <div style="font-family:'Archivo',sans-serif;font-size:32px;letter-spacing:6px;color:var(--accent)">${accessCode}</div>
       </div>
       <button class="btn btn-primary" onclick="navigator.clipboard.writeText('${accessCode}').then(()=>showToast('Copied!'))">Copy Code</button>
       <button class="btn btn-outline" style="margin-left:8px" onclick="closeModal()">Done</button>

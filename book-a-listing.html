@@ -47,7 +47,7 @@
       --green-dk:  #8F2110;   /* cobalt hover-darken */
       --off-white: #EBEDE8;   /* warm sand — alt section bg */
       --gray:      #5A5E63;   /* muted */
-      --gray-lt:   #79746A;   /* lighter caption */
+      --gray-lt:   #75797E;   /* lighter caption */
       --border:    #E7E9E4;   /* hairline */
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -59,10 +59,10 @@
     .btn-green { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border-radius: 2px; background: var(--green); color: var(--bone); font-family: inherit; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; }
     .btn-green:hover { background: var(--green-dk); }
     .btn-black { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border-radius: 2px; background: var(--black); color: var(--bone); font-family: inherit; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; transition: background 0.2s; }
-    .btn-black:hover { background: #2b2620; }
+    .btn-black:hover { background: #1E2023; }
 
     /* Header */
-    #site-header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px 6vw; background: rgba(250,248,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: padding 0.2s; }
+    #site-header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px 6vw; background: rgba(244,245,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: padding 0.2s; }
     #site-header.scrolled { padding: 12px 6vw; }
     .logo-link { text-decoration: none; display: flex; align-items: baseline; gap: 10px; }
     .logo-ecs { font-weight: 700; font-size: 20px; letter-spacing: -1px; color: var(--black); }
@@ -79,7 +79,7 @@
     .hero-inner { max-width: 1100px; margin: 0 auto; }
     .hero-breadcrumb { font-size: 11px; color: var(--gray); margin-bottom: 18px; }
     .hero-breadcrumb a { color: var(--gray); text-decoration: none; }
-    .hero-h1 { font-family: 'Archivo', Georgia, serif; font-size: clamp(34px, 5vw, 60px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; font-optical-sizing: auto; }
+    .hero-h1 { font-family: 'Archivo', Georgia, serif; font-size: clamp(34px, 5vw, 60px); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; font-optical-sizing: auto; font-stretch:125%; font-weight:900; text-transform:uppercase; letter-spacing:-.01em; line-height:.92; }
     .hero-h1 em { font-style: italic; color: var(--green); }
     .hero-sub { margin-top: 16px; font-size: 16px; line-height: 1.62; color: var(--gray); max-width: 620px; }
     .hero-pills { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -117,26 +117,26 @@
     .tiers-inner { max-width: 1100px; margin: 0 auto; }
     .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
     @media (max-width: 700px) { .tiers-grid { grid-template-columns: 1fr; } }
-    .tier { border: 1px solid rgba(250,248,242,0.15); padding: 22px; border-radius: 2px; }
+    .tier { border: 1px solid rgba(244,245,242,0.15); padding: 22px; border-radius: 2px; }
     .tier h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
     .tier .price { font-family: 'Archivo', Georgia, serif; font-size: 34px; font-weight: 300; margin: 8px 0 10px; letter-spacing: -0.02em; color: var(--bone); }
-    .tier p { font-size: 13px; line-height: 1.5; color: rgba(250,248,242,0.7); }
-    .tiers-note { font-size: 13px; color: rgba(250,248,242,0.6); margin-top: 18px; }
+    .tier p { font-size: 13px; line-height: 1.5; color: rgba(244,245,242,0.7); }
+    .tiers-note { font-size: 13px; color: rgba(244,245,242,0.6); margin-top: 18px; }
     .tiers-note a { color: var(--bone); font-weight: 600; text-decoration: underline; }
 
     /* Footer */
     footer { background: var(--black); color: var(--bone); padding: 36px 6vw; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
     .footer-brand { display: flex; align-items: baseline; gap: 10px; }
     .footer-ecs { font-weight: 700; font-size: 18px; }
-    .footer-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,248,242,0.6); }
-    .footer-copy { font-size: 11px; color: rgba(250,248,242,0.6); width: 100%; }
+    .footer-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(244,245,242,0.6); }
+    .footer-copy { font-size: 11px; color: rgba(244,245,242,0.6); width: 100%; }
 
     /* Hero quick-path buttons */
     .hero-paths { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
     .hero-path-btn { display: inline-flex; align-items: center; font-size: 14px; font-weight: 600; letter-spacing: 0.01em; padding: 12px 22px; border-radius: 2px; background: var(--green); color: var(--bone); text-decoration: none; transition: background 0.2s; }
     .hero-path-btn.alt { background: var(--black); }
     .hero-path-btn:hover { background: var(--green-dk); }
-    .hero-path-btn.alt:hover { background: #2b2620; }
+    .hero-path-btn.alt:hover { background: #1E2023; }
 
     /* Trust bar */
     #trust-bar { background: var(--bone); border-bottom: 1px solid var(--border); padding: 16px 6vw; }
@@ -203,7 +203,7 @@
       .m-arrow { display: inline-block; transition: transform .22s cubic-bezier(.22,.61,.36,1); }
       a:hover .m-arrow, a:focus-visible .m-arrow { transform: translateX(5px); }
       .m-lift { transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s cubic-bezier(.22,.61,.36,1); }
-      .m-lift:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(21,18,13,.10); }
+      .m-lift:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(23,24,26,.10); }
     }
 
   </style>
@@ -336,7 +336,7 @@
 
 <section id="tiers">
   <div class="tiers-inner">
-    <span class="section-label" style="color:rgba(250,248,242,0.55);">Listing Tiers</span>
+    <span class="section-label" style="color:rgba(244,245,242,0.55);">Listing Tiers</span>
     <h2 style="font-family:'Archivo',Georgia,serif;font-size:clamp(26px,3.5vw,40px);font-weight:300;letter-spacing:-0.02em;font-optical-sizing:auto;" class="reveal">Three tiers. One photographer on every <em style="font-style:italic;color:#B22A12;">listing.</em></h2>
     <div class="hero-pills" style="justify-content:flex-start;margin:14px 0 4px;"><span class="pill active">Published pricing — no surprise quotes</span></div>
     <div class="tiers-grid m-stagger">
@@ -357,10 +357,10 @@
       </div>
     </div>
     <p class="tiers-note">Add-ons: real twilight $150 and floor plan $75 (both included in Showcase &amp; Signature) · drone $125 (included in Signature) · 3D Zillow tour $100 · agent reel $150. Full details &amp; FAQ on the <a href="preferred-photographer.html">Preferred Photographer page</a>.</p>
-    <div style="margin-top:28px;border:1.5px solid rgba(250,248,242,0.3);padding:32px 36px;display:flex;flex-direction:column;gap:10px;max-width:720px;">
-      <span class="section-label" style="color:rgba(250,248,242,0.55);">The ECS Guarantee</span>
+    <div style="margin-top:28px;border:1.5px solid rgba(244,245,242,0.3);padding:32px 36px;display:flex;flex-direction:column;gap:10px;max-width:720px;">
+      <span class="section-label" style="color:rgba(244,245,242,0.55);">The ECS Guarantee</span>
       <p style="font-family:'Archivo',Georgia,serif;font-size:clamp(20px,2.4vw,28px);font-weight:300;letter-spacing:-.02em;color:var(--bone);">MLS-ready in 24 hours, or your next shoot is free.</p>
-      <p style="font-size:14px;line-height:1.7;color:rgba(250,248,242,0.7);">I&rsquo;ve never missed a delivery window &mdash; and I&rsquo;m staking the next shoot on it. Your edited, MLS-ready gallery lands within 24 hours of the shoot, no exceptions.</p>
+      <p style="font-size:14px;line-height:1.7;color:rgba(244,245,242,0.7);">I&rsquo;ve never missed a delivery window &mdash; and I&rsquo;m staking the next shoot on it. Your edited, MLS-ready gallery lands within 24 hours of the shoot, no exceptions.</p>
     </div>
   </div>
 </section>

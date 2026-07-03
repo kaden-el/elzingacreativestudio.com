@@ -176,6 +176,14 @@ h1 em, h2 em, h3 em, .section-title em, .hero-h1 em, .post-title em,
   font-weight: 400 !important;
 }
 
+/* Nav monogram on legacy pages — the ECS mark joins the display voice. */
+.logo-ecs, .footer-ecs {
+  font-family: var(--display) !important;
+  font-stretch: 125% !important;
+  font-weight: 900 !important;
+  letter-spacing: .03em !important;
+}
+
 /* ── 4. RETIRED CHROME (kept as inert classes so old markup can't break) ── */
 .ez-grain, .ez-progress, .ez-cursor { display: none !important; }
 

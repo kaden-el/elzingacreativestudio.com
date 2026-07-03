@@ -93,7 +93,7 @@
       --green-dk:  #8F2110;   /* cobalt hover-darken */
       --off-white: #EBEDE8;   /* warm sand — alt section bg */
       --gray:      #5A5E63;   /* muted */
-      --gray-lt:   #79746A;   /* lighter caption */
+      --gray-lt:   #75797E;   /* lighter caption */
       --border:    #E7E9E4;   /* hairline */
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -108,7 +108,7 @@
     .btn-black { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; background: var(--black); color: var(--white); font-family: 'Archivo', system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: .01em; text-decoration: none; border-radius: 2px; border: none; transition: background 0.2s; }
     .btn-black:hover { background: #333; }
 
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(244,245,242,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
     .logo-ecs { font-size: 20px; font-weight: 700; letter-spacing: 5px; color: var(--black); line-height: 1; font-family: 'Archivo', system-ui, sans-serif; }
@@ -121,7 +121,7 @@
 
     #hero { background: var(--black); min-height: 100vh; padding-top: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-left: 60px; padding-right: 60px; padding-bottom: 60px; }
     .hero-inner { max-width: 1100px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .hero-left h1 { font-family: 'Archivo', Georgia, serif; font-size: clamp(36px, 6vw, 72px); font-weight: 300; line-height: 1.0; letter-spacing: -0.025em; color: var(--white); margin-bottom: 24px; }
+    .hero-left h1 { font-family: 'Archivo', Georgia, serif; font-size: clamp(36px, 6vw, 56px); font-weight: 300; line-height: 1.0; letter-spacing: -0.025em; color: var(--white); margin-bottom: 24px; font-stretch:125%; font-weight:900; text-transform:uppercase; letter-spacing:-.01em; line-height:.92; }
     .hero-left h1 em { font-style: italic; color: var(--green); }
     .hero-left .hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 28px; font-family: 'Archivo', system-ui, sans-serif; }
     .hero-bullets { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
@@ -145,7 +145,7 @@
     .form-submit { width: 100%; padding: 16px 24px; background: var(--green); color: var(--bone); font-family: 'Archivo', system-ui, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: .01em; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s; }
     .form-submit:hover { background: var(--green-dk); }
     .form-disclaimer { margin-top: 16px; font-size: 11px; color: var(--gray-lt); text-align: center; line-height: 1.5; font-family: 'Archivo', system-ui, sans-serif; }
-    .form-success { display: none; padding: 24px; background: rgba(43,81,150,0.08); border: 1px solid var(--green); border-radius: 2px; color: var(--green); font-size: 14px; line-height: 1.6; font-family: 'Archivo', system-ui, sans-serif; }
+    .form-success { display: none; padding: 24px; background: rgba(178,42,18,0.08); border: 1px solid var(--green); border-radius: 2px; color: var(--green); font-size: 14px; line-height: 1.6; font-family: 'Archivo', system-ui, sans-serif; }
     .form-success.show { display: block; }
     .form-card.success-state .form-actual { display: none; }
     .form-card.success-state .form-success { display: block; }
