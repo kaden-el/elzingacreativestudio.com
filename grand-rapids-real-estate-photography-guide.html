@@ -50,26 +50,26 @@
   <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
   <link rel="stylesheet" href="css/brand.css">
   <style>
     :root {
-      --black:     #19150F;
+      --black:     #17181A;
       --white:     #FFFFFF;
-      --bone:      #F2EEE5;
-      --green:     #1E5C8B;
-      --green-dk:  #184B73;
-      --off-white: #F4F1E8;
-      --gray:      #4D4940;
+      --bone:      #F4F5F2;
+      --green:     #B22A12;
+      --green-dk:  #8F2110;
+      --off-white: #EBEDE8;
+      --gray:      #5A5E63;
       --gray-lt:   #79746A;
-      --border:    #ECE6D9;
-      --accent:    #1E5C8B;
+      --border:    #E7E9E4;
+      --accent:    #B22A12;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; line-height: 1.6; }
+    body { font-family: 'Archivo', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; line-height: 1.6; }
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: saturate(1.1) blur(8px); -webkit-backdrop-filter: saturate(1.1) blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
@@ -78,7 +78,7 @@
     .nav-desktop { display: flex; align-items: center; gap: 4px; }
     .nav-desktop a { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
     .nav-desktop a:hover { color: var(--green); }
-    .nav-book { background: var(--green) !important; color: var(--bone) !important; margin-left: 8px; padding: 10px 20px !important; border-radius: 44px !important; }
+    .nav-book { background: var(--green) !important; color: var(--bone) !important; margin-left: 8px; padding: 10px 20px !important; border-radius: 2px !important; }
     .nav-book:hover { background: var(--green-dk) !important; }
     .breadcrumb { font-size: 11px; color: var(--gray-lt); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
     .breadcrumb a { color: var(--green); text-decoration: none; }
@@ -87,12 +87,12 @@
     .hero-inner { max-width: 880px; margin: 0 auto; }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 12px;
-      color: var(--green); font-family: 'Spline Sans', system-ui, sans-serif;
+      color: var(--green); font-family: 'Archivo', system-ui, sans-serif;
       font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px;
     }
     .hero-eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--green); display: inline-block; }
     .hero-h1 {
-      font-family: 'Syne', Georgia, serif;
+      font-family: 'Archivo', Georgia, serif;
       font-size: clamp(36px, 6vw, 64px); font-weight: 300; line-height: 1.05; letter-spacing: -0.025em;
       color: var(--white); margin-bottom: 24px; font-optical-sizing: auto;
     }
@@ -103,7 +103,7 @@
 
     article.guide { max-width: 880px; margin: 0 auto; padding: 80px 60px; }
     article.guide h2 {
-      font-family: 'Syne', Georgia, serif;
+      font-family: 'Archivo', Georgia, serif;
       font-size: clamp(28px, 4vw, 44px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em;
       margin: 64px 0 20px; padding-top: 28px; border-top: 2px solid var(--green);
       font-optical-sizing: auto;
@@ -120,7 +120,7 @@
 
     .toc { background: var(--off-white); padding: 32px 36px; border-left: 4px solid var(--green); margin: 40px 0; border-radius: 0 8px 8px 0; }
     article.guide .toc h2 {
-      font-family: 'Spline Sans', system-ui, sans-serif;
+      font-family: 'Archivo', system-ui, sans-serif;
       font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
       color: var(--green); margin: 0 0 16px; padding-top: 0; border-top: none; line-height: 1.6;
     }
@@ -139,21 +139,21 @@
     .callout strong { color: var(--green-dk); }
 
     .cluster-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
-    .cluster-card { padding: 24px; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, transform 0.2s; display: block; background: var(--white); border-radius: 8px; }
+    .cluster-card { padding: 24px; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, transform 0.2s; display: block; background: var(--white); border-radius: 2px; }
     .cluster-card:hover { border-color: var(--green); transform: translateY(-2px); }
-    article.guide .cluster-card h3 { font-family: 'Spline Sans', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: var(--black); margin: 0 0 6px; letter-spacing: -0.2px; }
+    article.guide .cluster-card h3 { font-family: 'Archivo', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: var(--black); margin: 0 0 6px; letter-spacing: -0.2px; }
     .cluster-card p { font-size: 13px !important; color: var(--gray) !important; line-height: 1.6 !important; margin-bottom: 0 !important; }
 
     #cta-band { background: var(--green); padding: 80px 60px; text-align: center; }
     .cta-band .section-label { color: rgba(255,255,255,0.7); font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; display: inline-flex; align-items: center; gap: 12px; }
     .cta-band .section-label::before { content: ""; width: 26px; height: 2px; background: rgba(255,255,255,0.5); display: inline-block; }
     .cta-title {
-      font-family: 'Syne', Georgia, serif;
+      font-family: 'Archivo', Georgia, serif;
       font-size: clamp(28px, 4vw, 48px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em;
       color: var(--white); margin-bottom: 32px; font-optical-sizing: auto;
     }
     .cta-title em { font-style: italic; color: rgba(255,255,255,0.7); }
-    .btn-white { display: inline-flex; align-items: center; justify-content: center; padding: 15px 36px; border-radius: 44px; background: var(--white); color: var(--black); font-family: inherit; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; transition: background 0.2s; }
+    .btn-white { display: inline-flex; align-items: center; justify-content: center; padding: 15px 36px; border-radius: 2px; background: var(--white); color: var(--black); font-family: inherit; font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; transition: background 0.2s; }
     .btn-white:hover { background: var(--bone); }
 
     footer { background: var(--black); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -177,7 +177,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
+    :focus-visible{outline:2px solid #B22A12;outline-offset:3px}
   </style>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -186,7 +186,7 @@ fbq('init', '26293188720377993'); fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 /></noscript>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F4F5F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->

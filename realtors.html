@@ -63,7 +63,7 @@
   <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/brand.css">
   <style>
     /* ═══════════════════════════════════════════════════════════════════
@@ -73,10 +73,10 @@
        oversized Syne carrying hierarchy, flat (no shadows), single goal.
        ═══════════════════════════════════════════════════════════════════ */
     :root {
-      --paper:  #F2EEE5;   --ink: #19150F;   --accent: #1E5C8B;  --accent-dk: #184B73;
-      --soft:   #EAE4D7;   --muted: #6B655B;  --line: rgba(25,21,15,.12);
-      --display: 'Syne','Space Grotesk',system-ui,sans-serif;
-      --text: 'Spline Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+      --paper:  #F4F5F2;   --ink: #17181A;   --accent: #B22A12;  --accent-dk: #8F2110;
+      --soft:   #EBEDE8;   --muted: #6B655B;  --line: rgba(25,21,15,.12);
+      --display: 'Archivo','Archivo',system-ui,sans-serif;
+      --text: 'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
       /* 8pt spacing scale */
       --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px; --s9:128px;
       --ease: cubic-bezier(.2,.7,.2,1);
@@ -97,7 +97,7 @@
     .accent { color: var(--accent); }
 
     /* Buttons — cobalt is reserved for the primary action only. */
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 32px; font-family: var(--text); font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; border: none; border-radius: 46px; cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 32px; font-family: var(--text); font-size: 15px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; border: none; border-radius: 2px; cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease); }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-dk); }
     .btn-ghost { background: transparent; border: 1.5px solid var(--ink); color: var(--ink); }
@@ -115,7 +115,7 @@
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
     .logo-ecs { font-size: 19px; font-weight: 700; letter-spacing: 5px; color: var(--ink); line-height: 1; transition: color .3s; }
     .logo-full { font-size: 7.5px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); transition: color .3s; }
-    .nav-cta { font-size: 13px; font-weight: 600; letter-spacing: 0.01em; padding: 11px 22px; border-radius: 44px; text-decoration: none; background: var(--accent); color: #fff; transition: background .2s; }
+    .nav-cta { font-size: 13px; font-weight: 600; letter-spacing: 0.01em; padding: 11px 22px; border-radius: 2px; text-decoration: none; background: var(--accent); color: #fff; transition: background .2s; }
     .nav-cta:hover { background: var(--accent-dk); }
 
     /* ── HERO (full-bleed editorial, image carries the color) ─ */
@@ -146,7 +146,7 @@
     /* ── WORK (asymmetric editorial gallery) ────────────────── */
     #work .work-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-bottom: clamp(40px, 6vw, 72px); }
     .work-grid { display: grid; grid-template-columns: 1.55fr 1fr; grid-auto-rows: 1fr; gap: 14px; }
-    .work-grid figure { position: relative; overflow: hidden; border-radius: 4px; background: var(--soft); }
+    .work-grid figure { position: relative; overflow: hidden; border-radius: 2px; background: var(--soft); }
     .work-grid .big { grid-row: span 2; aspect-ratio: 4/5; }
     .work-grid .sm { aspect-ratio: 4/3; }
     .work-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
@@ -164,16 +164,16 @@
     .start-why { font-size: 0.95rem; line-height: 1.7; color: var(--muted); border-left: 2px solid var(--accent); padding-left: 18px; max-width: 44ch; }
     .start-why strong { color: var(--ink); }
 
-    .form-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: clamp(28px, 3.4vw, 44px); }
+    .form-card { background: var(--paper); border: 1px solid var(--line); border-radius: 2px; padding: clamp(28px, 3.4vw, 44px); }
     .form-kicker { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
     .form-title { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 2.4vw, 1.9rem); letter-spacing: -0.02em; margin: 8px 0 26px; line-height: 1.1; }
     .fld { margin-bottom: 20px; }
     .fld label { display: block; font-size: 13px; font-weight: 500; color: var(--muted); margin-bottom: 8px; }
     .fld label .opt { color: var(--muted); opacity: .7; font-weight: 400; }
-    .fld input, .fld select { width: 100%; height: 52px; padding: 0 16px; font-family: inherit; font-size: 16px; color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 10px; transition: border-color .18s, box-shadow .18s, background .18s; -webkit-appearance: none; appearance: none; }
+    .fld input, .fld select { width: 100%; height: 52px; padding: 0 16px; font-family: inherit; font-size: 16px; color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 2px; transition: border-color .18s, box-shadow .18s, background .18s; -webkit-appearance: none; appearance: none; }
     .fld select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B655B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
     .fld input:focus, .fld select:focus { outline: none; border-color: var(--accent); background: var(--paper); box-shadow: 0 0 0 3px rgba(30,92,139,.22); }
-    .fld input.bad, .fld select.bad { border-color: #B23A2E; box-shadow: 0 0 0 3px rgba(178,58,46,.16); }
+    .fld input.bad, .fld select.bad { border-color: #B22A12; box-shadow: 0 0 0 3px rgba(178,58,46,.16); }
     .fld-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     .form-submit { width: 100%; margin-top: 6px; }
@@ -202,7 +202,7 @@
     .price-head { margin-bottom: clamp(44px, 6vw, 72px); }
     .price-head .lede { margin-top: 18px; }
     .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .price-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: clamp(28px,3vw,40px) clamp(24px,2.6vw,34px); display: flex; flex-direction: column; }
+    .price-card { background: var(--paper); border: 1px solid var(--line); border-radius: 2px; padding: clamp(28px,3vw,40px) clamp(24px,2.6vw,34px); display: flex; flex-direction: column; }
     .price-card.feat { background: var(--ink); color: var(--paper); }
     .price-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); height: 16px; }
     .price-name { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 18px 0 14px; }
@@ -214,7 +214,7 @@
     .price-feats li { display: flex; gap: 11px; align-items: flex-start; font-size: 14px; line-height: 1.45; color: var(--muted); }
     .price-card.feat .price-feats li { color: rgba(242,238,229,.72); }
     .price-feats li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 7px; }
-    .price-btn { display: block; text-align: center; padding: 14px; font-size: 14px; font-weight: 600; border-radius: 44px; text-decoration: none; transition: background .2s, color .2s; }
+    .price-btn { display: block; text-align: center; padding: 14px; font-size: 14px; font-weight: 600; border-radius: 2px; text-decoration: none; transition: background .2s, color .2s; }
     .price-card:not(.feat) .price-btn { border: 1.5px solid var(--ink); color: var(--ink); }
     .price-card:not(.feat) .price-btn:hover { background: var(--ink); color: var(--paper); }
     .price-card.feat .price-btn { background: var(--accent); color: #fff; }
@@ -306,7 +306,7 @@
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','26293188720377993');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#19150F">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#17181A">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
