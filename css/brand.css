@@ -93,26 +93,25 @@ html.ez-motion .ez-keep.in > svg.ez-keep-svg path {
   transition: stroke-dashoffset .7s var(--ease) .15s;
 }
 
-/* 3b. CULL STRIKE — red X + dimmed frame for what didn't survive. */
+/* 3b. THE CULL — culled frames dim to gray; nothing is ever drawn over a
+   photograph. With motion, frames start full color and dim when .in lands
+   (stagger per-frame with transition-delay) — the cull happens live. */
 .ez-cull { position: relative; display: block; }
-.ez-cull img { filter: grayscale(.6) brightness(.72) contrast(.95); }
-.ez-cull > svg.ez-cull-svg {
-  position: absolute; inset: 6% 8%; width: 84%; height: 88%;
-  overflow: visible; pointer-events: none;
+.ez-cull img { filter: grayscale(.7) brightness(.68) contrast(.95); }
+html.ez-motion .ez-cull img { transition: filter .9s var(--ease); }
+html.ez-motion .ez-cull:not(.in) img { filter: none; }
+
+/* The pick — the frame that survives. A red selection outline (Lightroom
+   pick flag), never a mark across the image. Wrap the img:
+   <span class="ez-pick" data-reveal><img …></span> */
+.ez-pick { position: relative; display: block; }
+.ez-pick::after {
+  content: ""; position: absolute; inset: 0;
+  border: 2.5px solid var(--mark);
+  pointer-events: none;
 }
-.ez-cull > svg.ez-cull-svg path {
-  fill: none; stroke: var(--mark);
-  stroke-width: 3; stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
-  stroke-dasharray: 100 100; stroke-dashoffset: 0;
-  opacity: .92;
-}
-html.ez-motion .ez-cull:not(.in) > svg.ez-cull-svg path { stroke-dashoffset: 100; }
-html.ez-motion .ez-cull.in > svg.ez-cull-svg path {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset .45s var(--ease);
-}
-html.ez-motion .ez-cull.in > svg.ez-cull-svg path:nth-child(2) { transition-delay: .18s; }
+html.ez-motion [data-reveal].ez-pick::after { opacity: 0; transition: opacity .6s var(--ease); }
+html.ez-motion [data-reveal].ez-pick.in::after { opacity: 1; }
 
 /* 3c. FRAME PLATE — mono caption strip under photos. Real filenames only. */
 .ez-plate {
@@ -125,17 +124,40 @@ html.ez-motion .ez-cull.in > svg.ez-cull-svg path:nth-child(2) { transition-dela
   color: var(--silver-carbon); border-top-color: var(--line-carbon);
 }
 
-/* 3d. SHEET LABEL — sections are sheets of the studio's contact book. */
+/* 3d. SHEET LABEL — sections are sheets of the studio's contact book.
+   With motion + [data-reveal], the rule under the label wipes in from the
+   left as the sheet enters view. */
 .ez-sheet {
   display: flex; align-items: baseline; gap: 14px;
   font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
   text-transform: uppercase; color: var(--silver);
   padding-bottom: 12px; border-bottom: 1px solid var(--line);
   margin-bottom: 34px;
+  position: relative;
 }
 .ez-sheet .idx { color: var(--ink); }
+.ez-sheet::after {
+  content: ""; position: absolute; left: 0; bottom: -1px;
+  width: 64px; height: 1px; background: var(--ink);
+}
 .ez-on-carbon .ez-sheet { color: var(--silver-carbon); border-bottom-color: var(--line-carbon); }
 .ez-on-carbon .ez-sheet .idx { color: var(--paper); }
+.ez-on-carbon .ez-sheet::after { background: var(--paper); }
+html.ez-motion .ez-sheet[data-reveal]::after {
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 1s var(--ease) .2s;
+}
+html.ez-motion .ez-sheet[data-reveal].in::after { transform: scaleX(1); }
+
+/* 3d². DEVELOP — photos come up like a print in the developer tray: washed
+   and soft, then settling into full contrast. Add .ez-develop to an img
+   inside any observed ([data-reveal]/[data-reveal-stagger]) container. */
+html.ez-motion .ez-develop {
+  filter: brightness(1.25) contrast(.82) saturate(.55);
+  transition: filter 1.2s var(--ease) .1s;
+}
+html.ez-motion .in .ez-develop,
+html.ez-motion .in.ez-develop { filter: none; }
 
 /* 3e. CONTACT STRIP — full-bleed carbon band of frames with plates. */
 .ez-strip {
@@ -306,6 +328,9 @@ html.ez-motion [data-reveal-stagger].in > :nth-child(6){ transition-delay:.30s }
 @keyframes ezWipe  { from{ transform:scaleX(0) } to{ transform:scaleX(1) } }
 @keyframes ezPulse { 0%,100%{ transform:scale(1); opacity:1 } 50%{ transform:scale(1.55); opacity:.45 } }
 @keyframes ezToast { from{ opacity:0; transform:translate(-50%,16px) } to{ opacity:1; transform:translate(-50%,0) } }
+/* Seamless index-strip marquee: the .track holds TWO identical lanes and
+   translates by exactly one lane (-50%). Motion-gated at the use site. */
+@keyframes ezMarquee { from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
 
 /* ── 9. STATUS DOT (top bars) ───────────────────────────────────────────── */
 .ez-pulse-dot {
@@ -324,8 +349,10 @@ html.ez-motion [data-reveal-stagger].in > :nth-child(6){ transition-delay:.30s }
   }
   html.ez-motion [data-reveal],
   html.ez-motion [data-reveal-stagger] > * { opacity: 1 !important; transform: none !important; }
-  html.ez-motion .ez-keep > svg.ez-keep-svg path,
-  html.ez-motion .ez-cull > svg.ez-cull-svg path { stroke-dashoffset: 0 !important; }
+  html.ez-motion .ez-keep > svg.ez-keep-svg path { stroke-dashoffset: 0 !important; }
+  html.ez-motion .ez-cull img { filter: grayscale(.7) brightness(.68) contrast(.95) !important; }
+  html.ez-motion .ez-develop { filter: none !important; }
+  html.ez-motion .ez-pick::after { opacity: 1 !important; }
 }
 
 /* ── 11. RESPONSIVE ─────────────────────────────────────────────────────── */

@@ -29,12 +29,10 @@
   var SVG_NS = 'http://www.w3.org/2000/svg';
 
   /* Rough grease-pencil ellipse: a full pass that overshoots into a second
-     partial pass — the way a real china marker circles a keeper. */
+     partial pass — the way a real china marker circles a keeper.
+     TEXT ONLY — never draw marks over photographs (the work stays clean). */
   var KEEP_D = 'M12,24 C10,11 33,4 54,4 C78,4 96,9 95,21 C94,34 72,40 48,39 ' +
                'C25,38 9,33 10,22 C11,11 31,5 52,6 C69,7 83,9 91,13';
-  /* Two rough strokes for the cull X. */
-  var CULL_D1 = 'M8,10 C30,26 62,58 92,88';
-  var CULL_D2 = 'M90,12 C64,34 34,62 10,90';
 
   function makeSvg(cls, viewBox, paths) {
     var svg = document.createElementNS(SVG_NS, 'svg');
@@ -55,19 +53,24 @@
     var root = document.documentElement;
     if (!reduced) root.classList.add('ez-motion');
 
-    /* 3. Marking layer — inject SVGs (idempotent). */
+    /* 3. Marking layer — inject keeper SVGs (idempotent, text only).
+       .ez-cull gets NO overlay: culled frames dim via CSS when .in lands. */
     document.querySelectorAll('.ez-keep').forEach(function (el) {
+      if (el.querySelector('img, picture')) {       /* guard: never circle a photo */
+        el.classList.remove('ez-keep');
+        var old = el.querySelector('.ez-keep-svg');
+        if (old) old.remove();
+        return;
+      }
       if (!el.querySelector('.ez-keep-svg')) {
         el.appendChild(makeSvg('ez-keep-svg', '0 0 104 44', [KEEP_D]));
       }
     });
-    document.querySelectorAll('.ez-cull').forEach(function (el) {
-      if (!el.querySelector('.ez-cull-svg')) {
-        el.appendChild(makeSvg('ez-cull-svg', '0 0 100 100', [CULL_D1, CULL_D2]));
-      }
+    document.querySelectorAll('.ez-cull .ez-cull-svg').forEach(function (svg) {
+      svg.remove();  /* strip any legacy strike overlays */
     });
 
-    /* 2+3. One observer marks reveals and draws marks when they enter view. */
+    /* 2+3. One observer marks reveals and dims/draws when they enter view. */
     var targets = document.querySelectorAll(
       '[data-reveal], [data-reveal-stagger], .ez-keep, .ez-cull');
 

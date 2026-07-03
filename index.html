@@ -299,29 +299,37 @@
     .e3-cullrow .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
     .e3-cullrow figure { margin: 0; }
     .e3-cullrow img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-    .e3-cullrow .ez-keep { display: block; white-space: normal; }
-    .e3-cullrow .ez-keep > svg.ez-keep-svg { inset: -6px -10px -8px -10px; width: calc(100% + 20px); height: calc(100% + 14px); }
-    .e3-cullrow .ez-plate { font-size: 10px; }
+    .e3-cullrow .ez-plate { font-size: 10px; transition: color .5s var(--ease), border-top-color .5s var(--ease); }
     .e3-cullrow .kept .ez-plate { color: var(--mark); border-top-color: var(--mark); }
-    /* the cull runs left→right, the keeper circles last */
-    html.ez-motion .e3-cullrow figure:nth-child(1) .ez-cull-svg path { transition-delay: .25s; }
-    html.ez-motion .e3-cullrow figure:nth-child(1) .ez-cull-svg path:nth-child(2) { transition-delay: .4s; }
-    html.ez-motion .e3-cullrow figure:nth-child(2) .ez-cull-svg path { transition-delay: .55s; }
-    html.ez-motion .e3-cullrow figure:nth-child(2) .ez-cull-svg path:nth-child(2) { transition-delay: .7s; }
-    html.ez-motion .e3-cullrow figure:nth-child(4) .ez-cull-svg path { transition-delay: .85s; }
-    html.ez-motion .e3-cullrow figure:nth-child(4) .ez-cull-svg path:nth-child(2) { transition-delay: 1s; }
-    html.ez-motion .e3-cullrow figure:nth-child(5) .ez-cull-svg path { transition-delay: 1.15s; }
-    html.ez-motion .e3-cullrow figure:nth-child(5) .ez-cull-svg path:nth-child(2) { transition-delay: 1.3s; }
-    html.ez-motion .e3-cullrow .ez-keep.in > svg.ez-keep-svg path { transition-delay: 1.55s; }
-    html.ez-motion .e3-hero .e3-display .ez-keep.in > svg.ez-keep-svg path { transition-delay: .5s; }
 
-    /* ── Ticker ── */
+    /* ── The opening sequence ──
+       Text rises in, the strip arrives full color, then the cull runs
+       left→right (frames dim one by one) and the pick outline lands last.
+       No marks are ever drawn over the photographs. */
+    html.ez-motion .e3-hero .e3-topline { animation: ezRise .7s var(--ease) .05s both; }
+    html.ez-motion .e3-hero h1          { animation: ezRise .7s var(--ease) .16s both; }
+    html.ez-motion .e3-hero .e3-display { animation: ezRise .8s var(--ease) .3s both; }
+    html.ez-motion .e3-hero .e3-sub     { animation: ezRise .7s var(--ease) .48s both; }
+    html.ez-motion .e3-hero .e3-ctas    { animation: ezRise .7s var(--ease) .6s both; }
+    html.ez-motion .e3-hero .e3-phone   { animation: ezRise .7s var(--ease) .7s both; }
+    html.ez-motion .e3-cullrow          { animation: ezRise .9s var(--ease) .82s both; }
+    html.ez-motion .e3-hero .e3-display .ez-keep.in > svg.ez-keep-svg path { transition-delay: 1.05s; }
+    html.ez-motion .e3-cullrow figure:nth-child(1) .ez-cull img { transition-delay: 1.5s; }
+    html.ez-motion .e3-cullrow figure:nth-child(2) .ez-cull img { transition-delay: 1.8s; }
+    html.ez-motion .e3-cullrow figure:nth-child(4) .ez-cull img { transition-delay: 2.1s; }
+    html.ez-motion .e3-cullrow figure:nth-child(5) .ez-cull img { transition-delay: 2.4s; }
+    html.ez-motion .e3-cullrow .ez-pick::after { transition-delay: 2.85s; }
+
+    /* ── Ticker → slow index marquee (two identical lanes, seamless) ── */
     .e3-ticker {
       background: var(--carbon); border-top: 1px solid var(--line-carbon);
       padding: 15px 0; overflow: hidden; white-space: nowrap;
       font-family: var(--mono); font-size: 11px; letter-spacing: .22em;
-      text-transform: uppercase; color: var(--silver-carbon); text-align: center;
+      text-transform: uppercase; color: var(--silver-carbon);
     }
+    .e3-ticker .track { display: inline-flex; }
+    .e3-ticker .lane { display: inline-block; }
+    html.ez-motion .e3-ticker .track { animation: ezMarquee 48s linear infinite; will-change: transform; }
     .e3-ticker .star { color: var(--mark); padding: 0 14px; }
 
     /* ── Services ── */
@@ -344,10 +352,11 @@
     .e3-pf-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
     .e3-pf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-top: 40px; }
     .pg-item { position: relative; cursor: pointer; margin: 0; }
-    .pg-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: opacity .25s var(--ease); }
-    .pg-item:hover img, .pg-item:focus-visible img { opacity: .82; }
+    .pg-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: filter .45s var(--ease); }
+    .pg-item:hover img, .pg-item:focus-visible img { filter: brightness(1.08) saturate(1.06); }
     .pg-item .ez-plate { display: flex; justify-content: space-between; gap: 8px; }
-    .pg-item .ez-plate .cat { color: var(--paper); }
+    .pg-item .ez-plate .cat { color: var(--paper); transition: color .3s var(--ease); }
+    .pg-item:hover .ez-plate .cat, .pg-item:focus-visible .ez-plate .cat { color: var(--mark); }
     .e3-btn-outline-light {
       display: inline-flex; align-items: center; justify-content: center;
       padding: 14px 26px; background: transparent; color: var(--paper);
@@ -659,7 +668,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
         <figcaption class="ez-plate">CHAVAUN-KITCHEN · CULLED</figcaption>
       </figure>
       <figure class="kept">
-        <span class="ez-keep"><img src="images/web/chavaun-golden-hour-front-1600.jpg" alt="Golden hour front exterior real estate photography, Grand Rapids Michigan" width="800" height="600" fetchpriority="high"></span>
+        <span class="ez-pick" data-reveal><img src="images/web/chavaun-golden-hour-front-1600.jpg" alt="Golden hour front exterior real estate photography, Grand Rapids Michigan" width="800" height="600" fetchpriority="high"></span>
         <figcaption class="ez-plate">CHAVAUN-GOLDEN-HOUR · KEPT</figcaption>
       </figure>
       <figure>
@@ -675,7 +684,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 </section>
 
 <div class="e3-ticker" aria-hidden="true">
-  24-hour delivery<span class="star">●</span>Real twilight<span class="star">●</span>Part 107 drone<span class="star">●</span>HDR interiors<span class="star">●</span>3D tours<span class="star">●</span>Seniors<span class="star">●</span>Weddings<span class="star">●</span>Commercial<span class="star">●</span>Grand Rapids, MI
+  <div class="track">
+    <span class="lane">24-hour delivery<span class="star">●</span>Real twilight<span class="star">●</span>Part 107 drone<span class="star">●</span>HDR interiors<span class="star">●</span>3D tours<span class="star">●</span>Seniors<span class="star">●</span>Weddings<span class="star">●</span>Commercial<span class="star">●</span>Grand Rapids, MI<span class="star">●</span></span>
+    <span class="lane">24-hour delivery<span class="star">●</span>Real twilight<span class="star">●</span>Part 107 drone<span class="star">●</span>HDR interiors<span class="star">●</span>3D tours<span class="star">●</span>Seniors<span class="star">●</span>Weddings<span class="star">●</span>Commercial<span class="star">●</span>Grand Rapids, MI<span class="star">●</span></span>
+  </div>
 </div>
 
 
@@ -724,27 +736,27 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </div>
     <div class="e3-pf-grid" data-reveal-stagger>
       <figure class="pg-item" onclick="openLightbox('Weddings')" tabindex="0" role="button" aria-label="View Weddings gallery">
-        <img src="images/_DSC1170.avif" alt="Wedding photography in Grand Rapids Michigan" width="800" height="600" loading="lazy">
+        <img class="ez-develop" src="images/_DSC1170.avif" alt="Wedding photography in Grand Rapids Michigan" width="800" height="600" loading="lazy">
         <figcaption class="ez-plate"><span>_DSC1170</span><span class="cat">Weddings</span></figcaption>
       </figure>
       <figure class="pg-item" onclick="openLightbox('Seniors')" tabindex="0" role="button" aria-label="View Seniors gallery">
-        <img src="images/DSC02295.avif" alt="Senior portrait photography in West Michigan" width="800" height="600" loading="lazy">
+        <img class="ez-develop" src="images/DSC02295.avif" alt="Senior portrait photography in West Michigan" width="800" height="600" loading="lazy">
         <figcaption class="ez-plate"><span>DSC02295</span><span class="cat">Seniors</span></figcaption>
       </figure>
       <figure class="pg-item" onclick="openLightbox('Sports')" tabindex="0" role="button" aria-label="View Sports gallery">
-        <img src="images/DSC07049.avif" alt="Sports action photography - Grand Rapids Griffins hockey" width="800" height="600" loading="lazy">
+        <img class="ez-develop" src="images/DSC07049.avif" alt="Sports action photography - Grand Rapids Griffins hockey" width="800" height="600" loading="lazy">
         <figcaption class="ez-plate"><span>DSC07049</span><span class="cat">Sports</span></figcaption>
       </figure>
       <figure class="pg-item" onclick="openLightbox('Family')" tabindex="0" role="button" aria-label="View Family gallery">
-        <picture><source srcset="images/web/DSC01597-1600.avif" type="image/avif"><img src="images/web/DSC01597-1600.jpg" alt="Family photography sessions in Grand Rapids Michigan" width="800" height="600" loading="lazy"></picture>
+        <picture><source srcset="images/web/DSC01597-1600.avif" type="image/avif"><img class="ez-develop" src="images/web/DSC01597-1600.jpg" alt="Family photography sessions in Grand Rapids Michigan" width="800" height="600" loading="lazy"></picture>
         <figcaption class="ez-plate"><span>DSC01597</span><span class="cat">Family</span></figcaption>
       </figure>
       <figure class="pg-item" onclick="openLightbox('Portraits')" tabindex="0" role="button" aria-label="View Portraits gallery">
-        <picture><source srcset="images/web/DSC08625-1600.avif" type="image/avif"><img src="images/web/DSC08625-1600.jpg" alt="Portrait photography by Elzinga Creative Studio" width="800" height="600" loading="lazy"></picture>
+        <picture><source srcset="images/web/DSC08625-1600.avif" type="image/avif"><img class="ez-develop" src="images/web/DSC08625-1600.jpg" alt="Portrait photography by Elzinga Creative Studio" width="800" height="600" loading="lazy"></picture>
         <figcaption class="ez-plate"><span>DSC08625</span><span class="cat">Portraits</span></figcaption>
       </figure>
       <figure class="pg-item" onclick="openLightbox('Real Estate')" tabindex="0" role="button" aria-label="View Real Estate gallery">
-        <img src="images/web/DSC08468-HDR-1600.jpg" alt="Real estate photography Grand Rapids - HDR listing photos" width="800" height="600" loading="lazy">
+        <img class="ez-develop" src="images/web/DSC08468-HDR-1600.jpg" alt="Real estate photography Grand Rapids - HDR listing photos" width="800" height="600" loading="lazy">
         <figcaption class="ez-plate"><span>DSC08468-HDR</span><span class="cat">Real Estate</span></figcaption>
       </figure>
     </div>
@@ -1116,7 +1128,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <!-- ═══════ FOOTER ═══════ -->
 <footer>
   <div class="e3-wrap">
-    <p class="e3-foot-mark">Elzinga<span class="dot">.</span></p>
+    <p class="e3-foot-mark" data-reveal>Elzinga<span class="dot">.</span></p>
     <p class="e3-foot-tag">Photography · Video · Marketing — Grand Rapids, Michigan</p>
     <div class="e3-foot-row">
       <div class="footer-social">

@@ -50,17 +50,23 @@ python3 scripts/apply-brand.py index.html # specific page(s)
 - Loaded once via `@import` in brand.css + per-page `<link>` for first paint.
 
 ## Signature devices
-1. **Keeper mark** `.ez-keep` — rough red SVG ellipse around the chosen thing (headline keyword, recommended tier, surviving frame). Draws on scroll; static under reduced-motion. Never perfect/geometric — it's a grease pencil, not a border-radius.
-2. **Cull strike** `.ez-cull` — red X strike + dimmed frame for rejects and "not this" content.
-3. **Frame plate** `.ez-plate` — mono strip under photos: `DSC07048 · GRAND RAPIDS MI`. Use real filenames.
-4. **Sheet label** `.ez-sheet` — mono section header `SHEET 02 / PRICING` over a hairline. Sections are sheets of the studio's contact book.
-5. **Contact strip** `.ez-strip` — full-bleed carbon band of frames with plates.
+**Iron rule: nothing is ever drawn over a photograph.** Marks live on text and around frames; the work stays clean.
+1. **Keeper mark** `.ez-keep` — rough red SVG ellipse around the chosen thing — **TEXT ONLY** (headline keyword, recommended tier name). Draws on scroll; static under reduced-motion. brand.js strips the class if it finds an img inside. Never perfect/geometric — it's a grease pencil, not a border-radius.
+2. **The cull** `.ez-cull` — culled frames dim to gray (no overlay). With motion they start full color and dim when `.in` lands — stagger with `transition-delay` per frame.
+3. **The pick** `.ez-pick` — red selection outline *around* the surviving frame (Lightroom pick flag): `<span class="ez-pick" data-reveal><img …></span>`.
+4. **Frame plate** `.ez-plate` — mono strip under photos: `DSC07048 · GRAND RAPIDS MI`. Use real filenames.
+5. **Sheet label** `.ez-sheet` — mono section header `SHEET 02 / PRICING` over a hairline; with `[data-reveal]` the ink rule under it wipes in from the left.
+6. **Contact strip** `.ez-strip` — full-bleed carbon band of frames with plates.
 
-## Motion (one moment, everything else quiet)
+## Motion (orchestrated, never scattered — all gated)
 - Reveal: `[data-reveal]` fade+rise, **.5s**, 12px, `cubic-bezier(.2,.7,.2,1)`; `[data-reveal-stagger]` 60ms steps.
-- Keeper draw-on: stroke-dashoffset, .7s, when in view.
-- The orchestrated hero cull (frames dim → strikes land → keeper circles) lives ONLY on index.html, page-local.
-- **Killed forever:** grain, dot cursor, progress bar, marquee, scramble, tilt, spotlight, magnet, shimmer.
+- Keeper draw-on: stroke-dashoffset, .7s, when in view (text only).
+- **Develop** `.ez-develop` — photos come up like a print in the developer tray (washed → full contrast, 1.2s) inside any observed container.
+- **Sheet-rule wipe** — the ink segment under `.ez-sheet[data-reveal]` scales in from the left.
+- **Index marquee** — `.track` with two identical lanes + `ezMarquee` (translateX −50%, ~48s linear); motion-gated, static single line otherwise.
+- **The opening sequence** (index.html only, page-local): hero text rises in staggered → keeper circles the headline word → the strip arrives full color → the cull runs left→right (frames dim one by one) → the pick outline lands on the survivor.
+- Hover micro: portfolio frames brighten slightly; plate category flips to `--mark`.
+- **Killed forever:** grain, dot cursor, progress bar, scramble, tilt, spotlight, magnet, shimmer, marks drawn over photos.
 - ALWAYS honor `prefers-reduced-motion` (static end states) + `(pointer:fine)`.
 
 ## Layout
