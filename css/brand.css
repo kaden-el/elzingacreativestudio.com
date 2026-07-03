@@ -95,7 +95,7 @@ html.ez-motion .ez-keep.in > svg.ez-keep-svg path {
 
 /* 3b. CULL STRIKE — red X + dimmed frame for what didn't survive. */
 .ez-cull { position: relative; display: block; }
-.ez-cull img { filter: grayscale(.9) brightness(.5) contrast(.9); }
+.ez-cull img { filter: grayscale(.6) brightness(.72) contrast(.95); }
 .ez-cull > svg.ez-cull-svg {
   position: absolute; inset: 6% 8%; width: 84%; height: 88%;
   overflow: visible; pointer-events: none;

@@ -30,8 +30,8 @@
 
   /* Rough grease-pencil ellipse: a full pass that overshoots into a second
      partial pass — the way a real china marker circles a keeper. */
-  var KEEP_D = 'M14,26 C12,12 34,5 52,5 C74,5 94,10 93,22 C92,34 70,39 48,38 ' +
-               'C26,37 10,33 12,23 C14,11 30,6 47,6';
+  var KEEP_D = 'M12,24 C10,11 33,4 54,4 C78,4 96,9 95,21 C94,34 72,40 48,39 ' +
+               'C25,38 9,33 10,22 C11,11 31,5 52,6 C69,7 83,9 91,13';
   /* Two rough strokes for the cull X. */
   var CULL_D1 = 'M8,10 C30,26 62,58 92,88';
   var CULL_D2 = 'M90,12 C64,34 34,62 10,90';
