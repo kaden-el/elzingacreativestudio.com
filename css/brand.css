@@ -1,254 +1,320 @@
 /* ==========================================================================
-   ELZINGA. — Brand Identity System · Edition 02 (MMXXVI)
+   ELZINGA — Brand Identity System · Edition 03 "PROOF." (MMXXVI)
    Single source of truth for the site's look. Linked by EVERY page.
-   Source design: Claude Design "Elzinga Brand Guide" handoff (warm editorial).
 
    ── HOW TO RE-SKIN THE WHOLE SITE (the pipeline) ─────────────────────────
-   A new Claude Design brand drop applies to all 77 pages by editing this ONE
-   file plus js/brand.js. The per-page wiring (font link, palette hexes, the
-   accent dot, the brand.css/brand.js includes) is done by scripts/apply-brand.py
-   — re-run it after editing tokens here and every page inherits the change.
-   See DESIGN.md › "Edition 02 pipeline".
+   The brand lives in this file + js/brand.js. Per-page wiring (font link,
+   palette hexes, includes) is done by scripts/apply-brand.py — re-run it
+   after editing tokens here and every page inherits the change. DESIGN.md.
 
-   Feel: warm editorial — bone paper, one cobalt accent, a geometric display
-   face (Syne), and the recurring "dot" (the period after Elzinga.) as the
-   signature device. Restraint over decoration. "We don't decorate. We decide."
+   Feel: the studio's proof room. Cool print-paper white, photographic
+   carbon strips where the photos live, ONE china-marker red used only to
+   mark decisions (keeper circles, cull strikes, CTAs), Archivo Expanded
+   display, Fragment Mono metadata. Signature device: THE KEEPER MARK —
+   the hand-drawn red circle around what survives the cull.
    ========================================================================== */
 
-/* Fonts live here so a font change is a ONE-LINE edit that flows site-wide.
-   (Pages also carry a <link> for the same families for first-paint speed;
-   identical URLs are de-duped by the browser.) */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap');
+/* Fonts live here so a font change is a ONE-LINE edit that flows site-wide. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Fragment+Mono:ital@0;1&display=swap');
 
 /* ── 1. TOKENS ──────────────────────────────────────────────────────────── */
 :root {
-  /* Edition 02 palette (authoritative hexes from the brand guide). */
-  --paper:   #F2EEE5;            /* Bone — page surface, everywhere          */
-  --ink:     #19150F;            /* Ink — text + dark sections               */
-  --accent:  #1E5C8B;            /* Cobalt — the ONE pop, and the "dot"      */
-  --accent-dk: #184B73;          /* cobalt hover-darken (derived)            */
-  --soft:    #EAE4D7;            /* secondary surface                        */
-  --clay:    #C9B79C;            /* support                                  */
-  --slate:   #44504D;            /* support                                  */
-  --line:    rgba(25,21,15,.14); /* 1px rules / hairline borders             */
-  --muted:   #4D4940;            /* sub-copy / captions                      */
-  --error:   #B23A2E;            /* misuse ✕ / "Not" tags — warnings only    */
+  /* Edition 03 palette — "the proof room". */
+  --paper:    #F4F5F2;             /* cool print-paper — light sections      */
+  --ink:      #17181A;             /* text on paper                          */
+  --carbon:   #141517;             /* photographic black — lightbox strips   */
+  --carbon-2: #1E2023;             /* raised surface on carbon               */
+  --mark:     #D93A1F;             /* china-marker red — decisions only      */
+  --mark-deep:#B22A12;             /* small-text links / hover (AA on paper) */
+  --silver:   #75797E;             /* metadata gray on paper                 */
+  --silver-carbon: #9BA0A6;        /* metadata gray on carbon                */
+  --line:     rgba(20,21,23,.16);  /* hairlines on paper                     */
+  --line-carbon: rgba(255,255,255,.14);
+  --soft:     #EBEDE8;             /* secondary surface on paper             */
+  --muted:    #5A5E63;             /* sub-copy / captions                    */
+  --error:    #B22A12;             /* form errors (same family as the mark)  */
 
-  /* Back-compat aliases — legacy markup across the site still references
-     these names; they now resolve to the Edition 02 values so old pages
-     re-skin with zero markup changes. */
-  --bone:      #F2EEE5;
-  --cobalt:    #1E5C8B;
-  --cobalt-dk: #184B73;
-  --green:     #1E5C8B;          /* legacy alias for the accent */
-  --green-dk:  #184B73;
-  --sky:       #A9C0D8;
-  --stone:     #C9C0AE;
+  /* Back-compat aliases — legacy markup still references these names; they
+     resolve to Edition 03 values so old pages re-skin with zero edits. */
+  --accent:    #B22A12;            /* accent used as text/link inline → AA   */
+  --accent-dk: #8F2110;
+  --bone:      #F4F5F2;
+  --cobalt:    #B22A12;
+  --cobalt-dk: #8F2110;
+  --green:     #B22A12;
+  --green-dk:  #8F2110;
+  --sky:       #C6CBD1;
+  --stone:     #B9BDB4;
+  --clay:      #A7ACA3;
+  --slate:     #3E4348;
 
   /* Type families — the only place fonts are named. */
-  --display:      'Syne', 'Space Grotesk', system-ui, sans-serif;
-  --text:         'Spline Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --display: 'Archivo', system-ui, -apple-system, sans-serif;
+  --text:    'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:    'Fragment Mono', 'SFMono-Regular', Menlo, monospace;
   --font-display: var(--display);  /* legacy alias */
   --font-body:    var(--text);     /* legacy alias */
 
   /* Rhythm + motion. */
-  --radius-media: 14px;
-  --radius-pill:  44px;
-  --grain-opacity: .28;   /* subtle film — warms the bone canvas without muddying photos */
-  --ease:  cubic-bezier(.2,.7,.2,1);  /* the brand easing — used everywhere */
+  --radius-media: 2px;             /* prints aren't rounded                  */
+  --radius-pill:  2px;             /* legacy alias — pills are now rects     */
+  --grain-opacity: 0;              /* grain retired in Edition 03            */
+  --ease: cubic-bezier(.2,.7,.2,1);
 }
 
 /* ── 2. SELECTION + FOCUS ───────────────────────────────────────────────── */
-::selection { background: var(--accent); color: #fff; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--mark); color: #fff; }
+:focus-visible { outline: 2px solid var(--mark-deep); outline-offset: 3px; }
 
-/* ── 3. THE DOT (signature device) ──────────────────────────────────────── */
-/* Plain accent period — use right after the "Elzinga" wordmark anywhere. */
-.ez-dot-accent { color: var(--accent); }
+/* ── 3. THE MARKING LAYER (signature devices) ───────────────────────────── */
+/* Red period after "Elzinga" in legacy wordmarks — reads as a proof mark. */
+.ez-dot-accent { color: var(--mark); }
+/* Legacy shimmer dot → static mark (shimmer retired). */
+.ez-dot { color: var(--mark); }
 
-/* Shimmering accent dot — a light-sweep clipped to the glyph. Use on hero /
-   footer wordmarks for the living "dot". */
-.ez-dot {
-  color: var(--accent);
-  background: linear-gradient(105deg,
-    var(--accent) 30%,
-    color-mix(in srgb, var(--accent) 35%, #fff) 50%,
-    var(--accent) 70%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: ezShimmer 4.5s linear infinite;
+/* 3a. KEEPER MARK — hand-drawn red ellipse around the chosen thing.
+   Write <span class="ez-keep">word</span>; js/brand.js injects the SVG and
+   an IntersectionObserver adds .in to draw it. Without JS it renders drawn. */
+.ez-keep { position: relative; display: inline-block; white-space: nowrap; }
+.ez-keep > svg.ez-keep-svg {
+  position: absolute; inset: -.28em -.42em -.34em -.42em;
+  width: calc(100% + .84em); height: calc(100% + .62em);
+  overflow: visible; pointer-events: none;
+}
+.ez-keep > svg.ez-keep-svg path {
+  fill: none; stroke: var(--mark);
+  stroke-width: 2.6; stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 100 100; stroke-dashoffset: 0;  /* JS-off: drawn */
+}
+html.ez-motion .ez-keep:not(.in) > svg.ez-keep-svg path { stroke-dashoffset: 100; }
+html.ez-motion .ez-keep.in > svg.ez-keep-svg path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .7s var(--ease) .15s;
 }
 
-/* ── 4. FIXED CHROME (injected by js/brand.js on every page) ────────────── */
-/* Grain overlay — fixed fractal-noise texture, multiply blend. */
-.ez-grain {
-  position: fixed; inset: 0;
-  pointer-events: none;
-  z-index: 9990;
-  mix-blend-mode: multiply;
-  opacity: var(--grain-opacity);
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.55%22/></svg>');
+/* 3b. CULL STRIKE — red X + dimmed frame for what didn't survive. */
+.ez-cull { position: relative; display: block; }
+.ez-cull img { filter: grayscale(.6) brightness(.72) contrast(.95); }
+.ez-cull > svg.ez-cull-svg {
+  position: absolute; inset: 6% 8%; width: 84%; height: 88%;
+  overflow: visible; pointer-events: none;
+}
+.ez-cull > svg.ez-cull-svg path {
+  fill: none; stroke: var(--mark);
+  stroke-width: 3; stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 100 100; stroke-dashoffset: 0;
+  opacity: .92;
+}
+html.ez-motion .ez-cull:not(.in) > svg.ez-cull-svg path { stroke-dashoffset: 100; }
+html.ez-motion .ez-cull.in > svg.ez-cull-svg path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .45s var(--ease);
+}
+html.ez-motion .ez-cull.in > svg.ez-cull-svg path:nth-child(2) { transition-delay: .18s; }
+
+/* 3c. FRAME PLATE — mono caption strip under photos. Real filenames only. */
+.ez-plate {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--silver);
+  padding: 8px 2px 0; border-top: 1px solid var(--line);
+  margin-top: 8px;
+}
+.ez-on-carbon .ez-plate, .ez-strip .ez-plate {
+  color: var(--silver-carbon); border-top-color: var(--line-carbon);
 }
 
-/* Scroll-progress bar — 3px accent bar pinned to top. */
-.ez-progress {
-  position: fixed; top: 0; left: 0;
-  height: 3px; width: 0;
-  background: var(--accent);
-  z-index: 9999;
-  transition: width .12s linear;
+/* 3d. SHEET LABEL — sections are sheets of the studio's contact book. */
+.ez-sheet {
+  display: flex; align-items: baseline; gap: 14px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--silver);
+  padding-bottom: 12px; border-bottom: 1px solid var(--line);
+  margin-bottom: 34px;
+}
+.ez-sheet .idx { color: var(--ink); }
+.ez-on-carbon .ez-sheet { color: var(--silver-carbon); border-bottom-color: var(--line-carbon); }
+.ez-on-carbon .ez-sheet .idx { color: var(--paper); }
+
+/* 3e. CONTACT STRIP — full-bleed carbon band of frames with plates. */
+.ez-strip {
+  background: var(--carbon); color: var(--paper);
+  padding: 56px 0;
+}
+.ez-strip .frames {
+  display: grid; gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.ez-strip figure { margin: 0; }
+.ez-strip img {
+  width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block;
+  border-radius: var(--radius-media);
 }
 
-/* Custom dot cursor — the brand mark as interface. Added alongside the native
-   cursor (native stays visible). Desktop + fine-pointer only (see §10). */
-.ez-cursor {
-  position: fixed; top: 0; left: 0;
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: var(--accent);
-  pointer-events: none;
-  z-index: 10001;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  transition: width .25s var(--ease), height .25s var(--ease),
-              opacity .3s ease, background .3s ease, border-color .3s ease;
-}
-.ez-cursor.is-interactive {
-  width: 46px; height: 46px;
-  background: transparent;
-  border: 1.5px solid var(--accent);
+/* 3f. THE MARKED WORD — legacy pages emphasize one word per headline with an
+   italic accent <em>. Edition 03 re-reads that as a grease-pencil underline:
+   upright, ink-colored, marked in red. (!important beats page inline styles,
+   which load after this sheet.) */
+h1 em, h2 em, h3 em, .section-title em, .hero-h1 em, .post-title em,
+.about-title em, .hero-title em {
+  font-style: normal !important;
+  color: inherit !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M3,9 C25,5 60,4 117,6' fill='none' stroke='%23D93A1F' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0 97% !important;
+  background-size: 100% .14em !important;
+  padding-bottom: .06em;
 }
 
-/* Copy toast (palette page). */
+/* 3g. METADATA CLASSES — legacy eyebrow/label/crumb/meta elements across all
+   pages join the mono metadata layer. */
+.section-label, .hero-eyebrow, .nearby-label, .breadcrumb, .post-meta,
+.post-date-label, .post-breadcrumb, .work-gallery-label, .related-label,
+.stat-label, .crumbs, .eyebrow, .kicker {
+  font-family: var(--mono) !important;
+  font-weight: 400 !important;
+}
+
+/* Nav monogram on legacy pages — the ECS mark joins the display voice. */
+.logo-ecs, .footer-ecs {
+  font-family: var(--display) !important;
+  font-stretch: 125% !important;
+  font-weight: 900 !important;
+  letter-spacing: .03em !important;
+}
+
+/* ── 4. RETIRED CHROME (kept as inert classes so old markup can't break) ── */
+.ez-grain, .ez-progress, .ez-cursor { display: none !important; }
+
+/* Copy toast (brand guide). */
 .ez-toast {
   position: fixed; bottom: 34px; left: 50%;
   z-index: 10002;
-  background: var(--ink); color: var(--paper);
-  padding: 13px 22px; border-radius: 999px;
-  font-family: var(--text);
-  font-size: 12px; letter-spacing: .06em; font-weight: 600;
+  background: var(--carbon); color: var(--paper);
+  padding: 13px 22px; border-radius: 2px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .08em;
   display: flex; align-items: center; gap: 10px;
-  box-shadow: 0 16px 44px rgba(25,21,15,.32);
+  box-shadow: 0 16px 44px rgba(20,21,23,.32);
   transform: translateX(-50%);
   animation: ezToast .35s var(--ease) both;
 }
 .ez-toast::before {
   content: ""; width: 9px; height: 9px; border-radius: 50%;
-  background: var(--accent); display: inline-block;
+  background: var(--mark); display: inline-block;
 }
 
-/* ── 5. EDITORIAL COMPONENTS (for the guide + new builds) ────────────────── */
+/* ── 5. EDITORIAL COMPONENTS ────────────────────────────────────────────── */
 .ez-wrap { max-width: 1180px; margin: 0 auto; padding: 0 48px; }
 
+/* Eyebrow → metadata voice (mono, silver). Red is reserved for decisions. */
 .ez-eyebrow {
-  font-family: var(--text);
-  font-size: 12px; letter-spacing: .24em; text-transform: uppercase;
-  font-weight: 600; color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  font-weight: 400; color: var(--silver);
 }
 
+/* Display voice — Archivo Expanded, uppercase, tight. */
 .ez-display {
   font-family: var(--display);
-  font-weight: 600;
-  letter-spacing: -.02em;
-  line-height: .92;
+  font-stretch: 125%;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  line-height: .9;
   color: var(--ink);
 }
 
-/* Numbered section header: solid accent numeral + h2 title baseline-aligned. */
+/* Section header: mono sheet index + display title. */
 .ez-section-head { display: flex; align-items: flex-end; gap: 24px; margin-bottom: 24px; }
 .ez-section-head .num {
-  font-family: var(--display); font-weight: 800;
-  font-size: clamp(66px, 8.5vw, 112px); line-height: .7;
-  color: var(--accent);
+  font-family: var(--mono); font-weight: 400;
+  font-size: clamp(15px, 1.6vw, 19px); line-height: 1.2;
+  color: var(--silver); letter-spacing: .12em;
 }
 .ez-section-head h2 {
-  font-family: var(--display); font-weight: 600;
-  font-size: clamp(34px, 4vw, 46px); letter-spacing: -.01em;
-  padding-bottom: 9px; margin: 0;
+  font-family: var(--display); font-stretch: 125%; font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(30px, 3.6vw, 44px); letter-spacing: -.01em;
+  padding-bottom: 6px; margin: 0; line-height: .95;
 }
 
-/* Buttons — square-ish editorial primary + ghost. (Legacy pages keep their
-   own pill buttons; these are for the guide / new pages.) */
+/* Buttons — rectangular. Primary carries the mark; it IS a decision. */
 .ez-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-  padding: 15px 28px;
-  background: var(--accent); color: #fff;
+  padding: 16px 28px;
+  background: var(--mark); color: #fff;
   font-family: var(--text); font-size: 14px; font-weight: 600;
-  letter-spacing: .04em; text-decoration: none; border: none; cursor: pointer;
+  letter-spacing: .03em; text-decoration: none; border: none; cursor: pointer;
+  border-radius: 2px;
   transition: background .2s var(--ease), transform .2s var(--ease);
 }
-.ez-btn:hover { background: var(--accent-dk); }
+.ez-btn:hover { background: var(--mark-deep); }
 .ez-btn-ghost {
   display: inline-flex; align-items: center; gap: 9px;
   padding: 15px 6px; background: transparent; border: none;
   color: var(--ink); font-family: var(--text); font-size: 14px; font-weight: 600;
-  letter-spacing: .04em; text-decoration: none; cursor: pointer;
+  letter-spacing: .03em; text-decoration: none; cursor: pointer;
 }
-.ez-btn-ghost .arr { color: var(--accent); transition: transform .22s var(--ease); }
+.ez-btn-ghost .arr { color: var(--mark); transition: transform .22s var(--ease); }
 .ez-btn-ghost:hover .arr { transform: translateX(5px); }
 
-/* Hairline card-grid: container is --line, cells are --paper, gap:1px → crisp
-   1px rules bleed through. */
+/* Hairline card-grid. */
 .ez-grid { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .ez-grid > * { background: var(--paper); }
 
-/* ── 6. KINETIC MARQUEE ─────────────────────────────────────────────────── */
+/* ── 6. LEGACY MARQUEE → static mono index strip (animation retired) ────── */
 .ez-marquee {
   overflow: hidden;
-  background: var(--ink); color: var(--paper);
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  padding: 24px 0;
+  background: var(--carbon); color: var(--paper);
+  padding: 20px 0;
 }
-.ez-marquee .track { display: flex; width: max-content; will-change: transform; }
+.ez-marquee .track { display: flex; width: max-content; }
 .ez-marquee .lane {
   display: inline-flex; align-items: center; gap: 34px; padding-right: 34px;
-  font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4vw, 42px);
-  letter-spacing: .01em; text-transform: uppercase; white-space: nowrap;
+  font-family: var(--mono); font-size: clamp(12px, 1.4vw, 14px);
+  letter-spacing: .16em; text-transform: uppercase; white-space: nowrap;
+  color: var(--silver-carbon);
 }
-.ez-marquee .star { color: var(--accent); font-size: .62em; display: inline-block; animation: ezSpin 9s linear infinite; }
+.ez-marquee .star { color: var(--mark); font-size: 1em; }
 
-/* ── 7. SCROLL REVEAL ───────────────────────────────────────────────────── */
-/* Gated behind html.ez-motion so JS-off / reduced-motion shows everything. */
+/* ── 7. SCROLL REVEAL (fast + subtle) ───────────────────────────────────── */
 html.ez-motion [data-reveal] {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity .9s var(--ease), transform .9s var(--ease);
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
   will-change: opacity, transform;
 }
 html.ez-motion [data-reveal].in { opacity: 1; transform: none; }
 
 html.ez-motion [data-reveal-stagger] > * {
-  opacity: 0; transform: translateY(22px);
-  transition: opacity .75s var(--ease), transform .75s var(--ease);
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .45s var(--ease), transform .45s var(--ease);
 }
 html.ez-motion [data-reveal-stagger].in > * { opacity: 1; transform: none; }
 html.ez-motion [data-reveal-stagger].in > :nth-child(1){ transition-delay:0s }
-html.ez-motion [data-reveal-stagger].in > :nth-child(2){ transition-delay:.08s }
-html.ez-motion [data-reveal-stagger].in > :nth-child(3){ transition-delay:.16s }
-html.ez-motion [data-reveal-stagger].in > :nth-child(4){ transition-delay:.24s }
-html.ez-motion [data-reveal-stagger].in > :nth-child(5){ transition-delay:.32s }
-html.ez-motion [data-reveal-stagger].in > :nth-child(6){ transition-delay:.40s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(2){ transition-delay:.06s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(3){ transition-delay:.12s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(4){ transition-delay:.18s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(5){ transition-delay:.24s }
+html.ez-motion [data-reveal-stagger].in > :nth-child(6){ transition-delay:.30s }
 
-/* 3D tilt base. */
-[data-ez-tilt] { transform-style: preserve-3d; will-change: transform; transition: transform .3s var(--ease), box-shadow .3s ease; }
+/* Legacy tilt hook — inert (transform wiring removed from brand.js). */
+[data-ez-tilt] { transition: box-shadow .3s ease; }
 
 /* ── 8. KEYFRAMES ───────────────────────────────────────────────────────── */
-@keyframes ezRise   { from{ opacity:0; transform:translateY(26px) } to{ opacity:1; transform:translateY(0) } }
-@keyframes ezWipe   { from{ transform:scaleX(0) } to{ transform:scaleX(1) } }
-@keyframes ezShimmer{ 0%{ background-position:200% 0 } 100%{ background-position:-200% 0 } }
-@keyframes ezSpin   { to{ transform:rotate(360deg) } }
-@keyframes ezPulse  { 0%,100%{ transform:scale(1); opacity:1 } 50%{ transform:scale(1.55); opacity:.45 } }
-@keyframes ezToast  { from{ opacity:0; transform:translate(-50%,16px) } to{ opacity:1; transform:translate(-50%,0) } }
+@keyframes ezRise  { from{ opacity:0; transform:translateY(18px) } to{ opacity:1; transform:translateY(0) } }
+@keyframes ezWipe  { from{ transform:scaleX(0) } to{ transform:scaleX(1) } }
+@keyframes ezPulse { 0%,100%{ transform:scale(1); opacity:1 } 50%{ transform:scale(1.55); opacity:.45 } }
+@keyframes ezToast { from{ opacity:0; transform:translate(-50%,16px) } to{ opacity:1; transform:translate(-50%,0) } }
 
-/* ── 9. PULSING STATUS DOT (top bars) ───────────────────────────────────── */
+/* ── 9. STATUS DOT (top bars) ───────────────────────────────────────────── */
 .ez-pulse-dot {
   width: 7px; height: 7px; border-radius: 50%;
-  background: var(--accent); display: inline-block;
+  background: var(--mark); display: inline-block;
   animation: ezPulse 2.6s ease-in-out infinite;
 }
 
-/* ── 10. REDUCED MOTION / COARSE POINTER — HARD STOP ────────────────────── */
+/* ── 10. REDUCED MOTION — HARD STOP ─────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .001ms !important;
@@ -258,14 +324,13 @@ html.ez-motion [data-reveal-stagger].in > :nth-child(6){ transition-delay:.40s }
   }
   html.ez-motion [data-reveal],
   html.ez-motion [data-reveal-stagger] > * { opacity: 1 !important; transform: none !important; }
-  .ez-cursor { display: none !important; }
-  .ez-dot { -webkit-text-fill-color: var(--accent); background: none; }
+  html.ez-motion .ez-keep > svg.ez-keep-svg path,
+  html.ez-motion .ez-cull > svg.ez-cull-svg path { stroke-dashoffset: 0 !important; }
 }
-/* The custom cursor only makes sense with a fine pointer. */
-@media (pointer: coarse) { .ez-cursor { display: none !important; } }
 
 /* ── 11. RESPONSIVE ─────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .ez-wrap { padding: 0 24px; }
-  .ez-marquee { padding: 18px 0; }
+  .ez-wrap { padding: 0 22px; }
+  .ez-strip { padding: 36px 0; }
+  .ez-strip .frames { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 }

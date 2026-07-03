@@ -96,38 +96,38 @@
   <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
   <link rel="stylesheet" href="css/brand.css">
   <style>
     :root {
-      --black:     #19150F;
+      --black:     #17181A;
       --white:     #FFFFFF;
-      --bone:      #F2EEE5;
-      --green:     #1E5C8B;
-      --green-dk:  #184B73;
-      --off-white: #F4F1E8;
-      --gray:      #4D4940;
-      --gray-lt:   #79746A;
-      --border:    #ECE6D9;
+      --bone:      #F4F5F2;
+      --green:     #B22A12;
+      --green-dk:  #8F2110;
+      --off-white: #EBEDE8;
+      --gray:      #5A5E63;
+      --gray-lt:   #75797E;
+      --border:    #E7E9E4;
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Archivo', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
 
     .section-label { display: block; font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-    .section-title { font-family: 'Syne', Georgia, serif; font-size: clamp(36px, 5vw, 68px); font-weight: 300; line-height: 1.0; letter-spacing: -.025em; }
+    .section-title { font-family: 'Archivo', Georgia, serif; font-size: clamp(36px, 5vw, 68px); font-weight: 300; line-height: 1.0; letter-spacing: -.025em; }
     .section-title em { font-style: italic; color: var(--green); }
-    .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 44px; transition: background 0.2s; }
+    .btn-green { display: inline-block; padding: 14px 36px; background: var(--green); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
     .btn-green:hover { background: var(--green-dk); }
-    .btn-black { display: inline-block; padding: 14px 36px; background: var(--black); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 44px; transition: background 0.2s; }
+    .btn-black { display: inline-block; padding: 14px 36px; background: var(--black); color: var(--white); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
     .btn-black:hover { background: #333; }
-    .btn-outline { display: inline-block; padding: 12px 28px; background: transparent; border: 1.5px solid var(--black); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 44px; transition: background 0.2s, color 0.2s; }
+    .btn-outline { display: inline-block; padding: 12px 28px; background: transparent; border: 1.5px solid var(--black); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s, color 0.2s; }
     .btn-outline:hover { background: var(--green); color: var(--white); border-color: var(--green); }
 
     /* HEADER */
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(250,248,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(244,245,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
     header.scrolled { border-bottom-color: var(--border); }
     .logo-link { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
     .logo-ecs { font-size: 20px; font-weight: 800; letter-spacing: 5px; color: var(--black); line-height: 1; }
@@ -135,7 +135,7 @@
     .nav-desktop { display: flex; align-items: center; gap: 4px; }
     .nav-desktop a { font-size: 13px; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--gray); padding: 8px 14px; text-decoration: none; transition: color 0.2s; }
     .nav-desktop a:hover { color: var(--green); }
-    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; border-radius: 44px !important; }
+    .nav-book { background: var(--green) !important; color: var(--white) !important; margin-left: 8px; padding: 10px 20px !important; border-radius: 2px !important; }
     .nav-book:hover { background: var(--green-dk) !important; }
 
     /* HERO A — Dark statement */
@@ -163,7 +163,7 @@
     .hero-breadcrumb { font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--green); margin-bottom: 32px; }
     .hero-breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
     .hero-breadcrumb a:hover { color: rgba(255,255,255,0.6); }
-    .hero-h1 { font-family: 'Syne', Georgia, serif; font-size: clamp(48px, 8vw, 110px); font-weight: 300; line-height: 0.95; letter-spacing: -.025em; color: var(--white); margin-bottom: 36px; }
+    .hero-h1 { font-family: 'Archivo', Georgia, serif; font-size: clamp(48px, 8vw, 110px); font-weight: 300; line-height: 0.95; letter-spacing: -.025em; color: var(--white); margin-bottom: 36px; }
     .hero-h1 em { font-style: italic; color: var(--green); }
     .hero-sub { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
     .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
@@ -178,7 +178,7 @@
     .del-item { display: flex; flex-direction: column; gap: 16px; }
     .del-icon { width: 48px; height: 48px; background: var(--black); display: flex; align-items: center; justify-content: center; }
     .del-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .del-title { font-family: 'Syne', Georgia, serif; font-size: 18px; font-weight: 300; letter-spacing: -.02em; color: var(--black); }
+    .del-title { font-family: 'Archivo', Georgia, serif; font-size: 18px; font-weight: 300; letter-spacing: -.02em; color: var(--black); }
     .del-desc { font-size: 13px; line-height: 1.8; color: var(--gray); }
 
     /* PRICING */
@@ -192,7 +192,7 @@
     .p-card.p-featured .p-popular { display: block; }
     .p-name { font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gray-lt); margin-bottom: 20px; }
     .p-card.p-featured .p-name { color: rgba(255,255,255,0.6); }
-    .p-price { font-family: 'Syne', Georgia, serif; font-size: 64px; font-weight: 300; line-height: 1; letter-spacing: -.025em; color: var(--black); margin-bottom: 6px; }
+    .p-price { font-family: 'Archivo', Georgia, serif; font-size: 64px; font-weight: 300; line-height: 1; letter-spacing: -.025em; color: var(--black); margin-bottom: 6px; }
     .p-card.p-featured .p-price { color: var(--white); }
     .p-per { font-size: 11px; color: var(--gray-lt); margin-bottom: 36px; }
     .p-card.p-featured .p-per { color: rgba(255,255,255,0.6); }
@@ -203,7 +203,7 @@
     .p-card.p-featured .p-features li { color: rgba(255,255,255,0.65); }
     .p-check { width: 16px; height: 16px; background: var(--green); border-radius: 50%; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; }
     .p-check::after { content: '✓'; font-size: 9px; font-weight: 800; color: var(--white); }
-    .btn-book { display: block; text-align: center; padding: 14px 24px; font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; border: none; border-radius: 44px; transition: background 0.2s, color 0.2s; text-decoration: none; }
+    .btn-book { display: block; text-align: center; padding: 14px 24px; font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; border: none; border-radius: 2px; transition: background 0.2s, color 0.2s; text-decoration: none; }
     .p-card:not(.p-featured) .btn-book { background: transparent; border: 1.5px solid var(--black); color: var(--black); }
     .p-card:not(.p-featured) .btn-book:hover { background: var(--green); color: var(--white); border-color: var(--green); }
     .p-card.p-featured .btn-book { background: var(--green); color: var(--white); }
@@ -211,7 +211,7 @@
     .custom-strip { background: var(--black); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
     .custom-left { display: flex; flex-direction: column; gap: 6px; }
     .custom-kicker { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--green); }
-    .custom-title { font-family: 'Syne', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -.02em; color: var(--white); }
+    .custom-title { font-family: 'Archivo', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -.02em; color: var(--white); }
     .custom-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
     .btn-custom { display: inline-block; padding: 14px 36px; border: 1.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
     .btn-custom:hover { border-color: var(--white); color: var(--white); }
@@ -224,7 +224,7 @@
     .why-item { display: flex; flex-direction: column; gap: 8px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
     .why-item:last-child { border-bottom: none; padding-bottom: 0; }
     .why-num { font-size: 10px; font-weight: 800; letter-spacing: 3px; color: var(--green); }
-    .why-title { font-family: 'Syne', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -.02em; color: var(--black); }
+    .why-title { font-family: 'Archivo', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -.02em; color: var(--black); }
     .why-desc { font-size: 14px; line-height: 1.8; color: var(--gray); }
     .why-right { background: var(--black); padding: 56px 48px; }
     .why-stat { display: flex; flex-direction: column; gap: 4px; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -247,9 +247,9 @@
     /* CTA BAND */
     #cta-band { background: var(--green); padding: 100px 60px; text-align: center; }
     #cta-band .section-label { color: rgba(255,255,255,0.6); margin-bottom: 20px; }
-    .cta-title { font-family: 'Syne', Georgia, serif; font-size: clamp(36px, 5vw, 72px); font-weight: 300; line-height: 1; letter-spacing: -.025em; color: var(--white); margin-bottom: 48px; }
+    .cta-title { font-family: 'Archivo', Georgia, serif; font-size: clamp(36px, 5vw, 72px); font-weight: 300; line-height: 1; letter-spacing: -.025em; color: var(--white); margin-bottom: 48px; }
     .cta-title em { font-style: italic; }
-    .btn-white { display: inline-block; padding: 16px 48px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 44px; transition: background 0.2s; }
+    .btn-white { display: inline-block; padding: 16px 48px; background: var(--white); color: var(--black); font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
     .btn-white:hover { background: var(--off-white); }
 
     /* FOOTER */
@@ -283,15 +283,15 @@
     .nearby-areas { background: var(--off-white); padding: 64px 60px; border-top: 1px solid var(--border); }
     .nearby-inner { max-width: 880px; margin: 0 auto; }
     .nearby-label { font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: block; }
-    .nearby-title { font-family: 'Syne', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -.02em; color: var(--black); margin-bottom: 28px; }
+    .nearby-title { font-family: 'Archivo', Georgia, serif; font-size: clamp(22px, 3.6vw, 30px); font-weight: 300; line-height: 1.15; letter-spacing: -.02em; color: var(--black); margin-bottom: 28px; }
     .nearby-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; border-radius: 8px; transition: border-color 0.18s, transform 0.18s; }
+    .nearby-list a { display: block; padding: 14px 18px; background: var(--white); border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 14px; border-radius: 2px; transition: border-color 0.18s, transform 0.18s; }
     .nearby-list a strong { color: var(--black); font-weight: 700; }
     .nearby-list a:hover { border-color: var(--green); transform: translateX(2px); }
     @media (max-width: 768px) { .nearby-areas { padding: 48px 24px; } .nearby-list { grid-template-columns: 1fr; } }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
+    :focus-visible{outline:2px solid #B22A12;outline-offset:3px}
   
     /* ===== ECS motion system (Clean Editorial) ===== */
     @media (prefers-reduced-motion: no-preference) {
@@ -349,7 +349,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://elzingacreativestudio.com/" }, { "@type": "ListItem", "position": 2, "name": "Real Estate Photography", "item": "https://elzingacreativestudio.com/real-estate-photography-grand-rapids.html" } ] }
   </script>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F4F5F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
@@ -538,7 +538,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 
   <div style="margin-top:40px;border:1.5px solid var(--black);padding:36px 40px;display:flex;flex-direction:column;gap:10px;max-width:720px;">
     <span class="custom-kicker" style="color:var(--green);">The ECS Guarantee</span>
-    <p style="font-family:'Syne',Georgia,serif;font-size:clamp(20px,2.4vw,28px);font-weight:300;letter-spacing:-.02em;color:var(--black);">MLS-ready in 24 hours, or your next shoot is free.</p>
+    <p style="font-family:'Archivo',Georgia,serif;font-size:clamp(20px,2.4vw,28px);font-weight:300;letter-spacing:-.02em;color:var(--black);">MLS-ready in 24 hours, or your next shoot is free.</p>
     <p style="font-size:14px;line-height:1.7;color:var(--gray);">I&rsquo;ve never missed a delivery window &mdash; and I&rsquo;m staking the next shoot on it. Your edited, MLS-ready gallery lands within 24 hours of the shoot, no exceptions.</p>
   </div>
 </section>
@@ -555,11 +555,11 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
         <th style="padding:16px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;">ECS Showcase</th>
         <th style="padding:16px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;">Lakeshore (typical)</th>
       </tr>
-      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">Price per listing</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(43,81,150,0.06);font-weight:700;text-align:center;">$375</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">$435</td></tr>
-      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">Twilight</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(43,81,150,0.06);font-weight:700;text-align:center;">Real blue-hour shoot</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">Virtual edit only</td></tr>
-      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">2D floor plan</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(43,81,150,0.06);font-weight:700;text-align:center;">Included</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">Add-on</td></tr>
-      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">Delivery</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(43,81,150,0.06);font-weight:700;text-align:center;">24 hours</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">48-72 hours typical</td></tr>
-      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">Same photographer every listing</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(43,81,150,0.06);font-weight:700;text-align:center;">Yes, Kaden</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">Roster, varies</td></tr>
+      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">Price per listing</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(178,42,18,0.06);font-weight:700;text-align:center;">$375</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">$435</td></tr>
+      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">Twilight</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(178,42,18,0.06);font-weight:700;text-align:center;">Real blue-hour shoot</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">Virtual edit only</td></tr>
+      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">2D floor plan</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(178,42,18,0.06);font-weight:700;text-align:center;">Included</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">Add-on</td></tr>
+      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">Delivery</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(178,42,18,0.06);font-weight:700;text-align:center;">24 hours</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">48-72 hours typical</td></tr>
+      <tr><td style="padding:14px 20px;border-top:1px solid var(--border);">Same photographer every listing</td><td style="padding:14px 20px;border-top:1px solid var(--border);background:rgba(178,42,18,0.06);font-weight:700;text-align:center;">Yes, Kaden</td><td style="padding:14px 20px;border-top:1px solid var(--border);text-align:center;color:var(--gray);">Roster, varies</td></tr>
     </table>
     <p style="margin-top:18px;font-size:12px;color:var(--gray-lt);max-width:900px;line-height:1.7;">Comparison reflects publicly listed pricing as of May 2026. Showcase saves $60 per listing and ships real twilight by default, the single biggest differentiator on listing engagement.</p>
     <div style="margin-top:32px;"><a href="book-a-listing.html" onclick="openCalendly(); return false;" class="btn-green">Book a Shoot</a></div>

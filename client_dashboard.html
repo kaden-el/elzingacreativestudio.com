@@ -14,29 +14,29 @@ const _supa = supabase.createClient(window.ELZINGA_CONFIG.supabaseUrl, window.EL
 </script>
 <style>
 :root {
-  --cream:#FAF7F2; --sand:#EDE4D8; --brown:#8B6347; --brown-dark:#3D2B1F;
-  --green:#7A9E7E; --text:#2C1F14; --text-light:#7A6355; --border:#D4C4B0;
+  --cream:#F4F5F2; --sand:#E7E9E4; --brown:#B22A12; --brown-dark:#17181A;
+  --green:#7A9E7E; --text:#141517; --text-light:#5A5E63; --border:#E2E5E0;
   --bg:#F5F0EB; --surface:#FFFFFF; --surface2:#FDF9F5;
-  --accent:#8B6347; --accent-light:#F2E8DE;
+  --accent:#B22A12; --accent-light:#F2E8DE;
   --accent2:#7A9E7E; --accent2-light:#E8F2E9;
-  --danger:#C0504A; --danger-light:#FDECEA;
+  --danger:#C0504A; --danger-light:#FBEAE6;
   --text-primary:#1C1410; --text-secondary:#6B5B50; --text-muted:#A0897A;
-  --radius-sm:10px; --radius-md:16px; --radius-lg:24px; --radius-xl:32px;
+  --radius-sm:2px; --radius-md:2px; --radius-lg:2px; --radius-xl:2px;
   --shadow-sm:0 1px 3px rgba(61,43,31,.06),0 1px 2px rgba(61,43,31,.04);
   --shadow-md:0 4px 16px rgba(61,43,31,.08),0 2px 4px rgba(61,43,31,.04);
   --shadow-lg:0 12px 40px rgba(61,43,31,.12),0 4px 8px rgba(61,43,31,.06);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh;}
+body{font-family:'Archivo',Arial,sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh;}
 
 /* ── LOGIN ── */
 #login-screen{
   position:fixed;inset:0;
-  background:linear-gradient(135deg,var(--brown-dark) 0%,#5C3D28 50%,var(--brown) 100%);
+  background:linear-gradient(135deg,var(--brown-dark) 0%,#3E4348 50%,var(--brown) 100%);
   display:flex;align-items:center;justify-content:center;z-index:999;padding:24px;
 }
 .login-card{
-  background:var(--surface);border-radius:32px;
+  background:var(--surface);border-radius:2px;
   padding:52px 44px;width:100%;max-width:460px;
   box-shadow:0 24px 80px rgba(28,20,16,.25);
   animation:loginIn .4s ease;
@@ -44,19 +44,19 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 @keyframes loginIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
 .login-logo{display:flex;align-items:center;gap:12px;margin-bottom:32px;}
-.login-logo .name{font-family:'Georgia',serif;font-size:15px;font-weight:400;letter-spacing:3px;color:var(--brown-dark);}
+.login-logo .name{font-family:'Archivo',sans-serif;font-size:15px;font-weight:400;letter-spacing:3px;color:var(--brown-dark);}
 .login-logo .sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
 
 /* Tab switcher */
 .login-tabs{display:flex;background:var(--bg);border-radius:var(--radius-md);padding:5px;gap:4px;margin-bottom:28px;}
-.login-tab{flex:1;padding:10px;border:none;background:none;border-radius:12px;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .2s;font-family:inherit;}
+.login-tab{flex:1;padding:10px;border:none;background:none;border-radius:2px;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .2s;font-family:inherit;}
 .login-tab.active{background:var(--surface);color:var(--accent);box-shadow:var(--shadow-sm);}
 
 /* Panels */
 .login-panel{display:none;}
 .login-panel.active{display:block;}
 
-.login-panel h2{font-family:'Georgia',serif;font-size:24px;font-weight:300;color:var(--text-primary);margin-bottom:6px;}
+.login-panel h2{font-family:'Archivo',sans-serif;font-size:24px;font-weight:300;color:var(--text-primary);margin-bottom:6px;}
 .login-panel h2 em{font-style:italic;color:var(--accent);}
 .login-panel p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:24px;}
 
@@ -64,7 +64,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 .field-group label{display:block;font-size:11px;font-weight:600;letter-spacing:1px;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;}
 .field-group input{
   width:100%;padding:12px 16px;
-  border:1.5px solid #E8E0D8;border-radius:var(--radius-sm);
+  border:1.5px solid #E2E5E0;border-radius:var(--radius-sm);
   font-size:14px;color:var(--text-primary);background:var(--surface2);
   outline:none;transition:all .2s;font-family:inherit;
 }
@@ -74,7 +74,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 .login-btn{
   width:100%;padding:14px;
   background:var(--accent);color:white;
-  border:none;border-radius:50px;
+  border:none;border-radius:2px;
   font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;
   margin-top:4px;font-family:inherit;
   box-shadow:0 4px 16px rgba(139,99,71,.28);
@@ -104,11 +104,11 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
   box-shadow:0 2px 20px rgba(61,43,31,.06);
 }
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo .name{font-family:'Georgia',serif;font-size:13px;letter-spacing:3px;color:var(--brown-dark);}
+.nav-logo .name{font-family:'Archivo',sans-serif;font-size:13px;letter-spacing:3px;color:var(--brown-dark);}
 .nav-logo .sub{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
 .nav-center{display:flex;gap:4px;}
 .nav-link{
-  padding:7px 18px;border-radius:50px;
+  padding:7px 18px;border-radius:2px;
   font-size:12px;font-weight:500;color:var(--text-secondary);
   cursor:pointer;transition:all .18s;border:none;background:none;font-family:inherit;
 }
@@ -117,12 +117,12 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 .nav-right{display:flex;align-items:center;gap:12px;}
 .nav-client-badge{
   background:var(--accent-light);color:var(--accent);
-  padding:6px 16px;border-radius:50px;
+  padding:6px 16px;border-radius:2px;
   font-size:11px;font-weight:600;
 }
 .nav-signout{
-  padding:7px 16px;border-radius:50px;
-  border:1.5px solid #E8E0D8;
+  padding:7px 16px;border-radius:2px;
+  border:1.5px solid #E2E5E0;
   font-size:11px;font-weight:600;color:var(--text-muted);
   background:none;cursor:pointer;transition:all .18s;font-family:inherit;
 }
@@ -136,7 +136,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 /* ── PAGE HEAD ── */
 .page-head{margin-bottom:28px;}
 .page-eyebrow{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;}
-.page-title{font-family:'Georgia',serif;font-size:28px;font-weight:300;color:var(--text-primary);line-height:1.2;}
+.page-title{font-family:'Archivo',sans-serif;font-size:28px;font-weight:300;color:var(--text-primary);line-height:1.2;}
 .page-title em{font-style:italic;color:var(--accent);}
 .page-sub{font-size:13px;color:var(--text-secondary);margin-top:4px;}
 
@@ -147,7 +147,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
   box-shadow:var(--shadow-sm);margin-bottom:16px;
 }
 .card-eyebrow{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
-.card-title-text{font-family:'Georgia',serif;font-size:18px;font-weight:300;color:var(--text-primary);}
+.card-title-text{font-family:'Archivo',sans-serif;font-size:18px;font-weight:300;color:var(--text-primary);}
 .card-title-text em{font-style:italic;color:var(--accent);}
 
 /* ── KPI GRID ── */
@@ -159,7 +159,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
   transition:transform .2s,box-shadow .2s;
 }
 .kpi-label{font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:8px;}
-.kpi-value{font-family:'Georgia',serif;font-size:28px;font-weight:300;color:var(--text-primary);margin-bottom:4px;}
+.kpi-value{font-family:'Archivo',sans-serif;font-size:28px;font-weight:300;color:var(--text-primary);margin-bottom:4px;}
 .kpi-value em{font-style:italic;color:var(--accent);}
 .kpi-delta{font-size:11px;color:var(--accent2);font-weight:500;}
 
@@ -171,7 +171,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 .bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;}
 .bar{
   width:100%;background:linear-gradient(to top,var(--accent),var(--brown));
-  border-radius:6px 6px 0 0;opacity:.75;transition:opacity .2s;min-height:4px;
+  border-radius:2px 6px 0 0;opacity:.75;transition:opacity .2s;min-height:4px;
 }
 .bar:hover{opacity:1;}
 .bar-label{font-size:9px;color:var(--text-muted);font-weight:500;}
@@ -180,9 +180,9 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 .data-table{width:100%;border-collapse:collapse;font-size:13px;}
 .data-table th{
   font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;
-  color:var(--text-muted);text-align:left;padding:10px 0;border-bottom:1px solid #E8E0D8;
+  color:var(--text-muted);text-align:left;padding:10px 0;border-bottom:1px solid #E2E5E0;
 }
-.data-table td{padding:13px 0;border-bottom:1px solid #F5EFE8;vertical-align:middle;}
+.data-table td{padding:13px 0;border-bottom:1px solid #EFF1ED;vertical-align:middle;}
 .data-table tr:last-child td{border-bottom:none;}
 .metric-name{font-size:12px;color:var(--text-secondary);}
 .metric-value{font-size:14px;color:var(--text-primary);font-weight:500;}
@@ -192,7 +192,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 .info-rows{display:flex;flex-direction:column;}
 .info-row{
   display:flex;justify-content:space-between;align-items:center;
-  padding:12px 0;border-bottom:1px solid #F5EFE8;
+  padding:12px 0;border-bottom:1px solid #EFF1ED;
 }
 .info-row:last-child{border-bottom:none;}
 .info-key{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);}
@@ -200,7 +200,7 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 
 /* ── TIMELINE ── */
 .timeline{display:flex;flex-direction:column;}
-.tl-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #F5EFE8;}
+.tl-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #EFF1ED;}
 .tl-item:last-child{border-bottom:none;}
 .tl-dot-wrap{display:flex;flex-direction:column;align-items:center;gap:0;padding-top:4px;}
 .tl-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0;}
@@ -218,12 +218,12 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:va
 }
 .camp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
 .camp-platform{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;}
-.camp-name{font-family:'Georgia',serif;font-size:17px;font-weight:300;color:var(--text-primary);}
+.camp-name{font-family:'Archivo',sans-serif;font-size:17px;font-weight:300;color:var(--text-primary);}
 .status-pill{
-  padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;
+  padding:4px 12px;border-radius:2px;font-size:11px;font-weight:600;
 }
 .status-active{background:var(--accent2-light);color:var(--accent2);}
-.status-new{background:#EEF2FF;color:#4F46E5;}
+.status-new{background:#EBEDE8;color:#B22A12;}
 
 /* ── PROFILE GRID ── */
 .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
@@ -270,10 +270,10 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <div class="login-card">
     <div class="login-logo">
       <svg width="30" height="30" viewBox="0 0 80 80" fill="none">
-        <path d="M5 36L5 5L36 5" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M44 75L75 75L75 44" stroke="#8B6347" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="40" cy="40" r="13" stroke="#8B6347" stroke-width="1.1" fill="none" opacity=".35"/>
-        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+        <path d="M5 36L5 5L36 5" stroke="#B22A12" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75L75 75L75 44" stroke="#B22A12" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="13" stroke="#B22A12" stroke-width="1.1" fill="none" opacity=".35"/>
+        <circle cx="40" cy="40" r="3.5" fill="#B22A12"/>
       </svg>
       <div>
         <div class="name">ELZINGA</div>
@@ -325,9 +325,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <nav class="top-nav">
     <a href="login_portal.html" class="nav-logo">
       <svg width="24" height="24" viewBox="0 0 80 80" fill="none">
-        <path d="M5 36L5 5L36 5" stroke="#8B6347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M44 75L75 75L75 44" stroke="#8B6347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="40" cy="40" r="3.5" fill="#8B6347"/>
+        <path d="M5 36L5 5L36 5" stroke="#B22A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44 75L75 75L75 44" stroke="#B22A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="3.5" fill="#B22A12"/>
       </svg>
       <div>
         <div class="name">ELZINGA</div>
@@ -617,8 +617,8 @@ async function renderKPIs() {
     document.getElementById('kpi-grid').innerHTML = `
       <div class="kpi-card" style="grid-column:1/-1;text-align:center;padding:40px">
         <div style="font-size:32px;margin-bottom:12px">📊</div>
-        <div style="font-family:'Georgia',serif;font-size:20px;font-weight:300;color:var(--brown-dark);margin-bottom:8px">Your campaigns are being set up</div>
-        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--text-light);line-height:1.7">Performance data will appear here once your campaigns go live.<br>Your account manager will reach out within 1–2 business days.</div>
+        <div style="font-family:'Archivo',sans-serif;font-size:20px;font-weight:300;color:var(--brown-dark);margin-bottom:8px">Your campaigns are being set up</div>
+        <div style="font-family:'Archivo',Arial,sans-serif;font-size:12px;color:var(--text-light);line-height:1.7">Performance data will appear here once your campaigns go live.<br>Your account manager will reach out within 1–2 business days.</div>
       </div>`;
     return;
   }
@@ -685,7 +685,7 @@ async function renderAnalytics() {
 
   // Show loading state
   document.getElementById('analytics-tbody').innerHTML = `
-    <tr><td colspan="4" style="text-align:center;padding:32px;color:var(--text-light);font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px">Loading live analytics…</td></tr>`;
+    <tr><td colspan="4" style="text-align:center;padding:32px;color:var(--text-light);font-family:'Archivo',Arial,sans-serif;font-size:13px">Loading live analytics…</td></tr>`;
 
   // Load from analytics table
   try {
@@ -698,7 +698,7 @@ async function renderAnalytics() {
 
     if (!rows || rows.length === 0) {
       document.getElementById('analytics-tbody').innerHTML = `
-        <tr><td colspan="4" style="text-align:center;padding:32px;color:var(--text-light);font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px">No analytics data yet — your account manager will update this shortly after your campaigns launch.</td></tr>`;
+        <tr><td colspan="4" style="text-align:center;padding:32px;color:var(--text-light);font-family:'Archivo',Arial,sans-serif;font-size:13px">No analytics data yet — your account manager will update this shortly after your campaigns launch.</td></tr>`;
       return;
     }
 
@@ -755,13 +755,13 @@ async function renderAnalytics() {
 
   } catch(e) {
     document.getElementById('analytics-tbody').innerHTML = `
-      <tr><td colspan="4" style="text-align:center;padding:32px;color:#b04040;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px">Error loading analytics: ${e.message}</td></tr>`;
+      <tr><td colspan="4" style="text-align:center;padding:32px;color:#B22A12;font-family:'Archivo',Arial,sans-serif;font-size:12px">Error loading analytics: ${e.message}</td></tr>`;
   }
 }
 
 async function renderCampaigns() {
   const el = document.getElementById('campaigns-content');
-  el.innerHTML = '<div style="padding:24px;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--text-light)">Loading campaigns…</div>';
+  el.innerHTML = '<div style="padding:24px;text-align:center;font-family:'Archivo',Arial,sans-serif;font-size:13px;color:var(--text-light)">Loading campaigns…</div>';
   try {
     const { data, error } = await _supa.from('launched_campaigns')
       .select('*')
@@ -775,7 +775,7 @@ async function renderCampaigns() {
     el.innerHTML = data.map(row => {
       const r = row.launch_result || {};
       const statusClass = row.status === 'launched' ? 'status-active' : row.status === 'paused' ? 'status-paused' : 'status-new';
-      const testBadge = r.test_mode ? ' <span style="font-size:9px;background:#FFF8E7;color:#8B6000;padding:1px 6px;border-radius:6px">TEST</span>' : '';
+      const testBadge = r.test_mode ? ' <span style="font-size:9px;background:#F4F5F2;color:#8B6000;padding:1px 6px;border-radius:2px">TEST</span>' : '';
       return `<div class="camp-card">
         <div class="camp-header">
           <div>
@@ -786,12 +786,12 @@ async function renderCampaigns() {
         </div>
         <div class="info-rows">
           <div class="info-row"><span class="info-key">Launched</span><span class="info-val">${new Date(row.launched_at).toLocaleDateString()}</span></div>
-          ${r.campaign_id ? `<div class="info-row"><span class="info-key">Campaign ID</span><span class="info-val" style="font-family:'Courier New',monospace;font-size:11px">${r.campaign_id}</span></div>` : ''}
+          ${r.campaign_id ? `<div class="info-row"><span class="info-key">Campaign ID</span><span class="info-val" style="font-family:'Fragment Mono',monospace;font-size:11px">${r.campaign_id}</span></div>` : ''}
         </div>
       </div>`;
     }).join('');
   } catch(e) {
-    el.innerHTML = '<div style="padding:24px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#b04040">Error loading campaigns</div>';
+    el.innerHTML = '<div style="padding:24px;font-family:'Archivo',Arial,sans-serif;font-size:13px;color:#B22A12">Error loading campaigns</div>';
   }
 }
 
@@ -806,30 +806,30 @@ function renderProfile() {
       <div class="profile-item"><div class="profile-item-label">Website</div><div class="profile-item-val">${c.business?.website||'—'}</div></div>
       <div class="profile-item"><div class="profile-item-label">Contact Name</div><div class="profile-item-val">${c.contact?.name||'—'}</div></div>
       <div class="profile-item"><div class="profile-item-label">Contact Email</div><div class="profile-item-val">${c.contact?.email||'—'}</div></div>
-      <div class="profile-item"><div class="profile-item-label">Reference ID</div><div class="profile-item-val" style="font-family:'Courier New',monospace;font-size:12px">${c.referenceId||'—'}</div></div>
+      <div class="profile-item"><div class="profile-item-label">Reference ID</div><div class="profile-item-val" style="font-family:'Fragment Mono',monospace;font-size:12px">${c.referenceId||'—'}</div></div>
       <div class="profile-item"><div class="profile-item-label">Status</div><div class="profile-item-val">${c.status||'Active'}</div></div>
     </div>
     <!-- Change Password -->
     <div class="card" style="margin-top:20px">
-      <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:16px">Change Password</div>
+      <div style="font-family:'Archivo',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:16px">Change Password</div>
       <div style="max-width:400px;display:flex;flex-direction:column;gap:12px">
-        <input type="password" id="cp-current" placeholder="Current password" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;background:var(--cream)">
-        <input type="password" id="cp-new" placeholder="New password" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;background:var(--cream)">
-        <input type="password" id="cp-confirm" placeholder="Confirm new password" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;background:var(--cream)">
-        <div id="cp-error" style="display:none;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#b04040;background:#FDECEA;padding:8px 12px;border-radius:8px"></div>
-        <button onclick="clientChangePassword()" style="padding:12px 24px;background:var(--brown);color:#FAF7F2;border:none;border-radius:50px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;align-self:flex-start">Update Password</button>
+        <input type="password" id="cp-current" placeholder="Current password" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:13px;background:var(--cream)">
+        <input type="password" id="cp-new" placeholder="New password" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:13px;background:var(--cream)">
+        <input type="password" id="cp-confirm" placeholder="Confirm new password" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:13px;background:var(--cream)">
+        <div id="cp-error" style="display:none;font-family:'Archivo',Arial,sans-serif;font-size:12px;color:#B22A12;background:#FBEAE6;padding:8px 12px;border-radius:2px"></div>
+        <button onclick="clientChangePassword()" style="padding:12px 24px;background:var(--brown);color:#F4F5F2;border:none;border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;align-self:flex-start">Update Password</button>
       </div>
     </div>
 
     <!-- Message Agency -->
     <div class="card" style="margin-top:20px">
-      <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:16px">Message Your Account Manager</div>
-      <textarea id="client-message" placeholder="Questions about your campaign, creative feedback, budget changes…" style="width:100%;min-height:100px;padding:12px 14px;border:1.5px solid var(--border);border-radius:12px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;background:var(--cream);resize:vertical;margin-bottom:12px"></textarea>
-      <button onclick="sendMessageToAgency()" style="padding:12px 28px;background:var(--brown);color:#FAF7F2;border:none;border-radius:50px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer">Send Message</button>
+      <div style="font-family:'Archivo',Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:16px">Message Your Account Manager</div>
+      <textarea id="client-message" placeholder="Questions about your campaign, creative feedback, budget changes…" style="width:100%;min-height:100px;padding:12px 14px;border:1.5px solid var(--border);border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:13px;background:var(--cream);resize:vertical;margin-bottom:12px"></textarea>
+      <button onclick="sendMessageToAgency()" style="padding:12px 28px;background:var(--brown);color:#F4F5F2;border:none;border-radius:2px;font-family:'Archivo',Arial,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer">Send Message</button>
     </div>
 
     <div style="margin-top:16px;padding:14px 16px;background:var(--accent-light);border-radius:var(--radius-md);">
-      <div style="font-size:11px;color:var(--text-light);font-family:'Helvetica Neue',Arial,sans-serif;line-height:1.7">
+      <div style="font-size:11px;color:var(--text-light);font-family:'Archivo',Arial,sans-serif;line-height:1.7">
         Questions about your campaign? Contact your account manager at
         <a href="mailto:kaden@elzingacreativestudio.com" style="color:var(--brown)">kaden@elzingacreativestudio.com</a>
       </div>
@@ -867,7 +867,7 @@ function showClientToast(msg) {
   if (!t) {
     t = document.createElement('div');
     t.id = 'client-toast';
-    t.style.cssText = 'position:fixed;bottom:24px;right:24px;background:var(--brown-dark);color:#FAF7F2;padding:12px 20px;border-radius:12px;font-family:\'Helvetica Neue\',Arial,sans-serif;font-size:13px;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none';
+    t.style.cssText = 'position:fixed;bottom:24px;right:24px;background:var(--brown-dark);color:#F4F5F2;padding:12px 20px;border-radius:2px;font-family:\'Helvetica Neue\',Arial,sans-serif;font-size:13px;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none';
     document.body.appendChild(t);
   }
   t.textContent = msg;

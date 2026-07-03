@@ -77,7 +77,7 @@
   <!-- Google Fonts: Syne (display) + Spline Sans (body/UI) — ELZINGA. Edition 02 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
   <link rel="stylesheet" href="css/brand.css">
@@ -86,19 +86,19 @@
        Legacy class names kept; tokens remapped to Cobalt palette.
        VISUAL reskin only — no copy, structure, schema, or funnel logic changes. */
     :root {
-      --black:     #19150F;   /* ink */
+      --black:     #17181A;   /* ink */
       --white:     #FFFFFF;   /* paper — cards/forms only */
-      --bone:      #F2EEE5;   /* canvas */
-      --green:     #1E5C8B;   /* COBALT (legacy name kept) */
-      --green-dk:  #184B73;   /* cobalt hover-darken */
-      --off-white: #F4F1E8;   /* warm sand — alt section bg */
-      --gray:      #4D4940;   /* muted */
-      --gray-lt:   #79746A;   /* lighter caption */
-      --border:    #ECE6D9;   /* hairline */
+      --bone:      #F4F5F2;   /* canvas */
+      --green:     #B22A12;   /* COBALT (legacy name kept) */
+      --green-dk:  #8F2110;   /* cobalt hover-darken */
+      --off-white: #EBEDE8;   /* warm sand — alt section bg */
+      --gray:      #5A5E63;   /* muted */
+      --gray-lt:   #75797E;   /* lighter caption */
+      --border:    #E7E9E4;   /* hairline */
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Spline Sans', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
+    body { font-family: 'Archivo', system-ui, sans-serif; background: var(--bone); color: var(--black); overflow-x: hidden; }
 
     .section-label {
       display: inline-flex;
@@ -120,7 +120,7 @@
       flex-shrink: 0;
     }
     .section-title {
-      font-family: 'Syne', Georgia, serif;
+      font-family: 'Archivo', Georgia, serif;
       font-size: clamp(36px, 5vw, 68px);
       font-weight: 300;
       line-height: 1.02;
@@ -134,7 +134,7 @@
       justify-content: center;
       gap: 8px;
       padding: 15px 30px;
-      border-radius: 44px;
+      border-radius: 2px;
       background: var(--green);
       color: var(--bone);
       font-family: inherit;
@@ -153,7 +153,7 @@
       justify-content: center;
       gap: 8px;
       padding: 15px 30px;
-      border-radius: 44px;
+      border-radius: 2px;
       background: var(--black);
       color: var(--bone);
       font-family: inherit;
@@ -166,7 +166,7 @@
       display: inline-flex;
       align-items: center;
       padding: 13px 28px;
-      border-radius: 44px;
+      border-radius: 2px;
       background: transparent;
       border: 1.5px solid var(--black);
       color: var(--black);
@@ -181,10 +181,10 @@
       display: inline-flex;
       align-items: center;
       padding: 13px 28px;
-      border-radius: 44px;
+      border-radius: 2px;
       background: transparent;
-      border: 1.5px solid rgba(250,248,242,0.4);
-      color: rgba(250,248,242,0.8);
+      border: 1.5px solid rgba(244,245,242,0.4);
+      color: rgba(244,245,242,0.8);
       font-family: inherit;
       font-size: 14px;
       font-weight: 600;
@@ -199,7 +199,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; justify-content: space-between; align-items: center;
       padding: 20px 60px;
-      background: rgba(250,248,242,0.92);
+      background: rgba(244,245,242,0.92);
       backdrop-filter: saturate(1.1) blur(8px);
       -webkit-backdrop-filter: saturate(1.1) blur(8px);
       border-bottom: 1px solid transparent;
@@ -217,7 +217,7 @@
       color: var(--bone) !important;
       margin-left: 8px;
       padding: 10px 20px !important;
-      border-radius: 44px;
+      border-radius: 2px;
       font-weight: 600 !important;
     }
     .nav-book:hover { background: var(--green-dk) !important; }
@@ -244,11 +244,11 @@
       transition: transform 0.9s ease;
     }
     .re-strip-panel:hover .re-strip-fill { transform: scale(1.04); }
-    .hero-breadcrumb { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(169,192,216,0.9); margin-bottom: 32px; }
-    .hero-breadcrumb a { color: rgba(250,248,242,0.5); text-decoration: none; }
-    .hero-breadcrumb a:hover { color: rgba(250,248,242,0.7); }
+    .hero-breadcrumb { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(198,203,209,0.9); margin-bottom: 32px; }
+    .hero-breadcrumb a { color: rgba(244,245,242,0.5); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: rgba(244,245,242,0.7); }
     .hero-h1 {
-      font-family: 'Syne', Georgia, serif;
+      font-family: 'Archivo', Georgia, serif;
       font-size: clamp(48px, 8vw, 110px);
       font-weight: 300;
       line-height: 0.95;
@@ -257,11 +257,11 @@
       margin-bottom: 36px;
       font-optical-sizing: auto;
     }
-    .hero-h1 em { font-style: italic; color: #A9C0D8; }
-    .hero-sub { font-size: 15px; color: rgba(250,248,242,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+    .hero-h1 em { font-style: italic; color: #C6CBD1; }
+    .hero-sub { font-size: 15px; color: rgba(244,245,242,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
     .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
-    .pill { padding: 8px 18px; border-radius: 44px; border: 1px solid rgba(250,248,242,0.15); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,248,242,0.5); }
-    .pill.active { border-color: rgba(169,192,216,0.6); color: #A9C0D8; }
+    .pill { padding: 8px 18px; border-radius: 2px; border: 1px solid rgba(244,245,242,0.15); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,245,242,0.5); }
+    .pill.active { border-color: rgba(198,203,209,0.6); color: #C6CBD1; }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
     /* WHAT YOU GET */
@@ -269,9 +269,9 @@
     .del-header { margin-bottom: 72px; }
     .del-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
     .del-item { display: flex; flex-direction: column; gap: 16px; }
-    .del-icon { width: 48px; height: 48px; background: var(--black); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .del-icon { width: 48px; height: 48px; background: var(--black); border-radius: 2px; display: flex; align-items: center; justify-content: center; }
     .del-icon svg { width: 22px; height: 22px; stroke: var(--bone); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .del-title { font-family: 'Syne', Georgia, serif; font-size: 20px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
+    .del-title { font-family: 'Archivo', Georgia, serif; font-size: 20px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
     .del-desc { font-size: 13px; line-height: 1.8; color: var(--gray); }
 
     /* PRICING */
@@ -283,7 +283,7 @@
       .nav-desktop .nav-book{padding:10px 18px;} .pricing-row { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; } }
     .p-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-lt); margin-bottom: 20px; }
     .p-price {
-      font-family: 'Syne', Georgia, serif;
+      font-family: 'Archivo', Georgia, serif;
       font-size: 64px; font-weight: 300; line-height: 1;
       letter-spacing: -0.03em; color: var(--black); margin-bottom: 6px;
     }
@@ -295,7 +295,7 @@
     .p-check::after { content: '✓'; font-size: 9px; font-weight: 700; color: var(--bone); }
     .btn-book {
       display: block; text-align: center; padding: 14px 24px;
-      border-radius: 44px;
+      border-radius: 2px;
       font-family: inherit; font-size: 14px; font-weight: 600;
       letter-spacing: 0.01em;
       cursor: pointer; border: none; transition: background 0.2s, color 0.2s; text-decoration: none;
@@ -305,9 +305,9 @@
     .custom-strip { background: var(--black); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
     .custom-left { display: flex; flex-direction: column; gap: 6px; }
     .custom-kicker { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); }
-    .custom-title { font-family: 'Syne', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -0.02em; color: var(--bone); }
-    .custom-desc { font-size: 13px; color: rgba(250,248,242,0.6); margin-top: 4px; }
-    .btn-custom { display: inline-flex; align-items: center; padding: 13px 28px; border-radius: 44px; border: 1.5px solid rgba(250,248,242,0.25); color: rgba(250,248,242,0.8); font-family: inherit; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
+    .custom-title { font-family: 'Archivo', Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 300; letter-spacing: -0.02em; color: var(--bone); }
+    .custom-desc { font-size: 13px; color: rgba(244,245,242,0.6); margin-top: 4px; }
+    .btn-custom { display: inline-flex; align-items: center; padding: 13px 28px; border-radius: 2px; border: 1.5px solid rgba(244,245,242,0.25); color: rgba(244,245,242,0.8); font-family: inherit; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; transition: border-color 0.2s, color 0.2s; white-space: nowrap; cursor: pointer; }
     .btn-custom:hover { border-color: var(--bone); color: var(--bone); }
 
     /* WHY ECS */
@@ -317,14 +317,14 @@
     .why-item { display: flex; flex-direction: column; gap: 8px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
     .why-item:last-child { border-bottom: none; padding-bottom: 0; }
     .why-num { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; color: var(--green); }
-    .why-title { font-family: 'Syne', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
+    .why-title { font-family: 'Archivo', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -0.02em; color: var(--black); }
     .why-desc { font-size: 14px; line-height: 1.8; color: var(--gray); }
     .why-right { background: var(--black); padding: 56px 48px; }
-    .why-stat { display: flex; flex-direction: column; gap: 4px; padding: 28px 0; border-bottom: 1px solid rgba(250,248,242,0.08); }
+    .why-stat { display: flex; flex-direction: column; gap: 4px; padding: 28px 0; border-bottom: 1px solid rgba(244,245,242,0.08); }
     .why-stat:first-child { padding-top: 0; }
     .why-stat:last-child { border-bottom: none; padding-bottom: 0; }
-    .stat-num { font-family: 'Syne', Georgia, serif; font-size: 56px; font-weight: 300; letter-spacing: -0.03em; color: var(--bone); line-height: 1; }
-    .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,248,242,0.6); }
+    .stat-num { font-family: 'Archivo', Georgia, serif; font-size: 56px; font-weight: 300; letter-spacing: -0.03em; color: var(--bone); line-height: 1; }
+    .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(244,245,242,0.6); }
 
     /* FAQ */
     #senior-faq { padding: 120px 60px; background: var(--bone); border-top: 1px solid var(--border); }
@@ -338,11 +338,11 @@
     .faq-item p { padding: 0 0 24px; font-size: 15px; line-height: 1.85; color: var(--gray); }
 
     /* CTA BAND */
-    #cta-band { background: var(--black); padding: 100px 60px; text-align: center; display: flex; flex-direction: column; align-items: center; border-top: 1px solid rgba(250,248,242,0.06); }
-    #cta-band .section-label { color: rgba(169,192,216,0.8); margin-bottom: 20px; }
-    #cta-band .section-label::before { background: rgba(169,192,216,0.8); }
+    #cta-band { background: var(--black); padding: 100px 60px; text-align: center; display: flex; flex-direction: column; align-items: center; border-top: 1px solid rgba(244,245,242,0.06); }
+    #cta-band .section-label { color: rgba(198,203,209,0.8); margin-bottom: 20px; }
+    #cta-band .section-label::before { background: rgba(198,203,209,0.8); }
     .cta-title {
-      font-family: 'Syne', Georgia, serif;
+      font-family: 'Archivo', Georgia, serif;
       font-size: clamp(36px, 5vw, 72px);
       font-weight: 300;
       line-height: 1.02;
@@ -355,7 +355,7 @@
       align-items: center;
       justify-content: center;
       padding: 15px 40px;
-      border-radius: 44px;
+      border-radius: 2px;
       background: var(--bone);
       color: var(--black);
       font-family: inherit;
@@ -365,17 +365,17 @@
       text-decoration: none;
       transition: background 0.2s;
     }
-    .btn-white:hover { background: #F4F1E8; }
+    .btn-white:hover { background: #EBEDE8; }
 
     /* FOOTER */
-    footer { background: var(--black); border-top: 1px solid rgba(250,248,242,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer { background: var(--black); border-top: 1px solid rgba(244,245,242,0.08); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     footer > * { flex: 1; }
     footer > *:nth-child(2) { text-align: center; }
     footer > *:last-child { text-align: right; }
     .footer-brand { display: flex; flex-direction: column; gap: 4px; }
-    .footer-ecs { font-size: 14px; font-weight: 700; letter-spacing: 5px; color: rgba(250,248,242,0.8); }
-    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(250,248,242,0.25); }
-    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(250,248,242,0.2); }
+    .footer-ecs { font-size: 14px; font-weight: 700; letter-spacing: 5px; color: rgba(244,245,242,0.8); }
+    .footer-tag { font-size: 7.5px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(244,245,242,0.25); }
+    .footer-copy { font-size: 10px; letter-spacing: 1px; color: rgba(244,245,242,0.2); }
 
     @media (max-width: 768px) {
       header { padding: 16px 24px; }
@@ -392,7 +392,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    :focus-visible{outline:2px solid #1E5C8B;outline-offset:3px}
+    :focus-visible{outline:2px solid #B22A12;outline-offset:3px}
   </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <!-- Meta Pixel Code -->
@@ -416,7 +416,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://elzingacreativestudio.com/" }, { "@type": "ListItem", "position": 2, "name": "Senior Portraits", "item": "https://elzingacreativestudio.com/senior-portraits-grand-rapids.html" } ] }
   </script>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F2EEE5">
+  <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#F4F5F2">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PX92WS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
