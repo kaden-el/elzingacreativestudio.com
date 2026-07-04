@@ -235,7 +235,6 @@
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
     :focus-visible{outline:2px solid #B22A12;outline-offset:3px}
   </style>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '26293188720377993'); fbq('track', 'PageView');
@@ -342,7 +341,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   </div>
   <div class="timeline-grid reveal">
     <div class="timeline-day">Day 0</div>
-    <div class="timeline-content"><h3>Book + 50% deposit</h3><p>Calendly lock the shoot date. $1,250 deposit holds it. Balance due before final delivery.</p></div>
+    <div class="timeline-content"><h3>Book + 50% deposit</h3><p>Send your details and I&rsquo;ll text you to lock the shoot date. $1,250 deposit holds it. Balance due before final delivery.</p></div>
 
     <div class="timeline-day">Day 1-3</div>
     <div class="timeline-content"><h3>Pre-shoot planning call</h3><p>30-45 minute call. We map your shot list, locations, wardrobe, and message. You get a Google Doc with the full plan before shoot day.</p></div>
@@ -449,7 +448,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </details>
     <details class="faq-item">
       <summary>How do I book?</summary>
-      <p>Click "Book a Brand Day" or call (616) 258-4578. Pick a date on the Calendly, pay 50% deposit, schedule the pre-shoot planning call.</p>
+      <p>Click "Book a Brand Day" or call (616) 258-4578. Send your details and I&rsquo;ll text you to lock the date, take the 50% deposit, and schedule the pre-shoot planning call.</p>
     </details>
   </div>
 </section>
@@ -481,13 +480,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
 </script>
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script>
-  const CALENDLY_URL = 'https://calendly.com/kaden-elzingacreativestudio/portrait-session';
-  function openCalendly() {
-    if (window.Calendly) { Calendly.initPopupWidget({ url: CALENDLY_URL }); }
-    else { window.open(CALENDLY_URL, '_blank'); }
-  }
 </script>
 <script>
 (function () {
@@ -503,5 +496,6 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 })();
 </script>
   <script src="js/brand.js" defer></script>
+  <script src="js/booking.js" data-ecs-booking="branding" defer></script>
 </body>
 </html>

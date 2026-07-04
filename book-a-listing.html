@@ -35,7 +35,6 @@
   <!-- Cobalt Gallery canonical design system (shared across all pages) -->
   <link rel="stylesheet" href="css/cobalt-gallery.css">
   <link rel="stylesheet" href="css/brand.css">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
     /* ── DESIGN SYSTEM — Cobalt Gallery ──
        Legacy class names kept; tokens remapped to Cobalt palette. VISUAL reskin only. */
@@ -87,11 +86,9 @@
     .pill.active { border-color: var(--green); color: var(--green); }
 
     /* Two-column booking */
-    .booking-wrap { max-width: 1100px; margin: 0 auto; padding: 56px 6vw 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-    @media (max-width: 880px) { .booking-wrap { grid-template-columns: 1fr; gap: 40px; } }
+    .booking-wrap { max-width: 640px; margin: 0 auto; padding: 56px 6vw 24px; }
     .col-head { font-family: 'Archivo', Georgia, serif; font-size: 22px; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 6px; }
     .col-sub { font-size: 14px; color: var(--gray); line-height: 1.5; margin-bottom: 20px; }
-    .calendly-inline-widget { min-width: 300px; height: 700px; border: 1px solid var(--border); border-radius: 2px; }
 
     /* Form */
     .lead-form .fg { margin-bottom: 16px; }
@@ -236,8 +233,7 @@
       <span class="pill active">Part 107 Drone</span>
     </div>
     <div class="hero-paths">
-      <a href="#calendly" class="hero-path-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-1px;margin-right:6px;"><polyline points="9 6 15 12 9 18"/></svg>Pick a time on the calendar</a>
-      <a href="#book-form" class="hero-path-btn alt"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-1px;margin-right:6px;"><polyline points="9 6 15 12 9 18"/></svg>Just send listing details</a>
+      <a href="#book-form" class="hero-path-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-1px;margin-right:6px;"><polyline points="9 6 15 12 9 18"/></svg>Send listing details &mdash; I&rsquo;ll text you back</a>
     </div>
   </div>
 </section>
@@ -252,17 +248,10 @@
 </section>
 
 <div class="booking-wrap">
-  <!-- Option 1: pick a time -->
-  <div id="calendly">
-    <h2 class="col-head">Pick a time</h2>
-    <p class="col-sub">Choose a slot that works for your listing. You'll get a confirmation, and I'll text you the prep checklist before shoot day.</p>
-    <div class="calendly-inline-widget" data-url="https://calendly.com/kaden-elzingacreativestudio/real-estate-shoot?hide_gdpr_banner=1"></div>
-  </div>
-
-  <!-- Option 2: send details -->
+  <!-- Send listing details → Kaden texts back to lock the date -->
   <div id="book-form">
-    <h2 class="col-head">Or send listing details</h2>
-    <p class="col-sub">Not sure on timing yet? Send the listing and I'll come back with a quote and the next open dates — usually within a few hours.</p>
+    <h2 class="col-head">Send your listing details</h2>
+    <p class="col-sub">Send the listing and I'll come back with a quote and the next open dates — usually within a few hours.</p>
     <form class="lead-form" id="listing-form" onsubmit="handleListingSubmit(event)">
       <div class="form-row">
         <div class="fg">
@@ -405,9 +394,6 @@
   <p class="footer-copy">&copy; 2026 Elzinga Creative Studio. Grand Rapids, Michigan. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.2);text-decoration:none;">Privacy Policy</a></p>
 </footer>
 
-<!-- Calendly inline widget -->
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-
 <!-- EmailJS (same pipeline as the main contact form) -->
 <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="config.js"></script>
@@ -517,9 +503,6 @@
     }
     btn.textContent = 'Send Listing Details'; btn.disabled = false;
   }
-</script>
-<script>
-window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendly.event_scheduled'){window.dataLayer=window.dataLayer||[];dataLayer.push({event:'booking_complete'});if(window.fbq)fbq('track','Schedule');}});
 </script>
 
 <!-- Meta Pixel Code -->

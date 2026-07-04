@@ -454,7 +454,6 @@
     }
 
   </style>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -582,7 +581,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <div class="how-item">
       <span class="how-num">Step 01</span>
       <span class="how-title">Book your first listing</span>
-      <p class="how-desc">Pick a tier, send the address, lock the date on the Calendly link. 50% deposit secures the slot.</p>
+      <p class="how-desc">Pick a tier, send the address, and I&rsquo;ll text you to lock the date. 50% deposit secures the slot.</p>
     </div>
     <div class="how-item">
       <span class="how-num">Step 02</span>
@@ -884,7 +883,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </details>
     <details class="faq-item">
       <summary>How do I book my first listing?</summary>
-      <p>Click "Book Your First Listing" or call (616) 258-4578. Send the address, pick a tier, lock the date on Calendly. 50% deposit secures the slot. Balance due before delivery.</p>
+      <p>Click "Book Your First Listing" or call (616) 258-4578. Send the address, pick a tier, and I&rsquo;ll text you to lock the date. 50% deposit secures the slot. Balance due before delivery.</p>
     </details>
     <details class="faq-item">
       <summary>How do I pay the deposit and balance?</summary>
@@ -961,19 +960,9 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     hdr.classList.toggle('scrolled', window.scrollY > 40);
   });
 </script>
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script>
-  const CALENDLY_URL = 'https://calendly.com/kaden-elzingacreativestudio/real-estate-shoot';
-  function openCalendly() {
-    if (window.Calendly) {
-      Calendly.initPopupWidget({ url: CALENDLY_URL });
-    } else {
-      window.open(CALENDLY_URL, '_blank');
-    }
-  }
 </script>
 <script>
-window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendly.event_scheduled'){window.dataLayer=window.dataLayer||[];dataLayer.push({event:'booking_complete'});if(window.fbq)fbq('track','Schedule');}});
 </script>
 
 <script>
@@ -1009,5 +998,6 @@ window.addEventListener('message',function(e){if(e.data&&e.data.event==='calendl
 </script>
 
   <script src="js/brand.js" defer></script>
+  <script src="js/booking.js" data-ecs-booking="real-estate" defer></script>
 </body>
 </html>
