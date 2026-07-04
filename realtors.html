@@ -152,6 +152,30 @@
     .work-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
     .work-grid figure:hover img { transform: scale(1.045); }
     .work-cap { margin-top: 18px; font-size: 13px; color: var(--muted); }
+    /* The survivors sheet — one listing, frame by frame (homepage treatment). */
+    .work-sheet { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .work-sheet figure { margin: 0; }
+    .work-sheet .cover { grid-column: 1 / 3; grid-row: 1 / 3; display: flex; flex-direction: column; }
+    .work-sheet img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; border-radius: 2px; }
+    .work-sheet .cover .ez-pick { flex: 1; min-height: 0; }
+    .work-sheet .cover img { height: 100%; aspect-ratio: auto; }
+    .work-sheet .ez-plate { font-size: 10px; }
+    .work-sheet .cover .ez-plate { color: var(--mark); border-top-color: var(--mark); }
+    html.ez-motion .work-sheet figure:nth-child(1) .ez-develop { transition-delay: .1s; }
+    html.ez-motion .work-sheet figure:nth-child(2) .ez-develop { transition-delay: .3s; }
+    html.ez-motion .work-sheet figure:nth-child(3) .ez-develop { transition-delay: .5s; }
+    html.ez-motion .work-sheet figure:nth-child(4) .ez-develop { transition-delay: .7s; }
+    html.ez-motion .work-sheet figure:nth-child(5) .ez-develop { transition-delay: .9s; }
+    html.ez-motion .work-sheet figure:nth-child(6) .ez-develop { transition-delay: 1.1s; }
+    html.ez-motion .work-sheet .ez-pick::after { transition-delay: 1.5s; }
+    /* the hero keeper circle sits over the scrimmed photo bg — stroke up */
+    .hero-h1 .ez-keep > svg.ez-keep-svg path { stroke-width: 3; }
+    @media (max-width: 860px) {
+      .work-sheet { grid-template-columns: repeat(2, 1fr); }
+      .work-sheet .cover { grid-column: 1 / 3; grid-row: auto; display: block; }
+      .work-sheet .cover .ez-pick { min-height: unset; }
+      .work-sheet .cover img { aspect-ratio: 16/10; height: auto; }
+    }
 
     /* ── LEAD FORM (the conversion centerpiece) ─────────────── */
     #start { background: var(--soft); scroll-margin-top: 64px; }
@@ -331,7 +355,7 @@
   <div class="hero-content">
     <div class="wrap">
       <p class="eyebrow hero-eyebrow">Real estate photography · Grand Rapids &amp; West Michigan</p>
-      <h1 class="hero-h1">Shot to sell.</h1>
+      <h1 class="hero-h1">Shot to <span class="ez-keep">sell.</span></h1>
       <p class="hero-sub">Bright, true-to-color listing photography for West Michigan agents. Real twilight, drone, and your gallery back by 9am the next morning.</p>
       <div class="hero-meta">
         <span>Gallery by 9am next morning</span>
@@ -367,12 +391,35 @@
       </div>
       <p class="lede">Windows you can see out of. Color that&rsquo;s true to the home. Real twilight when the house earns it. The same standard on every shoot, whether it&rsquo;s a starter ranch or a lakefront estate.</p>
     </div>
-    <div class="work-grid" data-reveal>
-      <figure class="big"><picture><source srcset="images/web/DSC08468-HDR-1600.avif" type="image/avif"><img src="images/web/DSC08468-HDR-1600.jpg" alt="Bright, sunlit living room of a West Michigan listing, flambient HDR" loading="lazy"></picture></figure>
-      <figure class="sm"><picture><source srcset="images/web/DSC08881-HDR-1600.avif" type="image/avif"><img src="images/web/DSC08881-HDR-1600.jpg" alt="Warm, naturally lit bedroom in a West Michigan home" loading="lazy"></picture></figure>
-      <figure class="sm"><picture><source srcset="images/web/_DSC8528-HDR-1600.avif" type="image/avif"><img src="images/web/_DSC8528-HDR-1600.jpg" alt="Clean, bright full bathroom in a West Michigan listing" loading="lazy"></picture></figure>
+    <!-- One listing, told completely — the chavaun shoot, frame by frame.
+         Every frame shown made the cut (survivors only, per DESIGN.md). -->
+    <div class="work-sheet" data-reveal>
+      <figure class="cover">
+        <span class="ez-pick" data-reveal><img class="ez-develop" src="images/web/chavaun-golden-hour-front-1600.jpg" alt="Golden hour front exterior of a Grand Rapids listing by Elzinga Creative Studio" loading="lazy" width="1600" height="1067"></span>
+        <figcaption class="ez-plate">CHAVAUN-GOLDEN-HOUR · THE COVER</figcaption>
+      </figure>
+      <figure>
+        <img class="ez-develop" src="images/web/chavaun-kitchen-1600.jpg" alt="Bright HDR kitchen of the same West Michigan listing" loading="lazy" width="1600" height="1067">
+        <figcaption class="ez-plate">CHAVAUN-KITCHEN · KEPT</figcaption>
+      </figure>
+      <figure>
+        <img class="ez-develop" src="images/web/chavaun-open-concept-1600.jpg" alt="Open-concept living space, true-to-color HDR" loading="lazy" width="1600" height="1067">
+        <figcaption class="ez-plate">CHAVAUN-OPEN-CONCEPT · KEPT</figcaption>
+      </figure>
+      <figure>
+        <img class="ez-develop" src="images/web/chavaun-primary-bedroom-1600.jpg" alt="Primary bedroom with balanced window light" loading="lazy" width="1600" height="1067">
+        <figcaption class="ez-plate">CHAVAUN-PRIMARY-BEDROOM · KEPT</figcaption>
+      </figure>
+      <figure>
+        <img class="ez-develop" src="images/web/chavaun-patio-1600.jpg" alt="Backyard patio and outdoor living space" loading="lazy" width="1600" height="1067">
+        <figcaption class="ez-plate">CHAVAUN-PATIO · KEPT</figcaption>
+      </figure>
+      <figure>
+        <img class="ez-develop" src="images/web/chavaun-drone-aerial-1600.jpg" alt="Part 107 drone aerial showing the home and lot" loading="lazy" width="1600" height="1067">
+        <figcaption class="ez-plate">CHAVAUN-DRONE-AERIAL · KEPT</figcaption>
+      </figure>
     </div>
-    <p class="work-cap">Recent West Michigan listing work. Want a full gallery before you decide? Just ask when you grab a quote below.</p>
+    <p class="work-cap">One recent listing, frame by frame — golden hour front, interiors, and the Part 107 aerial. Want a full gallery before you decide? Just ask when you grab a quote below.</p>
   </div>
 </section>
 
