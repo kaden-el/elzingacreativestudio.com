@@ -322,7 +322,6 @@
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
     :focus-visible{outline:2px solid #B22A12;outline-offset:3px}
   </style>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -499,13 +498,7 @@ fbq('track', 'PageView');
   const hdr = document.getElementById('site-header');
   window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 40); });
 </script>
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script>
-  const CALENDLY_URL = 'https://calendly.com/kaden-elzingacreativestudio/real-estate-shoot';
-  function openCalendly() {
-    if (window.Calendly) { Calendly.initPopupWidget({ url: CALENDLY_URL }); }
-    else { window.open(CALENDLY_URL, '_blank'); }
-  }
 </script>
 <script>
 (function () {
@@ -521,5 +514,6 @@ fbq('track', 'PageView');
 })();
 </script>
   <script src="js/brand.js" defer></script>
+  <script src="js/booking.js" data-ecs-booking="real-estate" defer></script>
 </body>
 </html>

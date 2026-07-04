@@ -115,6 +115,31 @@ of scope, no change.
 - SMS/mailto fallback verified when `ELZINGA_CONFIG`/EmailJS is absent.
 - Site still deploys cleanly via the existing GitHub Pages workflow on push to `main`.
 
+## Implementation notes (what actually shipped, 2026-07-03)
+
+Two realities surfaced during build that adjusted the plan:
+
+1. **`book-a-listing.html` is a redirect tombstone.** Lines 4–6 `<meta http-equiv="refresh">`
+   + `location.replace("realtors.html#start")` — the page was consolidated into
+   `realtors.html` on 2026-06-25 and redirects instantly. Its inline Calendly widget was
+   therefore never actually shown to users. The live real-estate booking surface is
+   **`realtors.html`**, which already uses the EmailJS lead form (no Calendly). Action taken:
+   removed the Calendly column + assets from `book-a-listing.html` as hygiene (so nothing
+   Calendly loads even briefly before the redirect), kept its existing rich form intact. It
+   does **not** load `js/booking.js` (it has its own handler and redirects anyway).
+
+2. **Only `index.html` preloaded EmailJS + `config.js`.** The other 9 popup pages had Calendly
+   only. So `js/booking.js` is **self-loading**: it injects `config.js` + the EmailJS SDK when
+   absent, inits, and falls back to SMS/mailto if config never arrives. One `<script>` include
+   per page is all that's needed.
+
+Shipped: `js/booking.js` (shared form + modal, self-contained CSS/JS), wired into the 10 popup
+pages via `openBooking()` (with `openCalendly()` kept as an alias so existing buttons are
+untouched). QA verified in a headless browser: modal opens with the correct default shoot type
+per page (Wedding, Real estate, "Not sure yet" for general), correct subject-label variant
+(address vs. "what are we shooting"), required-field validation, and the success screen. Zero
+Calendly references remain repo-wide.
+
 ## Out of scope (YAGNI)
 - Any real availability/calendar or self-serve time selection.
 - Supabase logging (realtors form doesn't do it; keep parity — can be added later).
