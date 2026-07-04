@@ -50,7 +50,7 @@ python3 scripts/apply-brand.py index.html # specific page(s)
 - Loaded once via `@import` in brand.css + per-page `<link>` for first paint.
 
 ## Signature devices
-**Iron rule: nothing is ever drawn over a photograph.** Marks live on text and around frames; the work stays clean.
+**Iron rules: (1) nothing is ever drawn over a photograph; (2) real portfolio work is NEVER labeled culled.** Marks live on text and around frames; the work stays clean. Every frame shown on the site is a keeper — the cull is the *story in the copy* ("hundreds shot, these survived"), not a label applied to Kaden's shots. `.ez-cull` (dim) exists only for genuine rejects, if they're ever shown at all.
 1. **Keeper mark** `.ez-keep` — rough red SVG ellipse around the chosen thing — **TEXT ONLY** (headline keyword, recommended tier name). Draws on scroll; static under reduced-motion. brand.js strips the class if it finds an img inside. Never perfect/geometric — it's a grease pencil, not a border-radius.
 2. **The cull** `.ez-cull` — culled frames dim to gray (no overlay). With motion they start full color and dim when `.in` lands — stagger with `transition-delay` per frame.
 3. **The pick** `.ez-pick` — red selection outline *around* the surviving frame (Lightroom pick flag): `<span class="ez-pick" data-reveal><img …></span>`.
@@ -64,7 +64,7 @@ python3 scripts/apply-brand.py index.html # specific page(s)
 - **Develop** `.ez-develop` — photos come up like a print in the developer tray (washed → full contrast, 1.2s) inside any observed container.
 - **Sheet-rule wipe** — the ink segment under `.ez-sheet[data-reveal]` scales in from the left.
 - **Index marquee** — `.track` with two identical lanes + `ezMarquee` (translateX −50%, ~48s linear); motion-gated, static single line otherwise.
-- **The opening sequence** (index.html only, page-local): hero text rises in staggered → keeper circles the headline word → the strip arrives full color → the cull runs left→right (frames dim one by one) → the pick outline lands on the survivor.
+- **The opening sequence** (index.html only, page-local): hero text rises in staggered → keeper circles the headline word → the survivors develop in left→right (all KEPT, full color) → the pick outline lands on the cover shot.
 - Hover micro: portfolio frames brighten slightly; plate category flips to `--mark`.
 - **Killed forever:** grain, dot cursor, progress bar, scramble, tilt, spotlight, magnet, shimmer, marks drawn over photos.
 - ALWAYS honor `prefers-reduced-motion` (static end states) + `(pointer:fine)`.

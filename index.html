@@ -303,9 +303,10 @@
     .e3-cullrow .kept .ez-plate { color: var(--mark); border-top-color: var(--mark); }
 
     /* ── The opening sequence ──
-       Text rises in, the strip arrives full color, then the cull runs
-       left→right (frames dim one by one) and the pick outline lands last.
-       No marks are ever drawn over the photographs. */
+       Text rises in, then the survivors develop in left→right (washed →
+       full contrast, like prints in the tray) and the pick outline lands
+       on the cover shot last. Every frame shown made the cut — the cull
+       is the copy's story, never a label on real work. */
     html.ez-motion .e3-hero .e3-topline { animation: ezRise .7s var(--ease) .05s both; }
     html.ez-motion .e3-hero h1          { animation: ezRise .7s var(--ease) .16s both; }
     html.ez-motion .e3-hero .e3-display { animation: ezRise .8s var(--ease) .3s both; }
@@ -314,11 +315,12 @@
     html.ez-motion .e3-hero .e3-phone   { animation: ezRise .7s var(--ease) .7s both; }
     html.ez-motion .e3-cullrow          { animation: ezRise .9s var(--ease) .82s both; }
     html.ez-motion .e3-hero .e3-display .ez-keep.in > svg.ez-keep-svg path { transition-delay: 1.05s; }
-    html.ez-motion .e3-cullrow figure:nth-child(1) .ez-cull img { transition-delay: 1.5s; }
-    html.ez-motion .e3-cullrow figure:nth-child(2) .ez-cull img { transition-delay: 1.8s; }
-    html.ez-motion .e3-cullrow figure:nth-child(4) .ez-cull img { transition-delay: 2.1s; }
-    html.ez-motion .e3-cullrow figure:nth-child(5) .ez-cull img { transition-delay: 2.4s; }
-    html.ez-motion .e3-cullrow .ez-pick::after { transition-delay: 2.85s; }
+    html.ez-motion .e3-cullrow figure:nth-child(1) .ez-develop { transition-delay: 1.15s; }
+    html.ez-motion .e3-cullrow figure:nth-child(2) .ez-develop { transition-delay: 1.4s; }
+    html.ez-motion .e3-cullrow figure:nth-child(3) .ez-develop { transition-delay: 1.65s; }
+    html.ez-motion .e3-cullrow figure:nth-child(4) .ez-develop { transition-delay: 1.9s; }
+    html.ez-motion .e3-cullrow figure:nth-child(5) .ez-develop { transition-delay: 2.15s; }
+    html.ez-motion .e3-cullrow .ez-pick::after { transition-delay: 2.7s; }
 
     /* ── Ticker → slow index marquee (two identical lanes, seamless) ── */
     .e3-ticker {
@@ -657,27 +659,29 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     </div>
     <p class="e3-phone">Call or text <a href="tel:+16162584578">(616) 258-4578</a> — Kaden</p>
   </div>
+  <!-- The survivors — every frame here made the cut. The sequence develops
+       them in left to right, then the pick lands on the cover shot. -->
   <div class="e3-cullrow e3-wrap">
-    <div class="row">
+    <div class="row" data-reveal>
       <figure>
-        <span class="ez-cull"><img src="images/web/richard-living-room-1600.jpg" alt="HDR living room real estate photo, Grand Rapids MI" width="800" height="600" loading="eager"></span>
-        <figcaption class="ez-plate">RICHARD-LIVING · CULLED</figcaption>
+        <img class="ez-develop" src="images/web/richard-living-room-1600.jpg" alt="HDR living room real estate photo, Grand Rapids MI" width="800" height="600" loading="eager">
+        <figcaption class="ez-plate">RICHARD-LIVING · KEPT</figcaption>
       </figure>
       <figure>
-        <span class="ez-cull"><img src="images/web/chavaun-kitchen-1600.jpg" alt="HDR kitchen real estate photo, West Michigan listing" width="800" height="600" loading="eager"></span>
-        <figcaption class="ez-plate">CHAVAUN-KITCHEN · CULLED</figcaption>
+        <img class="ez-develop" src="images/web/chavaun-kitchen-1600.jpg" alt="HDR kitchen real estate photo, West Michigan listing" width="800" height="600" loading="eager">
+        <figcaption class="ez-plate">CHAVAUN-KITCHEN · KEPT</figcaption>
       </figure>
       <figure class="kept">
-        <span class="ez-pick" data-reveal><img src="images/web/chavaun-golden-hour-front-1600.jpg" alt="Golden hour front exterior real estate photography, Grand Rapids Michigan" width="800" height="600" fetchpriority="high"></span>
-        <figcaption class="ez-plate">CHAVAUN-GOLDEN-HOUR · KEPT</figcaption>
+        <span class="ez-pick" data-reveal><img class="ez-develop" src="images/web/chavaun-golden-hour-front-1600.jpg" alt="Golden hour front exterior real estate photography, Grand Rapids Michigan" width="800" height="600" fetchpriority="high"></span>
+        <figcaption class="ez-plate">CHAVAUN-GOLDEN-HOUR · THE COVER</figcaption>
       </figure>
       <figure>
-        <span class="ez-cull"><picture><source srcset="images/web/DSC08468-HDR-1600.avif" type="image/avif"><img src="images/web/DSC08468-HDR-1600.jpg" alt="HDR interior real estate photography Grand Rapids" width="800" height="600" loading="eager"></picture></span>
-        <figcaption class="ez-plate">DSC08468-HDR · CULLED</figcaption>
+        <picture><source srcset="images/web/DSC08468-HDR-1600.avif" type="image/avif"><img class="ez-develop" src="images/web/DSC08468-HDR-1600.jpg" alt="HDR interior real estate photography Grand Rapids" width="800" height="600" loading="eager"></picture>
+        <figcaption class="ez-plate">DSC08468-HDR · KEPT</figcaption>
       </figure>
       <figure>
-        <span class="ez-cull"><img src="images/web/chavaun-drone-aerial-1600.jpg" alt="Part 107 drone aerial real estate photo, West Michigan" width="800" height="600" loading="eager"></span>
-        <figcaption class="ez-plate">CHAVAUN-AERIAL · CULLED</figcaption>
+        <img class="ez-develop" src="images/web/chavaun-drone-aerial-1600.jpg" alt="Part 107 drone aerial real estate photo, West Michigan" width="800" height="600" loading="eager">
+        <figcaption class="ez-plate">CHAVAUN-AERIAL · KEPT</figcaption>
       </figure>
     </div>
   </div>
