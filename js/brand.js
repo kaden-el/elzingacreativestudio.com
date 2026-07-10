@@ -23,7 +23,7 @@
    Empty string = no-op (safe to ship; nothing loads). */
 (function () {
   'use strict';
-  var GA4_ID = '';                       // ← paste GA4 Measurement ID here to go live
+  var GA4_ID = 'G-1BZCS0HDRF';           // ECS GA4 property (created 2026-07-09)
   if (GA4_ID.indexOf('G-') !== 0) return;
   if (window.__ezGA4) return;
   window.__ezGA4 = true;
