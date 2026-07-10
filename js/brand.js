@@ -12,6 +12,31 @@
    Everything Edition 02 injected (grain, dot cursor, progress bar, marquee,
    scramble, tilt, magnet, spotlight) is retired.
    ========================================================================== */
+/* ── GA4 measurement (added 2026-07-09) ────────────────────────────────
+   Bookings must be attributable. The site fires funnel events into
+   dataLayer (booking_request from js/booking.js; lead_form_submit from the
+   index + realtors forms) but the GTM container GTM-T9PX92WS is empty, so
+   nothing reaches GA4. This loads gtag.js directly and exposes window.gtag,
+   which the conversion points call with a `generate_lead` event. Meta Pixel
+   conversions are already live and independent of this.
+   ACTIVATE: paste the GA4 Measurement ID (G-XXXXXXXXXX) into GA4_ID below.
+   Empty string = no-op (safe to ship; nothing loads). */
+(function () {
+  'use strict';
+  var GA4_ID = 'G-1BZCS0HDRF';           // ECS GA4 property (created 2026-07-09)
+  if (GA4_ID.indexOf('G-') !== 0) return;
+  if (window.__ezGA4) return;
+  window.__ezGA4 = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+  (document.head || document.documentElement).appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GA4_ID);
+})();
+
 (function () {
   'use strict';
   if (window.__ezBrand3) return;

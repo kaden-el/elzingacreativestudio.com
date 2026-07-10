@@ -205,7 +205,8 @@
 
     .form-card { background: var(--paper); border: 1px solid var(--line); border-radius: 2px; padding: clamp(28px, 3.4vw, 44px); }
     .form-kicker { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
-    .form-title { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 2.4vw, 1.9rem); letter-spacing: -0.02em; margin: 8px 0 26px; line-height: 1.1; }
+    .form-title { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 2.4vw, 1.9rem); letter-spacing: -0.02em; margin: 8px 0 8px; line-height: 1.1; }
+    .form-sub { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin: 0 0 24px; }
     .fld { margin-bottom: 20px; }
     .fld label { display: block; font-size: 13px; font-weight: 500; color: var(--muted); margin-bottom: 8px; }
     .fld label .opt { color: var(--muted); opacity: .7; font-weight: 400; }
@@ -219,6 +220,8 @@
     .form-fine { margin-top: 16px; font-size: 12px; line-height: 1.6; color: var(--muted); text-align: center; }
     .form-fine strong { color: var(--ink); }
     .form-fine a { color: var(--accent); text-decoration: none; }
+    .form-guar { margin-top: 16px; padding: 12px 14px; background: var(--soft); border: 1px solid var(--line); border-left: 2px solid var(--accent); border-radius: 2px; font-size: 12.5px; line-height: 1.55; color: var(--muted); }
+    .form-guar strong { color: var(--ink); font-weight: 600; }
     .form-done { display: none; text-align: center; padding: 14px 0; }
     .form-done.show { display: block; }
     .done-tick { width: 58px; height: 58px; border-radius: 50%; background: var(--accent); margin: 0 auto 22px; display: flex; align-items: center; justify-content: center; }
@@ -297,8 +300,9 @@
     /* ── CTA BAND ───────────────────────────────────────────── */
     #cta { background: var(--ink); color: var(--paper); text-align: center; }
     #cta .eyebrow { color: var(--accent); justify-content: center; }
-    .cta-h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem,6vw,5rem); letter-spacing: -0.035em; line-height: 0.96; margin: 22px 0 40px; }
+    .cta-h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem,6vw,5rem); letter-spacing: -0.035em; line-height: 0.96; margin: 22px 0 24px; }
     .cta-h2 em { font-style: italic; color: var(--accent); }
+    .cta-sub { font-size: clamp(1rem, 1.6vw, 1.15rem); line-height: 1.6; color: rgba(244,245,242,.72); max-width: 48ch; margin: 0 auto 36px; }
 
     /* ── FOOTER ─────────────────────────────────────────────── */
     footer { background: var(--ink); color: rgba(244,245,242,.55); border-top: 1px solid rgba(244,245,242,.1); padding: 30px clamp(24px,5vw,56px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -494,6 +498,7 @@
              ════════════════════════════════════════════════════════════════ -->
         <p class="form-kicker">Fast quote</p>
         <h3 class="form-title">Tell me about the listing</h3>
+        <p class="form-sub">Three quick fields &mdash; a straight, flat quote back, usually within the hour.</p>
         <form id="lead-form" novalidate>
           <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
 
@@ -537,6 +542,7 @@
           </div>
 
           <button type="submit" class="btn btn-primary form-submit">Get my fast quote</button>
+          <p class="form-guar"><strong>The 9am guarantee.</strong> Your edited, MLS-ready gallery by 9am the next morning &mdash; or your next shoot is free.</p>
           <p class="form-fine">No spam, ever. I&rsquo;ll text you back from <strong>(616) 258-4578</strong>. <a href="privacy-policy.html">Privacy</a>.</p>
         </form>
 
@@ -631,6 +637,7 @@
           <li>Part 107 drone aerials</li>
           <li>60-second listing reel</li>
           <li>55&ndash;70 total images</li>
+          <li>Built for luxury &amp; lakefront listings</li>
         </ul>
         <a href="#start" class="price-btn">Get a quote</a>
       </div>
@@ -736,6 +743,7 @@
   <div class="wrap">
     <p class="eyebrow">Your next listing deserves better photos</p>
     <h2 class="cta-h2">Get a fast<br><em>quote.</em></h2>
+    <p class="cta-sub">Published flat rates from $245. Your edited gallery back by 9am the next morning &mdash; or your next shoot is free.</p>
     <a href="#start" class="btn btn-primary">Get a fast quote <span class="arr">→</span></a>
   </div>
 </section>
@@ -846,6 +854,7 @@
     try {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'lead_form_submit', lead_timeline: timeline.value });
+      if (window.gtag) window.gtag('event', 'generate_lead', { form: 'realtors_funnel', lead_timeline: timeline.value });
       if (window.fbq) fbq('track', 'Lead', { content_name: 'realtors-funnel' });
     } catch (_) {}
 

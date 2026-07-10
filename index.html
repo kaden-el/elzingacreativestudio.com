@@ -1476,6 +1476,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       if (window.fbq) fbq('track', 'Lead', { content_name: 'homepage-inquiry' });
       window.dataLayer = window.dataLayer || [];
       dataLayer.push({ event: 'lead_form_submit' });
+      if (window.gtag) window.gtag('event', 'generate_lead', { form: 'homepage_inquiry' });
       document.getElementById('inquiry-form').reset();
     } catch (err) {
       msg.className = 'form-msg error';
