@@ -854,6 +854,7 @@
     try {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'lead_form_submit', lead_timeline: timeline.value });
+      if (window.gtag) window.gtag('event', 'generate_lead', { form: 'realtors_funnel', lead_timeline: timeline.value });
       if (window.fbq) fbq('track', 'Lead', { content_name: 'realtors-funnel' });
     } catch (_) {}
 

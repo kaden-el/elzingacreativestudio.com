@@ -195,6 +195,7 @@
     try {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'booking_request', shoot_type: type });
+      if (window.gtag) window.gtag('event', 'generate_lead', { form: 'booking_request', shoot_type: type });
       if (window.fbq) fbq('track', 'Lead', { content_name: 'booking-' + PAGE_TYPE });
     } catch (_) {}
 
