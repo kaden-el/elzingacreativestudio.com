@@ -37,6 +37,93 @@
   window.gtag('config', GA4_ID);
 })();
 
+/* ── Lift SDK v1 (Phase 1: instrument-only, log-only) ──────────────────
+   Vendored from ~/Desktop/lift/sdk/lift.js — edit there, re-vendor here.
+   Adds the funnel events this site is missing on top of the gtag loaded
+   above: lift_form_start (first focus on a lead form), lift_form_abandon
+   (started, never attempted submit), and contact (tel:/sms: clicks, which
+   ECS didn't track). Successful submits stay on the existing generate_lead.
+   FAIL OPEN: fully wrapped; a no-op without gtag. Never breaks the page. */
+(function () {
+  try {
+    var cfg = window.__LIFT = { site: "ecs",
+      forms: "#inquiry-form, #lead-form, #ecsbk-ov form", trackContact: true };
+    var FORMS = cfg.forms;
+
+    function send(name, params) {
+      try {
+        if (!window.gtag) return;
+        params = params || {};
+        params.lift_v = "1";
+        params.lift_site = cfg.site;
+        window.gtag("event", name, params);
+      } catch (_) {}
+    }
+
+    function leadForm(el) {
+      try {
+        var f = el && el.form ? el.form : el;
+        if (!f || f.tagName !== "FORM" || !f.matches) return null;
+        return f.matches(FORMS) ? f : null;
+      } catch (_) { return null; }
+    }
+
+    function key(f) {
+      return f.id || f.getAttribute("data-lead-form") || "form";
+    }
+
+    var started = {}; // key -> { t0, touched, attempted }
+
+    document.addEventListener("focusin", function (e) {
+      try {
+        var f = leadForm(e.target);
+        if (!f) return;
+        var k = key(f);
+        var field = e.target.name || e.target.id || "?";
+        if (started[k]) { started[k].touched[field] = 1; return; }
+        started[k] = { t0: Date.now(), touched: {}, attempted: false };
+        started[k].touched[field] = 1;
+        send("lift_form_start", { form: k });
+      } catch (_) {}
+    });
+
+    document.addEventListener("submit", function (e) {
+      try {
+        var f = leadForm(e.target);
+        if (!f) return;
+        var k = key(f);
+        if (!started[k]) started[k] = { t0: Date.now(), touched: {} };
+        started[k].attempted = true;
+      } catch (_) {}
+    }, true);
+
+    window.addEventListener("pagehide", function () {
+      try {
+        for (var k in started) {
+          var s = started[k];
+          if (s.attempted) continue;
+          send("lift_form_abandon", {
+            form: k,
+            seconds_in_form: Math.round((Date.now() - s.t0) / 1000),
+            fields_touched: Object.keys(s.touched).length
+          });
+        }
+        started = {};
+      } catch (_) {}
+    });
+
+    document.addEventListener("click", function (e) {
+      try {
+        var t = e.target;
+        var a = t && t.closest ? t.closest('a[href^="tel:"], a[href^="sms:"]') : null;
+        if (!a) return;
+        var sms = a.getAttribute("href").lastIndexOf("sms:", 0) === 0;
+        send("contact", { method: sms ? "sms" : "phone" });
+      } catch (_) {}
+    });
+  } catch (_) {}
+})();
+
 (function () {
   'use strict';
   if (window.__ezBrand3) return;
