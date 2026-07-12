@@ -37,29 +37,28 @@
   window.gtag('config', GA4_ID);
 })();
 
-/* ── Lift SDK v1 (Phase 1: instrument-only, log-only) ──────────────────
+/* ── Lift SDK v2 (Phase 1 instrumentation + Phase 2 shadow experiments) ──
    Vendored from ~/Desktop/lift/sdk/lift.js — edit there, re-vendor here.
-   Adds the funnel events this site is missing on top of the gtag loaded
-   above: lift_form_start (first focus on a lead form), lift_form_abandon
-   (started, never attempted submit), and contact (tel:/sms: clicks, which
-   ECS didn't track). Successful submits stay on the existing generate_lead.
+   Config below; experiments load from /lift-config.json (empty for ECS today).
    FAIL OPEN: fully wrapped; a no-op without gtag. Never breaks the page. */
+window.__LIFT = { site: "ecs",
+  forms: "#inquiry-form, #lead-form, #ecsbk-ov form", trackContact: true };
 (function () {
   try {
-    var cfg = window.__LIFT = { site: "ecs",
-      forms: "#inquiry-form, #lead-form, #ecsbk-ov form", trackContact: true };
-    var FORMS = cfg.forms;
+    var cfg = window.__LIFT || {};
+    var FORMS = cfg.forms || "#leadform, [data-lead-form]";
 
     function send(name, params) {
       try {
         if (!window.gtag) return;
         params = params || {};
-        params.lift_v = "1";
-        params.lift_site = cfg.site;
+        params.lift_v = "2";
+        params.lift_site = cfg.site || "";
         window.gtag("event", name, params);
       } catch (_) {}
     }
 
+    /* ── Phase 1: form funnel ─────────────────────────────────────────── */
     function leadForm(el) {
       try {
         var f = el && el.form ? el.form : el;
@@ -94,6 +93,9 @@
         var k = key(f);
         if (!started[k]) started[k] = { t0: Date.now(), touched: {} };
         started[k].attempted = true;
+        var valid = true;
+        try { if (f.checkValidity) valid = f.checkValidity(); } catch (_) {}
+        if (valid) convert();
       } catch (_) {}
     }, true);
 
@@ -117,8 +119,107 @@
         var t = e.target;
         var a = t && t.closest ? t.closest('a[href^="tel:"], a[href^="sms:"]') : null;
         if (!a) return;
-        var sms = a.getAttribute("href").lastIndexOf("sms:", 0) === 0;
-        send("contact", { method: sms ? "sms" : "phone" });
+        if (cfg.trackContact) {
+          var sms = a.getAttribute("href").lastIndexOf("sms:", 0) === 0;
+          send("contact", { method: sms ? "sms" : "phone" });
+        }
+        convert(); // a call/text click is a conversion for experiment arms
+      } catch (_) {}
+    });
+
+    /* ── Phase 2: experiments ─────────────────────────────────────────── */
+    var assigns = {};   // expId -> armId
+    var converted = false;
+
+    function pickArm(exp) {
+      try {
+        var sk = "lift_a_" + exp.id, stored = null, i;
+        try { stored = localStorage.getItem(sk); } catch (_) {}
+        if (stored) {
+          for (i = 0; i < exp.arms.length; i++) {
+            if (exp.arms[i].id === stored) return stored;
+          }
+        }
+        var total = 0;
+        for (i = 0; i < exp.arms.length; i++) total += (exp.arms[i].weight || 1);
+        var r = Math.random() * total, acc = 0, id = exp.arms[0].id;
+        for (i = 0; i < exp.arms.length; i++) {
+          acc += (exp.arms[i].weight || 1);
+          if (r <= acc) { id = exp.arms[i].id; break; }
+        }
+        try { localStorage.setItem(sk, id); } catch (_) {}
+        return id;
+      } catch (_) { return null; }
+    }
+
+    function applyArm(exp, armId) {
+      try {
+        var arm = null, i, j;
+        for (i = 0; i < exp.arms.length; i++) {
+          if (exp.arms[i].id === armId) { arm = exp.arms[i]; break; }
+        }
+        if (!arm || !arm.changes) return;
+        for (j = 0; j < arm.changes.length; j++) {
+          var ch = arm.changes[j];
+          if (!ch || !ch.sel || typeof ch.text !== "string") continue;
+          var el = document.querySelector(ch.sel);
+          if (el) el.textContent = ch.text;
+        }
+      } catch (_) {}
+    }
+
+    function initExperiments(conf) {
+      try {
+        if (!conf || !conf.experiments || !conf.experiments.length) return;
+        var path = location.pathname, i;
+        for (i = 0; i < conf.experiments.length; i++) {
+          var e = conf.experiments[i];
+          if (!e || !e.id || !e.arms || !e.arms.length) continue;
+          try { if (e.page && !(new RegExp(e.page)).test(path)) continue; }
+          catch (_) { continue; }
+          var arm = pickArm(e);
+          if (!arm) continue;
+          assigns[e.id] = arm;
+          if (e.mode === "live") applyArm(e, arm); // shadow = never applied
+          send("lift_e_" + e.id + "_" + arm, {});
+        }
+        if (conf.endpoint) relay(conf.endpoint, "exposure");
+      } catch (_) {}
+    }
+
+    function convert() {
+      try {
+        if (converted) return;
+        var any = false, k;
+        for (k in assigns) { any = true; send("lift_c_" + k + "_" + assigns[k], {}); }
+        if (any) converted = true;
+      } catch (_) {}
+    }
+
+    // Optional raw-event relay to the Lift edge Worker (Phase 2b, when the
+    // config gains an `endpoint`). Beacon-style, fire-and-forget, fail-open.
+    function relay(endpoint, kind) {
+      try {
+        var payload = JSON.stringify({
+          site: cfg.site || "", kind: kind, page: location.pathname,
+          assigns: assigns, ts: Date.now()
+        });
+        if (navigator.sendBeacon) { navigator.sendBeacon(endpoint + "/collect", payload); }
+      } catch (_) {}
+    }
+
+    function ready(fn) {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", fn, { once: true });
+      } else { fn(); }
+    }
+
+    ready(function () {
+      try {
+        if (!window.fetch) return;
+        fetch("/lift-config.json", { credentials: "omit" })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(initExperiments)["catch"](function () {});
       } catch (_) {}
     });
   } catch (_) {}
