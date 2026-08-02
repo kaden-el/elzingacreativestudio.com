@@ -38,7 +38,7 @@
 })();
 
 /* ── Lift SDK v2 (Phase 1 instrumentation + Phase 2 shadow experiments) ──
-   Vendored from ~/Desktop/lift/sdk/lift.js — edit there, re-vendor here.
+   Vendored from ~/Desktop/Code/lift/sdk/lift.js — edit there, re-vendor here.
    Config below; experiments load from /lift-config.json (empty for ECS today).
    FAIL OPEN: fully wrapped; a no-op without gtag. Never breaks the page. */
 window.__LIFT = { site: "ecs",
