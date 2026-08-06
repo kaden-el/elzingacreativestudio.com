@@ -36,10 +36,13 @@
     return TYPES[t] ? t : 'general';
   })();
 
-  /* ── make sure the EmailJS SDK + config are present (only index preloads them) ── */
+  /* ── make sure the EmailJS SDK + config + delivery layer are present ──
+     (only a few pages preload them; every page that can open this modal needs
+     all three, so self-inject rather than editing every page that includes us) */
   function ensure(test, src) { if (!test()) { var el = document.createElement('script'); el.src = src; document.head.appendChild(el); } }
   ensure(function () { return !!window.ELZINGA_CONFIG; }, 'config.js');
   ensure(function () { return !!window.emailjs; }, 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js');
+  ensure(function () { return !!window.ECSLead || !!document.querySelector('script[src$="js/lead.js"]'); }, 'js/lead.js');
   (function initEJS(n) {
     if (window.emailjs && window.ELZINGA_CONFIG) { try { emailjs.init(window.ELZINGA_CONFIG.emailjsPublicKey); } catch (_) {} return; }
     if (n < 60) setTimeout(function () { initEJS(n + 1); }, 150);
@@ -201,13 +204,20 @@
 
     var go = form.querySelector('.ecsbk-go');
 
-    if (window.emailjs && window.ELZINGA_CONFIG && window.ELZINGA_CONFIG.emailjsServiceId) {
+    // Delivery runs through ECSLead (js/lead.js): it waits for the deferred CDN
+    // script rather than testing for it once, retries, and queues a hard failure
+    // for redelivery. The old `if (window.emailjs)` check sent anyone who beat
+    // the CDN — or blocked it — straight to a composer they had to finish by hand.
+    if (window.ECSLead) {
       go.disabled = true; go.textContent = 'Sending…';
-      emailjs.send(window.ELZINGA_CONFIG.emailjsServiceId, window.ELZINGA_CONFIG.emailjsTemplateId,
-        { first_name: nm, last_name: '', email: em, service: svc, message: message }
-      ).then(function () {
-        finish('Thanks ' + esc(nm) + '! Got it — I&rsquo;ll text you back shortly to lock a time.', null, null);
-      }).catch(function () { fallback(nm, ph, em, message); });
+      window.ECSLead.deliver({
+        first_name: nm, last_name: '', email: em, service: svc,
+        message: message, form: 'booking_' + PAGE_TYPE
+      }).then(function (res) {
+        go.disabled = false; go.textContent = 'Send request';
+        if (res.ok) finish('Thanks ' + esc(nm) + '! Got it — I&rsquo;ll text you back shortly to lock a time.', null, null);
+        else fallback(nm, ph, em, message);
+      });
       return;
     }
     fallback(nm, ph, em, message);

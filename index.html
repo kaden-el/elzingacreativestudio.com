@@ -616,7 +616,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   <nav class="nav-desktop">
     <a href="#portfolio">Work</a>
     <a href="#services">Services</a>
-    <a href="preferred-photographer.html">For Realtors</a>
+    <a href="realtors.html">For Realtors</a>
     <a href="about.html">About</a>
     <a href="#contact">Contact</a>
     <a href="blog.html">Blog</a>
@@ -638,7 +638,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
   </button>
   <a href="#portfolio" onclick="closeMenu()">Work</a>
   <a href="#services"  onclick="closeMenu()">Services</a>
-  <a href="preferred-photographer.html" onclick="closeMenu()">For Realtors</a>
+  <a href="realtors.html" onclick="closeMenu()">For Realtors</a>
   <a href="about.html" onclick="closeMenu()">About</a>
   <a href="#contact"   onclick="closeMenu()">Contact</a>
   <a href="#" onclick="openCalendly(); closeMenu(); return false;" class="nav-book-mobile">Book a Session</a>
@@ -653,7 +653,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
     <p class="e3-display">Shoot everything.<br>Keep the <span class="ez-keep">keepers.</span></p>
     <p class="e3-sub">Every shoot produces hundreds of frames. Your listing gets the ones that survive a photographer who's never satisfied — HDR interiors, real twilight, Part 107 drone. Delivered in 24 hours.</p>
     <div class="e3-ctas">
-      <a href="book-a-listing.html" class="ez-btn">Book a listing shoot</a>
+      <a href="realtors.html#start" class="ez-btn">Book a listing shoot</a>
       <a href="#portfolio" class="e3-btn-ghost-light">See the keepers <span class="arr">↓</span></a>
     </div>
     <p class="e3-phone">Call or text <a href="tel:+16162584578">(616) 258-4578</a> — Kaden</p>
@@ -800,7 +800,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
           <li>24-hour delivery</li>
           <li>Pixieset gallery download</li>
         </ul>
-        <a class="btn-book" href="book-a-listing.html?tier=essential#book-form">Book Essential</a>
+        <a class="btn-book" href="realtors.html#pricing">Book Essential</a>
       </div>
 
       <div class="e3-tier featured">
@@ -815,7 +815,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
           <li>Social media graphics</li>
           <li>Vertical cuts for Reels &amp; Stories</li>
         </ul>
-        <a class="btn-book" href="book-a-listing.html?tier=showcase#book-form">Book Showcase</a>
+        <a class="btn-book" href="realtors.html#pricing">Book Showcase</a>
       </div>
 
       <div class="e3-tier">
@@ -829,7 +829,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
           <li>3D walkthrough tour (Zillow 3D Home)</li>
           <li>55–70 total images</li>
         </ul>
-        <a class="btn-book" href="book-a-listing.html?tier=signature#book-form">Book Signature</a>
+        <a class="btn-book" href="realtors.html#pricing">Book Signature</a>
       </div>
     </div>
 
@@ -960,8 +960,8 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
         <ul>
           <li><a href="grand-rapids-real-estate-photography-guide.html">The Complete 2026 Guide</a></li>
           <li><a href="elzinga-pricing-calculator.html">Pricing Calculator</a></li>
-          <li><a href="free-audit.html">Free Listing Photo Audit</a></li>
-          <li><a href="preferred-photographer.html">Preferred Photographer Program</a></li>
+          <li><a href="realtors.html#start">Free Listing Photo Audit</a></li>
+          <li><a href="realtors.html#program">Preferred Photographer Program</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="blog.html">Blog &amp; Local Guides</a></li>
           <li><a href="faq.html">FAQ — Every Question Answered</a></li>
@@ -1465,22 +1465,26 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
       return;
     }
 
-    try {
-      await emailjs.send(
-        window.ELZINGA_CONFIG.emailjsServiceId,
-        window.ELZINGA_CONFIG.emailjsTemplateId,
-        { first_name: first, last_name: last, email, service, message }
-      );
+    if (window.ECSLead) ECSLead.track('lead_form_submit', { form: 'homepage_inquiry' });
+
+    const res = window.ECSLead
+      ? await ECSLead.deliver({
+          first_name: first, last_name: last, email: email,
+          service: service, message: message, form: 'homepage_inquiry'
+        })
+      : { ok: false };
+
+    if (res.ok) {
       msg.className = 'form-msg success';
       msg.textContent = 'Message sent — we\'ll be in touch within 24 hours.';
-      if (window.fbq) fbq('track', 'Lead', { content_name: 'homepage-inquiry' });
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({ event: 'lead_form_submit' });
-      if (window.gtag) window.gtag('event', 'generate_lead', { form: 'homepage_inquiry' });
       document.getElementById('inquiry-form').reset();
-    } catch (err) {
+    } else {
+      // Don't dead-end on "email us directly" — that makes the visitor retype
+      // everything. Hand over the message already composed.
+      const c = ECSLead.composerUrl(first, message + '\nEmail: ' + email + '\nService: ' + service);
       msg.className = 'form-msg error';
-      msg.textContent = 'Something went wrong. Please email us directly at kaden@elzingacreativestudio.com';
+      msg.innerHTML = 'The send did not go through from your browser. One tap sends it from your own app: ' +
+        '<a href="' + c.url + '"><strong>' + c.label + ' →</strong></a>';
     }
     btn.textContent = 'Send Inquiry';
     btn.disabled = false;
@@ -1490,6 +1494,7 @@ src="https://www.facebook.com/tr?id=26293188720377993&ev=PageView&noscript=1"
 <script>
 </script>
 
+  <script src="js/lead.js" defer></script>
   <script src="js/brand.js" defer></script>
   <script src="js/booking.js" data-ecs-booking="general" defer></script>
 </body>

@@ -27,10 +27,14 @@ jobs:
 
       - name: Generate config.js from secrets
         run: |
+          # NOTE 2026-08-05: the Supabase keys used to be emitted here too. That
+          # project (wpvydafeuuwiqkaudsnu) no longer resolves — it was deleted —
+          # so the site was publishing a dead host on every page load. Nothing in
+          # the public funnel ever read it; only the three orphaned app pages
+          # (client_intake / client_dashboard / agency_dashboard) did, and they
+          # are broken regardless. Dropped rather than shipped dead.
           cat > config.js << EOF
           window.ELZINGA_CONFIG = {
-            supabaseUrl:       '${{ secrets.SUPABASE_URL }}',
-            supabaseKey:       '${{ secrets.SUPABASE_KEY }}',
             emailjsPublicKey:  '${{ secrets.EMAILJS_PUBLIC_KEY }}',
             emailjsServiceId:  '${{ secrets.EMAILJS_SERVICE_ID }}',
             emailjsTemplateId: '${{ secrets.EMAILJS_TEMPLATE_ID }}',

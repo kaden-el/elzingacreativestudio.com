@@ -275,6 +275,34 @@
     .proc-step h3 { font-family: var(--display); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; margin-bottom: 10px; }
     .proc-step p { font-size: 14px; line-height: 1.65; color: rgba(244,245,242,.66); }
 
+    /* The header is position:fixed, so every section that is now a direct link
+       target needs to clear it on a #jump. #start already did; #pricing and
+       #program became link destinations for ~590 site links on 2026-08-05. */
+    #program, #pricing { scroll-margin-top: 72px; }
+
+    /* ── PREFERRED PHOTOGRAPHER PROGRAM (restored 2026-08-05) ── */
+    #program { background: var(--soft); }
+    #program .h2 em { font-style: italic; color: var(--accent); }
+    .prog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: clamp(44px,5.5vw,68px); }
+    .prog-item { border-top: 1px solid var(--line); padding-top: 22px; }
+    .prog-item h3 { font-family: var(--display); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .prog-item p { font-size: 14px; line-height: 1.65; color: var(--muted); }
+    .prog-ref { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(32px,5vw,64px); align-items: start;
+                margin-top: clamp(48px,6vw,76px); padding: clamp(28px,3.4vw,44px); background: var(--ink); color: var(--paper); border-radius: 2px; }
+    .prog-ref .eyebrow { color: var(--paper); opacity: .72; }
+    .prog-ref .eyebrow::before { background: var(--accent); opacity: 1; }
+    .prog-ref-h { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem,2.9vw,2.3rem); letter-spacing: -0.025em; line-height: 1.12; margin-top: 16px; }
+    .prog-ref-h em { font-style: italic; color: var(--accent); }
+    .prog-ref-p { margin-top: 16px; font-size: 14.5px; line-height: 1.68; color: rgba(244,245,242,.72); max-width: 54ch; }
+    .prog-ref-cta { margin-top: 18px; font-size: 14px; font-weight: 600; }
+    .prog-ref-cta a { color: var(--paper); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+    .prog-ref-cta a:hover { color: var(--accent); }
+    .prog-ref-how { border-left: 2px solid rgba(244,245,242,.18); padding-left: 22px; }
+    .prog-ref-how .lbl { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .prog-ref-how ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .prog-ref-how li { font-size: 14px; line-height: 1.55; color: rgba(244,245,242,.8); padding-left: 18px; position: relative; }
+    .prog-ref-how li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 1px; background: var(--accent); }
+
     /* ── PROOF (honest) ─────────────────────────────────────── */
     #proof .proof-quote { font-family: var(--display); font-weight: 600; font-size: clamp(1.5rem,3.4vw,2.6rem); letter-spacing: -0.02em; line-height: 1.3; max-width: 20ch; }
     #proof .proof-quote .accent { font-style: italic; }
@@ -327,6 +355,9 @@
       .proof-grid { grid-template-columns: 1fr; gap: 40px; }
       #faq .faq-grid { grid-template-columns: 1fr; gap: 24px; }
       .proc-grid { grid-template-columns: 1fr 1fr; gap: 28px 14px; }
+      .prog-grid { grid-template-columns: 1fr 1fr; gap: 28px 14px; }
+      .prog-ref { grid-template-columns: 1fr; gap: 32px; }
+      .prog-ref-how { border-left: 0; border-top: 1px solid rgba(244,245,242,.18); padding-left: 0; padding-top: 22px; }
     }
     @media (max-width: 680px) {
       .price-grid { grid-template-columns: 1fr; }
@@ -335,6 +366,7 @@
       .fld-2 { grid-template-columns: 1fr; }
       .trust-inner { justify-content: flex-start; }
       .proc-grid { grid-template-columns: 1fr; }
+      .prog-grid { grid-template-columns: 1fr; }
       header .nav-cta { padding: 10px 16px; font-size: 12px; }
       .mcta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 120; box-shadow: 0 -2px 16px rgba(0,0,0,.16); }
       .mcta a { flex: 1; text-align: center; padding: 16px 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
@@ -679,6 +711,64 @@
 </section>
 
 <!-- ══════════════ PROOF (honest) ══════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     PREFERRED PHOTOGRAPHER PROGRAM · restored 2026-08-05.
+
+     When the funnel was consolidated into this page on 2026-06-25,
+     preferred-photographer.html became a redirect stub — but 157 links across
+     the site still read "Preferred Photographer Program", and this page never
+     said the word "preferred" or "referral" once. Agents clicked through to
+     read about a standing arrangement and landed on a generic quote page.
+     The two things that were lost — House Photographer status and the $50
+     referral credit — live here now, and those links point straight at it.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<section id="program" class="section">
+  <div class="wrap">
+    <div data-reveal>
+      <p class="eyebrow">Preferred Photographer Program</p>
+      <h2 class="h2" style="margin-top:16px;">Shoot twice, and you stop <em>filling out forms.</em></h2>
+      <p class="lede" style="margin-top:18px;">There is no contract, no retainer and no minimum. After your second paid
+        listing you are a House Photographer client, and the whole thing gets shorter: you text me an address,
+        I text you back a date.</p>
+    </div>
+
+    <div class="prog-grid" data-reveal>
+      <div class="prog-item">
+        <h3>Priority on the calendar</h3>
+        <p>Your listings get first look at the week before it opens up. In spring, that is the difference between
+          shooting Thursday and shooting next Tuesday.</p>
+      </div>
+      <div class="prog-item">
+        <h3>Book by text, not by form</h3>
+        <p>Address and a date. No tier picking, no quote round-trip, no deposit link unless you want one.</p>
+      </div>
+      <div class="prog-item">
+        <h3>The same photographer every time</h3>
+        <p>Not a rotating contractor pool. Your listings look like one body of work because one person shoots them.</p>
+      </div>
+    </div>
+
+    <div class="prog-ref" data-reveal>
+      <div>
+        <p class="eyebrow">Agent Referral Credit</p>
+        <h3 class="prog-ref-h">Bring in another agent. Get <em>$50 off</em> your next listing.</h3>
+        <p class="prog-ref-p">Real estate runs on word of mouth. I do not pay kickbacks or commissions — that gets
+          messy under RESPA. I credit your account $50 when an agent you refer books their first paid shoot.
+          No cap: refer five agents and that is $250 off your book of business.</p>
+        <p class="prog-ref-cta"><a href="referrals.html">See the referral details &rarr;</a></p>
+      </div>
+      <div class="prog-ref-how">
+        <p class="lbl">How it works</p>
+        <ul>
+          <li>Text me the agent&rsquo;s name and number</li>
+          <li>They book their first paid shoot, any tier</li>
+          <li>$50 lands on your next listing balance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="proof" class="section">
   <div class="wrap">
     <div class="proof-grid">
@@ -858,19 +948,23 @@
       if (window.fbq) fbq('track', 'Lead', { content_name: 'realtors-funnel' });
     } catch (_) {}
 
-    // 1) primary: EmailJS (hands-free, no extra tap) — same template as book-a-listing
-    if (window.emailjs && window.ELZINGA_CONFIG && window.ELZINGA_CONFIG.emailjsServiceId) {
-      if (submit) { submit.disabled = true; submit.textContent = 'Sending…'; }
-      try {
-        await emailjs.send(
-          window.ELZINGA_CONFIG.emailjsServiceId,
-          window.ELZINGA_CONFIG.emailjsTemplateId,
-          { first_name: nm, last_name: bk, email: em, service: 'Real Estate — Listing Quote', message: message }
-        );
+    // 1) primary: EmailJS (hands-free, no extra tap) — same template as book-a-listing.
+    //    Delivery goes through ECSLead (js/lead.js), which WAITS for the deferred
+    //    CDN script instead of testing for it once, retries 3x with backoff, and
+    //    queues a hard failure for redelivery on the next page view. Before this,
+    //    a visitor who submitted while the SDK was still loading — or whose browser
+    //    blocked the CDN — was pushed into a mail composer for no good reason.
+    if (submit) { submit.disabled = true; submit.textContent = 'Sending…'; }
+    if (window.ECSLead) {
+      var res = await ECSLead.deliver({
+        first_name: nm, last_name: bk, email: em,
+        service: 'Real Estate — Listing Quote', message: message, form: 'realtors_funnel'
+      });
+      if (res.ok) {
         return finish(nm, hot
           ? 'Thanks ' + esc(nm) + '! Got it &mdash; since you&rsquo;ve got a listing coming up, I&rsquo;ll text you a quote within the hour.'
           : 'Thanks ' + esc(nm) + '! Got it &mdash; I&rsquo;ll text you back with a quote shortly.', null, null);
-      } catch (err) { /* fall through to composer */ }
+      }
     }
 
     // 2) fallback: prefilled SMS (mobile) / email (desktop) composer
@@ -887,6 +981,7 @@
 })();
 </script>
 
+<script src="js/lead.js" defer></script>
 <script src="js/brand.js" defer></script>
 </body>
 </html>
