@@ -90,6 +90,32 @@
 
   function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
+  /* ── the params every form sends ──
+     `reply_to` is the load-bearing one: the EmailJS template binds its Reply-To
+     header to it, so hitting Reply on a lead notification answers the LEAD.
+     Without it the reply went back to our own inbox and the lead heard nothing.
+     The name/email aliases exist because the template's header lines read
+     {{name}} / {{from_email}}; sending only first_name/email rendered them blank. */
+  function paramsFor(lead) {
+    var first = lead.first_name || '';
+    var last  = lead.last_name || '';
+    var full  = (first + ' ' + last).trim();
+    var email = lead.email || '';
+    return {
+      first_name: first,
+      last_name:  last,
+      name:       full,
+      from_name:  full,
+      user_name:  full,
+      email:      email,
+      from_email: email,
+      user_email: email,
+      reply_to:   email,
+      service:    lead.service || 'Shoot Request',
+      message:    lead.message || ''
+    };
+  }
+
   /* ── one delivery attempt against EmailJS ── */
   function sendOnce(params) {
     var cfg = window.ELZINGA_CONFIG;
@@ -110,13 +136,7 @@
 
   /* ── the public call ── */
   async function deliver(lead) {
-    var params = {
-      first_name: lead.first_name || '',
-      last_name:  lead.last_name || '',
-      email:      lead.email || '',
-      service:    lead.service || 'Shoot Request',
-      message:    lead.message || ''
-    };
+    var params = paramsFor(lead);
 
     if (await attempt(params)) return { ok: true, via: 'emailjs' };
 
@@ -146,6 +166,11 @@
     for (var i = 0; i < box.length; i++) {
       var it = box[i];
       var p = Object.assign({}, it.params);
+      // Entries queued before reply_to existed still carry only `email`.
+      if (!p.reply_to) p = Object.assign(p, paramsFor({
+        first_name: p.first_name, last_name: p.last_name,
+        email: p.email, service: p.service, message: p.message
+      }));
       var age = Math.round((Date.now() - it.at) / 60000);
       // Flag it so a late arrival is never mistaken for a fresh lead.
       p.message = '[DELAYED DELIVERY — this lead was submitted ' + age +
@@ -182,6 +207,7 @@
 
   window.ECSLead = {
     deliver: deliver,
+    paramsFor: paramsFor,
     track: track,
     composerUrl: composerUrl,
     flush: flush,

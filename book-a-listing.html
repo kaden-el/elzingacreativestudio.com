@@ -491,7 +491,15 @@
       await emailjs.send(
         window.ELZINGA_CONFIG.emailjsServiceId,
         window.ELZINGA_CONFIG.emailjsTemplateId,
-        { first_name: first, last_name: last, email, service: 'Real Estate — Listing Booking', message }
+        // reply_to + the name/email aliases come from ECSLead.paramsFor so the
+        // notification's Reply-To lands on the lead, not on our own inbox.
+        window.ECSLead
+          ? ECSLead.paramsFor({ first_name: first, last_name: last, email: email,
+                                service: 'Real Estate — Listing Booking', message: message })
+          : { first_name: first, last_name: last, name: (first + ' ' + last).trim(),
+              from_name: (first + ' ' + last).trim(), email: email, from_email: email,
+              user_email: email, reply_to: email,
+              service: 'Real Estate — Listing Booking', message: message }
       );
       if (window.fbq) { fbq('track', 'Lead', { content_name: 'book-a-listing' }); }
       msg.className = 'form-msg success';
